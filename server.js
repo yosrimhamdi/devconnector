@@ -11,6 +11,8 @@ const { PORT, DATABASE } = process.env;
   try {
     await mongoose.connect(DATABASE, {
       useNewUrlParser: true,
+      useCreateIndex: true,
+      useFindAndModify: false,
       useUnifiedTopology: true,
     });
 

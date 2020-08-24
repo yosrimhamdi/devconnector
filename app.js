@@ -1,9 +1,9 @@
 const express = require('express');
 
+const userRouter = require('./routers/user');
+
 const app = express();
 
-app.get('/', (req, res) => {
-  res.json({ status: 'succes', data: [1, 2, 3] });
-});
+app.use('/users', userRouter);
 
 module.exports = app;

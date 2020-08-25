@@ -4,7 +4,11 @@ module.exports = (err, req, res, next) => {
   const { message, name } = err;
 
   if (err.code === 11000) {
-    err = new AppError(`email: ${err.keyValue.email} already registered.`, 400);
+    if (err.keyPattern.user) {
+      err = new AppError('already has a profile.', 401);
+    } else {
+      err = new AppError(`email: ${err.keyValue.email} already registered.`, 400);
+    }
   }
 
   if (name === 'ValidationError') {

@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const users = require('./routers/users');
-const { handleCommonErrors, sendError } = require('./errors/globalHandlers');
+const { handleCommonErrors, sendError } = require('./errors/global');
 
 const app = express();
 

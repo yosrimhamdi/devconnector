@@ -4,13 +4,7 @@ const User = require('../../models/User');
 const AppError = require('../../errors/appError');
 
 const requireLogIn = catchAsync(async (req, res, next) => {
-  const token = req.cookies.jwt;
-
-  if (!token) {
-    return next(new AppError('Unauthorized, please login to get access.', 401));
-  }
-
-  const { id } = verifyToken(token);
+  const { id } = verifyToken(req.cookies.jwt);
 
   const user = await User.findById(id);
 

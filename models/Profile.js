@@ -7,7 +7,7 @@ const profileSchema = new Schema({
   },
   handle: {
     type: String,
-    required: true,
+    required: [true, 'handle is required.'],
     maxlength: 40,
   },
   company: String,
@@ -15,11 +15,11 @@ const profileSchema = new Schema({
   location: String,
   status: {
     type: String,
-    required: true,
+    required: [true, 'status is required.'],
   },
   skills: {
     type: [String],
-    required: true,
+    required: [true, ' skills is required.'],
   },
   bio: String,
   githubusername: String,
@@ -27,16 +27,16 @@ const profileSchema = new Schema({
     {
       title: {
         type: String,
-        required: true,
+        required: [true, 'title is required.'],
       },
       company: {
         type: String,
-        required: true,
+        required: [true, 'company is required.'],
       },
       location: String,
       from: {
         type: Date,
-        required: true,
+        required: [true, 'location is required.'],
       },
       to: Date,
       current: {
@@ -50,19 +50,19 @@ const profileSchema = new Schema({
     {
       school: {
         type: String,
-        required: true,
+        required: [true, 'school name is required.'],
       },
       degree: {
         type: String,
-        required: true,
+        required: [true, 'degree is required.'],
       },
       fieldofstudy: {
         type: String,
-        required: true,
+        required: [true, 'field of study is required.'],
       },
       from: {
         type: Date,
-        required: true,
+        required: [true, 'from is required.'],
       },
       to: Date,
       current: {

@@ -9,7 +9,7 @@ const requireLogIn = catchAsync(async (req, res, next) => {
   const user = await User.findById(id);
 
   if (!user) {
-    return next(new AppError('user not found. Please consider signing up.', 401));
+    return next(new AppError('user not found. Please register instead.', 401));
   }
 
   req.user = user;

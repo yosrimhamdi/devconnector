@@ -1,3 +1,5 @@
+const { createToken } = require('../../utils/jwt');
+
 module.exports = (res, statusCode, payload) => {
   const { JWT_COOKIE_EXPIRES_IN } = process.env;
 

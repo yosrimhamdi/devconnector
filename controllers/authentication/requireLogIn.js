@@ -4,9 +4,7 @@ const User = require('../../models/User');
 const AppError = require('../../errors/appError');
 
 const requireLogIn = catchAsync(async (req, res, next) => {
-  const token = req.cookies.jwt.replace('In', 'Out');
-
-  const { id } = verifyToken(token);
+  const { id } = verifyToken(req.cookies.jwt);
 
   const user = await User.findById(id);
 

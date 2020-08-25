@@ -28,6 +28,17 @@ const profileSchema = new Schema({
   },
   bio: String,
   githubusername: String,
+  social: {
+    youtube: String,
+    twitter: String,
+    facebook: String,
+    linkedin: String,
+    instagram: String,
+  },
+  date: {
+    type: Date,
+    default: Date.now(),
+  },
   experience: [
     {
       title: {
@@ -77,17 +88,6 @@ const profileSchema = new Schema({
       description: String,
     },
   ],
-  social: {
-    youtube: String,
-    twitter: String,
-    facebook: String,
-    linkedin: String,
-    instagram: String,
-  },
-  date: {
-    type: Date,
-    default: Date.now(),
-  },
 });
 
 const Profile = model('Profile', profileSchema);

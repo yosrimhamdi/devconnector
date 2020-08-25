@@ -7,7 +7,7 @@ const profileSchema = new Schema({
   },
   handle: {
     type: String,
-    required: [true, 'handle is required.'],
+    required: [true, 'is required.'],
     maxlength: 40,
   },
   company: String,
@@ -15,11 +15,16 @@ const profileSchema = new Schema({
   location: String,
   status: {
     type: String,
-    required: [true, 'status is required.'],
+    required: [true, 'is required.'],
   },
   skills: {
     type: [String],
-    required: [true, ' skills is required.'],
+    validate: {
+      validator(skills) {
+        return skills.length !== 0;
+      },
+      message: 'is required',
+    },
   },
   bio: String,
   githubusername: String,
@@ -27,16 +32,16 @@ const profileSchema = new Schema({
     {
       title: {
         type: String,
-        required: [true, 'title is required.'],
+        required: [true, 'is required.'],
       },
       company: {
         type: String,
-        required: [true, 'company is required.'],
+        required: [true, 'is required.'],
       },
       location: String,
       from: {
         type: Date,
-        required: [true, 'location is required.'],
+        required: [true, 'is required.'],
       },
       to: Date,
       current: {
@@ -50,11 +55,11 @@ const profileSchema = new Schema({
     {
       school: {
         type: String,
-        required: [true, 'school name is required.'],
+        required: [true, 'name is required.'],
       },
       degree: {
         type: String,
-        required: [true, 'degree is required.'],
+        required: [true, 'is required.'],
       },
       fieldofstudy: {
         type: String,
@@ -62,7 +67,7 @@ const profileSchema = new Schema({
       },
       from: {
         type: Date,
-        required: [true, 'from is required.'],
+        required: [true, 'is required.'],
       },
       to: Date,
       current: {

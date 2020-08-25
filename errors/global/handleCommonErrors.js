@@ -8,7 +8,7 @@ module.exports = (err, req, res, next) => {
   }
 
   if (name === 'ValidationError') {
-    err = new AppError(message, 400);
+    err = new AppError(message.split('failed: ')[1], 400);
   }
 
   switch (message) {

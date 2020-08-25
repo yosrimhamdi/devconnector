@@ -2,7 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 
 const users = require('./routers/users');
-const globalErrorHandler = require('./errors/globalErrorHandler');
+const { handleCommonErrors, sendError } = require('./errors/globalHandlers');
 
 const app = express();
 
@@ -12,6 +12,6 @@ app.use(cookieParser());
 
 app.use('/api/users', users);
 
-app.use(globalErrorHandler);
+app.use(handleCommonErrors, sendError);
 
 module.exports = app;

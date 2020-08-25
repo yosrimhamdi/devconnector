@@ -5,7 +5,7 @@ module.exports = (err, req, res, next) => {
 
   if (err.code === 11000) {
     if (err.keyPattern.user) {
-      err = new AppError('already has a profile.', 401);
+      err = new AppError('already has a profile.', 403);
     } else {
       err = new AppError(`email: ${err.keyValue.email} already registered.`, 400);
     }
@@ -17,7 +17,7 @@ module.exports = (err, req, res, next) => {
 
   switch (message) {
     case 'jwt must be provided': {
-      err = new AppError('Unauthorized. login to grant access.', 401);
+      err = new AppError('Unauthorized. Login to grant access.', 401);
       break;
     }
     case 'invalid token': {

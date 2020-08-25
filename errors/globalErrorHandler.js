@@ -1,3 +1,5 @@
 module.exports = (err, req, res, next) => {
-  res.status(400).json({ status: 'fail', err, message: err.message });
+  const { statusCode = 500, message } = err;
+
+  res.status(statusCode).json({ message, err });
 };

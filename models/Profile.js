@@ -41,7 +41,7 @@ const profileSchema = new Schema({
     type: Date,
     default: Date.now(),
   },
-  experience: [
+  exprience: [
     {
       title: {
         type: String,
@@ -99,13 +99,19 @@ profileSchema.pre(/^find/, function (next) {
 });
 
 profileSchema.methods.addEducation = async function (data) {
-  this.education.push(data);
+  this.education.unshift(data);
 
   return this.save();
 };
 
 profileSchema.methods.deleteEducation = async function (id) {
   this.education = this.education.filter(({ _id }) => String(_id) !== id);
+
+  return this.save();
+};
+
+profileSchema.methods.addExprience = async function (data) {
+  this.exprience.unshift(data);
 
   return this.save();
 };

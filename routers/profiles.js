@@ -14,6 +14,11 @@ const {
   deleteEducation,
 } = require('../controllers/profiles/education');
 
+const {
+  addExprience,
+  deleteExprience,
+} = require('../controllers/profiles/exprience');
+
 const router = express.Router();
 
 router.get('/all', getAllProfiles);
@@ -27,5 +32,11 @@ router.route('/').get(getProfile).post(createProfile).patch(updateProfile);
 router.post('/education', addEducation);
 
 router.delete('/education/:id', deleteEducation);
+
+console.log(addExprience);
+
+router.post('/exprience', addExprience);
+
+// router.delete('/exprience/:id', deleteExprience);
 
 module.exports = router;

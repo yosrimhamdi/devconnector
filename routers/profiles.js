@@ -17,7 +17,7 @@ const {
 const {
   addExperience,
   deleteExperience,
-} = require('../controllers/profiles/exprience');
+} = require('../controllers/profiles/experience');
 
 const router = express.Router();
 

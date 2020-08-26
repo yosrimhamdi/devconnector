@@ -8,9 +8,13 @@ const profiles = require('./routers/profiles');
 const { handleExpectedErrors, sendError } = require('./errors/global');
 const notFound = require('./errors/notFound');
 
+const { NODE_ENV } = process.env;
+
 const app = express();
 
-app.use(morgan('dev'));
+if (NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
 
 app.use(express.json());
 

@@ -92,6 +92,12 @@ const profileSchema = new Schema({
   ],
 });
 
+profileSchema.pre(/^find/, function (next) {
+  this.populate('user');
+
+  next();
+});
+
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;

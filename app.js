@@ -4,6 +4,7 @@ const morgan = require('morgan');
 
 const users = require('./routers/users');
 const profiles = require('./routers/profiles');
+const posts = require('./routers/posts');
 
 const { handleExpectedErrors, sendError } = require('./errors/global');
 const notFound = require('./errors/notFound');
@@ -25,6 +26,8 @@ app.use(cookieParser());
 app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);
+
+app.use('/api/posts', posts);
 
 app.all('*', notFound);
 

@@ -6,7 +6,7 @@ const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 
 const { handleExpectedErrors, sendError } = require('./errors/global');
-const routeNotFound = require('./errors/routeNotFound');
+const routeNotFound = require('./errors/generators/routeNotFound');
 
 const app = express();
 

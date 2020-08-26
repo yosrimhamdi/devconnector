@@ -27,7 +27,7 @@ router.get('/:handle', getProfileByHandle);
 
 router.use(requireLogIn);
 
-router.route('/').get(getProfile).post(createProfile).patch(updateProfile);
+router.route('/').get(getProfile).post(createProfile).put(updateProfile);
 
 router.post('/education', addEducation);
 

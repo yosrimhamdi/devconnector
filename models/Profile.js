@@ -10,6 +10,7 @@ const profileSchema = new Schema({
     type: String,
     required: [true, 'is required.'],
     maxlength: 40,
+    unique: true,
   },
   company: String,
   website: String,

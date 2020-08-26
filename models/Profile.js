@@ -116,6 +116,12 @@ profileSchema.methods.addExprience = async function (data) {
   return this.save();
 };
 
+profileSchema.methods.deleteExprience = async function (id) {
+  this.exprience = this.exprience.filter(({ _id }) => String(_id) !== id);
+
+  return this.save();
+};
+
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;

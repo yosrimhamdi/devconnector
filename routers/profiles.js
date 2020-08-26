@@ -33,10 +33,8 @@ router.post('/education', addEducation);
 
 router.delete('/education/:id', deleteEducation);
 
-console.log(addExprience);
-
 router.post('/exprience', addExprience);
 
-// router.delete('/exprience/:id', deleteExprience);
+router.delete('/exprience/:id', deleteExprience);
 
 module.exports = router;

@@ -25,7 +25,7 @@ const profileSchema = new Schema({
       validator(skills) {
         return skills.length !== 0;
       },
-      message: 'is required',
+      message: 'is required.',
     },
   },
   bio: String,

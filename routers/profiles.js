@@ -15,8 +15,8 @@ const {
 } = require('../controllers/profiles/education');
 
 const {
-  addExprience,
-  deleteExprience,
+  addExperience,
+  deleteExperience,
 } = require('../controllers/profiles/exprience');
 
 const router = express.Router();
@@ -33,8 +33,8 @@ router.post('/education', addEducation);
 
 router.delete('/education/:id', deleteEducation);
 
-router.post('/exprience', addExprience);
+router.post('/experience', addExperience);
 
-router.delete('/exprience/:id', deleteExprience);
+router.delete('/experience/:id', deleteExperience);
 
 module.exports = router;

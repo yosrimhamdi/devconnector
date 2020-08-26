@@ -1,4 +1,4 @@
-const addExprience = require('./addExprience');
-const deleteExprience = require('./deleteExprience');
+const addExperience = require('./addExperience');
+const deleteExperience = require('./deleteExperience');
 
-module.exports = { addExprience, deleteExprience };
+module.exports = { addExperience, deleteExperience };

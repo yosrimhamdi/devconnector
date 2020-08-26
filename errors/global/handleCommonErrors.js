@@ -11,11 +11,14 @@ module.exports = (err, req, res, next) => {
       break;
 
     case 'JsonWebTokenError':
+    case 'TokenExpiredError':
       err = jwt(err);
       break;
 
     default:
   }
+
+  console.log(err.name);
 
   req.err = err;
 

@@ -18,7 +18,8 @@ const { PORT, DATABASE } = process.env;
 
     console.log('connected to database');
   } catch (err) {
-    console.log('connection to database failed');
+    console.log(err);
+    console.log('CONNECTION TO DB FAILED');
   }
 })();
 

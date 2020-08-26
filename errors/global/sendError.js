@@ -7,12 +7,14 @@ module.exports = (req, res) => {
 
   const response = { status, message, error: req.err };
 
-  if (NODE_ENV === 'production' && !operational) {
-    message = 'something went wrong.';
-
+  if (NODE_ENV === 'production') {
     delete response.error;
 
-    console.error(req.err);
+    if (!operational) {
+      message = 'something went wrong.';
+
+      console.error(req.err);
+    }
   }
 
   res.status(statusCode).json(response);

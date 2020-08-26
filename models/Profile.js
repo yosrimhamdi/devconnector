@@ -98,6 +98,18 @@ profileSchema.pre(/^find/, function (next) {
   next();
 });
 
+profileSchema.methods.addEducation = async function (data) {
+  this.education.push(data);
+
+  return this.save();
+};
+
+profileSchema.methods.deleteEducation = async function (id) {
+  this.education = this.education.filter(({ _id }) => String(_id) !== id);
+
+  return this.save();
+};
+
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;

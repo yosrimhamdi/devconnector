@@ -18,8 +18,6 @@ module.exports = (err, req, res, next) => {
     default:
   }
 
-  console.log(err.name);
-
   req.err = err;
 
   next();

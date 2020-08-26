@@ -1,4 +1,4 @@
-const handleCommonErrors = require('./handleCommonErrors');
+const handleExpectedErrors = require('./handleExpectedErrors');
 const sendError = require('./sendError');
 
-module.exports = { handleCommonErrors, sendError };
+module.exports = { handleExpectedErrors, sendError };

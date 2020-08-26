@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 
-const { handleCommonErrors, sendError } = require('./errors/global');
+const { handleExpectedErrors, sendError } = require('./errors/global');
 
 const app = express();
 
@@ -19,6 +19,6 @@ app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);
 
-app.use(handleCommonErrors, sendError);
+app.use(handleExpectedErrors, sendError);
 
 module.exports = app;

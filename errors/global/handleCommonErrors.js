@@ -1,13 +1,17 @@
 const AppError = require('../appError');
 
 module.exports = (err, req, res, next) => {
-  const { message, name } = err;
+  const { message, name, code } = err;
 
-  if (err.code === 11000) {
-    if (err.keyPattern.user) {
+  if (code === 11000) {
+    const { user, email, handle } = err.keyPattern;
+
+    if (user) {
       err = new AppError('already has a profile.', 403);
-    } else {
+    } else if (email) {
       err = new AppError(`email: ${err.keyValue.email} already registered.`, 400);
+    } else if (handle) {
+      err = new AppError(`handle: ${err.keyValue.handle} already exists.`, 400);
     }
   }
 

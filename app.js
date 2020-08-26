@@ -6,7 +6,7 @@ const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 
 const { handleExpectedErrors, sendError } = require('./errors/global');
-const routeNotFound = require('./errors/generators/routeNotFound');
+const notFound = require('./errors/notFound');
 
 const app = express();
 
@@ -22,7 +22,7 @@ app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);
 
-app.all('*', routeNotFound);
+app.all('*', notFound);
 
 app.use(handleExpectedErrors, sendError);
 

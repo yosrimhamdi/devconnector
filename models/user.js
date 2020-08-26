@@ -30,7 +30,7 @@ const userSchema = new mongoose.Schema({
     type: String,
     default: 'default.jpg',
   },
-  date: {
+  createdAt: {
     type: Date,
     default: Date.now(),
   },

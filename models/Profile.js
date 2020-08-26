@@ -37,7 +37,7 @@ const profileSchema = new Schema({
     linkedin: String,
     instagram: String,
   },
-  date: {
+  createdAt: {
     type: Date,
     default: Date.now(),
   },

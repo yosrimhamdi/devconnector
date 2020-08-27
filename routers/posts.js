@@ -1,5 +1,7 @@
 const express = require('express');
 
+const postLikes = require('./postLikes');
+
 const {
   getAllPosts,
   createPost,
@@ -9,6 +11,8 @@ const {
 const { requireLogIn } = require('../controllers/authentication');
 
 const router = express.Router();
+
+router.use('/:id/likes', postLikes);
 
 router.route('/').get(getAllPosts).post(requireLogIn, createPost);
 

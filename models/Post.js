@@ -13,22 +13,6 @@ const postSchema = Schema({
     type: Date,
     default: Date.now(),
   },
-  likes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    },
-  ],
-  dislikes: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-    },
-  ],
 });
 
 postSchema.pre(/find/, function (next) {

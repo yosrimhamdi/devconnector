@@ -1,7 +1,11 @@
 const AppError = require('../appError');
 
-module.exports = ({ keyPattern, keyValue }) => {
+module.exports = ({ keyPattern, keyValue, message }) => {
   const { user, email, handle } = keyPattern;
+
+  if (message.includes('postlikes index')) {
+    return new AppError('already made a like', 401);
+  }
 
   if (user) {
     return new AppError('already has a profile.', 403);

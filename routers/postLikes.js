@@ -6,9 +6,7 @@ const { requireLogIn } = require('../controllers/authentication');
 
 const router = express.Router({ mergeParams: true });
 
-router.use(requireLogIn);
-
-router.use(postMustExist);
+router.use(requireLogIn, postMustExist);
 
 router.route('/').post(addLike).delete(removeLike);
 

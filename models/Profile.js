@@ -4,7 +4,6 @@ const profileSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    unique: true,
   },
   handle: {
     type: String,
@@ -91,6 +90,8 @@ const profileSchema = new Schema({
     },
   ],
 });
+
+profileSchema.index({ user: 1, handler: 1 }, { unique: true });
 
 profileSchema.pre(/^find/, function (next) {
   this.populate('user');

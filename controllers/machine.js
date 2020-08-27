@@ -11,4 +11,15 @@ const createOne = Model => catchAsync(async (req, res) => {
   res.status(201).json(response);
 });
 
-module.exports = { createOne };
+// prettier-ignore
+const getAll = Model => catchAsync(async (req, res) => {
+  const documents = await Model.find();
+
+  const response = { status: 'success' };
+
+  response[Model.collection.name] = documents;
+
+  res.status(200).json(response);
+});
+
+module.exports = { createOne, getAll };

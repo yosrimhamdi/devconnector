@@ -31,6 +31,12 @@ const postSchema = Schema({
   ],
 });
 
+postSchema.pre(/find/, function (next) {
+  this.populate('user');
+
+  next();
+});
+
 const Post = model('Post', postSchema);
 
 module.exports = Post;

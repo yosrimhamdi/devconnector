@@ -1,6 +1,11 @@
 const express = require('express');
 
-const { getAllPosts, createPost, getPost } = require('../controllers/posts');
+const {
+  getAllPosts,
+  createPost,
+  getPost,
+  deletePost,
+} = require('../controllers/posts');
 const { requireLogIn } = require('../controllers/authentication');
 
 const router = express.Router();
@@ -9,6 +14,6 @@ router.use(requireLogIn);
 
 router.route('/').get(getAllPosts).post(createPost);
 
-router.route('/:id').get(getPost);
+router.route('/:id').get(getPost).delete(deletePost);
 
 module.exports = router;

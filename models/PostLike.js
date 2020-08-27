@@ -4,18 +4,18 @@ const postLikeSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
-    unique: true,
   },
   post: {
     type: Schema.Types.ObjectId,
     ref: 'Post',
-    unique: true,
   },
   createdAt: {
     type: Date,
     default: Date.now(),
   },
 });
+
+postLikeSchema.index({ user: 1, post: 1 }, { unique: true });
 
 const PostLike = model('PostLike', postLikeSchema);
 

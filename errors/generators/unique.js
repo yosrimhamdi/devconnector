@@ -1,6 +1,8 @@
 const AppError = require('../appError');
 
-module.exports = ({ keyPattern, keyValue, message }) => {
+module.exports = err => {
+  const { keyPattern, keyValue, message } = err;
+
   const { user, email, handle } = keyPattern;
 
   if (message.includes('postlikes index')) {
@@ -18,4 +20,6 @@ module.exports = ({ keyPattern, keyValue, message }) => {
   if (handle) {
     return new AppError(`handle: ${keyValue.handle} already exists.`, 400);
   }
+
+  return err;
 };

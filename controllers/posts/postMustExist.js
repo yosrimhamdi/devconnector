@@ -8,7 +8,7 @@ module.exports = catchAsync(async (req, res, next) => {
   const post = await Post.findById(postId);
 
   if (!post) {
-    return next(new AppError(`there is no post with id: ${postId}`, 406));
+    return next(new AppError(`there is no post with id: ${postId}`, 404));
   }
 
   next();

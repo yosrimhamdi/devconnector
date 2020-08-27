@@ -10,10 +10,8 @@ const { requireLogIn } = require('../controllers/authentication');
 
 const router = express.Router();
 
-router.use(requireLogIn);
+router.route('/').get(getAllPosts).post(requireLogIn, createPost);
 
-router.route('/').get(getAllPosts).post(createPost);
-
-router.route('/:id').get(getPost).delete(deletePost);
+router.route('/:id').get(getPost).delete(requireLogIn, deletePost);
 
 module.exports = router;

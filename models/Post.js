@@ -9,6 +9,10 @@ const postSchema = Schema({
     type: String,
     required: [true, 'is required'],
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
   likes: [
     {
       user: {
@@ -22,26 +26,6 @@ const postSchema = Schema({
       user: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-      },
-    },
-  ],
-  createdAt: {
-    type: Date,
-    default: Date.now(),
-  },
-  comments: [
-    {
-      user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User',
-      },
-      text: {
-        type: String,
-        required: [true, 'is required'],
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now(),
       },
     },
   ],

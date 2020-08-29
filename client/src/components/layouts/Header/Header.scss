@@ -1,4 +1,6 @@
 $bgColor: #343a40;
+$lightGreyLinkHover: rgba(255, 255, 255, 0.75);
+$greyLink: rgba(255, 255, 255, 0.5);
 
 .header {
   color: white;
@@ -14,7 +16,7 @@ $bgColor: #343a40;
 
   &__right-section,
   &__developer {
-    color: rgba(255, 255, 255, 0.5);
+    color: $greyLink;
   }
 
   &__right-section,
@@ -26,7 +28,7 @@ $bgColor: #343a40;
 
   &__right-section > div:hover,
   &__developer:hover {
-    color: rgba(255, 255, 255, 0.75);
+    color: $lightGreyLinkHover;
   }
 
   &__devconnector,

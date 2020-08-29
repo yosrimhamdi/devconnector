@@ -1,10 +1,16 @@
 import React from 'react';
-import { Router, Route } from 'react-router-dom';
 
 import './global.scss';
+import Header from '../layouts/Header';
+import Footer from '../layouts/Footer';
 
 const App = () => {
-  return <div className="app">App</div>;
+  return (
+    <div>
+      <Header />
+      <Footer />
+    </div>
+  );
 };
 
 export default App;

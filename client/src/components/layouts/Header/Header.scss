@@ -1,0 +1,31 @@
+$bgColor: #343a40;
+
+.header {
+  color: white;
+  background-color: $bgColor;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 8%;
+
+  &__right-section,
+  &__developer {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &__right-section,
+  &__left-section {
+    cursor: pointer;
+    display: flex;
+    display: flex;
+  }
+
+  &__right-section > div:hover,
+  &__developer:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  &__devconnector,
+  &__sign-up {
+    margin-right: 1.1em;
+  }
+}

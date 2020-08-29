@@ -21,20 +21,20 @@ const {
 
 const router = express.Router();
 
-router.get('/all', getAllProfiles);
+router.get('/', getAllProfiles);
 
 router.get('/:handle', getProfileByHandle);
 
 router.use(requireLogIn);
 
-router.route('/').get(getProfile).post(createProfile).put(updateProfile);
+router.route('/admin').get(getProfile).post(createProfile).put(updateProfile);
 
-router.post('/education', addEducation);
+router.post('/admin/education', addEducation);
 
-router.delete('/education/:id', deleteEducation);
+router.delete('/admin/education/:id', deleteEducation);
 
-router.post('/experience', addExperience);
+router.post('/admin/experience', addExperience);
 
-router.delete('/experience/:id', deleteExperience);
+router.delete('/admin/experience/:id', deleteExperience);
 
 module.exports = router;

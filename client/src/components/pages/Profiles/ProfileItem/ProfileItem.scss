@@ -1,0 +1,53 @@
+$greyBackground: #f8f9fa;
+$border: rgb(238, 237, 237);
+$linkBgColor: #17a2b8;
+
+.profile-item {
+  display: flex;
+  width: 70%;
+  margin: 0 auto;
+  padding: 2em;
+  background-color: $greyBackground;
+  border: 1px solid $border;
+  border-radius: 2px;
+
+  &__image {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 3em;
+  }
+
+  &__details {
+    text-align: left;
+  }
+
+  &__user-name {
+    font-size: 2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.3em;
+  }
+
+  &__user-details {
+    margin-bottom: 0.9em;
+  }
+
+  &__user-status {
+    text-transform: capitalize;
+  }
+
+  &__user-campany {
+    font-style: italic;
+  }
+
+  &__user-location {
+    margin-bottom: 1.5em;
+  }
+
+  &__view-profile {
+    background-color: $linkBgColor;
+    padding: 0.6em 1em;
+    border-radius: 3px;
+  }
+}

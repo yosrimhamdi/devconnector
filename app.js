@@ -1,6 +1,7 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const path = require('path');
 
 const users = require('./routers/users');
 const profiles = require('./routers/profiles');
@@ -18,6 +19,8 @@ if (NODE_ENV === 'development') {
 }
 
 app.use(express.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(express.urlencoded({ extended: true }));
 

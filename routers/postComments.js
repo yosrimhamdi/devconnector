@@ -12,6 +12,8 @@ const router = express.Router({ mergeParams: true });
 
 router.use(requireLogIn, postMustExist);
 
-router.route('/').get(getAllComments).post(addComment).delete(deleteComment);
+router.route('/').get(getAllComments).post(addComment);
+
+router.route('/:commentId').delete(deleteComment);
 
 module.exports = router;

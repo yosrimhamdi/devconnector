@@ -1,4 +1,3 @@
-const machine = require('../../machine');
 const Comment = require('../../../models/Comment');
 const catchAsync = require('../../../errors/catchAsync');
 

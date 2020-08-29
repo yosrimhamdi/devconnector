@@ -6,6 +6,11 @@ $bgColor: #343a40;
   display: flex;
   justify-content: space-between;
   padding: 1em 8%;
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 2;
 
   &__right-section,
   &__developer {

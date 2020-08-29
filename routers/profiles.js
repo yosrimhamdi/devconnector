@@ -27,14 +27,14 @@ router.get('/:handle', getProfileByHandle);
 
 router.use(requireLogIn);
 
-router.route('/admin').get(getProfile).post(createProfile).put(updateProfile);
+router.route('/').get(getProfile).post(createProfile).put(updateProfile);
 
-router.post('/admin/education', addEducation);
+router.post('/education', addEducation);
 
-router.delete('/admin/education/:id', deleteEducation);
+router.delete('/education/:id', deleteEducation);
 
-router.post('/admin/experience', addExperience);
+router.post('/experience', addExperience);
 
-router.delete('/admin/experience/:id', deleteExperience);
+router.delete('/experience/:id', deleteExperience);
 
 module.exports = router;

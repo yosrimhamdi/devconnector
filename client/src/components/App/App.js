@@ -8,6 +8,7 @@ import Header from '../layouts/Header';
 import Footer from '../layouts/Footer';
 
 import Landing from '../pages/Landing';
+import Profiles from '../pages/Profiles';
 
 const App = () => {
   return (
@@ -15,8 +16,9 @@ const App = () => {
       <Router history={history}>
         <Header />
         <Route path="/" exact component={Landing} />
-        <Footer />
+        <Route path="/profiles" exact component={Profiles} />
       </Router>
+      <Footer />
     </div>
   );
 };

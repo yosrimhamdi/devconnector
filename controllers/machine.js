@@ -15,7 +15,7 @@ const createOne = Model => catchAsync(async (req, res) => {
 const getAll = Model => catchAsync(async (req, res) => {
   const documents = await Model.find();
 
-  const response = { status: 'success' };
+  const response = { status: 'success', results: documents.length };
 
   response[Model.collection.name] = documents;
 

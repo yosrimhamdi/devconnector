@@ -17,6 +17,6 @@ const postLikeSchema = new Schema({
 
 postLikeSchema.index({ user: 1, post: 1 }, { unique: true });
 
-const PostLike = model('PostLike', postLikeSchema);
+const PostLike = model('Like', postLikeSchema);
 
 module.exports = PostLike;

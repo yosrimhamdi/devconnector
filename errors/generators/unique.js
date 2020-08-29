@@ -5,7 +5,7 @@ module.exports = err => {
 
   const { user, email, handle } = keyPattern;
 
-  if (message.includes('postlikes index')) {
+  if (message.includes('likes index')) {
     return new AppError('already made a like', 401);
   }
 

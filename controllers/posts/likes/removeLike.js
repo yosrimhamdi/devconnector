@@ -1,5 +1,5 @@
 const catchAsync = require('../../../errors/catchAsync');
-const PostLike = require('../../../models/PostLike');
+const PostLike = require('../../../models/Like');
 const AppError = require('../../../errors/appError');
 
 module.exports = catchAsync(async (req, res, next) => {

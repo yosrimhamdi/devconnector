@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PostLike = require('../../../models/PostLike');
+const PostLike = require('../../../models/Like');
 const catchAsync = require('../../../errors/catchAsync');
 
 module.exports = catchAsync(async (req, res) => {

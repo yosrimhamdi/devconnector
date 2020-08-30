@@ -1,0 +1,47 @@
+.form {
+  width: 55%;
+  margin: 0 auto 2em;
+
+  &__input {
+    width: 100%;
+    outline: none;
+    border: 1px solid rgb(212, 212, 212);
+    color: rgb(83, 83, 83);
+    padding: 0.6em 0.7em;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+
+    &::placeholder {
+      color: red;
+      font-size: 1.3rem;
+      color: rgb(196, 196, 196);
+      text-transform: capitalize;
+      position: relative;
+      top: 1px;
+      left: -1px;
+    }
+  }
+
+  &__input-message {
+    color: #6c757d;
+    font-size: 0.8rem;
+    margin: -1em 0 1.1em;
+    text-transform: capitalize;
+  }
+
+  &__button {
+    width: 100%;
+    padding: 1em 0;
+    text-transform: capitalize;
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+  }
+
+  &__input,
+  &__button {
+    border-radius: 4px;
+  }
+}

@@ -1,6 +1,6 @@
 import validator from 'validator';
 
-export default ({ name, email = '', password, passwordConfirm }) => {
+export default ({ name, email = '', password = '', passwordConfirm }) => {
   const err = {};
 
   if (!name) {
@@ -11,12 +11,12 @@ export default ({ name, email = '', password, passwordConfirm }) => {
     err.email = 'invalid email';
   }
 
-  if (!password) {
-    err.password = 'password in require';
+  if (!validator.isLength(password, { min: 6, max: 30 })) {
+    err.password = 'password in required: between 6 and 30 characters';
   }
 
-  if (!passwordConfirm) {
-    err.passwordConfirm = 'password confrim is required';
+  if (passwordConfirm !== password) {
+    err.passwordConfirm = "passwords don't match";
   }
 
   return err;

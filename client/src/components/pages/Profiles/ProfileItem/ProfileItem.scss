@@ -5,12 +5,11 @@ $linkBgColor: #17a2b8;
 .profile-item {
   display: flex;
   width: 70%;
-  margin: 0 auto;
+  margin: 0 auto 1em;
   padding: 2em;
   background-color: $greyBackground;
   border: 1px solid $border;
   border-radius: 2px;
-  margin-bottom: 1em;
 
   &__image {
     width: 180px;
@@ -20,7 +19,7 @@ $linkBgColor: #17a2b8;
     margin-right: 3em;
   }
 
-  &__details {
+  &__user-details {
     text-align: left;
   }
 
@@ -30,7 +29,7 @@ $linkBgColor: #17a2b8;
     margin-bottom: 0.3em;
   }
 
-  &__user-details {
+  &__user-job-details {
     margin-bottom: 0.9em;
   }
 

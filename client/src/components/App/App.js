@@ -9,6 +9,7 @@ import Footer from '../layouts/Footer';
 
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
+import ShowProfile from '../pages/ShowProfile';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <Header />
         <Route path="/" exact component={Landing} />
         <Route path="/profiles" exact component={Profiles} />
+        <Route path="/profiles/:handle" exact component={ShowProfile} />
       </Router>
       <Footer />
     </div>

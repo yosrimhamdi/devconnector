@@ -10,6 +10,7 @@ import Footer from '../layouts/Footer';
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
 import ShowProfile from '../pages/ShowProfile';
+import Register from '../pages/Register';
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/" exact component={Landing} />
         <Route path="/profiles" exact component={Profiles} />
         <Route path="/profiles/:handle" exact component={ShowProfile} />
+        <Route path="/register" exact component={Register} />
       </Router>
       <Footer />
     </div>

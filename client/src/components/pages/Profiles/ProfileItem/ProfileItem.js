@@ -2,9 +2,10 @@ import React from 'react';
 
 import './ProfileItem.scss';
 import CostumLink from '../../../CostumLink';
+import SkillList from './SkillList';
 
 const ProfileItem = profile => {
-  const { user, handle, status, company, location } = profile.profile;
+  const { user, handle, status, company, location, skills } = profile.profile;
 
   return (
     <div className="profile-item">
@@ -27,6 +28,7 @@ const ProfileItem = profile => {
           to={`/profiles/${handle}`}
         />
       </div>
+      <SkillList skills={skills} />
     </div>
   );
 };

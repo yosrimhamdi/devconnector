@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import { Field } from 'redux-form';
 
 import './Form.scss';
 import Headline from '../Headline';
@@ -13,16 +13,34 @@ class Form extends React.Component {
     return <div className="form__input-message">{message}</div>;
   }
 
-  renderInput = ({ input, type, placeholder, message }) => {
+  renderError({ error, touched, active }) {
+    if (touched && !active && error) {
+      return (
+        <div className="form__input-error-message">
+          <i className="fas fa-exclamation-circle"></i> {error}
+        </div>
+      );
+    }
+
+    return null;
+  }
+
+  renderInput = ({ input, type, placeholder, message, meta }) => {
+    const className =
+      meta.error && meta.touched && !meta.active
+        ? 'form__input form__input--error'
+        : 'form__input';
+
     return (
       <div>
         <input
-          className="form__input"
+          className={className}
           placeholder={placeholder}
           {...input}
           type={type}
         />
         {this.renderMessage(message)}
+        {this.renderError(meta)}
       </div>
     );
   };

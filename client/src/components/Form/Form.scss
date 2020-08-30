@@ -1,3 +1,5 @@
+$error: rgb(253, 99, 99);
+
 .form {
   width: 55%;
   margin: 0 auto 2em;
@@ -12,7 +14,6 @@
     margin-bottom: 1em;
 
     &::placeholder {
-      color: red;
       font-size: 1.3rem;
       color: rgb(196, 196, 196);
       text-transform: capitalize;
@@ -22,10 +23,24 @@
     }
   }
 
+  &__input--error {
+    border-color: $error;
+  }
+
+  &__input-error-message {
+    margin: -1.2em 0 1em;
+    font-size: 0.8rem;
+    color: $error;
+
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
+
   &__input-message {
     color: #6c757d;
     font-size: 0.8rem;
-    margin: -1em 0 1.1em;
+    margin: -1em 0 1.2em;
     text-transform: capitalize;
   }
 

@@ -38,7 +38,7 @@
     margin-bottom: 2.6em;
   }
 
-  &__button {
+  &__button-container > a:not(:last-child) {
     margin-right: 0.8em;
   }
 }

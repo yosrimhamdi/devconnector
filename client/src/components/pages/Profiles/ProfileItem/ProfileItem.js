@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './ProfileItem.scss';
+import CostumLink from '../../../CostumLink';
 
 const ProfileItem = profile => {
   const { user, handle, status, company, location } = profile.profile;
@@ -20,9 +20,12 @@ const ProfileItem = profile => {
           <span className="profile-item__user-campany">{company}</span>
         </div>
         <div className="profile-item__user-location">{location}.</div>
-        <Link className="profile-item__view-profile" to={`/profiles/${handle}`}>
-          View Profile
-        </Link>
+        <CostumLink
+          bgColor="#17a2b8"
+          colro="white"
+          text="view profile"
+          to={`/profiles/${handle}`}
+        />
       </div>
     </div>
   );

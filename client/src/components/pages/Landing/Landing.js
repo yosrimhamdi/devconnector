@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Landing.scss';
-import Button from '../../Button';
+import CostumLink from '../../CostumLink';
 
 const Landing = () => {
   return (
@@ -12,14 +12,14 @@ const Landing = () => {
           Create a developer profile/portfolio, share posts and get help from other
           developers
         </p>
-        <div>
-          <Button
-            className="landing__button"
+        <div className="landing__button-container">
+          <CostumLink
             bgColor="#17a2b8"
             color="white"
             text="sing up"
-          ></Button>
-          <Button bgColor="#ffffff" color="grey" text="login"></Button>
+            to="/register"
+          />
+          <CostumLink bgColor="#ffffff" color="grey" text="login" to="/login" />
         </div>
       </div>
     </div>

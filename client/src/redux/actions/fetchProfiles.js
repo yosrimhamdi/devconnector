@@ -1,8 +1,8 @@
 import { FETCH_PROFILES } from './types';
-import devConnector from '../../apis/devConnector';
+import profiles from '../../apis/profiles';
 
 export default () => async dispatch => {
-  const response = await devConnector.get('/api/profiles/all');
+  const response = await profiles.get('/api/profiles/all');
 
   dispatch({
     type: FETCH_PROFILES,

@@ -16,8 +16,10 @@ const Header = () => {
       </div>
 
       <div className="header__right-section">
-        <div className="header__sign-up">Sign up</div>
-        <div>Login</div>
+        <Link to="/register" className="header__sign-up">
+          Sign up
+        </Link>
+        <Link to="/login">Login</Link>
       </div>
     </div>
   );

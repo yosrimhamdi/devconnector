@@ -21,7 +21,7 @@ const {
 
 const router = express.Router();
 
-router.get('/', getAllProfiles);
+router.get('/all', getAllProfiles);
 
 router.get('/:handle', getProfileByHandle);
 

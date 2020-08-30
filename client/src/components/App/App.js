@@ -11,6 +11,7 @@ import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
 import ShowProfile from '../pages/ShowProfile';
 import Register from '../pages/Register';
+import Login from '../pages/Login';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/profiles" exact component={Profiles} />
         <Route path="/profiles/:handle" exact component={ShowProfile} />
         <Route path="/register" exact component={Register} />
+        <Route path="/login" exact component={Login} />
       </Router>
       <Footer />
     </div>

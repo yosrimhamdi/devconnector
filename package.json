@@ -21,6 +21,7 @@
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "client-install": "npm i --prefix client",
+    "install-all": "npm i && npm run client-install",
     "start": "concurrently \"npm run server\" \"npm run client\""
   },
   "keywords": [],

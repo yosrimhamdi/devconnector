@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
+import classnames from 'classnames';
 
 import './Form.scss';
 import Headline from '../Headline';
@@ -26,10 +27,9 @@ class Form extends React.Component {
   }
 
   renderInput = ({ input, type, placeholder, message, meta }) => {
-    const className =
-      meta.error && meta.touched && !meta.active
-        ? 'form__input form__input--error'
-        : 'form__input';
+    const className = classnames('form__input', {
+      'form__input--error': meta.error && meta.touched && !meta.active,
+    });
 
     return (
       <div>

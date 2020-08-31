@@ -7,9 +7,7 @@ export default [
   {
     name: 'email',
     placeholder: 'email',
-    type: 'text',
-    message:
-      'This site uses Gravatar so if you want a profile image, use a Gravatar email',
+    type: 'email',
   },
   {
     name: 'password',

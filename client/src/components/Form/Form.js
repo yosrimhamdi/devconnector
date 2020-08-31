@@ -64,7 +64,7 @@ class Form extends React.Component {
     return (
       <div className="form">
         <Headline header={this.props.header} subHeader={this.props.subHeader} />
-        <form onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
+        <form noValidate onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
           {renderedFields}
           <button className="form__button" type="submit">
             submit

@@ -13,8 +13,8 @@
   },
   "plugins": ["react"],
   "rules": {
-    "linebreak-style": "off",
     "import/no-extraneous-dependencies": "off",
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "linebreak-style": ["warn", "windows"]
   }
 }

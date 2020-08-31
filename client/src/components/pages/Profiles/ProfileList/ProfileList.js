@@ -11,9 +11,9 @@ class ProfileList extends React.Component {
   }
 
   renderProfiles() {
-    return this.props.profiles.map(profile => {
-      return <ProfileItem key={profile._id} profile={profile} />;
-    });
+    return this.props.profiles.map(profile => (
+      <ProfileItem key={profile._id} profile={profile} />
+    ));
   }
 
   render() {
@@ -21,8 +21,6 @@ class ProfileList extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
-  return { profiles: state.profiles };
-};
+const mapStateToProps = state => ({ profiles: state.profiles });
 
 export default connect(mapStateToProps, { fetchProfiles })(ProfileList);

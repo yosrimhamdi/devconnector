@@ -1,1 +1,1 @@
-export const PROXY = 'http://localhost:3001';
+export default 'http://localhost:3001';

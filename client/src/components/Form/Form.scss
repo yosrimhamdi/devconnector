@@ -3,6 +3,10 @@ $error: rgb(253, 99, 99);
 .form {
   width: 55%;
   margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
 
   &__input {
     width: 100%;
@@ -53,6 +57,7 @@ $error: rgb(253, 99, 99);
     border: none;
     outline: none;
     font-size: 0.9rem;
+    cursor: pointer;
   }
 
   &__input,

@@ -17,7 +17,7 @@ class Form extends React.Component {
     if (touched && !active && error) {
       return (
         <div className="form__input-error-message">
-          <i className="fas fa-exclamation-circle"></i> {error}
+          <i className="fas fa-exclamation-circle" /> {error}
         </div>
       );
     }
@@ -46,18 +46,16 @@ class Form extends React.Component {
   };
 
   renderFields() {
-    return this.props.fields.map(({ name, placeholder, type, message }, i) => {
-      return (
-        <Field
-          key={i}
-          name={name}
-          placeholder={placeholder}
-          message={message}
-          type={type}
-          component={this.renderInput}
-        />
-      );
-    });
+    return this.props.fields.map(({ name, placeholder, type, message }, i) => (
+      <Field
+        key={i}
+        name={name}
+        placeholder={placeholder}
+        message={message}
+        type={type}
+        component={this.renderInput}
+      />
+    ));
   }
 
   render() {
@@ -65,10 +63,12 @@ class Form extends React.Component {
 
     return (
       <div className="form">
-        <Headline header="sign up" subHeader="create your devConnector account." />
+        <Headline header={this.props.header} subHeader={this.props.subHeader} />
         <form onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
           {renderedFields}
-          <button className="form__button">submit</button>
+          <button className="form__button" type="submit">
+            submit
+          </button>
         </form>
       </div>
     );

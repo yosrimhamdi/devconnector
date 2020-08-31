@@ -18,6 +18,8 @@ class Register extends React.Component {
         fields={fields}
         onFormSubmit={this.onFormSubmit}
         handleSubmit={this.props.handleSubmit}
+        header="sign up"
+        subHeader="create your devConnector account."
       />
     );
   }

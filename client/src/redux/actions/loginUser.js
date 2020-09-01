@@ -1,16 +1,17 @@
 import users from '../../apis/users';
-import { LOGIN_USER, ERROR_HAS_OCCURED, CLEAR_ERRORS } from './types';
+import { LOGIN_USER, ERROR_HAS_OCCURED } from './types';
+import history from '../../history';
 
 export default formValues => async dispatch => {
   try {
     const response = await users.post('/login', formValues);
 
-    dispatch({ type: CLEAR_ERRORS });
-
     dispatch({
       type: LOGIN_USER,
       payload: response.data,
     });
+
+    history.push('/dashboard');
   } catch (err) {
     dispatch({
       type: ERROR_HAS_OCCURED,

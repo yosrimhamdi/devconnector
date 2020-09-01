@@ -6,6 +6,7 @@ import Form from '../../Form';
 import fields from './fields';
 import validate from './validate';
 import { registerUser } from '../../../redux/actions';
+import history from '../../../history';
 
 class Register extends React.Component {
   onFormSubmit = formValues => {
@@ -13,6 +14,10 @@ class Register extends React.Component {
   };
 
   render() {
+    if (this.props.auth.isAuthenticated) {
+      history.push('/dashboard');
+    }
+
     return (
       <Form
         fields={fields}
@@ -27,4 +32,6 @@ class Register extends React.Component {
 
 const wrappedForm = reduxForm({ form: 'register', validate })(Register);
 
-export default connect(null, { registerUser })(wrappedForm);
+const mapStateToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStateToProps, { registerUser })(wrappedForm);

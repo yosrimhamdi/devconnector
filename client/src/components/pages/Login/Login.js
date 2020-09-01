@@ -19,8 +19,7 @@ class Login extends React.Component {
         fields={fields}
         onFormSubmit={this.onFormSubmit}
         handleSubmit={this.props.handleSubmit}
-        header="Log In
-        "
+        header="Log In"
         subHeader="Sign in to your DevConnector account."
       />
     );

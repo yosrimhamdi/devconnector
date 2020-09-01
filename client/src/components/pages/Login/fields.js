@@ -3,12 +3,12 @@ export default [
     name: 'email',
     placeholder: 'email',
     type: 'text',
-    errorName: 'wrongemailorpassword',
+    errorName: 'wrongEmailOrPassword',
   },
   {
     name: 'password',
     placeholder: 'password',
     type: 'password',
-    errorName: 'wrongemailorpassword',
+    errorName: 'wrongEmailOrPassword',
   },
 ];

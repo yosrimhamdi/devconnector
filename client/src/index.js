@@ -6,9 +6,12 @@ import reduxThunk from 'redux-thunk';
 
 import App from './components/App';
 import reducers from './redux/reducers';
+import establishAuth from './utils/establishAuth';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducers, composeEnhancers(applyMiddleware(reduxThunk)));
+
+establishAuth(store);
 
 ReactDOM.render(
   <Provider store={store}>

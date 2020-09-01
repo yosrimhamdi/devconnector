@@ -5,9 +5,9 @@ const sendToken = require('./sendToken');
 const catchAsync = require('../../errors/catchAsync');
 
 const register = catchAsync(async (req, res) => {
-  const newUser = await User.create(req.body);
+  let user = await User.create(req.body);
 
-  const user = _.omit(newUser._doc, 'password');
+  user = _.omit(user._doc, 'password');
 
   sendToken(res, 201, user);
 });

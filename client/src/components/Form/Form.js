@@ -24,7 +24,21 @@ class Form extends React.Component {
     );
   }
 
-  renderInput = ({ input, type, placeholder, message, meta }) => {
+  renderResponseError(errorName) {
+    const error = this.props.errors[errorName];
+
+    if (!error) {
+      return null;
+    }
+
+    return (
+      <div className="form__input-error-message">
+        <i className="fas fa-exclamation-circle" /> {error}
+      </div>
+    );
+  }
+
+  renderInput({ input, type, placeholder, message, errorName, meta }) {
     const className = classnames('form__input', {
       'form__input--error': meta.error && meta.touched && !meta.active,
     });
@@ -39,9 +53,10 @@ class Form extends React.Component {
         />
         {this.renderMessage(message)}
         {this.renderValidationError(meta)}
+        {this.renderResponseError(errorName)}
       </div>
     );
-  };
+  }
 }
 
 export default Form;

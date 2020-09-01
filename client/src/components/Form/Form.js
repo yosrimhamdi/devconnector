@@ -27,9 +27,7 @@ class Form extends React.Component {
     );
   }
 
-  renderResponseError(errorName = '') {
-    const error = this.props.errors[errorName];
-
+  renderResponseError(error) {
     if (!error) {
       return null;
     }
@@ -41,9 +39,11 @@ class Form extends React.Component {
     );
   }
 
-  renderInput = ({ input, type, placeholder, message, errorName, meta }) => {
+  renderInput({ input, type, placeholder, message, errorName, meta }) {
+    const error = this.props.errors[errorName];
+
     const className = classnames('form__input', {
-      'form__input--error': meta.error && meta.touched && !meta.active,
+      'form__input--error': error || (meta.error && meta.touched && !meta.active),
     });
 
     return (
@@ -56,10 +56,10 @@ class Form extends React.Component {
         />
         {this.renderMessage(message)}
         {this.renderValidationError(meta)}
-        {this.renderResponseError(errorName)}
+        {this.renderResponseError(error)}
       </div>
     );
-  };
+  }
 
   renderFields() {
     return this.props.fields.map(
@@ -71,7 +71,7 @@ class Form extends React.Component {
           placeholder={placeholder}
           message={message}
           type={type}
-          component={this.renderInput}
+          component={this.renderInput.bind(this)}
         />
       ),
     );
@@ -79,6 +79,7 @@ class Form extends React.Component {
 
   render() {
     const renderedFields = this.renderFields();
+
     return (
       <div className="form">
         <Headline header={this.props.header} subHeader={this.props.subHeader} />

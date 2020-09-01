@@ -22,7 +22,6 @@ class Login extends React.Component {
         header="Log In
         "
         subHeader="Sign in to your DevConnector account."
-        errors={this.props.errors}
       />
     );
   }
@@ -30,6 +29,4 @@ class Login extends React.Component {
 
 const wrappedForm = reduxForm({ form: 'login', validate })(Login);
 
-const mapStateToProps = ({ errors }) => ({ errors });
-
-export default connect(mapStateToProps, { loginUser })(wrappedForm);
+export default connect(null, { loginUser })(wrappedForm);

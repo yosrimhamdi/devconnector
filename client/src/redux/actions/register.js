@@ -1,7 +1,13 @@
 import users from '../../apis/users';
+import { REGISTER_USER } from './types';
 
 export default formValues => async dispatch => {
-  const response = await users.post('/register', formValues);
+  try {
+    const response = await users.post('/register', formValues);
 
-  console.log(response);
+    dispatch({
+      type: REGISTER_USER,
+      payload: response.data,
+    });
+  } catch (err) {}
 };

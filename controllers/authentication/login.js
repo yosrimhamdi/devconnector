@@ -18,7 +18,7 @@ const logIn = catchAsync(async (req, res, next) => {
     return next(new AppError('invalid password.', 400));
   }
 
-  sendToken(res, 200, { id: user._id });
+  sendToken(res, 200, user);
 });
 
 module.exports = logIn;

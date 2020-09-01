@@ -9,5 +9,7 @@ export default formValues => async dispatch => {
       type: LOGIN_USER,
       payload: response.data,
     });
-  } catch (err) {}
+  } catch (err) {
+    console.log(err.response.data);
+  }
 };

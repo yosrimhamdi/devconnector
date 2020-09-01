@@ -5,11 +5,11 @@ import { connect } from 'react-redux';
 import Form from '../../Form';
 import fields from './fields';
 import validate from './validate';
-import { register } from '../../../redux/actions';
+import { registerUser } from '../../../redux/actions';
 
 class Register extends React.Component {
   onFormSubmit = formValues => {
-    this.props.register(formValues);
+    this.props.registerUser(formValues);
   };
 
   render() {
@@ -27,4 +27,4 @@ class Register extends React.Component {
 
 const wrappedForm = reduxForm({ form: 'register', validate })(Register);
 
-export default connect(null, { register })(wrappedForm);
+export default connect(null, { registerUser })(wrappedForm);

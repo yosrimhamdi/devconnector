@@ -6,11 +6,11 @@ import './Login.scss';
 import Form from '../../Form';
 import fields from './fields';
 import validate from './validate';
-import { login } from '../../../redux/actions';
+import { loginUser } from '../../../redux/actions';
 
 class Login extends React.Component {
   onFormSubmit = formValues => {
-    this.props.login(formValues);
+    this.props.loginUser(formValues);
   };
 
   render() {
@@ -29,4 +29,4 @@ class Login extends React.Component {
 
 const wrappedForm = reduxForm({ form: 'login', validate })(Login);
 
-export default connect(null, { login })(wrappedForm);
+export default connect(null, { loginUser })(wrappedForm);

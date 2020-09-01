@@ -14,19 +14,33 @@ class Form extends React.Component {
     return <div className="form__input-message">{message}</div>;
   }
 
-  renderError({ error, touched, active }) {
-    if (touched && !active && error) {
-      return (
-        <div className="form__input-error-message">
-          <i className="fas fa-exclamation-circle" /> {error}
-        </div>
-      );
+  renderValidationError({ error, touched, active }) {
+    if (!(touched && !active && error)) {
+      return null;
     }
 
-    return null;
+    return (
+      <div className="form__input-error-message">
+        <i className="fas fa-exclamation-circle" /> {error}
+      </div>
+    );
   }
 
-  renderInput = ({ input, type, placeholder, message, meta }) => {
+  renderResponseError(errorName) {
+    const { [errorName]: error } = this.props.errors;
+
+    if (!error) {
+      return null;
+    }
+
+    return (
+      <div className="form__input-error-message">
+        <i className="fas fa-exclamation-circle" /> {error}
+      </div>
+    );
+  }
+
+  renderInput = ({ input, type, placeholder, message, meta, errorName }) => {
     const className = classnames('form__input', {
       'form__input--error': meta.error && meta.touched && !meta.active,
     });
@@ -40,22 +54,26 @@ class Form extends React.Component {
           type={type}
         />
         {this.renderMessage(message)}
-        {this.renderError(meta)}
+        {this.renderValidationError(meta)}
+        {this.renderResponseError(errorName)}
       </div>
     );
   };
 
   renderFields() {
-    return this.props.fields.map(({ name, placeholder, type, message }, i) => (
-      <Field
-        key={i}
-        name={name}
-        placeholder={placeholder}
-        message={message}
-        type={type}
-        component={this.renderInput}
-      />
-    ));
+    return this.props.fields.map(
+      ({ name, placeholder, type, message, errorName }, i) => (
+        <Field
+          key={i}
+          name={name}
+          errorName={errorName}
+          placeholder={placeholder}
+          message={message}
+          type={type}
+          component={this.renderInput}
+        />
+      ),
+    );
   }
 
   render() {

@@ -10,7 +10,6 @@ export default formValues => async dispatch => {
       payload: response.data,
     });
   } catch (err) {
-    console.log(err.response.data);
     dispatch({
       type: ERROR_HAS_OCCURED,
       payload: err.response.data,

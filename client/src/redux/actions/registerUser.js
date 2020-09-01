@@ -8,7 +8,7 @@ export default formValues => async dispatch => {
 
     dispatch({
       type: REGISTER_USER,
-      payload: response.data,
+      payload: response.data.user,
     });
 
     history('/dashboard');

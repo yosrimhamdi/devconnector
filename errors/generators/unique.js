@@ -14,7 +14,11 @@ module.exports = err => {
   }
 
   if (email) {
-    return new AppError(`email: ${keyValue.email} already registered.`, 400);
+    return new AppError(
+      'emailAlreadyExists',
+      `email: ${keyValue.email} already registered.`,
+      400,
+    );
   }
 
   if (handle) {

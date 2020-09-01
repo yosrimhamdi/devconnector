@@ -8,6 +8,7 @@ export default [
     name: 'email',
     placeholder: 'email',
     type: 'email',
+    errorName: 'emailAlreadyExists',
   },
   {
     name: 'password',

@@ -1,9 +1,7 @@
 import React from 'react';
-import { Field } from 'redux-form';
 import classnames from 'classnames';
 
 import './Form.scss';
-import Headline from '../Headline';
 
 class Form extends React.Component {
   renderMessage(message) {
@@ -26,21 +24,7 @@ class Form extends React.Component {
     );
   }
 
-  renderResponseError(errorName) {
-    const { [errorName]: error } = this.props.errors;
-
-    if (!error) {
-      return null;
-    }
-
-    return (
-      <div className="form__input-error-message">
-        <i className="fas fa-exclamation-circle" /> {error}
-      </div>
-    );
-  }
-
-  renderInput = ({ input, type, placeholder, message, meta, errorName }) => {
+  renderInput = ({ input, type, placeholder, message, meta }) => {
     const className = classnames('form__input', {
       'form__input--error': meta.error && meta.touched && !meta.active,
     });
@@ -55,42 +39,9 @@ class Form extends React.Component {
         />
         {this.renderMessage(message)}
         {this.renderValidationError(meta)}
-        {this.renderResponseError(errorName)}
       </div>
     );
   };
-
-  renderFields() {
-    return this.props.fields.map(
-      ({ name, placeholder, type, message, errorName }, i) => (
-        <Field
-          key={i}
-          name={name}
-          errorName={errorName}
-          placeholder={placeholder}
-          message={message}
-          type={type}
-          component={this.renderInput}
-        />
-      ),
-    );
-  }
-
-  render() {
-    const renderedFields = this.renderFields();
-
-    return (
-      <div className="form">
-        <Headline header={this.props.header} subHeader={this.props.subHeader} />
-        <form noValidate onSubmit={this.props.handleSubmit(this.props.onFormSubmit)}>
-          {renderedFields}
-          <button className="form__button" type="submit">
-            submit
-          </button>
-        </form>
-      </div>
-    );
-  }
 }
 
 export default Form;

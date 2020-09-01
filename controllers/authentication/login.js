@@ -12,7 +12,7 @@ const logIn = catchAsync(async (req, res, next) => {
 
   if (!user) {
     return next(
-      new AppError('wrongeamilorpassword', 'wrong email or password.', 400),
+      new AppError('wrongemailorpassword', 'wrong email or password.', 400),
     );
   }
 

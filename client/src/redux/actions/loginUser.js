@@ -1,5 +1,5 @@
 import users from '../../apis/users';
-import { LOGIN_USER } from './types';
+import { LOGIN_USER, ERROR_HAS_OCCURED } from './types';
 
 export default formValues => async dispatch => {
   try {
@@ -11,5 +11,9 @@ export default formValues => async dispatch => {
     });
   } catch (err) {
     console.log(err.response.data);
+    dispatch({
+      type: ERROR_HAS_OCCURED,
+      payload: err.response.data,
+    });
   }
 };

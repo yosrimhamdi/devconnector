@@ -11,13 +11,17 @@ const logIn = catchAsync(async (req, res, next) => {
   let user = await User.findOne({ email }).select('+password');
 
   if (!user) {
-    return next(new AppError('wrong email or password.', 404));
+    return next(
+      new AppError('wrongeamilorpassword', 'wrong email or password.', 400),
+    );
   }
 
   const isValid = await user.validatePassword(password);
 
   if (!isValid) {
-    return next(new AppError('wrong email or password.', 400));
+    return next(
+      new AppError('wrongemailorpassword', 'wrong email or password.', 400),
+    );
   }
 
   user = _.omit(user._doc, 'password');

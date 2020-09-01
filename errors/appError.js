@@ -1,10 +1,11 @@
 class AppError extends Error {
-  constructor(message, statusCode) {
+  constructor(errName, message, statusCode) {
     super(message);
 
     this.status = statusCode === 500 ? 'error' : 'fail';
     this.statusCode = statusCode;
     this.operational = true;
+    this.errName = errName;
   }
 }
 

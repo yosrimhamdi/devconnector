@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 import './Form.scss';
 import Headline from '../Headline';
-import { clearErrors } from '../../redux/actions';
 
 class Form extends React.Component {
   renderMessage(message) {
@@ -97,4 +96,4 @@ class Form extends React.Component {
 
 const mapStateToProps = ({ errors }) => ({ errors });
 
-export default connect(mapStateToProps, { clearErrors })(Form);
+export default connect(mapStateToProps)(Form);

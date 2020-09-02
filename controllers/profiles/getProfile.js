@@ -6,7 +6,7 @@ const getProfile = catchAsync(async (req, res, next) => {
   const profile = await Profile.findOne({ user: req.user._id });
 
   if (!profile) {
-    return next(new AppError('no profile yet.', 404));
+    return next(new AppError('noProfileYet', 'no profile yet.', 404));
   }
 
   res.status(200).json({ status: 'success', profile });

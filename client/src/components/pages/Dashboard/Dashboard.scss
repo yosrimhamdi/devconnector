@@ -1,0 +1,30 @@
+.dashboard {
+  margin-top: 5.5em;
+
+  &__content {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-weight: 400;
+    font-size: 2.2rem;
+    text-transform: capitalize;
+  }
+
+  &__welcome-message {
+    font-weight: 300;
+    font-size: 1.2rem;
+    margin-bottom: 1em;
+  }
+
+  &__user-name {
+    font-style: italic;
+    color: #007bff;
+  }
+
+  &__create-profile-message {
+    margin-bottom: 1em;
+    color: rgb(255, 81, 81);
+  }
+}

@@ -11,6 +11,7 @@ import Profiles from '../pages/Profiles';
 import ShowProfile from '../pages/ShowProfile';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
+import Dashboard from '../pages/Dashboard';
 
 const App = () => (
   <div>
@@ -21,6 +22,7 @@ const App = () => (
       <Route path="/profiles/:handle" exact component={ShowProfile} />
       <Route path="/register" exact component={Register} />
       <Route path="/login" exact component={Login} />
+      <Route path="/dashboard" exact component={Dashboard} />
     </Router>
   </div>
 );

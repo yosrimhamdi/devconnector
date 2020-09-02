@@ -1,4 +1,5 @@
 export const FETCH_PROFILES = 'FETCH_PROFILES';
+export const FETCH_USER_PROFILE = 'FETCH_USER_PROFILE';
 
 export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN_USER = 'LOGIN_USER';

@@ -11,8 +11,11 @@ export default (state = {}, action) => {
     case FETCH_PROFILES:
       return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
     case FETCH_USER_PROFILE:
-    case REMOVE_EXPERIENCE:
-      return { ...state, [action.payload.profile.user._id]: action.payload.profile };
+    case REMOVE_EXPERIENCE: {
+      const { profile } = action.payload;
+
+      return { ...state, [profile.user._id]: profile };
+    }
     default:
       return state;
   }

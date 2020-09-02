@@ -10,15 +10,17 @@ import { loginUser } from '../../../redux/actions';
 import history from '../../../history';
 
 class Login extends React.Component {
+  UNSAFE_componentWillMount() {
+    if (this.props.auth.isAuthenticated) {
+      history.push('/dashboard');
+    }
+  }
+
   onFormSubmit = formValues => {
     this.props.loginUser(formValues);
   };
 
   render() {
-    if (this.props.auth.isAuthenticated) {
-      history.push('/dashboard');
-    }
-
     return (
       <Form
         fields={fields}

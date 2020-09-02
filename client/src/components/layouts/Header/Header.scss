@@ -5,6 +5,7 @@ $greyLink: rgba(255, 255, 255, 0.5);
 .header {
   color: white;
   background-color: $bgColor;
+  text-transform: capitalize;
   display: flex;
   justify-content: space-between;
   padding: 1em 8%;
@@ -25,13 +26,31 @@ $greyLink: rgba(255, 255, 255, 0.5);
     display: flex;
   }
 
-  &__right-section > div:hover,
+  &__right-section > *:hover,
   &__developer:hover {
     color: $lightGreyLinkHover;
+  }
+
+  &__right-section > * {
+    margin-right: 1em;
   }
 
   &__devconnector,
   &__sign-up {
     margin-right: 1.1em;
+  }
+
+  &__user-image {
+    width: 26px;
+    height: 26px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    position: relative;
+    top: -2px;
+  }
+
+  &__logout {
+    display: flex;
   }
 }

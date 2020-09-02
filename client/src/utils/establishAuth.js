@@ -17,5 +17,7 @@ export default store => {
       type: LOGIN_USER,
       payload: user,
     });
-  } catch (err) {}
+  } catch (err) {
+    // skip
+  }
 };

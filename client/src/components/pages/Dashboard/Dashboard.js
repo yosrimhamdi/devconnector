@@ -5,17 +5,20 @@ import './Dashboard.scss';
 
 import CostumLink from '../../CostumLink';
 import { fetchUserProfile } from '../../../redux/actions';
+import history from '../../../history';
 
 class Dashboard extends React.Component {
+  UNSAFE_componentWillMount() {
+    if (!this.props.auth.isAuthenticated) {
+      history.push('/login');
+    }
+  }
+
   componentDidMount() {
     this.props.fetchUserProfile();
   }
 
   renderCreateProfile() {
-    if (this.props.auth.user.hasProfile) {
-      return null;
-    }
-
     return (
       <>
         <div className="dashboard__create-profile-message">
@@ -32,25 +35,29 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { user } = this.props.auth;
+    const { auth } = this.props;
 
-    const firstName = user.name.split(' ')[0];
-    //
+    const { name, hasProfile } = auth.user;
 
     return (
       <div className="dashboard">
         <div className="dashboard__content">
           <h1 className="dashboard__title">dashboard</h1>
           <h3 className="dashboard__welcome-message">
-            Welcome <span className="dashboard__user-name">{firstName}</span>
+            Welcome{' '}
+            <span className="dashboard__user-name">{name.split(' ')[0]}</span>
           </h3>
-          <div>{this.renderCreateProfile()}</div>
+          {hasProfile ? '' : this.renderCreateProfile()}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth, profiles, errors }) => ({
+  auth,
+  errors,
+  profile: profiles.find(profile => profile.user._id === auth.user._id),
+});
 
 export default connect(mapStateToProps, { fetchUserProfile })(Dashboard);

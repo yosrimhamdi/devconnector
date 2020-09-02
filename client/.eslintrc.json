@@ -24,6 +24,8 @@
     "jsx-a11y/interactive-supports-focus": "off",
     "camelcase": "off",
     "react/jsx-one-expression-per-line": "off",
-    "object-curly-newline": "off"
+    "object-curly-newline": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off"
   }
 }

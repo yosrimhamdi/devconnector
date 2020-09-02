@@ -18,36 +18,38 @@ class Dashboard extends React.Component {
     this.props.fetchUserProfile();
   }
 
-  renderCreateProfile() {
-    return (
-      <>
-        <div className="dashboard__create-profile-message">
-          yo have no profile yet. Please create one.
+  renderContent() {
+    if (this.props.auth.user.hasProfile) {
+      return (
+        <div>
+          <div className="dashboard__create-profile-message">
+            yo have no profile yet. Please create one.
+          </div>
+          <CostumLink
+            to="/profiles/new"
+            bgColor="#17a2b8"
+            color="white"
+            text="create profile"
+          />
         </div>
-        <CostumLink
-          to="/profiles/new"
-          bgColor="#17a2b8"
-          color="white"
-          text="create profile"
-        />
-      </>
-    );
+      );
+    }
+
+    return null;
   }
 
   render() {
-    const { auth } = this.props;
-
-    const { name, hasProfile } = auth.user;
-
     return (
       <div className="dashboard">
         <div className="dashboard__content">
           <h1 className="dashboard__title">dashboard</h1>
           <h3 className="dashboard__welcome-message">
             Welcome{' '}
-            <span className="dashboard__user-name">{name.split(' ')[0]}</span>
+            <span className="dashboard__user-name">
+              {this.props.auth.user.name.split(' ')[0]}
+            </span>
           </h3>
-          {hasProfile ? '' : this.renderCreateProfile()}
+          {this.renderContent()}
         </div>
       </div>
     );

@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import './Header.scss';
+import { logoutUser } from '../../../redux/actions';
 
 const Header = () => (
   <div className="header">
@@ -23,4 +25,6 @@ const Header = () => (
   </div>
 );
 
-export default Header;
+const mapStateToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStateToProps, { logoutUser })(Header);

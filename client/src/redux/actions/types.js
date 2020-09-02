@@ -6,3 +6,5 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const ERROR_HAS_OCCURED = 'ERROR_HAS_OCCURED';
+
+export const REMOVE_EXP = 'REMOVE_EXP';

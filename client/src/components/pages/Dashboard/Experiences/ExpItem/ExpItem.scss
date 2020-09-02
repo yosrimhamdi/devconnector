@@ -1,0 +1,19 @@
+.exp-item {
+  &__logo-container {
+    position: relative;
+  }
+
+  &__remove {
+    opacity: 0;
+    color: rgb(255, 113, 113);
+    position: absolute;
+    transform: translateY(50%);
+    transition: transform 200ms, opacity 200ms;
+    cursor: pointer;
+  }
+
+  &:hover &__remove {
+    opacity: 1;
+    transform: translate(50%, 50%);
+  }
+}

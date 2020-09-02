@@ -1,0 +1,22 @@
+.table {
+  // border: 1px solid #ddd;
+  border-collapse: collapse;
+  // width: 50%;
+
+  &__company {
+    width: 400px;
+  }
+
+  tr {
+    text-align: left;
+  }
+  &__body > tr:nth-child(even) {
+    background-color: #ddd;
+  }
+
+  &__body td,
+  th {
+    padding: 0.4em 0.7em;
+    border: 1px solid #ddd;
+  }
+}

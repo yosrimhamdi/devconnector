@@ -15,7 +15,7 @@
   &__welcome-message {
     font-weight: 300;
     font-size: 1.2rem;
-    margin-bottom: 1em;
+    margin-bottom: 1.6em;
   }
 
   &__user-name {
@@ -26,5 +26,10 @@
   &__create-profile-message {
     margin-bottom: 1em;
     color: rgb(255, 81, 81);
+  }
+
+  &__exp {
+    font-weight: 600;
+    margin-bottom: 0.6em;
   }
 }

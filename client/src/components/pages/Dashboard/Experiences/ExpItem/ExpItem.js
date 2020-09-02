@@ -3,11 +3,11 @@ import moment from 'moment';
 import { connect } from 'react-redux';
 
 import './ExpItem.scss';
-import { removeExp } from '../../../../../redux/actions';
+import { removeExperience } from '../../../../../redux/actions';
 
 class ExpItem extends React.Component {
   removeExp = () => {
-    this.props.removeExp(this.props.exp._id);
+    this.props.removeExperience(this.props.exp._id);
   };
 
   render() {
@@ -36,4 +36,4 @@ class ExpItem extends React.Component {
   }
 }
 
-export default connect(null, { removeExp })(ExpItem);
+export default connect(null, { removeExperience })(ExpItem);

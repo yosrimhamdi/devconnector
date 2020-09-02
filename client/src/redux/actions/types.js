@@ -7,4 +7,4 @@ export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const ERROR_HAS_OCCURED = 'ERROR_HAS_OCCURED';
 
-export const REMOVE_EXP = 'REMOVE_EXP';
+export const REMOVE_EXPERIENCE = 'REMOVE_EXPERIENCE';

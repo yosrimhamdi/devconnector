@@ -7,7 +7,7 @@ export default () => async dispatch => {
 
     dispatch({
       type: FETCH_USER_PROFILE,
-      payload: response.data.profile,
+      payload: response.data,
     });
   } catch (err) {
     // skip

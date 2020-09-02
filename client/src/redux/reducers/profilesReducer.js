@@ -1,11 +1,18 @@
-import { FETCH_PROFILES, FETCH_USER_PROFILE } from '../actions/types';
+import _ from 'lodash';
 
-export default (state = [], action) => {
+import {
+  FETCH_PROFILES,
+  FETCH_USER_PROFILE,
+  REMOVE_EXPERIENCE,
+} from '../actions/types';
+
+export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_PROFILES:
-      return [...state, ...action.payload];
+      return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
     case FETCH_USER_PROFILE:
-      return [...state, action.payload];
+    case REMOVE_EXPERIENCE:
+      return { ...state, [action.payload.profile.user._id]: action.payload.profile };
     default:
       return state;
   }

@@ -6,6 +6,6 @@ export default () => async dispatch => {
 
   dispatch({
     type: FETCH_PROFILES,
-    payload: response.data.profiles,
+    payload: response.data,
   });
 };

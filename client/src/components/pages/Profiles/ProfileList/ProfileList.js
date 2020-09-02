@@ -21,6 +21,6 @@ class ProfileList extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({ profiles: state.profiles });
+const mapStateToProps = state => ({ profiles: Object.values(state.profiles) });
 
 export default connect(mapStateToProps, { fetchProfiles })(ProfileList);

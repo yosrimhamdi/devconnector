@@ -70,7 +70,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = ({ auth, profiles, errors }) => ({
   auth,
   errors,
-  profile: profiles.find(profile => profile.user._id === auth.user._id),
+  profile: profiles[auth.user._id],
 });
 
 export default connect(mapStateToProps, { fetchUserProfile })(Dashboard);

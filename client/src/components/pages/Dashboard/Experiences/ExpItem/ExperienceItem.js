@@ -19,7 +19,7 @@ class ExpItem extends React.Component {
   }
 
   removeExp = () => {
-    this.props.removeExperience(this.props.exp._id);
+    this.props.removeExperience(this.props.experience._id);
   };
 
   render() {

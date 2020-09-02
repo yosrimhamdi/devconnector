@@ -2,7 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-import './ExpItem.scss';
+import './ExperienceItem.scss';
 import { removeExperience } from '../../../../../redux/actions';
 
 class ExpItem extends React.Component {

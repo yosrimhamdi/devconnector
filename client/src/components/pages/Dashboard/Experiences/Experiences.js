@@ -1,10 +1,12 @@
 import React from 'react';
 
-import ExpItem from './ExpItem';
+import ExperienceItem from './ExpItem';
 import './Experiences.scss';
 
 const Experiences = ({ experiences }) => {
-  const renderedExps = experiences.map(exp => <ExpItem key={exp._id} exp={exp} />);
+  const renderedExperiences = experiences.map(exp => (
+    <ExperienceItem key={exp._id} exp={exp} />
+  ));
 
   return (
     <table className="table">
@@ -14,7 +16,7 @@ const Experiences = ({ experiences }) => {
           <th>title</th>
           <th>year</th>
         </tr>
-        {renderedExps}
+        {renderedExperiences}
       </tbody>
     </table>
   );

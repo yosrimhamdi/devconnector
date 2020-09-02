@@ -1,1 +1,1 @@
-export { default } from './ExpItem';
+export { default } from './ExperienceItem';

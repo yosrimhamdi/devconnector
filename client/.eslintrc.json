@@ -28,6 +28,7 @@
     "object-curly-newline": "off",
     "no-underscore-dangle": "off",
     "class-methods-use-this": "off",
-    "jsx-a11y/control-has-associated-label": "off"
+    "jsx-a11y/control-has-associated-label": "off",
+    "react/sort-comp": "off"
   }
 }

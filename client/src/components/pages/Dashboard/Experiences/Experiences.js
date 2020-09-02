@@ -8,8 +8,8 @@ const Experiences = ({ experiences }) => {
     return <div>there is no experience.</div>;
   }
 
-  const renderedExperiences = experiences.map(exp => (
-    <ExperienceItem key={exp._id} exp={exp} />
+  const renderedExperiences = experiences.map(experience => (
+    <ExperienceItem key={experience._id} experience={experience} />
   ));
 
   return (

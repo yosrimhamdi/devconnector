@@ -6,24 +6,30 @@ import './ExperienceItem.scss';
 import { removeExperience } from '../../../../../redux/actions';
 
 class ExpItem extends React.Component {
+  format(date) {
+    return moment(date).format('YYYY-MM-DD');
+  }
+
+  getFormattedDate(from, to) {
+    if (to) {
+      return `${this.format(from)} / ${this.format(to)}`;
+    }
+
+    return `${this.format(from)} / now`;
+  }
+
   removeExp = () => {
     this.props.removeExperience(this.props.exp._id);
   };
 
   render() {
-    const { company, title, from, to } = this.props.exp;
-
-    const formatedFrom = moment(from).format('YYYY-MM-DD');
-
-    const formatedTo = moment(to).format('YYYY-MM-DD');
-
-    const year = `${formatedFrom} / ${to ? `${formatedTo}` : 'now'}`;
+    const { company, title, from, to } = this.props.experience;
 
     return (
       <tr className="exp-item">
         <td>{company}</td>
         <td>{title}</td>
-        <td>{year}</td>
+        <td>{this.getFormattedDate(from, to)}</td>
         <div className="exp-item__logo-container">
           <i
             onClick={this.removeExp}

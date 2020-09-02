@@ -50,6 +50,10 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    if (!this.props.auth.user) {
+      return null;
+    }
+
     return (
       <div className="dashboard">
         <div className="dashboard__content">
@@ -70,7 +74,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = ({ auth, profiles, errors }) => ({
   auth,
   errors,
-  profile: profiles[auth.user._id],
+  profile: auth.user ? profiles[auth.user._id] : null,
 });
 
 export default connect(mapStateToProps, { fetchUserProfile })(Dashboard);

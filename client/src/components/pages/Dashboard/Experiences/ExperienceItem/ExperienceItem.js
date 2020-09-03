@@ -30,13 +30,13 @@ class ExpItem extends React.Component {
         <td>{company}</td>
         <td>{title}</td>
         <td>{this.getFormattedDate(from, to)}</td>
-        <div className="exp-item__logo-container">
+        <td className="exp-item__logo-container">
           <i
             onClick={this.removeExp}
-            className="fas fa-trash-alt exp-item__remove"
+            className="fas fa-trash-alt exp-item__remove-logo"
             role="button"
           />
-        </div>
+        </td>
       </tr>
     );
   }

@@ -1,0 +1,25 @@
+.table {
+  border-collapse: collapse;
+
+  &__first-column {
+    width: 400px;
+  }
+
+  &__remove-logo {
+    display: none;
+  }
+
+  tr {
+    text-align: left;
+
+    &:nth-child(even) {
+      background-color: #ddd;
+    }
+  }
+
+  td,
+  th {
+    padding: 0.4em 0.7em;
+    border: 1px solid #ddd;
+  }
+}

@@ -1,19 +1,17 @@
 .exp-item {
   &__logo-container {
-    position: relative;
+    visibility: hidden;
   }
 
-  &__remove {
-    opacity: 0;
+  &__remove-logo {
+    visibility: visible;
     color: rgb(255, 113, 113);
-    position: absolute;
-    transform: translateY(50%);
-    transition: transform 200ms, opacity 200ms;
+    transform: translateY(calc(50% - 6px));
+    transition: all 200ms;
     cursor: pointer;
-  }
 
-  &:hover &__remove {
-    opacity: 1;
-    transform: translate(50%, 50%);
+    &:hover {
+      font-size: 1.1rem;
+    }
   }
 }

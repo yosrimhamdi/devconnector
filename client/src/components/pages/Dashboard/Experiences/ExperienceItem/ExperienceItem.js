@@ -13,7 +13,7 @@ class ExpItem extends React.Component {
     const { company, title, from, to } = this.props.experience;
 
     return (
-      <tr className="table">
+      <tr>
         <td>{company}</td>
         <td>{title}</td>
         <td>{getFormattedDate(from, to)}</td>

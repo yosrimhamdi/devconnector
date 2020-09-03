@@ -13,7 +13,7 @@ class EducationItem extends React.Component {
     const { school, degree, from, to } = this.props.education;
 
     return (
-      <tr className="table">
+      <tr>
         <td>{school}</td>
         <td>{degree}</td>
         <td>{getFormattedDate(from, to)}</td>

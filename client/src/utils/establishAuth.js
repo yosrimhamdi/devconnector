@@ -18,6 +18,6 @@ export default store => {
       payload: { user },
     });
   } catch (err) {
-    // skip
+    // do nothing
   }
 };

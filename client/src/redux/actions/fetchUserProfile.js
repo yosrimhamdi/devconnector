@@ -10,6 +10,6 @@ export default () => async dispatch => {
       payload: response.data,
     });
   } catch (err) {
-    // skip
+    // do nothing
   }
 };

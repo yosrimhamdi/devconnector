@@ -98,6 +98,12 @@ profileSchema.pre(/^find/, function (next) {
   next();
 });
 
+profileSchema.pre('save', function (next) {
+  this.skills = this.skills[0].split(',');
+
+  next();
+});
+
 profileSchema.methods.addEducation = async function (data) {
   this.education.unshift(data);
 

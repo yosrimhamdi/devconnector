@@ -7,3 +7,5 @@ export { default as logoutUser } from './logoutUser';
 
 export { default as removeExperience } from './removeExperience';
 export { default as removeEducation } from './removeEducation';
+
+export { default as createProfile } from './createProfile';

@@ -10,19 +10,23 @@ module.exports = err => {
   }
 
   if (user) {
-    return new AppError('already has a profile.', 403);
+    return new AppError('hasProfile', 'already has a profile.', 403);
   }
 
   if (email) {
     return new AppError(
       'emailAlreadyExists',
-      `email: ${keyValue.email} already registered.`,
+      `email: '${keyValue.email}' already registered.`,
       400,
     );
   }
 
   if (handle) {
-    return new AppError(`handle: ${keyValue.handle} already exists.`, 400);
+    return new AppError(
+      'handleAlreadyExists',
+      `handle: '${keyValue.handle}' already exists.`,
+      400,
+    );
   }
 
   return err;

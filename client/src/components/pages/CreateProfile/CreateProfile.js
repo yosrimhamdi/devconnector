@@ -1,15 +1,17 @@
 import React from 'react';
 import { reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 import './CreateProfile.scss';
 
 import Form from '../../Form';
 import validate from './validate';
 import fields from './fields';
+import { createProfile } from '../../../redux/actions';
 
 class CreateProfile extends React.Component {
   onFormSubmit = formValues => {
-    console.log(formValues);
+    this.props.createProfile(formValues);
   };
 
   render() {
@@ -29,4 +31,6 @@ class CreateProfile extends React.Component {
   }
 }
 
-export default reduxForm({ form: 'createProfile', validate })(CreateProfile);
+const wrappedForm = reduxForm({ form: 'createProfile', validate })(CreateProfile);
+
+export default connect(null, { createProfile })(wrappedForm);

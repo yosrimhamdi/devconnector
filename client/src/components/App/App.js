@@ -12,7 +12,7 @@ import ShowProfile from '../pages/ShowProfile';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
-// import CreateProfile from '../pages/CreateProfile';
+import CreateProfile from '../pages/CreateProfile';
 
 const App = () => (
   <div>
@@ -21,7 +21,7 @@ const App = () => (
       <Switch>
         <Route path="/" exact component={Landing} />
         <Route path="/profiles" exact component={Profiles} />
-        {/* <Route path="/profiles/new" exact component={CreateProfile} /> */}
+        <Route path="/profiles/new" exact component={CreateProfile} />
         <Route path="/profiles/:handle" exact component={ShowProfile} />
         <Route path="/register" exact component={Register} />
         <Route path="/login" exact component={Login} />

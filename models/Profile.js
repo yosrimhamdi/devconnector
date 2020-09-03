@@ -29,7 +29,7 @@ const profileSchema = new Schema({
     },
   },
   bio: String,
-  githubusername: String,
+  githubUserName: String,
   social: {
     youtube: String,
     twitter: String,

@@ -3,7 +3,7 @@ import React from 'react';
 import './form.scss';
 import ValidationError from './errors/Validation';
 import ResponseError from './errors/Response';
-import Message from './Message';
+import Message from './utils/Message';
 import getClassName from './utils/getClassName';
 
 export default ({ input, type, placeholder, message, responseError, meta }) => {

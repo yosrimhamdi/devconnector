@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import history from '../../../history';
 import validate from './validate';
-import Input from '../../form/Input';
+import { Input } from '../../form';
 import Headline from '../../Headline';
 import { registerUser } from '../../../redux/actions';
 
@@ -25,10 +25,13 @@ class Register extends React.Component {
     return (
       <div>
         <Headline
-          header="Log In"
-          subHeader="Sign in to your DevConnector account."
+          header="sign up"
+          subHeader="create your DevConnector account."
         />
-        <form onSubmit={this.props.handleSubmit(this.onFormSubmit)} className="form">
+        <form
+          onSubmit={this.props.handleSubmit(this.onFormSubmit)}
+          className="form"
+        >
           <Field name="name" type="text" placeholder="name" component={Input} />
           <Field
             name="email"

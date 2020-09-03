@@ -1,6 +1,7 @@
 import React from 'react';
 
 import getClassName from './utils/getClassName';
+import ValidationError from './errors/Validation';
 
 export default ({ input, name, meta }) => {
   const className = getClassName(meta);
@@ -20,6 +21,7 @@ export default ({ input, name, meta }) => {
         <option value="intern">intern</option>
         <option value="other">intern</option>
       </select>
+      <ValidationError meta={meta} />
     </div>
   );
 };

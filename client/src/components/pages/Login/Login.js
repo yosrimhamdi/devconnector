@@ -7,7 +7,7 @@ import { loginUser } from '../../../redux/actions';
 import history from '../../../history';
 import Headline from '../../Headline';
 
-import Input from '../../form/Input';
+import { Input } from '../../form';
 
 class Login extends React.Component {
   UNSAFE_componentWillMount() {
@@ -26,10 +26,13 @@ class Login extends React.Component {
     return (
       <div>
         <Headline
-          header="Log In"
-          subHeader="Sign in to your DevConnector account."
+          header="log in"
+          subHeader="sign in to your DevConnector account."
         />
-        <form onSubmit={this.props.handleSubmit(this.onFormSubmit)} className="form">
+        <form
+          onSubmit={this.props.handleSubmit(this.onFormSubmit)}
+          className="form"
+        >
           <Field
             name="email"
             type="text"

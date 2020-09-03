@@ -1,10 +1,9 @@
 import React from 'react';
-import classnames from 'classnames';
+
+import getClassName from './utils/getClassName';
 
 export default ({ input, name, meta }) => {
-  const className = classnames('form__input', {
-    'form__input--error': meta.error && meta.touched && !meta.active,
-  });
+  const className = getClassName(meta);
 
   return (
     <div>

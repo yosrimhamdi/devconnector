@@ -15,8 +15,10 @@ const Experiences = ({ experiences }) => {
 
   return (
     <div className="experiences">
-      <h1 className="experiences__title">experiences cridentials</h1>
-      <Table>{renderedExperiences}</Table>
+      <h1 className="experiences__title">experience cridentials</h1>
+      <Table columnNames={['company', 'title', 'years']}>
+        {renderedExperiences}
+      </Table>
     </div>
   );
 };

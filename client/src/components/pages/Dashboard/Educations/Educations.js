@@ -16,8 +16,8 @@ const Educations = ({ educations }) => {
 
   return (
     <div className="education">
-      <h1 className="education__title">experience credentials</h1>
-      <Table>{renderedEducations}</Table>
+      <h1 className="education__title">education credentials</h1>
+      <Table columnNames={['school', 'degree', 'years']}>{renderedEducations}</Table>
     </div>
   );
 };

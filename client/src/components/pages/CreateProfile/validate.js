@@ -1,4 +1,4 @@
-export default ({ handle, skills }) => {
+export default ({ handle, skills, status }) => {
   const errors = {};
 
   if (!handle) {
@@ -7,6 +7,10 @@ export default ({ handle, skills }) => {
 
   if (!skills) {
     errors.skills = 'skills is required';
+  }
+
+  if (status === '* select professional status') {
+    errors.status = 'status is required';
   }
 
   return errors;

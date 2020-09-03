@@ -26,6 +26,10 @@ $error: rgb(253, 99, 99);
     }
   }
 
+  select {
+    text-transform: capitalize;
+  }
+
   &__input--error {
     border-color: $error;
   }

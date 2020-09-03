@@ -7,6 +7,11 @@ export default [
       'a unique handle for your profile URL. Your full name, company name, nickname',
   },
   {
+    name: 'status',
+    type: 'select',
+    message: 'give us an idea of where you are at in your career',
+  },
+  {
     name: 'company',
     placeholder: 'company',
     type: 'text',
@@ -36,5 +41,11 @@ export default [
     type: 'text',
     message:
       'if you want your latest repos and a Github link, include your username',
+  },
+  {
+    name: 'bio',
+    type: 'textarea',
+    placeholder: 'short bio',
+    messaeg: 'tell us a little about yourself',
   },
 ];

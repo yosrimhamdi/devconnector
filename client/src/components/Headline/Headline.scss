@@ -13,4 +13,11 @@
     font-style: italic;
     margin-bottom: 2em;
   }
+
+  &__title,
+  &__message {
+    &:first-letter {
+      text-transform: capitalize;
+    }
+  }
 }

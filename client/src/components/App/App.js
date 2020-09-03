@@ -21,8 +21,8 @@ const App = () => (
       <Switch>
         <Route path="/" exact component={Landing} />
         <Route path="/profiles" exact component={Profiles} />
-        <Route path="/profiles/:handle" exact component={ShowProfile} />
         <Route path="/profiles/new" exact component={CreateProfile} />
+        <Route path="/profiles/:handle" exact component={ShowProfile} />
         <Route path="/register" exact component={Register} />
         <Route path="/login" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />

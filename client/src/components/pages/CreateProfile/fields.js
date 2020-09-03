@@ -5,6 +5,7 @@ export default [
     type: 'text',
     message:
       'a unique handle for your profile URL. Your full name, company name, nickname',
+    errorName: 'handleExists',
   },
   {
     name: 'status',

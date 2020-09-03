@@ -1,4 +1,4 @@
-export default ({ handle = '', skills, status }) => {
+export default ({ handle = '', skills = '', status }) => {
   const errors = {};
 
   if (!handle) {
@@ -11,6 +11,10 @@ export default ({ handle = '', skills, status }) => {
 
   if (!skills) {
     errors.skills = 'skills is required';
+  }
+
+  if (skills.includes(' ')) {
+    errors.skills = 'must not contain spaces. Seprate by comma';
   }
 
   if (status === '* select professional status' || !status) {

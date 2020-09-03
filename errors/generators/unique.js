@@ -15,7 +15,7 @@ module.exports = err => {
 
   if (email) {
     return new AppError(
-      'emailAlreadyExists',
+      'emailExists',
       `email: '${keyValue.email}' already registered.`,
       400,
     );
@@ -23,7 +23,7 @@ module.exports = err => {
 
   if (handle) {
     return new AppError(
-      'handleAlreadyExists',
+      'handleExists',
       `handle: '${keyValue.handle}' already exists.`,
       400,
     );

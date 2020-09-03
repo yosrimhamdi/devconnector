@@ -1,7 +1,7 @@
 const AppError = require('../appError');
 
 module.exports = err => {
-  const { keyPattern, keyValue, message } = err;
+  const { keyPattern, message } = err;
 
   const { user, email, handle } = keyPattern;
 
@@ -14,19 +14,11 @@ module.exports = err => {
   }
 
   if (email) {
-    return new AppError(
-      'emailExists',
-      `email: '${keyValue.email}' already registered.`,
-      400,
-    );
+    return new AppError('emailExists', 'email already registered.', 400);
   }
 
   if (handle) {
-    return new AppError(
-      'handleExists',
-      `handle: '${keyValue.handle}' already exists.`,
-      400,
-    );
+    return new AppError('handleExists', 'handle already exists.', 400);
   }
 
   return err;

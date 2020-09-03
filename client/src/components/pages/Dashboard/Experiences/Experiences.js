@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ExperienceItem from './ExpItem';
+import ExperienceItem from './ExperienceItem';
 import './Experiences.scss';
 
 const Experiences = ({ experiences }) => {

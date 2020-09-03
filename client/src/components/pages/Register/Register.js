@@ -1,12 +1,12 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import Form from '../../Form';
-import fields from './fields';
-import validate from './validate';
-import { registerUser } from '../../../redux/actions';
 import history from '../../../history';
+import validate from './validate';
+import Input from '../../form/Input';
+import Headline from '../../Headline';
+import { registerUser } from '../../../redux/actions';
 
 class Register extends React.Component {
   UNSAFE_componentWillMount() {
@@ -20,20 +20,46 @@ class Register extends React.Component {
   };
 
   render() {
+    const { errors } = this.props;
+
     return (
-      <Form
-        fields={fields}
-        onFormSubmit={this.onFormSubmit}
-        handleSubmit={this.props.handleSubmit}
-        header="sign up"
-        subHeader="create your devConnector account."
-      />
+      <div>
+        <Headline
+          header="Log In"
+          subHeader="Sign in to your DevConnector account."
+        />
+        <form onSubmit={this.props.handleSubmit(this.onFormSubmit)} className="form">
+          <Field name="name" type="text" placeholder="name" component={Input} />
+          <Field
+            name="email"
+            type="text"
+            placeholder="email"
+            component={Input}
+            responseError={errors.emailExists}
+          />
+          <Field
+            name="password"
+            type="password"
+            placeholder="password"
+            component={Input}
+          />
+          <Field
+            name="passwordConfirm"
+            type="password"
+            placeholder="confirm password"
+            component={Input}
+          />
+          <button className="form__button" type="submit">
+            submit
+          </button>
+        </form>
+      </div>
     );
   }
 }
 
 const wrappedForm = reduxForm({ form: 'register', validate })(Register);
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth, errors }) => ({ auth, errors });
 
 export default connect(mapStateToProps, { registerUser })(wrappedForm);

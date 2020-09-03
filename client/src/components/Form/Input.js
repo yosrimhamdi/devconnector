@@ -6,8 +6,8 @@ import ResponseError from './errors/Response';
 import Message from './Message';
 import getClassName from './utils/getClassName';
 
-export default ({ input, type, placeholder, message, error, meta }) => {
-  const className = getClassName(meta, error);
+export default ({ input, type, placeholder, message, responseError, meta }) => {
+  const className = getClassName(meta, responseError);
 
   return (
     <div>
@@ -19,7 +19,7 @@ export default ({ input, type, placeholder, message, error, meta }) => {
       />
       <Message message={message} />
       <ValidationError meta={meta} />
-      <ResponseError error={error} />
+      <ResponseError responseError={responseError} />
     </div>
   );
 };

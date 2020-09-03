@@ -9,7 +9,7 @@ import Header from '../layouts/Header';
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
 import ShowProfile from '../pages/ShowProfile';
-// import Register from '../pages/Register';
+import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 // import CreateProfile from '../pages/CreateProfile';
@@ -23,7 +23,7 @@ const App = () => (
         <Route path="/profiles" exact component={Profiles} />
         {/* <Route path="/profiles/new" exact component={CreateProfile} /> */}
         <Route path="/profiles/:handle" exact component={ShowProfile} />
-        {/* <Route path="/register" exact component={Register} /> */}
+        <Route path="/register" exact component={Register} />
         <Route path="/login" exact component={Login} />
         <Route path="/dashboard" exact component={Dashboard} />
       </Switch>

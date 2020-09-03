@@ -35,14 +35,14 @@ class Login extends React.Component {
             type="text"
             placeholder="email"
             component={Input}
-            error={errors.wrongEmailOrPassword}
+            responseError={errors.wrongEmailOrPassword}
           />
           <Field
             name="password"
             type="password"
             placeholder="password"
             component={Input}
-            error={errors.wrongEmailOrPassword}
+            responseError={errors.wrongEmailOrPassword}
           />
           <button className="form__button" type="submit">
             submit

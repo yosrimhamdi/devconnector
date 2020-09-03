@@ -8,10 +8,10 @@ export default formValues => async dispatch => {
 
     dispatch({
       type: REGISTER_USER,
-      payload: response.data.user,
+      payload: response.data,
     });
 
-    history('/dashboard');
+    history.push('/dashboard');
   } catch (err) {
     dispatch({
       type: ERROR_HAS_OCCURED,

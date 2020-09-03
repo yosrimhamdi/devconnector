@@ -87,10 +87,30 @@ class Form extends React.Component {
     );
   }
 
+  renderTextArea({ input, name, placeholder, message, meta }) {
+    const className = classnames('form__input', {
+      'form__input--error': meta.error && meta.touched && !meta.active,
+    });
+
+    return (
+      <div>
+        <textarea
+          {...input}
+          name={name}
+          className={className}
+          placeholder={placeholder}
+        />
+        {this.renderMessage(message)}
+      </div>
+    );
+  }
+
   getComponent(type) {
     switch (type) {
       case 'select':
         return this.renderSelect.bind(this);
+      case 'textarea':
+        return this.renderTextArea.bind(this);
       default:
         return this.renderInput.bind(this);
     }

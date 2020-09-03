@@ -46,6 +46,6 @@ export default [
     name: 'bio',
     type: 'textarea',
     placeholder: 'short bio',
-    messaeg: 'tell us a little about yourself',
+    message: 'tell us a little about yourself',
   },
 ];

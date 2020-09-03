@@ -15,6 +15,7 @@ const Experiences = ({ experiences }) => {
 
   return (
     <div className="experiences">
+      <h1 className="experiences__title">experiences cridentials</h1>
       <Table>{renderedExperiences}</Table>
     </div>
   );

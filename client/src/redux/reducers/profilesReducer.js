@@ -4,6 +4,7 @@ import {
   FETCH_PROFILES,
   FETCH_USER_PROFILE,
   REMOVE_EXPERIENCE,
+  REMOVE_EDUCATION,
 } from '../actions/types';
 
 export default (state = {}, action) => {
@@ -11,7 +12,8 @@ export default (state = {}, action) => {
     case FETCH_PROFILES:
       return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
     case FETCH_USER_PROFILE:
-    case REMOVE_EXPERIENCE: {
+    case REMOVE_EXPERIENCE:
+    case REMOVE_EDUCATION: {
       const { profile } = action.payload;
 
       return { ...state, [profile.user._id]: profile };

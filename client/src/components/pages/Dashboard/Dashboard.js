@@ -5,6 +5,7 @@ import './Dashboard.scss';
 
 import CostumLink from '../../CostumLink';
 import Experiences from './Experiences';
+import Educations from './Educations';
 
 import { fetchUserProfile } from '../../../redux/actions';
 import history from '../../../history';
@@ -21,7 +22,9 @@ class Dashboard extends React.Component {
   }
 
   renderMainContent() {
-    if (!this.props.auth.user.hasProfile) {
+    const { auth, profile } = this.props;
+
+    if (!auth.user.hasProfile) {
       return (
         <div>
           <div className="dashboard__create-profile-message">
@@ -37,14 +40,16 @@ class Dashboard extends React.Component {
       );
     }
 
-    if (!this.props.profile) {
+    if (!profile) {
       return null;
     }
 
+    const { experience, education } = this.props.profile;
+
     return (
       <div>
-        <h1 className="dashboard__exp">Experience Credentials</h1>
-        <Experiences experiences={this.props.profile.experience} />
+        <Experiences experiences={experience} />
+        <Educations educations={education} />
       </div>
     );
   }

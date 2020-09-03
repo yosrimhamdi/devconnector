@@ -6,5 +6,5 @@ module.exports = catchAsync(async (req, res) => {
 
   await profile.deleteEducation(req.params.id);
 
-  res.status(204).json({ status: 'success', profile: null });
+  res.status(200).json({ status: 'success', profile });
 });

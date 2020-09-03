@@ -5,6 +5,11 @@
     width: 400px;
   }
 
+  &__second-column,
+  &__third-column {
+    width: 250px;
+  }
+
   &__remove-logo {
     display: none;
   }

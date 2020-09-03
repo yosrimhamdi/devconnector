@@ -9,7 +9,7 @@ const Table = props => (
         <th className="table__first-column">company</th>
         <th className="table__second-column">title</th>
         <th className="table__third-column">year</th>
-        <th className="table__remove-logo"> </th>
+        <th className="table__remove-logo-column"> </th>
       </tr>
       {props.children}
     </tbody>

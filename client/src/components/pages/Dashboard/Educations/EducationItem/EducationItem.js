@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-import './EducationItem.scss';
 import { removeEducation } from '../../../../../redux/actions';
 
 class EducationItem extends React.Component {
@@ -26,14 +25,14 @@ class EducationItem extends React.Component {
     const { school, degree, from, to } = this.props.education;
 
     return (
-      <tr className="education-item">
+      <tr className="table">
         <td>{school}</td>
         <td>{degree}</td>
         <td>{this.getFormattedDate(from, to)}</td>
-        <td className="education-item__logo-container">
+        <td className="table__logo-container">
           <i
             onClick={this.removeEducation}
-            className="fas fa-trash-alt education-item__remove-logo"
+            className="fas fa-trash-alt table__remove-logo"
             role="button"
           />
         </td>

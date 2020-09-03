@@ -10,8 +10,24 @@
     width: 250px;
   }
 
-  &__remove-logo {
+  &__remove-logo-column {
     display: none;
+  }
+
+  &__logo-container {
+    visibility: hidden;
+  }
+
+  &__remove-logo {
+    visibility: visible;
+    color: rgb(255, 113, 113);
+    transform: translateY(calc(50% - 6px));
+    transition: all 200ms;
+    cursor: pointer;
+
+    &:hover {
+      font-size: 1.1rem;
+    }
   }
 
   tr {

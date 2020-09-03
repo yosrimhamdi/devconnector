@@ -2,7 +2,6 @@ import React from 'react';
 import moment from 'moment';
 import { connect } from 'react-redux';
 
-import './ExperienceItem.scss';
 import { removeExperience } from '../../../../../redux/actions';
 
 class ExpItem extends React.Component {
@@ -26,14 +25,14 @@ class ExpItem extends React.Component {
     const { company, title, from, to } = this.props.experience;
 
     return (
-      <tr className="exp-item">
+      <tr className="table">
         <td>{company}</td>
         <td>{title}</td>
         <td>{this.getFormattedDate(from, to)}</td>
-        <td className="exp-item__logo-container">
+        <td className="table__logo-container">
           <i
             onClick={this.removeExp}
-            className="fas fa-trash-alt exp-item__remove-logo"
+            className="fas fa-trash-alt table__remove-logo"
             role="button"
           />
         </td>

@@ -1,13 +1,13 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
-import './Login.scss';
-import fields from './fields';
-import Form from '../../Form';
 import validate from './validate';
 import { loginUser } from '../../../redux/actions';
 import history from '../../../history';
+import Headline from '../../Headline';
+
+import Input from '../../form/Input';
 
 class Login extends React.Component {
   UNSAFE_componentWillMount() {
@@ -21,20 +21,40 @@ class Login extends React.Component {
   };
 
   render() {
+    const { errors } = this.props;
+
     return (
-      <Form
-        fields={fields}
-        onFormSubmit={this.onFormSubmit}
-        handleSubmit={this.props.handleSubmit}
-        header="Log In"
-        subHeader="Sign in to your DevConnector account."
-      />
+      <div>
+        <Headline
+          header="Log In"
+          subHeader="Sign in to your DevConnector account."
+        />
+        <form onSubmit={this.props.handleSubmit(this.onFormSubmit)} className="form">
+          <Field
+            name="email"
+            type="text"
+            placeholder="email"
+            component={Input}
+            error={errors.wrongEmailOrPassword}
+          />
+          <Field
+            name="password"
+            type="password"
+            placeholder="password"
+            component={Input}
+            error={errors.wrongEmailOrPassword}
+          />
+          <button className="form__button" type="submit">
+            submit
+          </button>
+        </form>
+      </div>
     );
   }
 }
 
 const wrappedForm = reduxForm({ form: 'login', validate })(Login);
 
-const mapStateToProps = ({ auth }) => ({ auth });
+const mapStateToProps = ({ auth, errors }) => ({ auth, errors });
 
 export default connect(mapStateToProps, { loginUser })(wrappedForm);

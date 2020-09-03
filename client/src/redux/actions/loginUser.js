@@ -8,7 +8,7 @@ export default formValues => async dispatch => {
 
     dispatch({
       type: LOGIN_USER,
-      payload: response.data.user,
+      payload: response.data,
     });
 
     history.push('/dashboard');

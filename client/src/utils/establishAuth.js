@@ -15,7 +15,7 @@ export default store => {
 
     store.dispatch({
       type: LOGIN_USER,
-      payload: user,
+      payload: { user },
     });
   } catch (err) {
     // skip

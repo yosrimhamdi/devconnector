@@ -1,23 +1,11 @@
 import React from 'react';
-import moment from 'moment';
 import { connect } from 'react-redux';
 
 import { removeExperience } from '../../../../../redux/actions';
+import getFormattedDate from '../../../../../utils/getFomatedDate';
 
 class ExpItem extends React.Component {
-  format(date) {
-    return moment(date).format('YYYY-MM-DD');
-  }
-
-  getFormattedDate(from, to) {
-    if (to) {
-      return `${this.format(from)} / ${this.format(to)}`;
-    }
-
-    return `${this.format(from)} / now`;
-  }
-
-  removeExp = () => {
+  removeExperience = () => {
     this.props.removeExperience(this.props.experience._id);
   };
 
@@ -28,10 +16,10 @@ class ExpItem extends React.Component {
       <tr className="table">
         <td>{company}</td>
         <td>{title}</td>
-        <td>{this.getFormattedDate(from, to)}</td>
+        <td>{getFormattedDate(from, to)}</td>
         <td className="table__logo-container">
           <i
-            onClick={this.removeExp}
+            onClick={this.removeExperience}
             className="fas fa-trash-alt table__remove-logo"
             role="button"
           />

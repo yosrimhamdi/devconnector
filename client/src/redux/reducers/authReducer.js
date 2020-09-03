@@ -14,8 +14,9 @@ export default (state = INITIAL, action) => {
   switch (action.type) {
     case REGISTER_USER:
     case LOGIN_USER:
-    case UPDATE_USER:
       return { ...state, user: action.payload.user, isAuthenticated: true };
+    case UPDATE_USER:
+      return { ...state, user: action.payload.user };
     case LOGOUT_USER:
       return { ...state, user: null, isAuthenticated: false };
     default:

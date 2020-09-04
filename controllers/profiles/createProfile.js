@@ -2,9 +2,13 @@ const Profile = require('../../models/Profile');
 const catchAsync = require('../../errors/catchAsync');
 
 module.exports = catchAsync(async (req, res, next) => {
-  const profile = await Profile.create({ ...req.body, user: req.user._id });
+  const { user } = req;
 
-  req.profile = profile;
+  const profile = await Profile.create({ ...req.body, user: user._id });
 
-  next();
+  profile.user = user;
+
+  await user.markHasProfile();
+
+  res.status(201).json({ status: 'success', profile: profile, user });
 });

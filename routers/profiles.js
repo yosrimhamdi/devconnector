@@ -7,7 +7,6 @@ const {
   updateProfile,
   getAllProfiles,
   getProfileByHandle,
-  markUserHasProfile,
   requireProfile,
 } = require('../controllers/profiles');
 
@@ -29,11 +28,7 @@ router.get('/:handle', getProfileByHandle);
 
 router.use(requireLogIn);
 
-router
-  .route('/')
-  .get(getProfile)
-  .post(createProfile, markUserHasProfile)
-  .put(updateProfile);
+router.route('/').get(getProfile).post(createProfile).put(updateProfile);
 
 router.use(requireProfile);
 

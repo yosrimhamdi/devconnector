@@ -12,8 +12,8 @@ module.exports = (res, statusCode, user) => {
   res.cookie('jwt', token, {
     httpOnly: false,
     secure: process.env.NODE_ENV === 'production',
-    expires: new Date(Date.now() + JWT_COOKIE_EXPIRES_IN * 3600000), //in ms
+    expires: new Date(Date.now() + JWT_COOKIE_EXPIRES_IN * 3600000),
   });
 
-  res.status(statusCode).json({ status: 'succes', user });
+  res.status(statusCode).json({ status: 'succes', user: payload });
 };

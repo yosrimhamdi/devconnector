@@ -19,7 +19,7 @@ export default ({ input, name, meta }) => {
         <option value="student">student</option>
         <option value="instructor">instructor</option>
         <option value="intern">intern</option>
-        <option value="other">intern</option>
+        <option value="other">other</option>
       </select>
       <ValidationError meta={meta} />
     </div>

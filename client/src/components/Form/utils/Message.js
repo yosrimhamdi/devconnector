@@ -5,5 +5,5 @@ export default ({ message }) => {
     return null;
   }
 
-  return <div className="form__input-message">{message}</div>;
+  return <div className="form__input-message">{message}.</div>;
 };

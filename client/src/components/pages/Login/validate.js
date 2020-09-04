@@ -1,13 +1,13 @@
-import validator from 'validator';
+import { isEmail, isLength } from 'validator';
 
 export default ({ email = '', password = '' }) => {
   const err = {};
 
-  if (!validator.isEmail(email)) {
+  if (!isEmail(email)) {
     err.email = 'invalid email';
   }
 
-  if (!validator.isLength(password, { min: 6, max: 30 })) {
+  if (!isLength(password, { min: 6, max: 30 })) {
     err.password = 'password in required: between 6 and 30 characters';
   }
 

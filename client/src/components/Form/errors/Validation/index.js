@@ -6,7 +6,7 @@ export default ({ meta }) => {
   if (touched && !active && error) {
     return (
       <div className="form__input-error-message">
-        <i className="fas fa-exclamation-circle" /> {error}
+        <i className="fas fa-exclamation-circle" /> {error}.
       </div>
     );
   }

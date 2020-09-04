@@ -7,7 +7,7 @@ export default ({ responseError }) => {
 
   return (
     <div className="form__input-error-message">
-      <i className="fas fa-exclamation-circle" /> {responseError}
+      <i className="fas fa-exclamation-circle" /> {responseError}.
     </div>
   );
 };

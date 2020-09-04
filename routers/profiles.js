@@ -8,6 +8,7 @@ const {
   getAllProfiles,
   getProfileByHandle,
   markUserHasProfile,
+  requireProfile,
 } = require('../controllers/profiles');
 
 const {
@@ -33,6 +34,8 @@ router
   .get(getProfile)
   .post(createProfile, markUserHasProfile)
   .put(updateProfile);
+
+router.use(requireProfile);
 
 router.post('/education', addEducation);
 

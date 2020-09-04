@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './Profiles.scss';
 import ProfileList from './ProfileList';
 import Headline from '../../Headline';
 

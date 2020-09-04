@@ -19,11 +19,13 @@ const App = () => (
       <Header />
       <Switch>
         <Route path="/" exact component={Landing} />
-        <Route path="/profiles" exact component={Profiles} />
-        <Route path="/profiles/new" exact component={CreateProfile} />
-        <Route path="/register" exact component={Register} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/dashboard" exact component={Dashboard} />
+        <div style={{ margin: '5em 0' }}>
+          <Route path="/profiles" exact component={Profiles} />
+          <Route path="/profiles/new" exact component={CreateProfile} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/dashboard" exact component={Dashboard} />
+        </div>
       </Switch>
     </Router>
   </div>

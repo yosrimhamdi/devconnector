@@ -10,7 +10,11 @@ const requireLogIn = catchAsync(async (req, res, next) => {
 
   if (!user) {
     return next(
-      new AppError('userNotFound', 'user not found. Please register instead.', 401),
+      new AppError(
+        'userNotFound',
+        'user not found. Please register instead',
+        401,
+      ),
     );
   }
 

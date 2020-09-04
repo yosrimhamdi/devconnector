@@ -10,7 +10,7 @@ const logIn = catchAsync(async (req, res, next) => {
 
   if (!user) {
     return next(
-      new AppError('wrongEmailOrPassword', 'wrong email or password.', 400),
+      new AppError('wrongEmailOrPassword', 'wrong email or password', 400),
     );
   }
 
@@ -18,7 +18,7 @@ const logIn = catchAsync(async (req, res, next) => {
 
   if (!isValid) {
     return next(
-      new AppError('wrongEmailOrPassword', 'wrong email or password.', 400),
+      new AppError('wrongEmailOrPassword', 'wrong email or password', 400),
     );
   }
 

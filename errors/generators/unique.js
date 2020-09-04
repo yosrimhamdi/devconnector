@@ -10,15 +10,15 @@ module.exports = err => {
   }
 
   if (user) {
-    return new AppError('hasProfile', 'already has a profile.', 403);
+    return new AppError('hasProfile', 'already has a profile', 403);
   }
 
   if (email) {
-    return new AppError('emailExists', 'email already registered.', 400);
+    return new AppError('emailExists', 'email already registered', 400);
   }
 
   if (handle) {
-    return new AppError('handleExists', 'handle already exists.', 400);
+    return new AppError('handleExists', 'handle already exists', 400);
   }
 
   return err;

@@ -8,7 +8,6 @@ import getClassName from './utils/getClassName';
 
 export default ({ input, type, placeholder, message, responseError, meta }) => {
   const className = getClassName(meta, responseError);
-
   return (
     <div>
       <input

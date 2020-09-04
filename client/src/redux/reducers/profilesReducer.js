@@ -16,9 +16,9 @@ export default (state = {}, action) => {
     case REMOVE_EXPERIENCE:
     case REMOVE_EDUCATION:
     case CREATE_PROFILE: {
-      const { profile, user } = action.payload;
+      const { profile } = action.payload;
 
-      return { ...state, [user._id]: profile };
+      return { ...state, [profile.user._id]: profile };
     }
     default:
       return state;

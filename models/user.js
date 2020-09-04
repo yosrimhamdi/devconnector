@@ -55,12 +55,6 @@ userSchema.methods.validatePassword = async function (password) {
   return isValid;
 };
 
-userSchema.methods.markHasProfile = async function () {
-  this.hasProfile = true;
-
-  return this.save({ validateBeforeSave: false });
-};
-
 const User = mongoose.model('User', userSchema);
 
 module.exports = User;

@@ -76,9 +76,8 @@ class Dashboard extends React.Component {
   }
 }
 
-const mapStateToProps = ({ auth, profiles, errors }) => ({
+const mapStateToProps = ({ auth, profiles }) => ({
   auth,
-  errors,
   profile: auth.user ? profiles[auth.user._id] : null,
 });
 

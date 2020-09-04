@@ -15,7 +15,7 @@ export default ({ handle = '', skills = '', status, website = '' }) => {
     errors.status = 'status is required';
   }
 
-  if (!isURL(website, { require_protocol: true })) {
+  if (website && !isURL(website, { require_protocol: true })) {
     errors.website =
       'please sepecify a valid url (eg. https://yosrimhamdi.netlify.com)';
   }

@@ -4,13 +4,13 @@ import { connect } from 'react-redux';
 
 import validate from './validate';
 import Headline from '../../Headline';
-import { addExperience } from '../../../redux/actions';
+import { addEducation } from '../../../redux/actions';
 import { Input, TextArea } from '../../form';
 import CostumLink from '../../CostumLink';
 
-class AddExperience extends React.Component {
+class AddEducation extends React.Component {
   onFormSubmit = formValues => {
-    this.props.addExperience(formValues);
+    this.props.addEducation(formValues);
   };
 
   render() {
@@ -32,20 +32,20 @@ class AddExperience extends React.Component {
           />
           <div className="form__require-message">* = required</div>
           <Field
-            name="company"
-            placeholder="* company"
+            name="school"
+            placeholder="* school"
             type="text"
             component={Input}
           />
           <Field
-            name="title"
-            placeholder="* job title"
+            name="degree"
+            placeholder="* degree or certification"
             type="text"
             component={Input}
           />
           <Field
-            name="location"
-            placeholder="location"
+            name="fieldOfStudy"
+            placeholder="* field of study"
             type="text"
             component={Input}
           />
@@ -55,8 +55,8 @@ class AddExperience extends React.Component {
           <Field name="to" type="date" component={Input} />
           <Field
             name="description"
-            placeholder="job description"
-            message="tell us about the position"
+            placeholder="program description"
+            message="tell us about the program that you were in"
             component={TextArea}
           />
           <button className="form__button" type="submit">
@@ -68,10 +68,8 @@ class AddExperience extends React.Component {
   }
 }
 
-const wrappedForm = reduxForm({ form: 'addExperience', validate })(
-  AddExperience,
-);
+const wrappedForm = reduxForm({ form: 'addEducation', validate })(AddEducation);
 
 const mapStateToProps = ({ errors }) => ({ errors });
 
-export default connect(mapStateToProps, { addExperience })(wrappedForm);
+export default connect(mapStateToProps, { addEducation })(wrappedForm);

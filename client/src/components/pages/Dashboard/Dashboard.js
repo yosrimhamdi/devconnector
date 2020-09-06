@@ -42,7 +42,7 @@ class Dashboard extends React.Component {
 
     return (
       <div>
-        <div>
+        <div className="dashboard__navigation-links">
           <CostumLink to="/profiles/update" text="update profile" />
           <CostumLink to="/profiles/experience/new" text="add experience" />
           <CostumLink to="/profiles/education/new" text="add education" />

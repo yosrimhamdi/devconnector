@@ -14,6 +14,7 @@ import Dashboard from '../pages/Dashboard';
 import CreateProfile from '../pages/CreateProfile';
 import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
+import AddEducation from '../pages/AddEducation';
 
 const App = () => (
   <div>
@@ -31,6 +32,11 @@ const App = () => (
             path="/profiles/experience/new"
             exact
             component={AddExperience}
+          />
+          <Route
+            path="/profiles/education/new"
+            exact
+            component={AddEducation}
           />
           <Route paht="/profiles/update" exact component={UpdateProfile} />
         </Switch>

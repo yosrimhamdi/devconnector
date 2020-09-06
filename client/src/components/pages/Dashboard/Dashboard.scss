@@ -25,4 +25,12 @@
     margin-bottom: 1em;
     color: rgb(255, 81, 81);
   }
+
+  &__navigation-links {
+    margin-bottom: 0.5em;
+  }
+
+  &__navigation-links > a:not(:last-child) {
+    margin-right: 0.7em;
+  }
 }

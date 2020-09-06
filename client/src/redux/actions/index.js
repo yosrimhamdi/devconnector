@@ -6,6 +6,7 @@ export { default as loginUser } from './loginUser';
 export { default as logoutUser } from './logoutUser';
 
 export { default as addExperience } from './addExperience';
+export { default as addEducation } from './addEducation';
 export { default as removeExperience } from './removeExperience';
 export { default as removeEducation } from './removeEducation';
 

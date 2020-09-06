@@ -4,6 +4,7 @@ import {
   FETCH_PROFILES,
   FETCH_USER_PROFILE,
   ADD_EXPERIENCE,
+  ADD_EDUCATION,
   REMOVE_EXPERIENCE,
   REMOVE_EDUCATION,
   CREATE_PROFILE,
@@ -16,6 +17,7 @@ export default (state = {}, action) => {
       return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
     case FETCH_USER_PROFILE:
     case ADD_EXPERIENCE:
+    case ADD_EDUCATION:
     case REMOVE_EXPERIENCE:
     case REMOVE_EDUCATION:
     case CREATE_PROFILE:

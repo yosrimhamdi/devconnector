@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Headline from '../Headline';
 import { Input, TextArea, Select } from '../form';
+import CostumLink from '../CostumLink';
 
 const ProfileForm = ({
   handleSubmit,
@@ -15,6 +16,12 @@ const ProfileForm = ({
   <div>
     <Headline header={header} subHeader={subHeader} />
     <form onSubmit={handleSubmit(onFormSubmit)} className="form">
+      <CostumLink
+        to="/dashboard"
+        text="go back"
+        bgColor="rgb(236, 235, 235)"
+        color="black"
+      />
       <div className="form__require-message">* = required</div>
       <Field
         name="handle"

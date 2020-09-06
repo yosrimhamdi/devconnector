@@ -28,7 +28,7 @@ const App = () => (
           <Route path="/profiles" exact component={Profiles} />
           <Route path="/profiles/new" exact component={CreateProfile} />
           <Route
-            paht="/profiles/experience/new"
+            path="/profiles/experience/new"
             exact
             component={AddExperience}
           />

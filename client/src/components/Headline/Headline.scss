@@ -4,14 +4,15 @@
 
   &__title {
     font-size: 4rem;
-    font-weight: 300;
+    font-weight: 400;
   }
 
-  &__message {
+  &__sub-title {
     font-size: 1.2rem;
     font-weight: 400;
     font-style: italic;
     margin-bottom: 2em;
+    text-decoration: underline;
   }
 
   &__title,

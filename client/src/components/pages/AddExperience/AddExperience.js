@@ -1,13 +1,15 @@
 import React from 'react';
-import { reduxForm } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
 import Headline from '../../Headline';
+import { addExperience } from '../../../redux/actions';
+import { Input, TextArea } from '../../form';
 
 class AddExperience extends React.Component {
-  onFormSubmit = () => {
-    // console.log(formValues);
+  onFormSubmit = formValues => {
+    this.props.addExperience(formValues);
   };
 
   render() {
@@ -22,6 +24,30 @@ class AddExperience extends React.Component {
           className="form"
         >
           <div className="form__require-message">* = required</div>
+          <Field
+            name="company"
+            placeholder="* company"
+            type="text"
+            component={Input}
+          />
+          <Field
+            name="title"
+            placeholder="* job title"
+            type="text"
+            component={Input}
+          />
+          <Field
+            name="location"
+            placeholder="location"
+            type="text"
+            component={Input}
+          />
+          <Field
+            name="description"
+            placeholder="description"
+            message="tell us about the position"
+            component={TextArea}
+          />
           <button className="form__button" type="submit">
             submit
           </button>
@@ -37,4 +63,4 @@ const wrappedForm = reduxForm({ form: 'addExperience', validate })(
 
 const mapStateToProps = ({ errors }) => ({ errors });
 
-export default connect(mapStateToProps)(wrappedForm);
+export default connect(mapStateToProps, { addExperience })(wrappedForm);

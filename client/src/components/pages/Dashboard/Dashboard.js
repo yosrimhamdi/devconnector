@@ -44,8 +44,8 @@ class Dashboard extends React.Component {
       <div>
         <div>
           <CostumLink to="/profiles/update" text="update profile" />
-          <CostumLink to="profiles/experiences/new" text="add experience" />
-          <CostumLink to="profiles/educations/new" text="add education" />
+          <CostumLink to="/profiles/experience/new" text="add experience" />
+          <CostumLink to="/profiles/education/new" text="add education" />
         </div>
         <Experiences experiences={experience} />
         <Educations educations={education} />

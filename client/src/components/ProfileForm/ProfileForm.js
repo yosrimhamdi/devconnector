@@ -2,7 +2,6 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import './ProfileForm.scss';
 import Headline from '../Headline';
 import { Input, TextArea, Select } from '../form';
 
@@ -13,10 +12,10 @@ const ProfileForm = ({
   header,
   subHeader,
 }) => (
-  <div className="profile-form">
+  <div>
     <Headline header={header} subHeader={subHeader} />
     <form onSubmit={handleSubmit(onFormSubmit)} className="form">
-      <div className="profile-form__require-message">* = required</div>
+      <div className="form__require-message">* = required</div>
       <Field
         name="handle"
         placeholder="* profile handle"

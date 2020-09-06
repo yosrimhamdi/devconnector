@@ -4,7 +4,6 @@ export const FETCH_USER_PROFILE = 'FETCH_USER_PROFILE';
 export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
-export const UPDATE_USER = 'UPDATE_USER';
 
 export const ERROR_HAS_OCCURED = 'ERROR_HAS_OCCURED';
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';

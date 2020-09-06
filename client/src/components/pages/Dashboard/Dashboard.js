@@ -22,9 +22,7 @@ class Dashboard extends React.Component {
   }
 
   renderMainContent() {
-    const { auth, profile } = this.props;
-
-    if (!auth.user.hasProfile) {
+    if (!this.props.profile) {
       return (
         <div>
           <div className="dashboard__create-profile-message">
@@ -40,14 +38,15 @@ class Dashboard extends React.Component {
       );
     }
 
-    if (!profile) {
-      return null;
-    }
-
     const { experience, education } = this.props.profile;
 
     return (
       <div>
+        <div>
+          <CostumLink text="update profile" />
+          <CostumLink text="add experience" />
+          <CostumLink text="add education" />
+        </div>
         <Experiences experiences={experience} />
         <Educations educations={education} />
       </div>

@@ -8,7 +8,5 @@ module.exports = catchAsync(async (req, res) => {
 
   profile.user = user;
 
-  await user.markUserHasProfile();
-
-  res.status(201).json({ status: 'success', profile, user });
+  res.status(201).json({ status: 'success', profile });
 });

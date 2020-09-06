@@ -1,9 +1,4 @@
-import {
-  REGISTER_USER,
-  LOGIN_USER,
-  LOGOUT_USER,
-  UPDATE_USER,
-} from '../actions/types';
+import { REGISTER_USER, LOGIN_USER, LOGOUT_USER } from '../actions/types';
 
 const INITIAL = {
   isAuthenticated: false,
@@ -17,8 +12,6 @@ export default (state = INITIAL, action) => {
       return { ...state, user: action.payload.user, isAuthenticated: true };
     case LOGOUT_USER:
       return { ...state, user: null, isAuthenticated: false };
-    case UPDATE_USER:
-      return { ...state, user: action.payload.user };
     default:
       return state;
   }

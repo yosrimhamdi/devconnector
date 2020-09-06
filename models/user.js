@@ -34,10 +34,6 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: Date.now(),
   },
-  hasProfile: {
-    type: Boolean,
-    default: false,
-  },
 });
 
 userSchema.pre('save', async function (next) {
@@ -57,12 +53,6 @@ userSchema.methods.validatePassword = async function (password) {
   const isValid = await bcrypt.compare(password, this.password);
 
   return isValid;
-};
-
-userSchema.methods.markUserHasProfile = async function () {
-  this.hasProfile = true;
-
-  return this.save({ validateBeforeSave: false });
 };
 
 const User = mongoose.model('User', userSchema);

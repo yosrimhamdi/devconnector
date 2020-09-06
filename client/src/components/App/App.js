@@ -12,6 +12,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import CreateProfile from '../pages/CreateProfile';
+import UpdateProfile from '../pages/UpdateProfile';
 
 const App = () => (
   <div>
@@ -22,6 +23,7 @@ const App = () => (
         <Switch>
           <Route path="/profiles" exact component={Profiles} />
           <Route path="/profiles/new" exact component={CreateProfile} />
+          {/* <Route paht="/profiles/update" exact component={UpdateProfile} /> */}
         </Switch>
         <Route path="/register" exact component={Register} />
         <Route path="/login" exact component={Login} />

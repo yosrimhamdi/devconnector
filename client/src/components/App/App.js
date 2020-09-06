@@ -17,16 +17,16 @@ const App = () => (
   <div>
     <Router history={history}>
       <Header />
-      <Switch>
-        <Route path="/" exact component={Landing} />
-        <div style={{ margin: '5em 0' }}>
+      <Route path="/" exact component={Landing} />
+      <div style={{ margin: '5em 0' }}>
+        <Switch>
           <Route path="/profiles" exact component={Profiles} />
           <Route path="/profiles/new" exact component={CreateProfile} />
-          <Route path="/register" exact component={Register} />
-          <Route path="/login" exact component={Login} />
-          <Route path="/dashboard" exact component={Dashboard} />
-        </div>
-      </Switch>
+        </Switch>
+        <Route path="/register" exact component={Register} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/dashboard" exact component={Dashboard} />
+      </div>
     </Router>
   </div>
 );

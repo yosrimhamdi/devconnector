@@ -6,12 +6,15 @@ import './ProfileForm.scss';
 import Headline from '../Headline';
 import { Input, TextArea, Select } from '../form';
 
-const ProfileForm = ({ handleSubmit, onFormSubmit, errors }) => (
+const ProfileForm = ({
+  handleSubmit,
+  onFormSubmit,
+  errors,
+  header,
+  subHeader,
+}) => (
   <div className="profile-form">
-    <Headline
-      header="create your profile"
-      subHeader="let`s get some information to make your profile stand out."
-    />
+    <Headline header={header} subHeader={subHeader} />
     <form onSubmit={handleSubmit(onFormSubmit)} className="form">
       <div className="profile-form__require-message">* = required</div>
       <Field

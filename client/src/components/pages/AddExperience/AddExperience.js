@@ -9,6 +9,14 @@ import { Input, TextArea } from '../../form';
 import CostumLink from '../../CostumLink';
 
 class AddExperience extends React.Component {
+  state = { disabled: false };
+
+  toggleToDate = () => {
+    const { disabled } = this.state;
+
+    this.setState({ disabled: !disabled });
+  };
+
   onFormSubmit = formValues => {
     this.props.addExperience(formValues);
   };
@@ -52,7 +60,18 @@ class AddExperience extends React.Component {
           <div className="form__input-header">* from date</div>
           <Field name="from" type="date" component={Input} />
           <div className="form__input-header">to date</div>
-          <Field name="to" type="date" component={Input} />
+          <Field
+            name="to"
+            type="date"
+            component={Input}
+            disabled={this.state.disabled}
+          />
+          <div className="form__control-wrapper">
+            <label htmlFor="control" className="form__control">
+              <input type="checkbox" onClick={this.toggleToDate} id="control" />{' '}
+              Current Job?
+            </label>
+          </div>
           <Field
             name="description"
             placeholder="job description"

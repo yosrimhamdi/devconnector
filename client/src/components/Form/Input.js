@@ -6,7 +6,15 @@ import ResponseError from './errors/Response';
 import Message from './utils/Message';
 import getClassName from './utils/getClassName';
 
-export default ({ input, type, placeholder, message, responseError, meta }) => {
+export default ({
+  input,
+  type,
+  placeholder,
+  message,
+  disabled,
+  responseError,
+  meta,
+}) => {
   const className = getClassName(meta, responseError);
   return (
     <div>
@@ -14,6 +22,7 @@ export default ({ input, type, placeholder, message, responseError, meta }) => {
         className={className}
         placeholder={placeholder}
         type={type}
+        disabled={disabled}
         {...input}
       />
       <Message message={message} />

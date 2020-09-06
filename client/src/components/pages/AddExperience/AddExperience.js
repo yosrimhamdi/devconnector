@@ -6,6 +6,7 @@ import validate from './validate';
 import Headline from '../../Headline';
 import { addExperience } from '../../../redux/actions';
 import { Input, TextArea } from '../../form';
+import CostumLink from '../../CostumLink';
 
 class AddExperience extends React.Component {
   onFormSubmit = formValues => {
@@ -23,6 +24,12 @@ class AddExperience extends React.Component {
           onSubmit={this.props.handleSubmit(this.onFormSubmit)}
           className="form"
         >
+          <CostumLink
+            to="/dashboard"
+            text="go back"
+            bgColor="rgb(236, 235, 235)"
+            color="black"
+          />
           <div className="form__require-message">* = required</div>
           <Field
             name="company"

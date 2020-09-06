@@ -17,8 +17,8 @@ class AddEducation extends React.Component {
     return (
       <div>
         <Headline
-          header="add experience"
-          subHeader="add any job or position that you have had in the past or current."
+          header="add education"
+          subHeader="add any school, bootcamp, etc that you have attended."
         />
         <form
           onSubmit={this.props.handleSubmit(this.onFormSubmit)}

@@ -6,7 +6,7 @@ import validate from '../../ProfileForm/validate';
 import { updateProfile } from '../../../redux/actions';
 import ProfileForm from '../../ProfileForm/ProfileForm';
 
-const CreateProfile = props => (
+const UpdateProfile = props => (
   <ProfileForm
     handleSubmit={props.handleSubmit}
     onFormSubmit={formValues => props.updateProfile(formValues)}
@@ -16,7 +16,7 @@ const CreateProfile = props => (
 );
 
 const wrappedForm = reduxForm({ form: 'updateProfile', validate })(
-  CreateProfile,
+  UpdateProfile,
 );
 
 const mapStateToProps = state => ({

@@ -1,6 +1,8 @@
 const { unique, validation, jwt, id } = require('../generators');
 
 module.exports = (err, req, res, next) => {
+  console.log(err);
+
   switch (err.name) {
     case 'MongoError':
       err = unique(err);

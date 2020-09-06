@@ -6,6 +6,7 @@ import {
   REMOVE_EXPERIENCE,
   REMOVE_EDUCATION,
   CREATE_PROFILE,
+  UPDATE_PROFILE,
 } from '../actions/types';
 
 export default (state = {}, action) => {
@@ -15,7 +16,8 @@ export default (state = {}, action) => {
     case FETCH_USER_PROFILE:
     case REMOVE_EXPERIENCE:
     case REMOVE_EDUCATION:
-    case CREATE_PROFILE: {
+    case CREATE_PROFILE:
+    case UPDATE_PROFILE: {
       const { profile } = action.payload;
 
       return { ...state, [profile.user._id]: profile };

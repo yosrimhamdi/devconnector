@@ -9,5 +9,6 @@ export { default as removeExperience } from './removeExperience';
 export { default as removeEducation } from './removeEducation';
 
 export { default as createProfile } from './createProfile';
+export { default as updateProfile } from './updateProfile';
 
 export { default as clearErrors } from './clearErrors';

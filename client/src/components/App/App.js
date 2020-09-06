@@ -18,16 +18,16 @@ const App = () => (
   <div>
     <Router history={history}>
       <Header />
-      <Route path="/" exact component={Landing} />
       <div style={{ margin: '5em 0' }}>
         <Switch>
+          <Route path="/" exact component={Landing} />
+          <Route path="/register" exact component={Register} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/dashboard" exact component={Dashboard} />
           <Route path="/profiles" exact component={Profiles} />
           <Route path="/profiles/new" exact component={CreateProfile} />
-          {/* <Route paht="/profiles/update" exact component={UpdateProfile} /> */}
+          <Route paht="/profiles/update" exact component={UpdateProfile} />
         </Switch>
-        <Route path="/register" exact component={Register} />
-        <Route path="/login" exact component={Login} />
-        <Route path="/dashboard" exact component={Dashboard} />
       </div>
     </Router>
   </div>

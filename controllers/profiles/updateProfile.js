@@ -6,6 +6,8 @@ module.exports = catchAsync(async (req, res) => {
 
   const data = { ...req.body, user: user._id };
 
+  data.skills = data.skills[0].split(',');
+
   const profile = await Profile.findOneAndReplace({ user: user._id }, data, {
     new: true,
     runValidators: true,

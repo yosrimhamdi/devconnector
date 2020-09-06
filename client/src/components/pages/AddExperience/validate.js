@@ -1,4 +1,4 @@
-export default ({ company, title }) => {
+export default ({ company, title, from }) => {
   const errors = {};
 
   if (!company) {
@@ -7,6 +7,10 @@ export default ({ company, title }) => {
 
   if (!title) {
     errors.title = 'job title is required';
+  }
+
+  if (!from) {
+    errors.from = 'from date is required';
   }
 
   return errors;

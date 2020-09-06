@@ -32,6 +32,12 @@ $error: rgb(253, 99, 99);
     height: 100px;
   }
 
+  &__input-header {
+    font-size: 1.2rem;
+    margin-bottom: 0.3em;
+    font-style: italic;
+  }
+
   &__input--error {
     border-color: $error;
   }

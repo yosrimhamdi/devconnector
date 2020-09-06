@@ -42,6 +42,10 @@ class AddExperience extends React.Component {
             type="text"
             component={Input}
           />
+          <div className="form__input-header">* from date</div>
+          <Field name="from" type="date" component={Input} />
+          <div className="form__input-header">to date</div>
+          <Field name="to" type="date" component={Input} />
           <Field
             name="description"
             placeholder="description"

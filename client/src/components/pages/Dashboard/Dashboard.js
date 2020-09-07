@@ -19,7 +19,9 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    if (!this.props.auth.user) {
+    const { profile, auth } = this.props;
+
+    if (!auth.user) {
       return null;
     }
 
@@ -29,11 +31,9 @@ class Dashboard extends React.Component {
           <h1 className="dashboard__title">dashboard</h1>
           <h3 className="dashboard__greeting">
             <span className="dashboard__welcome">welcome</span>
-            <span className="dashboard__username">
-              {this.props.auth.user.name}
-            </span>
+            <span className="dashboard__username">{auth.user.name}</span>
           </h3>
-          <DashboardContent profile={this.props.profile} />
+          <DashboardContent profile={profile} />
         </div>
       </div>
     );

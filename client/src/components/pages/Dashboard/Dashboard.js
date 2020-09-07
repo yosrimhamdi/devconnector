@@ -5,8 +5,7 @@ import './Dashboard.scss';
 
 import { fetchUserProfile } from '../../../redux/actions';
 import history from '../../../history';
-// import DashboardContent from './DashboardContent';
-import Spinner from '../../Spinner';
+import DashboardContent from './DashboardContent';
 
 class Dashboard extends React.Component {
   UNSAFE_componentWillMount() {
@@ -20,11 +19,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    /*  const { profile, auth } = this.props;
-
-    if (!auth.user) {
-      return null;
-    }
+    const { profile, auth, loading } = this.props;
 
     return (
       <div className="dashboard">
@@ -34,17 +29,17 @@ class Dashboard extends React.Component {
             <span className="dashboard__welcome">welcome</span>
             <span className="dashboard__username">{auth.user.name}</span>
           </h3>
-          <DashboardContent profile={profile} />
+          <DashboardContent profile={profile} loading={loading} />
         </div>
       </div>
-    ); */
-    return <Spinner />;
+    );
   }
 }
 
-const mapStateToProps = ({ auth, profiles }) => ({
+const mapStateToProps = ({ auth, profiles, loading }) => ({
   auth,
   profile: auth.user ? profiles[auth.user._id] : null,
+  loading,
 });
 
 export default connect(mapStateToProps, { fetchUserProfile })(Dashboard);

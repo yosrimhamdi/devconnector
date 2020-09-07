@@ -1,7 +1,14 @@
-import { FETCH_USER_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import {
+  FETCH_USER_PROFILE,
+  ERROR_HAS_OCCURED,
+  LOADING,
+  LOADED,
+} from '../types';
 import profiles from '../../../apis/profiles';
 
 export default () => async dispatch => {
+  dispatch({ type: LOADING });
+
   try {
     const response = await profiles.get('/');
 
@@ -15,4 +22,6 @@ export default () => async dispatch => {
       payload: err,
     });
   }
+
+  dispatch({ type: LOADED });
 };

@@ -3,8 +3,13 @@ import React from 'react';
 import CostumLink from '../../../CostumLink';
 import Experiences from '../Experiences';
 import Educations from '../Educations';
+import Spinner from '../../../Spinner';
 
-const DashBoardContent = ({ profile }) => {
+const DashBoardContent = ({ profile, loading }) => {
+  if (loading) {
+    return <Spinner />;
+  }
+
   if (!profile) {
     return (
       <div>

@@ -4,10 +4,12 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import profilesReducer from './profilesReducer';
 import authReducer from './authReducer';
 import errorReducer from './errorsReducer';
+import loadingReducer from './loadingReducer';
 
 export default combineReducers({
-  profiles: profilesReducer,
   auth: authReducer,
-  form: reduxFormReducer,
+  profiles: profilesReducer,
   errors: errorReducer,
+  form: reduxFormReducer,
+  loading: loadingReducer,
 });

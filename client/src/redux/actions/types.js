@@ -15,3 +15,6 @@ export const REMOVE_EDUCATION = 'REMOVE_EDUCATION';
 
 export const CREATE_PROFILE = 'CREATE_PROFILE';
 export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+
+export const LOADING = 'LOADING';
+export const LOADED = 'LOADED';

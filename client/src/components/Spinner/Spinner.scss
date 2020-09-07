@@ -1,0 +1,29 @@
+.spinner {
+  height: 70vh;
+  position: relative;
+
+  &__container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__circle {
+    font-size: 2rem;
+    color: #109bb1;
+    animation: spin 1500ms linear infinite;
+    transform: translateX(10px);
+    margin-bottom: 0.12em;
+  }
+
+  &__message {
+    text-transform: capitalize;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: translateX(10px) rotate(360deg);
+  }
+}

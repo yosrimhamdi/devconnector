@@ -5,7 +5,8 @@ import './Dashboard.scss';
 
 import { fetchUserProfile } from '../../../redux/actions';
 import history from '../../../history';
-import DashboardContent from './DashboardContent';
+// import DashboardContent from './DashboardContent';
+import Spinner from '../../Spinner';
 
 class Dashboard extends React.Component {
   UNSAFE_componentWillMount() {
@@ -19,7 +20,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
-    const { profile, auth } = this.props;
+    /*  const { profile, auth } = this.props;
 
     if (!auth.user) {
       return null;
@@ -36,7 +37,8 @@ class Dashboard extends React.Component {
           <DashboardContent profile={profile} />
         </div>
       </div>
-    );
+    ); */
+    return <Spinner />;
   }
 }
 

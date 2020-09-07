@@ -15,7 +15,7 @@ import CreateProfile from '../pages/CreateProfile';
 import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
-import PrivateRoute from '../common/PrivateRoute';
+import { PrivateRoute } from '../common/Routes';
 
 const NonLanding = () => (
   <div style={{ margin: '6em 0' }}>

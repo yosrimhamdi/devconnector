@@ -21,6 +21,10 @@ class Dashboard extends React.Component {
   render() {
     const { profile, auth, loading } = this.props;
 
+    if (!auth.user) {
+      return null;
+    }
+
     return (
       <div className="dashboard">
         <div className="dashboard__container">

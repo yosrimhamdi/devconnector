@@ -1,6 +1,6 @@
-import { REMOVE_EXPERIENCE } from './types';
+import { REMOVE_EXPERIENCE } from '../types';
 
-import profiles from '../../apis/profiles';
+import profiles from '../../../apis/profiles';
 
 export default id => async dispatch => {
   const response = await profiles.delete(`/experience/${id}`);

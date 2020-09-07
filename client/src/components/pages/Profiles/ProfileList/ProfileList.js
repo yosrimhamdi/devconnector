@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import fetchProfiles from '../../../../redux/actions/fetchProfiles';
+import { fetchProfiles } from '../../../../redux/actions';
 import ProfileItem from '../ProfileItem';
 import './ProfileList.scss';
 

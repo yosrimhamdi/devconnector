@@ -1,5 +1,5 @@
-import { REMOVE_EDUCATION, ERROR_HAS_OCCURED } from './types';
-import profiles from '../../apis/profiles';
+import { REMOVE_EDUCATION, ERROR_HAS_OCCURED } from '../types';
+import profiles from '../../../apis/profiles';
 
 export default id => async dispatch => {
   try {

@@ -1,5 +1,5 @@
-import { FETCH_PROFILES } from './types';
-import profiles from '../../apis/profiles';
+import { FETCH_PROFILES } from '../types';
+import profiles from '../../../apis/profiles';
 
 export default () => async dispatch => {
   const response = await profiles.get('/all');

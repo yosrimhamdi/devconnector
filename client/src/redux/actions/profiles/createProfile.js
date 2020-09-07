@@ -1,13 +1,13 @@
-import { ADD_EDUCATION, ERROR_HAS_OCCURED } from './types';
-import profiles from '../../apis/profiles';
-import history from '../../history';
+import { CREATE_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import profiles from '../../../apis/profiles';
+import history from '../../../history';
 
 export default formValues => async dispatch => {
   try {
-    const response = await profiles.post('/education', formValues);
+    const response = await profiles.post('/', formValues);
 
     dispatch({
-      type: ADD_EDUCATION,
+      type: CREATE_PROFILE,
       payload: response.data,
     });
 

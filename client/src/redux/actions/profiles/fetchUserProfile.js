@@ -1,5 +1,5 @@
-import { FETCH_USER_PROFILE, ERROR_HAS_OCCURED } from './types';
-import profiles from '../../apis/profiles';
+import { FETCH_USER_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import profiles from '../../../apis/profiles';
 
 export default () => async dispatch => {
   try {

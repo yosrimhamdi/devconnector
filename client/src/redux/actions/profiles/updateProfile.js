@@ -1,13 +1,13 @@
-import users from '../../apis/users';
-import { LOGIN_USER, ERROR_HAS_OCCURED } from './types';
-import history from '../../history';
+import { UPDATE_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import profiles from '../../../apis/profiles';
+import history from '../../../history';
 
 export default formValues => async dispatch => {
   try {
-    const response = await users.post('/login', formValues);
+    const response = await profiles.put('/', formValues);
 
     dispatch({
-      type: LOGIN_USER,
+      type: UPDATE_PROFILE,
       payload: response.data,
     });
 

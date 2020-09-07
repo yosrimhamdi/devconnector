@@ -1,13 +1,13 @@
-import { UPDATE_PROFILE, ERROR_HAS_OCCURED } from './types';
-import profiles from '../../apis/profiles';
-import history from '../../history';
+import { ADD_EXPERIENCE, ERROR_HAS_OCCURED } from '../types';
+import profiles from '../../../apis/profiles';
+import history from '../../../history';
 
 export default formValues => async dispatch => {
   try {
-    const response = await profiles.put('/', formValues);
+    const response = await profiles.post('/experience', formValues);
 
     dispatch({
-      type: UPDATE_PROFILE,
+      type: ADD_EXPERIENCE,
       payload: response.data,
     });
 

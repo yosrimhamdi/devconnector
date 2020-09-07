@@ -15,13 +15,14 @@ import CreateProfile from '../pages/CreateProfile';
 import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
+import PrivateRoute from '../common/PrivateRoute';
 
 const NonLanding = () => (
   <div style={{ margin: '6em 0' }}>
     <Switch>
       <Route path="/register" exact component={Register} />
       <Route path="/login" exact component={Login} />
-      <Route path="/dashboard" exact component={Dashboard} />
+      <PrivateRoute path="/dashboard" exact component={Dashboard} />
       <Route path="/profiles" exact component={Profiles} />
       <Route path="/profiles/new" exact component={CreateProfile} />
       <Route path="/profiles/experience/new" exact component={AddExperience} />

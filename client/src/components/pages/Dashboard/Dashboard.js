@@ -4,17 +4,10 @@ import { connect } from 'react-redux';
 import './Dashboard.scss';
 
 import { fetchUserProfile } from '../../../redux/actions';
-import history from '../../../history';
 import DashboardContent from './DashboardContent';
 import UserProfileLink from './UserProfileLink';
 
 class Dashboard extends React.Component {
-  UNSAFE_componentWillMount() {
-    if (!this.props.auth.isAuthenticated) {
-      history.push('/login');
-    }
-  }
-
   componentDidMount() {
     this.props.fetchUserProfile();
   }

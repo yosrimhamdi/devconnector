@@ -6,7 +6,7 @@ import ResponseError from './errors/Response';
 import Message from './utils/Message';
 import getClassName from './utils/getClassName';
 
-export default ({
+const Input = ({
   input,
   type,
   placeholder,
@@ -31,3 +31,9 @@ export default ({
     </div>
   );
 };
+
+Input.defaultProps = {
+  type: 'text',
+};
+
+export default Input;

@@ -35,7 +35,6 @@ class Login extends React.Component {
         >
           <Field
             name="email"
-            type="text"
             placeholder="email"
             component={Input}
             responseError={errors.wrongEmailOrPassword}

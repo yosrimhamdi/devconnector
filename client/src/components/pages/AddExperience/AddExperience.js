@@ -39,24 +39,9 @@ class AddExperience extends React.Component {
             color="black"
           />
           <div className="form__require-message">* = required</div>
-          <Field
-            name="company"
-            placeholder="* company"
-            type="text"
-            component={Input}
-          />
-          <Field
-            name="title"
-            placeholder="* job title"
-            type="text"
-            component={Input}
-          />
-          <Field
-            name="location"
-            placeholder="location"
-            type="text"
-            component={Input}
-          />
+          <Field name="company" placeholder="* company" component={Input} />
+          <Field name="title" placeholder="* job title" component={Input} />
+          <Field name="location" placeholder="location" component={Input} />
           <div className="form__input-header">* from date</div>
           <Field name="from" type="date" component={Input} />
           <div className="form__input-header">to date</div>

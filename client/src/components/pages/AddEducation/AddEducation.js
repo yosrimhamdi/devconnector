@@ -31,22 +31,15 @@ class AddEducation extends React.Component {
             color="black"
           />
           <div className="form__require-message">* = required</div>
-          <Field
-            name="school"
-            placeholder="* school"
-            type="text"
-            component={Input}
-          />
+          <Field name="school" placeholder="* school" component={Input} />
           <Field
             name="degree"
             placeholder="* degree or certification"
-            type="text"
             component={Input}
           />
           <Field
             name="fieldOfStudy"
             placeholder="* field of study"
-            type="text"
             component={Input}
           />
           <div className="form__input-header">* from date</div>

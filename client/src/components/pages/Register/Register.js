@@ -32,10 +32,9 @@ class Register extends React.Component {
           onSubmit={this.props.handleSubmit(this.onFormSubmit)}
           className="form"
         >
-          <Field name="name" type="text" placeholder="name" component={Input} />
+          <Field name="name" placeholder="name" component={Input} />
           <Field
             name="email"
-            type="text"
             placeholder="email"
             component={Input}
             responseError={errors.emailExists}

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import CostumLink from '../../../CostumLink';
-import Experiences from '../Experiences';
-import Educations from '../Educations';
-import Spinner from '../../../Spinner';
+import CostumLink from '../../CostumLink';
+import Experiences from './Experiences';
+import Educations from './Educations';
+import Spinner from '../../Spinner';
 
 const DashBoardContent = ({ profile, loading }) => {
   if (loading) {

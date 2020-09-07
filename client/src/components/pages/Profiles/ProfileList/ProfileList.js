@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchProfiles } from '../../../../redux/actions';
 import ProfileItem from '../ProfileItem';
 import './ProfileList.scss';
+import Spinner from '../../../Spinner';
 
 class ProfileList extends React.Component {
   componentDidMount() {
@@ -17,10 +18,17 @@ class ProfileList extends React.Component {
   }
 
   render() {
+    if (this.props.loading) {
+      return <Spinner />;
+    }
+
     return <div className="profile-list">{this.renderProfiles()}</div>;
   }
 }
 
-const mapStateToProps = state => ({ profiles: Object.values(state.profiles) });
+const mapStateToProps = ({ profiles, loading }) => ({
+  profiles: Object.values(profiles),
+  loading,
+});
 
 export default connect(mapStateToProps, { fetchProfiles })(ProfileList);

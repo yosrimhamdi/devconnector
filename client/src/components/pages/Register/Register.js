@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 
 import history from '../../../history';
 import validate from './validate';
-import { Input } from '../../form';
-import Headline from '../../Headline';
+import { Input } from '../../common/form';
+import Headline from '../../common/Headline';
 import { registerUser } from '../../../redux/actions';
 
 class Register extends React.Component {

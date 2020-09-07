@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ProfileList from './ProfileList';
-import Headline from '../../Headline';
+import Headline from '../../common/Headline';
 
 const Profiles = () => (
   <div className="profiles">

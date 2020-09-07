@@ -2,9 +2,9 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import Headline from '../Headline';
-import { Input, TextArea, Select } from '../form';
-import CostumLink from '../CostumLink';
+import Headline from '../../common/Headline';
+import { Input, TextArea, Select } from '../../common/form';
+import CostumLink from '../../common/CostumLink';
 
 class ProfileForm extends React.Component {
   onFormSubmit = formValues => {

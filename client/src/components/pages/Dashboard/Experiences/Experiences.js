@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Experiences.scss';
 import ExperienceItem from './ExperienceItem';
-import Table from '../../../Table';
+import Table from '../../../common/Table';
 
 const Experiences = ({ experiences }) => {
   if (!experiences.length) {

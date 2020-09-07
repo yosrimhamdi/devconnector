@@ -3,10 +3,10 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
-import Headline from '../../Headline';
+import Headline from '../../common/Headline';
 import { addEducation } from '../../../redux/actions';
-import { Input, TextArea } from '../../form';
-import CostumLink from '../../CostumLink';
+import { Input, TextArea } from '../../common/form';
+import CostumLink from '../../common/CostumLink';
 
 class AddEducation extends React.Component {
   onFormSubmit = formValues => {

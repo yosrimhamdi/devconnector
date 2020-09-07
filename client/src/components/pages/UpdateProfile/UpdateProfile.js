@@ -2,9 +2,9 @@ import React from 'react';
 import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
-import validate from '../../ProfileForm/validate';
+import validate from '../../common/ProfileForm/validate';
+import ProfileForm from '../../common/ProfileForm/ProfileForm';
 import { updateProfile } from '../../../redux/actions';
-import ProfileForm from '../../ProfileForm/ProfileForm';
 
 const UpdateProfile = props => (
   <ProfileForm

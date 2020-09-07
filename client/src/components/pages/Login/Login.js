@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 import validate from './validate';
 import { loginUser } from '../../../redux/actions';
 import history from '../../../history';
-import Headline from '../../Headline';
+import Headline from '../../common/Headline';
 
-import { Input } from '../../form';
+import { Input } from '../../common/form';
 
 class Login extends React.Component {
   UNSAFE_componentWillMount() {

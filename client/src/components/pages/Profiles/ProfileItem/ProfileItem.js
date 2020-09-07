@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './ProfileItem.scss';
-import CostumLink from '../../../CostumLink';
+import CostumLink from '../../../common/CostumLink';
 import SkillList from './SkillList';
 
 const ProfileItem = profile => {

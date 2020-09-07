@@ -6,6 +6,7 @@ import './Dashboard.scss';
 import { fetchUserProfile } from '../../../redux/actions';
 import history from '../../../history';
 import DashboardContent from './DashboardContent';
+import UserProfileLink from './UserProfileLink';
 
 class Dashboard extends React.Component {
   UNSAFE_componentWillMount() {
@@ -21,18 +22,11 @@ class Dashboard extends React.Component {
   render() {
     const { profile, auth, loading } = this.props;
 
-    if (!auth.user) {
-      return null;
-    }
-
     return (
       <div className="dashboard">
         <div className="dashboard__container">
           <h1 className="dashboard__title">dashboard</h1>
-          <h3 className="dashboard__greeting">
-            <span className="dashboard__welcome">welcome</span>
-            <span className="dashboard__username">{auth.user.name}</span>
-          </h3>
+          <UserProfileLink user={auth.user} profile={profile} />
           <DashboardContent profile={profile} loading={loading} />
         </div>
       </div>

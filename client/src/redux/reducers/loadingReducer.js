@@ -1,6 +1,6 @@
 import { LOADING, LOADED } from '../actions/types';
 
-export default (state = true, action) => {
+export default (state = false, action) => {
   switch (action.type) {
     case LOADING:
       return true;

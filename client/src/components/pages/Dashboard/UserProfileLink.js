@@ -2,10 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserProfileLink = ({ user, profile }) => {
-  if (!user) {
-    return null;
-  }
-
   let userLink = <span className="dashboard__username">{user.name}</span>;
 
   if (profile) {

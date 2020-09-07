@@ -1,5 +1,5 @@
 .dashboard {
-  &__content {
+  &__container {
     width: 90%;
     margin: 0 auto;
   }
@@ -10,15 +10,20 @@
     text-transform: capitalize;
   }
 
-  &__welcome-message {
+  &__greeting {
     font-weight: 300;
     font-size: 1.2rem;
     margin-bottom: 3em;
   }
 
-  &__user-name {
+  &__welcome {
+    margin-right: 0.3em;
+  }
+
+  &__username {
     font-style: italic;
-    color: #007bff;
+    color: #0d72df;
+    text-decoration: underline;
   }
 
   &__create-profile-message {

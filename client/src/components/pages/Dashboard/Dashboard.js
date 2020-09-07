@@ -3,12 +3,9 @@ import { connect } from 'react-redux';
 
 import './Dashboard.scss';
 
-import CostumLink from '../../CostumLink';
-import Experiences from './Experiences';
-import Educations from './Educations';
-
 import { fetchUserProfile } from '../../../redux/actions';
 import history from '../../../history';
+import DashboardContent from './DashboardContent';
 
 class Dashboard extends React.Component {
   UNSAFE_componentWillMount() {
@@ -21,38 +18,6 @@ class Dashboard extends React.Component {
     this.props.fetchUserProfile();
   }
 
-  renderMainContent() {
-    if (!this.props.profile) {
-      return (
-        <div>
-          <div className="dashboard__create-profile-message">
-            yo have no profile yet. Please create one.
-          </div>
-          <CostumLink
-            to="/profiles/new"
-            bgColor="#17a2b8"
-            color="white"
-            text="create profile"
-          />
-        </div>
-      );
-    }
-
-    const { experience, education } = this.props.profile;
-
-    return (
-      <div>
-        <div className="dashboard__navigation-links">
-          <CostumLink to="/profiles/update" text="update profile" />
-          <CostumLink to="/profiles/experience/new" text="add experience" />
-          <CostumLink to="/profiles/education/new" text="add education" />
-        </div>
-        <Experiences experiences={experience} />
-        <Educations educations={education} />
-      </div>
-    );
-  }
-
   render() {
     if (!this.props.auth.user) {
       return null;
@@ -60,15 +25,15 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard">
-        <div className="dashboard__content">
+        <div className="dashboard__container">
           <h1 className="dashboard__title">dashboard</h1>
-          <h3 className="dashboard__welcome-message">
-            Welcome{' '}
-            <span className="dashboard__user-name">
-              {this.props.auth.user.name.split(' ')[0]}
+          <h3 className="dashboard__greeting">
+            <span className="dashboard__welcome">welcome</span>
+            <span className="dashboard__username">
+              {this.props.auth.user.name}
             </span>
           </h3>
-          {this.renderMainContent()}
+          <DashboardContent profile={this.props.profile} />
         </div>
       </div>
     );

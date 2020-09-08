@@ -27,7 +27,8 @@ const NonLanding = () => (
       <Route path="/profiles/new" exact component={CreateProfile} />
       <Route path="/profiles/experience/new" exact component={AddExperience} />
       <Route path="/profiles/education/new" exact component={AddEducation} />
-      <Route paht="/profiles/update" exact component={UpdateProfile} />
+      <Route path="/profiles/update" exact component={UpdateProfile} />
+      <Route path="*" component={() => <div>not found</div>} />
     </Switch>
   </div>
 );

@@ -1,13 +1,11 @@
 import React from 'react';
 
+import tick from './tick.svg';
 import './SkillItem.scss';
 
-const SkillItem = ({ skill }) => {
-  return (
-    <div className="skill-item">
-      <i className="fas fa-check skill-item__icon"></i> {skill}
-    </div>
-  );
-};
-
+const SkillItem = ({ skill }) => (
+  <div className="skill-item">
+    <img src={tick} className="skill-item__tick" alt="tick logo" /> {skill}
+  </div>
+);
 export default SkillItem;

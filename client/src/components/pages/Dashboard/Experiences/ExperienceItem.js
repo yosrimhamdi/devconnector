@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeExperience } from '../../../../../redux/actions';
-import getFormattedDate from '../../../../../utils/getFomatedDate';
+import { removeExperience } from '../../../../redux/actions';
+import getFormattedDate from '../../../../utils/getFomatedDate';
+import remove from './remove.svg';
 
 class ExpItem extends React.Component {
   removeExperience = () => {
@@ -18,11 +19,9 @@ class ExpItem extends React.Component {
         <td>{title}</td>
         <td>{getFormattedDate(from, to)}</td>
         <td className="table__logo-container">
-          <i
-            onClick={this.removeExperience}
-            className="fas fa-trash-alt table__remove-logo"
-            role="button"
-          />
+          <span onClick={this.removeExperience} role="button">
+            <img className="table__remove-logo" src={remove} alt="remove log" />
+          </span>
         </td>
       </tr>
     );

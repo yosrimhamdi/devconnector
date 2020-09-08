@@ -1,8 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeEducation } from '../../../../../redux/actions';
-import getFormattedDate from '../../../../../utils/getFomatedDate';
+import { removeEducation } from '../../../../redux/actions';
+import getFormattedDate from '../../../../utils/getFomatedDate';
+import remove from './remove.svg';
 
 class EducationItem extends React.Component {
   removeEducation = () => {
@@ -18,11 +19,13 @@ class EducationItem extends React.Component {
         <td>{degree}</td>
         <td>{getFormattedDate(from, to)}</td>
         <td className="table__logo-container">
-          <i
-            onClick={this.removeEducation}
-            className="fas fa-trash-alt table__remove-logo"
-            role="button"
-          />
+          <span onClick={this.removeEducation} role="button">
+            <img
+              className="fas fa-trash-alt table__remove-logo"
+              src={remove}
+              alt="remove logo"
+            />
+          </span>
         </td>
       </tr>
     );

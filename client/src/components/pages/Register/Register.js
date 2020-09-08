@@ -2,19 +2,12 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import history from '../../../history';
 import validate from './validate';
 import { Input } from '../../common/form';
 import Headline from '../../common/Headline';
 import { registerUser } from '../../../redux/actions';
 
 class Register extends React.Component {
-  UNSAFE_componentWillMount() {
-    if (this.props.auth.isAuthenticated) {
-      history.push('/dashboard');
-    }
-  }
-
   onFormSubmit = formValues => {
     this.props.registerUser(formValues);
   };

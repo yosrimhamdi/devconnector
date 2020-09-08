@@ -4,18 +4,11 @@ import { connect } from 'react-redux';
 
 import validate from './validate';
 import { loginUser } from '../../../redux/actions';
-import history from '../../../history';
 import Headline from '../../common/Headline';
 
 import { Input } from '../../common/form';
 
 class Login extends React.Component {
-  UNSAFE_componentWillMount() {
-    if (this.props.auth.isAuthenticated) {
-      history.push('/dashboard');
-    }
-  }
-
   onFormSubmit = formValues => {
     this.props.loginUser(formValues);
   };

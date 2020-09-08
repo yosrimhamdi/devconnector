@@ -6,7 +6,7 @@ module.exports = catchAsync(async (req, res) => {
 
   const data = { ...req.body, user: user._id };
 
-  data.skills = data.skills[0].split(',');
+  data.skills = data.skills.split(',');
 
   const profile = await Profile.findOneAndReplace({ user: user._id }, data, {
     new: true,

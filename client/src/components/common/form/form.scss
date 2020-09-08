@@ -1,4 +1,6 @@
 $error: rgb(253, 99, 99);
+$message: #6c757d;
+$inputBorder: rgb(212, 212, 212);
 
 .form {
   width: 55%;
@@ -7,7 +9,7 @@ $error: rgb(253, 99, 99);
   &__input {
     width: 100%;
     outline: none;
-    border: 1px solid rgb(212, 212, 212);
+    border: 1px solid $inputBorder;
     color: rgb(83, 83, 83);
     padding: 0.6em 0.7em;
     font-size: 1.2rem;
@@ -58,7 +60,7 @@ $error: rgb(253, 99, 99);
   }
 
   &__input-message {
-    color: #6c757d;
+    color: $message;
     font-size: 0.8rem;
     margin: -1em 0 1.2em;
 
@@ -67,7 +69,7 @@ $error: rgb(253, 99, 99);
     }
   }
 
-  &__button {
+  &__submit-btn {
     width: 100%;
     padding: 1em 0;
     text-transform: capitalize;
@@ -80,7 +82,7 @@ $error: rgb(253, 99, 99);
   }
 
   &__input,
-  &__button {
+  &__submit-btn {
     border-radius: 4px;
   }
 
@@ -108,5 +110,57 @@ $error: rgb(253, 99, 99);
     border: none;
     outline: none;
     font-size: 0.9rem;
+  }
+
+  &__social-toggle-btn {
+    border: none;
+    outline: none;
+    background: none;
+    margin-right: 0.5em;
+    font-size: 1rem;
+    background-color: rgb(248, 248, 248);
+    color: #363636;
+    padding: 0.5em 1em;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+  }
+
+  &__social-toggle-btn-wrapper {
+    margin-bottom: 1em;
+  }
+
+  &__social-toggle-message {
+    color: $message;
+  }
+
+  &__socials {
+    margin-bottom: 1em;
+  }
+
+  &__social-input {
+    padding-left: 3em;
+    display: block;
+  }
+
+  &__social-input-wrapper {
+    position: relative;
+  }
+
+  &__social-icon {
+    width: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &__social-icon-wrapper {
+    position: absolute;
+    border-right: 1px solid $inputBorder;
+    height: 100%;
+    width: 50px;
   }
 }

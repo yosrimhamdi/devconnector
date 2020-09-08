@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import Headline from '../Headline';
-import { Input, TextArea, Select } from '../form';
+import { Input, TextArea, Select, IconedInput } from '../form';
 import CostumLink from '../CostumLink';
 
 const ProfileForm = props => {
@@ -68,7 +68,25 @@ const ProfileForm = props => {
           message="tell us a little about yourself"
           component={TextArea}
         />
-        <button className="form__button" type="submit">
+        <div className="form__social-toggle-btn-wrapper">
+          <button className="form__social-toggle-btn" type="button">
+            add social network links
+          </button>
+          <span className="form__social-toggle-message">Optional</span>
+        </div>
+        <div className="form__socials">
+          <Field
+            name="youtube"
+            placeholder="youtube channel URL"
+            component={IconedInput}
+          />
+          <Field
+            name="facebook"
+            placeholder="facebook page URL"
+            component={IconedInput}
+          />
+        </div>
+        <button className="form__submit-btn" type="submit">
           submit
         </button>
       </form>

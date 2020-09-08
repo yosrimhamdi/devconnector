@@ -16,6 +16,7 @@ const Input = ({
   meta,
 }) => {
   const className = getClassName(meta, responseError);
+
   return (
     <div>
       <input

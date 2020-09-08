@@ -1,6 +1,12 @@
 import { isURL } from 'validator';
 
-export default ({ handle = '', skills = '', status, website = '' }) => {
+export default ({
+  handle = '',
+  skills = '',
+  status,
+  website = '',
+  youtube,
+}) => {
   const errors = {};
 
   if (!handle) {
@@ -27,6 +33,10 @@ export default ({ handle = '', skills = '', status, website = '' }) => {
   if (skills.includes(' ')) {
     errors.skills =
       'must not contain spaces. Please use comma, separated values';
+  }
+
+  if (youtube && !isURL(youtube, { require_protocol: true })) {
+    errors.youtube = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
   }
 
   return errors;

@@ -105,6 +105,15 @@ $inputBorder: rgb(212, 212, 212);
     -moz-user-select: none;
   }
 
+  #control {
+    margin-right: 0.3em;
+  }
+
+  &__control-message {
+    display: inline-block;
+    transform: translateY(-2px);
+  }
+
   &__control-button {
     background: none;
     border: none;

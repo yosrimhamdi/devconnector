@@ -12,9 +12,7 @@ class AddExperience extends React.Component {
   state = { disabled: false };
 
   toggleToDate = () => {
-    const { disabled } = this.state;
-
-    this.setState({ disabled: !disabled });
+    this.setState(prevState => ({ disabled: !prevState.disabled }));
   };
 
   onFormSubmit = formValues => {
@@ -53,8 +51,8 @@ class AddExperience extends React.Component {
           />
           <div className="form__control-wrapper">
             <label htmlFor="control" className="form__control">
-              <input type="checkbox" onClick={this.toggleToDate} id="control" />{' '}
-              Current Job?
+              <input type="checkbox" onClick={this.toggleToDate} id="control" />
+              <span className="form__control-message">current job?</span>
             </label>
           </div>
           <Field
@@ -63,7 +61,7 @@ class AddExperience extends React.Component {
             message="tell us about the position"
             component={TextArea}
           />
-          <button className="form__button" type="submit">
+          <button className="form__submit-btn" type="submit">
             submit
           </button>
         </form>

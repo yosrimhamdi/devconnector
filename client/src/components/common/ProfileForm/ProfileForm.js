@@ -7,11 +7,12 @@ import { Input, TextArea, Select, IconedInput } from '../form';
 import CostumLink from '../CostumLink';
 
 class ProfileForm extends React.Component {
-  state = { display: 'none' };
+  state = { display: 'none', message: 'show' };
 
   toggleSocials = () => {
     this.setState(prevState => ({
       display: prevState.display === 'none' ? 'block' : 'none',
+      message: prevState.message === 'show' ? 'hide' : 'show',
     }));
   };
 
@@ -83,7 +84,7 @@ class ProfileForm extends React.Component {
               type="button"
               onClick={this.toggleSocials}
             >
-              add social network links
+              {this.state.message} social network links
             </button>
             <span className="form__social-toggle-message">Optional</span>
           </div>

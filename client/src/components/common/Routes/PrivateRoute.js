@@ -4,9 +4,7 @@ import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
   // prettier-ignore
-  const render = props => (
-    auth.isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />
-  );
+  const render = props => (auth.isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />);
 
   return <Route {...rest} render={render} />;
 };

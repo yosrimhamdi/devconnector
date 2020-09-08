@@ -50,7 +50,9 @@ class Header extends React.Component {
           </Link>
         </div>
 
-        <div className="header__right-section">{this.showAdminOrAuthContent()}</div>
+        <div className="header__right-section">
+          {this.showAdminOrAuthContent()}
+        </div>
       </div>
     );
   }

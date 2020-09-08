@@ -8,75 +8,63 @@ import { addEducation } from '../../../redux/actions';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
 
-class AddEducation extends React.Component {
-  state = { disabled: false };
+import toggleToDate from '../../common/hooks/toggleToDate';
 
-  toggleToDate = () => {
-    this.setState(prevState => ({ disabled: !prevState.disabled }));
+const AddEducation = props => {
+  const [disabled, toggle] = toggleToDate();
+
+  const onFormSubmit = formValues => {
+    props.addEducation(formValues);
   };
 
-  onFormSubmit = formValues => {
-    this.props.addEducation(formValues);
-  };
-
-  render() {
-    return (
-      <div>
-        <Headline
-          header="add education"
-          subHeader="add any school, bootcamp, etc that you have attended."
+  return (
+    <div>
+      <Headline
+        header="add education"
+        subHeader="add any school, bootcamp, etc that you have attended."
+      />
+      <form onSubmit={props.handleSubmit(onFormSubmit)} className="form">
+        <CostumLink
+          to="/dashboard"
+          text="go back"
+          bgColor="rgb(236, 235, 235)"
+          color="black"
         />
-        <form
-          onSubmit={this.props.handleSubmit(this.onFormSubmit)}
-          className="form"
-        >
-          <CostumLink
-            to="/dashboard"
-            text="go back"
-            bgColor="rgb(236, 235, 235)"
-            color="black"
-          />
-          <div className="form__require-message">* = required</div>
-          <Field name="school" placeholder="* school" component={Input} />
-          <Field
-            name="degree"
-            placeholder="* degree or certification"
-            component={Input}
-          />
-          <Field
-            name="fieldOfStudy"
-            placeholder="* field of study"
-            component={Input}
-          />
-          <div className="form__input-header">* from date</div>
-          <Field name="from" type="date" component={Input} />
-          <div className="form__input-header">to date</div>
-          <Field
-            name="to"
-            type="date"
-            component={Input}
-            disabled={this.state.disabled}
-          />
-          <div className="form__control-wrapper">
-            <label htmlFor="control" className="form__control">
-              <input type="checkbox" onClick={this.toggleToDate} id="control" />
-              <span className="form__control-message">current job?</span>
-            </label>
-          </div>
-          <Field
-            name="description"
-            placeholder="program description"
-            message="tell us about the program that you were in"
-            component={TextArea}
-          />
-          <button className="form__submit-btn" type="submit">
-            submit
-          </button>
-        </form>
-      </div>
-    );
-  }
-}
+        <div className="form__require-message">* = required</div>
+        <Field name="school" placeholder="* school" component={Input} />
+        <Field
+          name="degree"
+          placeholder="* degree or certification"
+          component={Input}
+        />
+        <Field
+          name="fieldOfStudy"
+          placeholder="* field of study"
+          component={Input}
+        />
+        <div className="form__input-header">* from date</div>
+        <Field name="from" type="date" component={Input} />
+        <div className="form__input-header">to date</div>
+        <Field name="to" type="date" component={Input} disabled={disabled} />
+        <div className="form__control-wrapper">
+          <label htmlFor="control" className="form__control">
+            <input type="checkbox" onClick={toggle} id="control" />
+            <span className="form__control-message">current job?</span>
+          </label>
+        </div>
+        <Field
+          name="description"
+          placeholder="program description"
+          message="tell us about the program that you were in"
+          component={TextArea}
+        />
+        <button className="form__submit-btn" type="submit">
+          submit
+        </button>
+      </form>
+    </div>
+  );
+};
 
 const wrappedForm = reduxForm({ form: 'addEducation', validate })(AddEducation);
 

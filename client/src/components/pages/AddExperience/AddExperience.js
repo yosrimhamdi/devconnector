@@ -7,68 +7,55 @@ import Headline from '../../common/Headline';
 import { addExperience } from '../../../redux/actions';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
+import toggleToDate from '../../common/hooks/toggleToDate';
 
-class AddExperience extends React.Component {
-  state = { disabled: false };
+const AddExperience = props => {
+  const [disabled, toggle] = toggleToDate();
 
-  toggleToDate = () => {
-    this.setState(prevState => ({ disabled: !prevState.disabled }));
+  const onFormSubmit = formValues => {
+    props.addExperience(formValues);
   };
 
-  onFormSubmit = formValues => {
-    this.props.addExperience(formValues);
-  };
-
-  render() {
-    return (
-      <div>
-        <Headline
-          header="add experience"
-          subHeader="add any job or position that you have had in the past or current."
+  return (
+    <div>
+      <Headline
+        header="add experience"
+        subHeader="add any job or position that you have had in the past or current."
+      />
+      <form onSubmit={props.handleSubmit(onFormSubmit)} className="form">
+        <CostumLink
+          to="/dashboard"
+          text="go back"
+          bgColor="rgb(236, 235, 235)"
+          color="black"
         />
-        <form
-          onSubmit={this.props.handleSubmit(this.onFormSubmit)}
-          className="form"
-        >
-          <CostumLink
-            to="/dashboard"
-            text="go back"
-            bgColor="rgb(236, 235, 235)"
-            color="black"
-          />
-          <div className="form__require-message">* = required</div>
-          <Field name="company" placeholder="* company" component={Input} />
-          <Field name="title" placeholder="* job title" component={Input} />
-          <Field name="location" placeholder="location" component={Input} />
-          <div className="form__input-header">* from date</div>
-          <Field name="from" type="date" component={Input} />
-          <div className="form__input-header">to date</div>
-          <Field
-            name="to"
-            type="date"
-            component={Input}
-            disabled={this.state.disabled}
-          />
-          <div className="form__control-wrapper">
-            <label htmlFor="control" className="form__control">
-              <input type="checkbox" onClick={this.toggleToDate} id="control" />
-              <span className="form__control-message">current job?</span>
-            </label>
-          </div>
-          <Field
-            name="description"
-            placeholder="job description"
-            message="tell us about the position"
-            component={TextArea}
-          />
-          <button className="form__submit-btn" type="submit">
-            submit
-          </button>
-        </form>
-      </div>
-    );
-  }
-}
+        <div className="form__require-message">* = required</div>
+        <Field name="company" placeholder="* company" component={Input} />
+        <Field name="title" placeholder="* job title" component={Input} />
+        <Field name="location" placeholder="location" component={Input} />
+        <div className="form__input-header">* from date</div>
+        <Field name="from" type="date" component={Input} />
+        <div className="form__input-header">to date</div>
+        <Field name="to" type="date" component={Input} disabled={disabled} />
+        <div className="form__control-wrapper">
+          <label htmlFor="control" className="form__control">
+            <input type="checkbox" onClick={toggle} id="control" />
+            <span className="form__control-message">current job?</span>
+          </label>
+        </div>
+        <Field
+          name="description"
+          placeholder="job description"
+          message="tell us about the position"
+          component={TextArea}
+        />
+        <button className="form__submit-btn" type="submit">
+          submit
+        </button>
+      </form>
+    </div>
+  );
+};
 
 const wrappedForm = reduxForm({ form: 'addExperience', validate })(
   AddExperience,

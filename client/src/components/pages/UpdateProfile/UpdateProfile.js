@@ -19,8 +19,14 @@ const wrappedForm = reduxForm({ form: 'updateProfile', validate })(
   UpdateProfile,
 );
 
-const mapStateToProps = state => ({
-  initialValues: state.profiles[state.auth.user._id],
-});
+const mapStateToProps = state => {
+  let profile = state.profiles[state.auth.user._id];
+
+  profile = { ...profile, ...profile.social };
+
+  return {
+    initialValues: profile,
+  };
+};
 
 export default connect(mapStateToProps, { updateProfile })(wrappedForm);

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import Headline from '../Headline';
 import { Input, TextArea, Select, IconedInput } from '../form';
 import CostumLink from '../CostumLink';
+import constructProfile from '../../../utils/constructProfile';
 
 class ProfileForm extends React.Component {
   state = { display: 'none', message: 'show' };
@@ -16,13 +17,19 @@ class ProfileForm extends React.Component {
     }));
   };
 
+  onFormSubmit = formValues => {
+    const profile = constructProfile(formValues);
+
+    this.props.onFormSubmit(profile);
+  };
+
   render() {
     const { handleSubmit, errors, header, subHeader } = this.props;
 
     return (
       <div>
         <Headline header={header} subHeader={subHeader} />
-        <form onSubmit={handleSubmit(this.props.onFormSubmit)} className="form">
+        <form onSubmit={handleSubmit(this.onFormSubmit)} className="form">
           <CostumLink
             to="/dashboard"
             text="go back"

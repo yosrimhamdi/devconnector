@@ -16,7 +16,7 @@ import CreateProfile from '../pages/CreateProfile';
 import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
-import NotFoundPage from '../pages/NotFoundPage';
+import NotFound from '../pages/NotFound';
 
 const Others = () => (
   <div style={{ margin: '6em 0' }}>
@@ -29,7 +29,7 @@ const Others = () => (
       <Route path="/profiles/new" exact component={CreateProfile} />
       <Route path="/profiles/experience/new" exact component={AddExperience} />
       <Route path="/profiles/education/new" exact component={AddEducation} />
-      <Route path="*" component={NotFoundPage} />
+      <Route path="*" component={NotFound} />
     </Switch>
   </div>
 );

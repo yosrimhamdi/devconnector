@@ -25,9 +25,9 @@ export default ({
     errors.status = 'status is required';
   }
 
-  if (website && !isURL(website, { require_protocol: true })) {
+  if (website && !isURL(website)) {
     errors.website =
-      'please sepecify a valid url (eg. https://yosrimhamdi.netlify.com)';
+      'please sepecify a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
   if (!skills) {
@@ -39,24 +39,24 @@ export default ({
       'must not contain spaces. Please use comma, separated values';
   }
 
-  if (youtube && !isURL(youtube, { require_protocol: true })) {
-    errors.youtube = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  if (youtube && !isURL(youtube)) {
+    errors.youtube = 'not a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
-  if (facebook && !isURL(facebook, { require_protocol: true })) {
-    errors.facebook = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  if (facebook && !isURL(facebook)) {
+    errors.facebook = 'not a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
-  if (linkedin && !isURL(linkedin, { require_protocol: true })) {
-    errors.linkedin = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  if (linkedin && !isURL(linkedin)) {
+    errors.linkedin = 'not a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
-  if (twitter && !isURL(twitter, { require_protocol: true })) {
-    errors.twitter = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  if (twitter && !isURL(twitter)) {
+    errors.twitter = 'not a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
-  if (instagram && !isURL(instagram, { require_protocol: true })) {
-    errors.instagram = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  if (instagram && !isURL(instagram)) {
+    errors.instagram = 'not a valid url (eg. yosrimhamdi.netlify.com)';
   }
 
   return errors;

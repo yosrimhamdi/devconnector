@@ -52,6 +52,11 @@ $error: rgb(253, 99, 99);
     }
   }
 
+  &__error-icon {
+    width: 12px;
+    transform: translateY(1px);
+  }
+
   &__input-message {
     color: #6c757d;
     font-size: 0.8rem;

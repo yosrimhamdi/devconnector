@@ -44,7 +44,7 @@ class Register extends React.Component {
             placeholder="confirm password"
             component={Input}
           />
-          <button className="form__button" type="submit">
+          <button className="form__submit-btn" type="submit">
             submit
           </button>
         </form>

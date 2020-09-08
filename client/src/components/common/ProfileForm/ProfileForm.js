@@ -85,6 +85,21 @@ const ProfileForm = props => {
             placeholder="facebook page URL"
             component={IconedInput}
           />
+          <Field
+            name="linkedin"
+            placeholder="linkedin profile URL"
+            component={IconedInput}
+          />
+          <Field
+            name="twitter"
+            placeholder="twitter profile URL"
+            component={IconedInput}
+          />
+          <Field
+            name="instagram"
+            placeholder="instagram page URL"
+            component={IconedInput}
+          />
         </div>
         <button className="form__submit-btn" type="submit">
           submit

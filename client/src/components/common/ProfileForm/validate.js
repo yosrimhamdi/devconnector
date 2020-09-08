@@ -6,6 +6,10 @@ export default ({
   status,
   website = '',
   youtube,
+  facebook,
+  linkedin,
+  twitter,
+  instagram,
 }) => {
   const errors = {};
 
@@ -37,6 +41,22 @@ export default ({
 
   if (youtube && !isURL(youtube, { require_protocol: true })) {
     errors.youtube = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  }
+
+  if (facebook && !isURL(facebook, { require_protocol: true })) {
+    errors.facebook = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  }
+
+  if (linkedin && !isURL(linkedin, { require_protocol: true })) {
+    errors.linkedin = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  }
+
+  if (twitter && !isURL(twitter, { require_protocol: true })) {
+    errors.twitter = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
+  }
+
+  if (instagram && !isURL(instagram, { require_protocol: true })) {
+    errors.instagram = 'not a valid url (eg. https://yosrimhamdi.netlify.com)';
   }
 
   return errors;

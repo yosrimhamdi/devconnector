@@ -39,7 +39,7 @@ class Login extends React.Component {
             component={Input}
             responseError={errors.wrongEmailOrPassword}
           />
-          <button className="form__button" type="submit">
+          <button className="form__submit-btn" type="submit">
             submit
           </button>
         </form>

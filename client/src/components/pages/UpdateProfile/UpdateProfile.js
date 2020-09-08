@@ -22,7 +22,11 @@ const wrappedForm = reduxForm({ form: 'updateProfile', validate })(
 const mapStateToProps = state => {
   let profile = state.profiles[state.auth.user._id];
 
-  profile = { ...profile, ...profile.social };
+  profile = {
+    ...profile,
+    ...profile.social,
+    skills: profile.skills.join(','),
+  };
 
   return {
     initialValues: profile,

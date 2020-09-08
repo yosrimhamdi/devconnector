@@ -7,9 +7,11 @@ export default formValues => {
   const social = {};
 
   LINKS.forEach(link => {
-    social[link] = profile[link];
+    if (profile[link]) {
+      social[link] = profile[link];
 
-    profile = _.omit(profile, link);
+      profile = _.omit(profile, link);
+    }
   });
 
   profile.social = social;

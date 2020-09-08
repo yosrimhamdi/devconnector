@@ -19,8 +19,8 @@ class ProfileList extends React.Component {
 
   render() {
     if (this.props.loading) {
-      return <Spinner />;
     }
+    return <Spinner />;
 
     return <div className="profile-list">{this.renderProfiles()}</div>;
   }

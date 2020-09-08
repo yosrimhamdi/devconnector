@@ -8,13 +8,12 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-
   &__circle {
-    font-size: 2rem;
-    color: #109bb1;
     animation: spin 1500ms linear infinite;
-    transform: translateX(10px);
-    margin-bottom: 0.12em;
+    transform: translateX(-4px);
+    width: 35px;
+    display: block;
+    margin: 0 auto 0.3em;
   }
 
   &__message {
@@ -24,6 +23,6 @@
 
 @keyframes spin {
   to {
-    transform: translateX(10px) rotate(360deg);
+    transform: translateX(-4px) rotate(360deg);
   }
 }

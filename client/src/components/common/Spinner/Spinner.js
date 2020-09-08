@@ -1,11 +1,12 @@
 import React from 'react';
 
+import circle from './circle.svg';
 import './Spinner.scss';
 
 const Spinner = () => (
   <div className="spinner">
     <div className="spinner__container">
-      <i className="fas fa-circle-notch spinner__circle" />
+      <img src={circle} className="spinner__circle" alt="loading" />
       <div className="spinner__message">loading...</div>
     </div>
   </div>

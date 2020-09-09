@@ -17,7 +17,7 @@ const ProfileItem = profile => {
       <div className="profile-item__user-details">
         <div className="profile-item__user-name">{user.name}</div>
         <div className="profile-item__user-job-details">
-          <span className="profile-item__user-status">{status}</span> at{' '}
+          <span className="profile-item__user-status">{status}</span> at
           <span className="profile-item__user-campany">{company}</span>
         </div>
         <div className="profile-item__user-location">{location}.</div>

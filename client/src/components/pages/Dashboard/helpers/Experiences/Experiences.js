@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ExperienceItem from './ExperienceItem';
-import Table from '../../../common/Table';
+import Table from '../../../../common/Table';
 
 const Experiences = ({ experiences }) => {
   if (!experiences.length) {

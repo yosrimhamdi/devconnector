@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import './Dashboard.scss';
 
 import { fetchUserProfile } from '../../../redux/actions';
-import DashboardContent from './DashboardContent';
-import UserProfileLink from './UserProfileLink';
+import DashboardContent from './helpers/DashboardContent';
+import UserProfileLink from './helpers/UserProfileLink';
 
 class Dashboard extends React.Component {
   componentDidMount() {

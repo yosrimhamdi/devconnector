@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeExperience } from '../../../../redux/actions';
-import getFormattedDate from '../../../../utils/getFomatedDate';
+import { removeExperience } from '../../../../../redux/actions';
+import getFormattedDate from '../../../../../utils/getFomatedDate';
 import remove from '../remove.svg';
 
 class ExpItem extends React.Component {

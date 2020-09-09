@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { removeEducation } from '../../../../redux/actions';
 import getFormattedDate from '../../../../utils/getFomatedDate';
-import remove from './remove.svg';
+import remove from '../remove.svg';
 
 class EducationItem extends React.Component {
   removeEducation = () => {

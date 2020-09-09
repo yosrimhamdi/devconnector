@@ -1,13 +1,16 @@
 import React from 'react';
 
-import './Educations.scss';
-
 import Table from '../../../common/Table';
 import EducationItem from './EducationItem';
 
 const Educations = ({ educations }) => {
   if (!educations.length) {
-    return <div>there is no education to display.</div>;
+    return (
+      <div className="dashboard__empty-section">
+        <h1 className="dashboard__section-title">education cridentials</h1>
+        <div className="dashboard__empty-message">there is no education.</div>
+      </div>
+    );
   }
 
   const renderedEducations = educations.map(education => (
@@ -15,8 +18,8 @@ const Educations = ({ educations }) => {
   ));
 
   return (
-    <div className="education">
-      <h1 className="education__title">education credentials</h1>
+    <div className="dashboard__section">
+      <h1 className="dashboard__section-title">education credentials</h1>
       <Table columnNames={['school', 'degree', 'years']}>
         {renderedEducations}
       </Table>

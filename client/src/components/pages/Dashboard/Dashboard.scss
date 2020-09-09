@@ -38,4 +38,22 @@
   &__navigation-links > a:not(:last-child) {
     margin-right: 0.7em;
   }
+
+  &__section {
+    margin-bottom: 3em;
+  }
+
+  &__section-title {
+    font-weight: 600;
+    margin-bottom: 0.6em;
+    text-transform: capitalize;
+  }
+
+  &__empty-section {
+    margin-bottom: 1em;
+  }
+
+  &__empty-message {
+    margin-top: -1em;
+  }
 }

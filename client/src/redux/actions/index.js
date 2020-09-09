@@ -1,5 +1,6 @@
 export { default as fetchProfiles } from './profiles/fetchProfiles';
 export { default as fetchUserProfile } from './profiles/fetchUserProfile';
+export { default as fetchProfile } from './profiles/fetchProfile';
 
 export { default as registerUser } from './auth/registerUser';
 export { default as loginUser } from './auth/loginUser';

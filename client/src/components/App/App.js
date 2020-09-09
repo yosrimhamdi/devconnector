@@ -20,6 +20,7 @@ import CreateProfile from '../pages/CreateProfile';
 import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
+import Profile from '../pages/Profile';
 import NotFound from '../pages/NotFound';
 
 const Others = () => (
@@ -45,7 +46,8 @@ const Others = () => (
         exact
         component={AddEducation}
       />
-      <RestrictedRequireProfileRoute path="*" component={NotFound} />
+      <Route path="/profiles/:handle" exact component={Profile} />
+      <Route path="*" component={NotFound} />
     </Switch>
   </div>
 );

@@ -3,6 +3,7 @@ import _ from 'lodash';
 import {
   FETCH_PROFILES,
   FETCH_USER_PROFILE,
+  FETCH_PROFILE,
   ADD_EXPERIENCE,
   ADD_EDUCATION,
   REMOVE_EXPERIENCE,
@@ -16,6 +17,7 @@ export default (state = {}, action) => {
     case FETCH_PROFILES:
       return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
     case FETCH_USER_PROFILE:
+    case FETCH_PROFILE:
     case ADD_EXPERIENCE:
     case ADD_EDUCATION:
     case REMOVE_EXPERIENCE:

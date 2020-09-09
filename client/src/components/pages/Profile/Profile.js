@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import './Profile.scss';
+
 import { fetchProfile } from '../../../redux/actions';
 import Spinner from '../../common/Spinner';
 import ProfileDisplay from './helpers/DisplayProfiles/ProfileDisplay';
@@ -22,7 +24,7 @@ class Profile extends React.Component {
     }
 
     return (
-      <div>
+      <div className="profile">
         <button
           to="/profiles"
           text="go back"

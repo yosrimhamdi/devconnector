@@ -22,9 +22,21 @@ class Profile extends React.Component {
       return <Spinner />;
     }
 
-    console.log(profile);
-
-    return <ProfileDisplay profile={profile} />;
+    return (
+      <div>
+        <button
+          to="/profiles"
+          text="go back"
+          style={{ backgroundColor: 'rgb(236, 235, 235)', color: 'black' }}
+          type="button"
+          className="costum-link"
+          onClick={this.props.history.goBack}
+        >
+          go back
+        </button>
+        <ProfileDisplay profile={profile} />
+      </div>
+    );
   }
 }
 

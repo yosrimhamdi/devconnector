@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getClassName from './utils/getClassName';
+import getClassName from './helpers/getClassName';
 import ValidationError from './errors/Validation';
 
 import youtube from './icons/youtube.svg';

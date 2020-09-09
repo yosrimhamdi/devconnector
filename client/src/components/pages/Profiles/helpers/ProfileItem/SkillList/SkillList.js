@@ -1,10 +1,14 @@
 import React from 'react';
 
-import SkillItem from '../SkillItem';
 import './SkillList.scss';
+import tick from './tick.svg';
 
 const SkillList = ({ skills }) => {
-  const renderSkills = skills.map((skill, i) => <SkillItem skill={skill} key={i} />);
+  const renderSkills = skills.map(skill => (
+    <div className="skill-list__skill">
+      <img src={tick} className="skill-list__tick" alt="tick logo" /> {skill}
+    </div>
+  ));
 
   return (
     <div className="skill-list">

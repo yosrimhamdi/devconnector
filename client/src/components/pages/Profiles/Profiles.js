@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ProfileList from './ProfileList';
+import ProfileList from './helpers/ProfileList';
 import Headline from '../../common/Headline';
 
 const Profiles = () => (

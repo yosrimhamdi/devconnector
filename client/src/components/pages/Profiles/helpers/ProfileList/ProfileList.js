@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { fetchProfiles } from '../../../../redux/actions';
+import { fetchProfiles } from '../../../../../redux/actions';
 import ProfileItem from '../ProfileItem';
 import './ProfileList.scss';
-import Spinner from '../../../common/Spinner';
+import Spinner from '../../../../common/Spinner';
 
 class ProfileList extends React.Component {
   componentDidMount() {

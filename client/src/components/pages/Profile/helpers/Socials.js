@@ -9,7 +9,7 @@ import website from '../icons/website.svg';
 
 const ICONS = { website, youtube, facebook, twitter, linkedin, instagram };
 
-const Socials = ({ socials }) => {
+const Socials = ({ socials = {} }) => {
   const renderedSocials = Object.entries(socials).map(([social, link], i) => (
     <a href={link} rel="noreferrer" target="_blank" key={i}>
       <img src={ICONS[social]} alt="webiste logo" className="profile__icon" />

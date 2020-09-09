@@ -10,11 +10,15 @@ const RestrictedRequireProfileRoute = ({
   ...rest
 }) => {
   const render = props => {
-    if (auth.isAuthenticated && profile) {
-      return <Component {...props} />;
+    if (!auth.isAuthenticated) {
+      return <Redirect to="/login" />;
     }
 
-    return <Redirect to="/profiles/new" />;
+    if (!profile) {
+      return <Redirect to="/profiles/new" />;
+    }
+
+    return <Component {...props} />;
   };
 
   return <Route {...rest} render={render} />;

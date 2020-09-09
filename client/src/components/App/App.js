@@ -2,7 +2,11 @@ import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
 import history from '../../history';
-import { PrivateRoute, RestrictedRoute } from '../common/Routes';
+import {
+  PrivateRoute,
+  RestrictedRoute,
+  RestrictedRequireProfileRoute,
+} from '../common/Routes';
 
 import './global.scss';
 
@@ -26,7 +30,11 @@ const Others = () => (
       <RestrictedRoute path="/login" exact component={Login} />
       <Route path="/profiles" exact component={Profiles} />
       <Route path="/profiles/new" exact component={CreateProfile} />
-      <Route path="/profiles/update" exact component={UpdateProfile} />
+      <RestrictedRequireProfileRoute
+        path="/profiles/update"
+        exact
+        component={UpdateProfile}
+      />
       <Route path="/profiles/experience/new" exact component={AddExperience} />
       <Route path="/profiles/education/new" exact component={AddEducation} />
       <Route path="*" component={NotFound} />

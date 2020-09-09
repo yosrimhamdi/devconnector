@@ -17,7 +17,9 @@ const ProfileDisplay = ({ profile }) => {
 
   const { name, photo } = user;
 
-  social.website = website;
+  if (website) {
+    social.website = website;
+  }
 
   return (
     <div>

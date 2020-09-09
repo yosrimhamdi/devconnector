@@ -35,9 +35,17 @@ const Others = () => (
         exact
         component={UpdateProfile}
       />
-      <Route path="/profiles/experience/new" exact component={AddExperience} />
-      <Route path="/profiles/education/new" exact component={AddEducation} />
-      <Route path="*" component={NotFound} />
+      <RestrictedRequireProfileRoute
+        path="/profiles/experience/new"
+        exact
+        component={AddExperience}
+      />
+      <RestrictedRequireProfileRoute
+        path="/profiles/education/new"
+        exact
+        component={AddEducation}
+      />
+      <RestrictedRequireProfileRoute path="*" component={NotFound} />
     </Switch>
   </div>
 );

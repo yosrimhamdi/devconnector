@@ -6,7 +6,6 @@ const RestrictedRequireProfileRoute = ({
   component: Component,
   auth,
   profile,
-  profiles,
   ...rest
 }) => {
   const render = props => {
@@ -15,7 +14,7 @@ const RestrictedRequireProfileRoute = ({
     }
 
     if (!profile) {
-      return <Redirect to="/profiles/new" />;
+      return <Redirect to="/dashboard" />;
     }
 
     return <Component {...props} />;

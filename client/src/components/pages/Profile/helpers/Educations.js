@@ -3,7 +3,6 @@ import React from 'react';
 import getFormattedDate from '../../../../utils/getFomatedDate';
 
 const Educations = ({ educations }) => {
-  console.log(educations);
   const renderedEducations = educations.map(
     ({ _id, school, from, to, degree, fieldOfStudy }) => (
       <div key={_id} className="palet__card">

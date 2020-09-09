@@ -3,7 +3,6 @@ $border: rgb(238, 237, 237);
 
 .palet {
   flex-basis: calc(50% - 0.4em);
-  // border: 1px solid red;
 
   &__title {
     text-align: center;
@@ -17,6 +16,7 @@ $border: rgb(238, 237, 237);
     border: 1px solid $border;
     margin-bottom: 1em;
     padding: 1em;
+    min-height: 176px;
   }
 
   &__card-title {
@@ -24,6 +24,7 @@ $border: rgb(238, 237, 237);
     font-weight: 600;
     margin-bottom: 0.6em;
     text-transform: uppercase;
+    text-decoration: underline;
   }
 
   &__card-detail > div:not(:last-child) {

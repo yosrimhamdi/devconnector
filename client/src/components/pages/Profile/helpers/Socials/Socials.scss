@@ -1,0 +1,9 @@
+.socials {
+  &__link:not(:last-child) {
+    margin-right: 0.4em;
+  }
+
+  &__icon {
+    width: 30px;
+  }
+}

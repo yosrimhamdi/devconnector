@@ -1,0 +1,63 @@
+$greyBackground: #f8f9fa;
+$border: rgb(238, 237, 237);
+$main: #17a2b8;
+$spaceBetweenVertical: 1.2rem;
+
+.display-profiles {
+  max-width: 80%;
+  margin: 0 auto;
+
+  &__intro {
+    background-color: $main;
+    color: white;
+    padding: 2em;
+    margin-bottom: $spaceBetweenVertical;
+    text-align: center;
+    text-transform: capitalize;
+  }
+
+  &__user-image {
+    display: inline-block;
+    margin-bottom: 0.4em;
+    border-radius: 50%;
+    width: 230px;
+  }
+
+  &__user-name {
+    font-size: 3rem;
+  }
+
+  &__user-job {
+    font-weight: 300;
+    margin-bottom: 1em;
+  }
+
+  &__details {
+    border: 1px solid $border;
+    background-color: $greyBackground;
+    padding: 1em;
+    margin-bottom: $spaceBetweenVertical;
+  }
+
+  &__bio-wrapper {
+    border-bottom: 1px solid $border;
+    padding-bottom: 1.2em;
+  }
+
+  &__header {
+    color: $main;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.4em;
+    text-transform: capitalize;
+  }
+
+  &__skills-wrapper {
+    padding-top: 1.2em;
+  }
+
+  &__cridentials {
+    display: flex;
+    justify-content: space-between;
+  }
+}

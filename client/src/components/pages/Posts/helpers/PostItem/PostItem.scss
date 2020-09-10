@@ -4,8 +4,9 @@ $border: rgb(238, 237, 237);
 .post-item {
   background-color: $greyBackground;
   border: 1px solid $border;
-  padding: 2em;
+  padding: 1.5em;
   margin-bottom: 1em;
+  border-radius: 4px;
   display: flex;
 
   &__user-details {
@@ -13,7 +14,7 @@ $border: rgb(238, 237, 237);
   }
 
   &__user-image {
-    border-radius: 50%;
+    border-radius: 15px;
     width: 150px;
     margin-bottom: 0.5em;
   }

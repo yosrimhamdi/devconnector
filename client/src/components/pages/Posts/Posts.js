@@ -4,9 +4,10 @@ import { reduxForm, Field } from 'redux-form';
 
 import './Posts.scss';
 
-import { TextArea } from '../../common/form';
 import { fetchPosts, createPost } from '../../../redux/actions';
 import validate from './validate';
+import { TextArea } from '../../common/form';
+import PostList from './helpers/PostList';
 
 class Posts extends React.Component {
   componentDidMount() {
@@ -20,12 +21,17 @@ class Posts extends React.Component {
   render() {
     return (
       <div className="posts">
-        <form noValidate onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
+        <form
+          noValidate
+          onSubmit={this.props.handleSubmit(this.onFormSubmit)}
+          className="posts__form"
+        >
           <Field name="text" placeholder="create a post" component={TextArea} />
           <button className="form__submit-btn" type="submit">
             submit
           </button>
         </form>
+        <PostList posts={this.props.posts} />
       </div>
     );
   }

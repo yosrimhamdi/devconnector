@@ -16,7 +16,7 @@ const postSchema = Schema({
 });
 
 postSchema.pre(/find/, function (next) {
-  this.populate('user');
+  this.sort({ createdAt: -1 }).populate('user');
 
   next();
 });

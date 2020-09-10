@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './form.scss';
 import ValidationError from './errors/Validation';
 import ResponseError from './errors/Response';
 import Message from './helpers/Message';

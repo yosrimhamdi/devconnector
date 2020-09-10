@@ -1,17 +1,14 @@
 .costum-link {
   background-color: #17a2b8;
-  border: none;
-  border-radius: 3px;
   color: white;
+  border-radius: 3px;
   padding: 0.6em 1em;
+  margin-bottom: 1.4em;
+  display: inline-block;
   text-transform: capitalize;
   transition: all 200ms;
-  outline: none;
-  display: inline-block;
-  margin-bottom: 1.4em;
 
   &:hover {
-    cursor: pointer;
     transform: translateY(-2px);
     box-shadow: 0 3px 10px rgba($color: #000, $alpha: 0.2);
   }

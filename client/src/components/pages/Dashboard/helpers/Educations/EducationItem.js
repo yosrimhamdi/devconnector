@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeEducation } from '../../../../../redux/actions';
+import { deleteEducation } from '../../../../../redux/actions';
 import getFormattedDate from '../../../../../utils/getFomatedDate';
 import remove from '../remove.svg';
 
 class EducationItem extends React.Component {
   removeEducation = () => {
-    this.props.removeEducation(this.props.education._id);
+    this.props.deleteEducation(this.props.education._id);
   };
 
   render() {
@@ -32,4 +32,4 @@ class EducationItem extends React.Component {
   }
 }
 
-export default connect(null, { removeEducation })(EducationItem);
+export default connect(null, { deleteEducation })(EducationItem);

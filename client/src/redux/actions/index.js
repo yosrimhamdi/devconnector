@@ -8,13 +8,11 @@ export { default as logoutUser } from './auth/logoutUser';
 
 export { default as addExperience } from './profiles/addExperience';
 export { default as addEducation } from './profiles/addEducation';
-export { default as removeExperience } from './profiles/removeExperience';
-export { default as removeEducation } from './profiles/removeEducation';
+export { default as deleteExperience } from './profiles/deleteExperience';
+export { default as deleteEducation } from './profiles/deleteEducation';
 
 export { default as createProfile } from './profiles/createProfile';
 export { default as updateProfile } from './profiles/updateProfile';
-
-export { default as clearErrors } from './errors/clearErrors';
 
 export { default as fetchPosts } from './posts/fetchPosts';
 export { default as createPost } from './posts/createPost';

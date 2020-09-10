@@ -7,7 +7,6 @@ export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
 export const ERROR_HAS_OCCURED = 'ERROR_HAS_OCCURED';
-export const CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
 export const ADD_EDUCATION = 'ADD_EDUCATION';

@@ -1,13 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { removeExperience } from '../../../../../redux/actions';
+import { deleteExperience } from '../../../../../redux/actions';
 import getFormattedDate from '../../../../../utils/getFomatedDate';
 import remove from '../remove.svg';
 
 class ExpItem extends React.Component {
   removeExperience = () => {
-    this.props.removeExperience(this.props.experience._id);
+    this.props.deleteExperience(this.props.experience._id);
   };
 
   render() {
@@ -28,4 +28,4 @@ class ExpItem extends React.Component {
   }
 }
 
-export default connect(null, { removeExperience })(ExpItem);
+export default connect(null, { deleteExperience })(ExpItem);

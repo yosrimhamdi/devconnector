@@ -15,3 +15,6 @@ export { default as createProfile } from './profiles/createProfile';
 export { default as updateProfile } from './profiles/updateProfile';
 
 export { default as clearErrors } from './errors/clearErrors';
+
+export { default as fetchPosts } from './posts/fetchPosts';
+export { default as createPost } from './posts/createPost';

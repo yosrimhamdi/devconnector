@@ -21,6 +21,7 @@ import UpdateProfile from '../pages/UpdateProfile';
 import AddExperience from '../pages/AddExperience';
 import AddEducation from '../pages/AddEducation';
 import Profile from '../pages/Profile';
+import Posts from '../pages/Posts';
 import NotFound from '../pages/NotFound';
 
 const Others = () => (
@@ -47,6 +48,7 @@ const Others = () => (
         component={AddEducation}
       />
       <Route path="/profiles/:handle" exact component={Profile} />
+      <PrivateRoute path="/posts" exact component={Posts} />
       <Route path="*" component={NotFound} />
     </Switch>
   </div>

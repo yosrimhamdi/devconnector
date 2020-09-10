@@ -19,3 +19,6 @@ export const UPDATE_PROFILE = 'UPDATE_PROFILE';
 
 export const LOADING = 'LOADING';
 export const LOADED = 'LOADED';
+
+export const FETCH_POSTS = 'FETCH_POSTS';
+export const CREATE_POST = 'CREATE_POST';

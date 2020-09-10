@@ -1,0 +1,40 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { reduxForm, Field } from 'redux-form';
+
+import './Posts.scss';
+
+import { TextArea } from '../../common/form';
+import { fetchPosts, createPost } from '../../../redux/actions';
+import validate from './validate';
+
+class Posts extends React.Component {
+  componentDidMount() {
+    this.props.fetchPosts();
+  }
+
+  onFormSubmit = formValues => {
+    this.props.createPost(formValues);
+  };
+
+  render() {
+    return (
+      <div className="posts">
+        <form noValidate onSubmit={this.props.handleSubmit(this.onFormSubmit)}>
+          <Field name="text" placeholder="create a post" component={TextArea} />
+          <button className="form__submit-btn" type="submit">
+            submit
+          </button>
+        </form>
+      </div>
+    );
+  }
+}
+
+const wrappedForm = reduxForm({ form: 'createPost', validate })(Posts);
+
+const mapStateToProps = ({ posts }) => ({ posts });
+
+export default connect(mapStateToProps, { fetchPosts, createPost })(
+  wrappedForm,
+);

@@ -1,0 +1,12 @@
+.delete-post-button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  &__icon {
+    width: 40px;
+    transform: translateY(14px);
+    margin-left: 1em;
+  }
+}

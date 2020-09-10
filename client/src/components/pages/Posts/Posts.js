@@ -39,7 +39,7 @@ class Posts extends React.Component {
 
 const wrappedForm = reduxForm({ form: 'createPost', validate })(Posts);
 
-const mapStateToProps = ({ posts }) => ({ posts });
+const mapStateToProps = ({ posts }) => ({ posts: Object.values(posts) });
 
 export default connect(mapStateToProps, { fetchPosts, createPost })(
   wrappedForm,

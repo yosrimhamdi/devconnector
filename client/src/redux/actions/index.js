@@ -18,3 +18,4 @@ export { default as clearErrors } from './errors/clearErrors';
 
 export { default as fetchPosts } from './posts/fetchPosts';
 export { default as createPost } from './posts/createPost';
+export { default as deletePost } from './posts/deletePost';

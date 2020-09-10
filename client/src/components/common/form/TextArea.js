@@ -10,6 +10,7 @@ export default ({ input, name, placeholder, message, meta }) => {
   return (
     <div>
       <textarea
+        style={{ resize: 'vertical' }}
         {...input}
         name={name}
         className={className}

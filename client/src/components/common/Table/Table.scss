@@ -14,7 +14,7 @@
     display: none;
   }
 
-  &__logo-container {
+  &__logo-cell {
     visibility: hidden;
   }
 
@@ -22,7 +22,6 @@
     visibility: visible;
     width: 20px;
     transform: translateY(calc(50% - 7px));
-    cursor: pointer;
   }
 
   tr {

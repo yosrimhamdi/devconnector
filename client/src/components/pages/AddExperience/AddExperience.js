@@ -3,11 +3,12 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
-import Headline from '../../common/Headline';
+import toggleToDate from '../../common/hooks/useToggleToDate';
 import { addExperience } from '../../../redux/actions';
+
+import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
-import toggleToDate from '../../common/hooks/toggleToDate';
 
 const AddExperience = props => {
   const [disabled, toggle] = toggleToDate();

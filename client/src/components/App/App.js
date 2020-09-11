@@ -1,15 +1,15 @@
 import React from 'react';
 import { Router, Route, Switch } from 'react-router-dom';
 
+import './App.scss';
+
 import history from '../../history';
+
 import {
   PrivateRoute,
   RestrictedRoute,
   RestrictedRequireProfileRoute,
 } from '../common/Routes';
-
-import './global.scss';
-
 import Header from '../layouts/Header';
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';

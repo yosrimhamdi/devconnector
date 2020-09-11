@@ -8,7 +8,7 @@ import { addEducation } from '../../../redux/actions';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
 
-import toggleToDate from '../../common/hooks/toggleToDate';
+import toggleToDate from '../../common/hooks/useToggleToDate';
 
 const AddEducation = props => {
   const [disabled, toggle] = toggleToDate();

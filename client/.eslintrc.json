@@ -3,7 +3,7 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "airbnb"],
+  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "parserOptions": {
     "ecmaFeatures": {
       "jsx": true
@@ -17,7 +17,6 @@
     "linebreak-style": ["warn", "windows"],
     "arrow-parens": "off",
     "react/prop-types": "off",
-    // "object-curly-newline": "off",
     "no-shadow": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",

@@ -1,32 +1,17 @@
 import React from 'react';
 
-import './Socials.scss';
-
-import youtube from './icons/youtube.svg';
-import facebook from './icons/facebook.svg';
-import twitter from './icons/twitter.svg';
-import linkedin from './icons/linkedin.svg';
-import instagram from './icons/instagram.svg';
-import website from './icons/website.svg';
-
-const ICONS = { website, youtube, facebook, twitter, linkedin, instagram };
+import SocialItem from './SocialItem';
 
 const Socials = ({ socials = {} }) => {
-  const socialsArray = Object.entries(socials);
-
-  const renderedSocials = socialsArray.map(([social, link], i) => (
-    <a
-      className="socials__link"
-      href={link}
-      rel="noopener noreferrer"
-      target="_blank"
-      key={i}
-    >
-      <img src={ICONS[social]} alt="webiste logo" className="socials__icon" />
-    </a>
+  const renderedSocials = Object.entries(socials).map(([socialName, link]) => (
+    <SocialItem
+      socialName={socialName}
+      link={link}
+      key={`${socialName}-${link}`}
+    />
   ));
 
-  return <div>{renderedSocials}</div>;
+  return <ul>{renderedSocials}</ul>;
 };
 
 export default Socials;

@@ -3,7 +3,7 @@ import React from 'react';
 import './DisplayProfiles.scss';
 
 import Socials from '../Socials';
-import Skills from '../Skills/Skills';
+import SkillList from '../SkillList';
 import ExperienceList from '../ExperienceList';
 import EducationList from '../EducationList';
 
@@ -50,7 +50,7 @@ const ProfileDisplay = ({ profile }) => {
         </div>
         <div className="display-profiles__skills-wrapper">
           <div className="display-profiles__header">skill set</div>
-          <Skills skills={skills} />
+          <SkillList skills={skills} />
         </div>
       </section>
       <section className="display-profiles__cridentials">

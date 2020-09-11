@@ -5,11 +5,11 @@ import './DisplayProfiles.scss';
 import Socials from '../Socials';
 import Skills from '../Skills/Skills';
 import Experiences from '../Experiences';
-import Educations from '../Educations';
+import EducationList from '../EducationList';
 
 const ProfileDisplay = ({ profile }) => {
   const {
-    user,
+    user: { name, photo },
     status,
     company,
     location,
@@ -20,8 +20,6 @@ const ProfileDisplay = ({ profile }) => {
     experience,
     education,
   } = profile;
-
-  const { name, photo } = user;
 
   if (website) {
     social.website = website;
@@ -35,10 +33,11 @@ const ProfileDisplay = ({ profile }) => {
           src={`/images/${photo}`}
           alt={`${name} avatar`}
         />
-        <div className="display-profiles__user-name">{user.name}</div>
+        <div className="display-profiles__user-name">{name}</div>
         <div className="display-profiles__user-job">
           <div>
-            <span>{status}</span> at <span>{company}</span>
+            <span>{status}</span>
+            <span>{` at ${company}`}</span>
           </div>
           <div>{location}</div>
         </div>
@@ -56,7 +55,7 @@ const ProfileDisplay = ({ profile }) => {
       </section>
       <section className="display-profiles__cridentials">
         <Experiences experiences={experience} />
-        <Educations educations={education} />
+        <EducationList educations={education} />
       </section>
     </div>
   );

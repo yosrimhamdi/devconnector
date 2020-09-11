@@ -19,7 +19,6 @@
     "react/prop-types": "off",
     "no-shadow": "off",
     "react/jsx-props-no-spreading": "off",
-    "no-underscore-dangle": "off",
-    "react/jsx-one-expression-per-line": "off"
+    "no-underscore-dangle": "off"
   }
 }

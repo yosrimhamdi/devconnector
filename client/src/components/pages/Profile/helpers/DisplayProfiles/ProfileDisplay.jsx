@@ -4,7 +4,7 @@ import './DisplayProfiles.scss';
 
 import Socials from '../Socials';
 import Skills from '../Skills/Skills';
-import Experiences from '../Experiences';
+import ExperienceList from '../ExperienceList';
 import EducationList from '../EducationList';
 
 const ProfileDisplay = ({ profile }) => {
@@ -54,7 +54,7 @@ const ProfileDisplay = ({ profile }) => {
         </div>
       </section>
       <section className="display-profiles__cridentials">
-        <Experiences experiences={experience} />
+        <ExperienceList experiences={experience} />
         <EducationList educations={education} />
       </section>
     </div>

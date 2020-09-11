@@ -8,7 +8,7 @@ const Skills = ({ skills }) => {
     <SkillItem skill={skill} key={skill} />
   ));
 
-  return <ul className="skill-list collection">{renderedSkills}</ul>;
+  return <ul className="skills collection">{renderedSkills}</ul>;
 };
 
 export default Skills;

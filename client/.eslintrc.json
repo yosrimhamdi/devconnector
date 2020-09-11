@@ -31,7 +31,6 @@
     "jsx-a11y/control-has-associated-label": "off",
     "react/sort-comp": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/no-array-index-key": "off",
     "react/jsx-no-bind": "off",
     "operator-linebreak": "off",
     "react/state-in-constructor": "off"

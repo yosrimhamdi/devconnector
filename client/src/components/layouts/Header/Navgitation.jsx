@@ -1,9 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ShowNavigation = (auth, logoutUser) => {
-  const { isAuthenticated, user } = auth;
-
+const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   if (isAuthenticated) {
     return (
       <>

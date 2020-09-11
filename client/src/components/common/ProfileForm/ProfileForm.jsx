@@ -89,8 +89,7 @@ const ProfileForm = ({
             type="button"
             onClick={toggleSocials}
           >
-            {message}
-            social network links
+            {message} social network links
           </button>
           <span className="form__social-toggle-message">Optional</span>
         </div>

@@ -6,7 +6,8 @@ const PostList = ({ posts }) => {
   const renderedPosts = posts.map(post => (
     <PostItem key={post._id} post={post} />
   ));
-  return <div>{renderedPosts}</div>;
+
+  return <ul>{renderedPosts}</ul>;
 };
 
 export default PostList;

@@ -1,7 +1,6 @@
 import React from 'react';
 
-import ValidationError from './errors/Validation';
-import ResponseError from './errors/Response';
+import { ValidationError, ResponseError } from './errors';
 import Message from './helpers/Message';
 import getClassName from './helpers/getClassName';
 

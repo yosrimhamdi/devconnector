@@ -1,6 +1,6 @@
 import React from 'react';
 
-import errorIcon from '../error.svg';
+import errorIcon from './error.svg';
 
 export default ({ meta }) => {
   const { error, touched, active } = meta;

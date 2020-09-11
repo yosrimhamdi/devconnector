@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './SkillList.scss';
+import './Skills.scss';
 import SkillItem from './SkillItem';
 
 const Skills = ({ skills }) => {

@@ -3,15 +3,15 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from '../../common/ProfileForm/validate';
-import ProfileForm from '../../common/ProfileForm/';
+import ProfileForm from '../../common/ProfileForm';
 import { updateProfile } from '../../../redux/actions';
 
-const UpdateProfile = props => (
+const UpdateProfile = ({ handleSubmit, initialValues, updateProfile }) => (
   <ProfileForm
-    handleSubmit={props.handleSubmit}
-    onFormSubmit={formValues => props.updateProfile(formValues)}
+    handleSubmit={handleSubmit}
+    onFormSubmit={updateProfile}
+    initialValues={initialValues}
     header="update profile"
-    initialValues={props.initialValues}
   />
 );
 

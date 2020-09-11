@@ -10,7 +10,7 @@ export default ({ responseError }) => {
   return (
     <div className="form__input-error-message">
       <img src={errorIcon} className="form__error-icon" alt="error" />
-      {responseError}.
+      <span>{responseError}.</span>
     </div>
   );
 };

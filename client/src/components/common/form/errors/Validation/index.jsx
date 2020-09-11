@@ -8,8 +8,8 @@ export default ({ meta }) => {
   if (touched && !active && error) {
     return (
       <div className="form__input-error-message">
-        <img src={errorIcon} className="form__error-icon" alt="error" /> {error}
-        .
+        <img src={errorIcon} className="form__error-icon" alt="error" />
+        <span>{error}.</span>
       </div>
     );
   }

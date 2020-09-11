@@ -18,10 +18,7 @@ a {
 }
 
 button {
-  background: none;
-  border: none;
-  outline: none;
-  cursor: pointer;
+  all: inherit;
 }
 
 .form {

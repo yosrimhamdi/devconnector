@@ -19,6 +19,7 @@ a {
 
 button {
   all: inherit;
+  text-align: center;
 }
 
 .form {
@@ -111,33 +112,20 @@ button {
     margin-bottom: 1em;
   }
 
-  &__control-wrapper {
-    margin: -0.5em 0 1em;
-  }
-
-  &__control,
-  & #control {
-    cursor: pointer;
-    -webkit-user-select: none;
-    -webkit-touch-callout: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-  }
-
-  #control {
+  #toggle-input {
     margin-right: 0.3em;
   }
 
-  &__control-message {
-    display: inline-block;
-    transform: translateY(-2px);
+  &__toggle-to-date-label,
+  #toggle-input {
+    cursor: pointer;
   }
 
-  &__control-button {
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 0.9rem;
+  &__toggle-to-date-label {
+    display: inline-block;
+    transform: translateY(-2px);
+    user-select: none;
+    margin: -0.5em 0 1em;
   }
 
   &__social-toggle-btn {

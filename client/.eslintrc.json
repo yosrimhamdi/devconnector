@@ -17,10 +17,10 @@
     "linebreak-style": ["warn", "windows"],
     "arrow-parens": "off",
     "react/prop-types": "off",
-    "object-curly-newline": "off",
+    // "object-curly-newline": "off",
+    "no-shadow": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
-    "react/jsx-one-expression-per-line": "off",
-    "no-shadow": "off"
+    "react/jsx-one-expression-per-line": "off"
   }
 }

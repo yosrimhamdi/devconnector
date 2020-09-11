@@ -3,19 +3,16 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
-import toggleToDate from '../../common/hooks/useToggleToDate';
+import useToggleToDate from '../../common/hooks/useToggleToDate';
 import { addExperience } from '../../../redux/actions';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
+import ToggleToDate from '../../common/ToggleToDate';
 
-const AddExperience = props => {
-  const [disabled, toggle] = toggleToDate();
-
-  const onFormSubmit = formValues => {
-    props.addExperience(formValues);
-  };
+const AddExperience = ({ handleSubmit, addExperience }) => {
+  const [disabled, toggleToDate] = useToggleToDate();
 
   return (
     <div>
@@ -23,7 +20,7 @@ const AddExperience = props => {
         header="add experience"
         subHeader="add any job or position that you have had in the past or current."
       />
-      <form onSubmit={props.handleSubmit(onFormSubmit)} className="form">
+      <form onSubmit={handleSubmit(addExperience)} className="form">
         <CostumLink
           to="/dashboard"
           text="go back"
@@ -38,12 +35,7 @@ const AddExperience = props => {
         <Field name="from" type="date" component={Input} />
         <div className="form__input-header">to date</div>
         <Field name="to" type="date" component={Input} disabled={disabled} />
-        <div className="form__control-wrapper">
-          <label htmlFor="control" className="form__control">
-            <input type="checkbox" onClick={toggle} id="control" />
-            <span className="form__control-message">current job?</span>
-          </label>
-        </div>
+        <ToggleToDate toggleToDate={toggleToDate} />
         <Field
           name="description"
           placeholder="job description"

@@ -3,19 +3,16 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
-import Headline from '../../common/Headline';
 import { addEducation } from '../../../redux/actions';
+import useToggleToDate from '../../common/hooks/useToggleToDate';
+
+import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
 import CostumLink from '../../common/CostumLink';
+import ToggleToDate from '../../common/ToggleToDate';
 
-import toggleToDate from '../../common/hooks/useToggleToDate';
-
-const AddEducation = props => {
-  const [disabled, toggle] = toggleToDate();
-
-  const onFormSubmit = formValues => {
-    props.addEducation(formValues);
-  };
+const AddEducation = ({ handleSubmit, addEducation }) => {
+  const [disabled, toggleToDate] = useToggleToDate();
 
   return (
     <div>
@@ -23,7 +20,7 @@ const AddEducation = props => {
         header="add education"
         subHeader="add any school, bootcamp, etc that you have attended."
       />
-      <form onSubmit={props.handleSubmit(onFormSubmit)} className="form">
+      <form onSubmit={handleSubmit(addEducation)} className="form">
         <CostumLink
           to="/dashboard"
           text="go back"
@@ -46,12 +43,7 @@ const AddEducation = props => {
         <Field name="from" type="date" component={Input} />
         <div className="form__input-header">to date</div>
         <Field name="to" type="date" component={Input} disabled={disabled} />
-        <div className="form__control-wrapper">
-          <label htmlFor="control" className="form__control">
-            <input type="checkbox" onClick={toggle} id="control" />
-            <span className="form__control-message">current job?</span>
-          </label>
-        </div>
+        <ToggleToDate toggleToDate={toggleToDate} />
         <Field
           name="description"
           placeholder="program description"

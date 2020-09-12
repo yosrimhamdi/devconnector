@@ -1,7 +1,7 @@
 import React from 'react';
 
 import getClassName from './helpers/getClassName';
-import { ValidationError } from './errors';
+import { ValidationError } from './helpers/errors';
 
 export default ({ input, name, meta }) => {
   const className = getClassName(meta);

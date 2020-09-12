@@ -2,12 +2,12 @@ import React from 'react';
 
 import './SocialItem.scss';
 
-import youtube from '../icons/youtube.svg';
-import facebook from '../icons/facebook.svg';
-import twitter from '../icons/twitter.svg';
-import linkedin from '../icons/linkedin.svg';
-import instagram from '../icons/instagram.svg';
-import website from '../icons/website.svg';
+import youtube from '../../icons/youtube.svg';
+import facebook from '../../icons/facebook.svg';
+import twitter from '../../icons/twitter.svg';
+import linkedin from '../../icons/linkedin.svg';
+import instagram from '../../icons/instagram.svg';
+import website from '../../icons/website.svg';
 
 const ICONS = { website, youtube, facebook, twitter, linkedin, instagram };
 

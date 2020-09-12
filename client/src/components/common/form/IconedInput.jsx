@@ -1,7 +1,7 @@
 import React from 'react';
 
 import getClassName from './helpers/getClassName';
-import { ValidationError } from './errors';
+import { ValidationError } from './helpers/errors';
 
 import youtube from './icons/youtube.svg';
 import facebook from './icons/facebook.svg';

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { deleteExperience } from '../../../../../redux/actions';
 import getFormattedDate from '../../../../../utils/getFomatedDate';
-import remove from '../remove.svg';
+import remove from '../../icons/remove.svg';
 
 const ExpItem = ({
   experience: { company, title, from, to, _id },

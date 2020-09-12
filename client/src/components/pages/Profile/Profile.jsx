@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './Profile.scss';
@@ -8,7 +8,7 @@ import Spinner from '../../common/Spinner';
 import ProfileDisplay from './helpers/DisplayProfiles/ProfileDisplay';
 
 const Profile = ({ profile, fetchProfile, match, history, errors }) => {
-  useState(() => {
+  useEffect(() => {
     fetchProfile(match.params.handle);
   });
 

@@ -51,7 +51,7 @@ const ProfileDisplay = ({ profile }) => {
         </div>
         <div className="display-profiles__skills-wrapper">
           <div className="display-profiles__header">skill set</div>
-          <SkillList horizontal skills={skills} />
+          <SkillList skills={skills} />
         </div>
       </section>
       <section className="display-profiles__cridentials">

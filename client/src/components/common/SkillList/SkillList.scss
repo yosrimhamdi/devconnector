@@ -1,7 +1,5 @@
 .skill-list {
-  &--horizontal {
-    display: flex;
-  }
+  display: flex;
 
   &__item:not(:last-child) {
     margin-right: 1.2em;

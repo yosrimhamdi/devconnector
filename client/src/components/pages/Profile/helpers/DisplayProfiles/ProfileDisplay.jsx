@@ -6,6 +6,7 @@ import Socials from '../Socials';
 import Skills from '../Skills';
 import Experiences from '../Experiences';
 import Educations from '../Educations';
+import Company from '../../../../common/Company';
 
 const ProfileDisplay = ({ profile }) => {
   const {
@@ -37,7 +38,7 @@ const ProfileDisplay = ({ profile }) => {
         <div className="display-profiles__user-job">
           <div>
             <span>{status}</span>
-            <span>{` at ${company}`}</span>
+            <Company company={company} />
           </div>
           <div>{location}</div>
         </div>

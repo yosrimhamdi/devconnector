@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './ProfileItem.scss';
 
 import Skills from '../Skills';
+import Company from '../../../../common/Company';
 
 const ProfileItem = ({ profile }) => {
   const { user, handle, status, company, location, skills } = profile;
@@ -19,7 +20,7 @@ const ProfileItem = ({ profile }) => {
         <div className="profile-item__user-name">{user.name}</div>
         <div className="profile-item__user-job-details">
           <span className="profile-item__user-status">{status}</span>
-          <span className="profile-item__user-campany">{` at ${company}`}</span>
+          <Company company={company} />
         </div>
         <div className="profile-item__user-location">{location}</div>
         <Link to={`/profiles/${handle}`} className="link">

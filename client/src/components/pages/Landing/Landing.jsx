@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Landing.scss';
-import CostumLink from '../../common/CostumLink';
 
 const Landing = () => (
   <div className="landing">
@@ -12,13 +12,12 @@ const Landing = () => (
         other developers
       </p>
       <div className="landing__button-container">
-        <CostumLink
-          bgColor="#17a2b8"
-          color="white"
-          text="sing up"
-          to="/register"
-        />
-        <CostumLink bgColor="#ffffff" color="grey" text="login" to="/login" />
+        <Link to="/register" className="link">
+          sign up
+        </Link>
+        <Link to="/login" className="link link--grey">
+          login
+        </Link>
       </div>
     </div>
   </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import validate from './validate';
 import useToggleToDate from '../../common/hooks/useToggleToDate';
@@ -8,7 +9,6 @@ import { addExperience } from '../../../redux/actions';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
-import CostumLink from '../../common/CostumLink';
 import ToggleToDate from '../../common/ToggleToDate';
 
 const AddExperience = ({ handleSubmit, addExperience }) => {
@@ -21,12 +21,9 @@ const AddExperience = ({ handleSubmit, addExperience }) => {
         subHeader="add any job or position that you have had in the past or current."
       />
       <form onSubmit={handleSubmit(addExperience)} className="form">
-        <CostumLink
-          to="/dashboard"
-          text="go back"
-          bgColor="rgb(236, 235, 235)"
-          color="black"
-        />
+        <Link to="/dashboard" className="link link--grey">
+          go back
+        </Link>
         <div className="form__require-message">* = required</div>
         <Field name="company" placeholder="* company" component={Input} />
         <Field name="title" placeholder="* job title" component={Input} />

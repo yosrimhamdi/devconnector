@@ -1,6 +1,7 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import validate from './validate';
 import { addEducation } from '../../../redux/actions';
@@ -8,7 +9,6 @@ import useToggleToDate from '../../common/hooks/useToggleToDate';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
-import CostumLink from '../../common/CostumLink';
 import ToggleToDate from '../../common/ToggleToDate';
 
 const AddEducation = ({ handleSubmit, addEducation }) => {
@@ -21,12 +21,9 @@ const AddEducation = ({ handleSubmit, addEducation }) => {
         subHeader="add any school, bootcamp, etc that you have attended."
       />
       <form onSubmit={handleSubmit(addEducation)} className="form">
-        <CostumLink
-          to="/dashboard"
-          text="go back"
-          bgColor="rgb(236, 235, 235)"
-          color="black"
-        />
+        <Link to="/dashboard" className="link link--grey">
+          go back
+        </Link>
         <div className="form__require-message">* = required</div>
         <Field name="school" placeholder="* school" component={Input} />
         <Field

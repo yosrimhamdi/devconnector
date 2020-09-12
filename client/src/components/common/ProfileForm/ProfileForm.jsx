@@ -1,13 +1,13 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import constructProfile from '../../../utils/constructProfile';
 import useToggleSocials from './useToggleSocials';
 
 import Headline from '../Headline';
 import { Input, TextArea, Select, IconedInput } from '../form';
-import CostumLink from '../CostumLink';
 
 const ProfileForm = ({
   handleSubmit,
@@ -28,12 +28,9 @@ const ProfileForm = ({
     <div>
       <Headline header={header} subHeader={subHeader} />
       <form onSubmit={handleSubmit(onSubmit)} className="form">
-        <CostumLink
-          to="/dashboard"
-          text="go back"
-          bgColor="rgb(236, 235, 235)"
-          color="black"
-        />
+        <Link to="/dashboard" className="link link--grey">
+          got back
+        </Link>
         <div className="form__require-message">* = required</div>
         <Field
           name="handle"
@@ -89,9 +86,10 @@ const ProfileForm = ({
             type="button"
             onClick={toggleSocials}
           >
-            {message} social network links
+            <span className="form__social-toggle-message">{message}</span>
+            <span>social network links</span>
           </button>
-          <span className="form__social-toggle-message">Optional</span>
+          <span className="form__social-toggle-optional-message">Optional</span>
         </div>
         <div className="form__socials" style={{ display }}>
           <Field

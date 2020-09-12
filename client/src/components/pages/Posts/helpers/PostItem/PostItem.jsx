@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import './PostItem.scss';
 
-import CostumLink from '../../../../common/CostumLink';
 import DeletePostButton from '../DeletePostButton';
 import like from './like.svg';
 
@@ -23,7 +23,9 @@ const PostItem = ({ post, auth }) => {
       <div>
         <p className="post-item__post-text">{text}</p>
         <img src={like} className="post-item__thumb-up" alt="like" />
-        <CostumLink to={`/posts/${_id}/comment`} text="comment" />
+        <Link to={`/posts/${_id}/comment`} className="link">
+          comment
+        </Link>
         <DeletePostButton post={post} loggedInUser={auth.user} />
       </div>
     </li>

@@ -1,6 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-import CostumLink from '../../../common/CostumLink';
 import Experiences from './Experiences';
 import Educations from './Educations';
 import Spinner from '../../../common/Spinner';
@@ -16,12 +16,9 @@ const DashBoardContent = ({ profile, loading }) => {
         <div className="dashboard__create-profile-message">
           yo have no profile yet. Please create one.
         </div>
-        <CostumLink
-          to="/profiles/new"
-          bgColor="#17a2b8"
-          color="white"
-          text="create profile"
-        />
+        <Link to="/profiles/new" className="link">
+          create profile
+        </Link>
       </div>
     );
   }
@@ -31,9 +28,15 @@ const DashBoardContent = ({ profile, loading }) => {
   return (
     <div>
       <div className="dashboard__navigation-links">
-        <CostumLink to="/profiles/update" text="update profile" />
-        <CostumLink to="/profiles/experience/new" text="add experience" />
-        <CostumLink to="/profiles/education/new" text="add education" />
+        <Link to="/profiles/update" className="link">
+          update profile
+        </Link>
+        <Link to="/profiles/experience/new" className="link">
+          add experience
+        </Link>
+        <Link to="/profiles/education/new" className="link">
+          add education
+        </Link>
       </div>
       <Experiences experiences={experience} />
       <Educations educations={education} />

@@ -156,6 +156,10 @@ button {
   }
 
   &__social-toggle-message {
+    margin-right: 0.25em;
+  }
+
+  &__social-toggle-optional-message {
     color: $message;
   }
 

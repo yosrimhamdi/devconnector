@@ -1,8 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './ProfileItem.scss';
 
-import CostumLink from '../../../../common/CostumLink';
 import Skills from '../Skills';
 
 const ProfileItem = ({ profile }) => {
@@ -22,7 +22,9 @@ const ProfileItem = ({ profile }) => {
           <span className="profile-item__user-campany">{` at ${company}`}</span>
         </div>
         <div className="profile-item__user-location">{location}</div>
-        <CostumLink text="view profile" to={`/profiles/${handle}`} />
+        <Link to={`/profiles/${handle}`} className="link">
+          new profile
+        </Link>
       </div>
       <Skills skills={skills} />
     </li>

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 import validate from './validate';
 import { addEducation } from '../../../redux/actions';
-import useToggleToDate from '../../common/hooks/useToggleToDate';
+import useToggleToDate from '../../../hooks/useToggleToDate';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';

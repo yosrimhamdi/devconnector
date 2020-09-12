@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import validate from './validate';
-import useToggleToDate from '../../common/hooks/useToggleToDate';
+import useToggleToDate from '../../../hooks/useToggleToDate';
 import { addExperience } from '../../../redux/actions';
 
 import Headline from '../../common/Headline';

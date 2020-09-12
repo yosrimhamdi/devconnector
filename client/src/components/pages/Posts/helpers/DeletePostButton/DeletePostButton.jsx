@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './DeletePostButton.scss';
 
-import remove from './remove.svg';
+import remove from '../../icons/remove.svg';
 import { deletePost } from '../../../../../redux/actions';
 
 const DeletePostButton = ({ post, loggedInUser, deletePost }) => {

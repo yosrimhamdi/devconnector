@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './PostItem.scss';
 
 import DeletePostButton from '../DeletePostButton';
-import like from './like.svg';
+import like from '../../icons/like.svg';
 
 const PostItem = ({ post, auth }) => {
   const { _id, user, text } = post;

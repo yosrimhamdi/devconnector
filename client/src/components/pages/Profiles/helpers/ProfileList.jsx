@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchProfiles } from '../../../../../redux/actions';
-import ProfileItem from '../ProfileItem';
-import Spinner from '../../../../common/Spinner';
+import { fetchProfiles } from '../../../../redux/actions';
+import ProfileItem from './ProfileItem';
+import Spinner from '../../../common/Spinner';
 
 const ProfileList = ({ fetchProfiles, profiles, loading }) => {
   useEffect(() => {

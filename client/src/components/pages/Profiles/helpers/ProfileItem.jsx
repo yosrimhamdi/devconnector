@@ -3,11 +3,10 @@ import { Link } from 'react-router-dom';
 
 import './ProfileItem.scss';
 
-import Skills from '../Skills';
-import Company from '../../../../common/Company';
+import Company from '../../../common/Company';
 
 const ProfileItem = ({ profile }) => {
-  const { user, handle, status, company, location, skills } = profile;
+  const { user, handle, status, company, location } = profile;
 
   return (
     <li className="profile-item">
@@ -27,7 +26,6 @@ const ProfileItem = ({ profile }) => {
           new profile
         </Link>
       </div>
-      <Skills skills={skills} />
     </li>
   );
 };

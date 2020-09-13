@@ -5,11 +5,10 @@ import { Link } from 'react-router-dom';
 
 import validate from './validate';
 import { addEducation } from '../../../redux/actions';
-import useToggleToDate from '../../../hooks/useToggleToDate';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
-import ToggleToDate from '../../common/ToggleToDate';
+import { ToggleToDate, useToggleToDate } from '../../common/toggleToDate';
 
 const AddEducation = ({ handleSubmit, addEducation }) => {
   const [disabled, toggleToDate] = useToggleToDate();

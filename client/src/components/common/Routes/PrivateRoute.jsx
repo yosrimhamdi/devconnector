@@ -3,8 +3,13 @@ import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const PrivateRoute = ({ component: Component, auth, ...rest }) => {
-  // prettier-ignore
-  const render = props => (auth.isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />);
+  const render = props => {
+    if (auth.isAuthenticated) {
+      return <Component {...props} />;
+    }
+
+    return <Redirect to="/login" />;
+  };
 
   return <Route {...rest} render={render} />;
 };

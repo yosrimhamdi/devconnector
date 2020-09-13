@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import validate from './validate';
-import useToggleToDate from '../../../hooks/useToggleToDate';
 import { addExperience } from '../../../redux/actions';
 
 import Headline from '../../common/Headline';
 import { Input, TextArea } from '../../common/form';
-import ToggleToDate from '../../common/ToggleToDate';
+import { ToggleToDate, useToggleToDate } from '../../common/toggleToDate';
 
 const AddExperience = ({ handleSubmit, addExperience }) => {
   const [disabled, toggleToDate] = useToggleToDate();

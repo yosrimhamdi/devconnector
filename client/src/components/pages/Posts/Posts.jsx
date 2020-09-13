@@ -12,7 +12,7 @@ import PostList from './helpers/PostList';
 const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
   useEffect(() => {
     fetchPosts();
-  });
+  }, [fetchPosts]);
 
   return (
     <div className="posts">

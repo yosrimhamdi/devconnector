@@ -10,7 +10,7 @@ import ProfileDisplay from './helpers/DisplayProfiles/ProfileDisplay';
 const Profile = ({ profile, fetchProfile, match, history, errors }) => {
   useEffect(() => {
     fetchProfile(match.params.handle);
-  });
+  }, [fetchProfile, match.params.handle]);
 
   if (errors.profileNotFound) {
     return <div>profile not found</div>;

@@ -1,7 +1,7 @@
 const express = require('express');
 
-const postLikes = require('./postLikes');
-const postComments = require('./postComments');
+const likes = require('./likes');
+const comments = require('./comments');
 
 const {
   getAllPosts,
@@ -13,9 +13,9 @@ const { requireLogIn } = require('../controllers/authentication');
 
 const router = express.Router();
 
-router.use('/:id/likes', postLikes);
+router.use('/:id/likes', likes);
 
-router.use('/:id/comments', postComments);
+router.use('/:id/comments', comments);
 
 router.route('/').get(getAllPosts).post(requireLogIn, createPost);
 

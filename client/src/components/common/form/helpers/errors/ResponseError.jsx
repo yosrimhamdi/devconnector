@@ -1,6 +1,6 @@
 import React from 'react';
 
-import errorIcon from './error.svg';
+import errorIcon from '../../icons/error.svg';
 
 export default ({ responseError }) => {
   if (!responseError) {
@@ -10,7 +10,8 @@ export default ({ responseError }) => {
   return (
     <div className="form__input-error-message">
       <img src={errorIcon} className="form__error-icon" alt="error" />
-      <span>{responseError}.</span>
+      <span>{responseError}</span>
+      <span>.</span>
     </div>
   );
 };

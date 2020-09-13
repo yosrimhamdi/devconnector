@@ -1,6 +1,6 @@
 import React from 'react';
 
-import errorIcon from './error.svg';
+import errorIcon from '../../icons/error.svg';
 
 export default ({ meta }) => {
   const { error, touched, active } = meta;
@@ -9,7 +9,8 @@ export default ({ meta }) => {
     return (
       <div className="form__input-error-message">
         <img src={errorIcon} className="form__error-icon" alt="error" />
-        <span>{error}.</span>
+        <span>{error}</span>
+        <span>.</span>
       </div>
     );
   }

@@ -3,7 +3,7 @@ import React from 'react';
 import ExperienceItem from './ExperienceItem';
 import Table from '../../../../common/Table';
 
-const Experiences = ({ experiences }) => {
+const ExperienceList = ({ experiences }) => {
   if (!experiences.length) {
     return (
       <div className="dashboard__empty-section">
@@ -27,4 +27,4 @@ const Experiences = ({ experiences }) => {
   );
 };
 
-export default Experiences;
+export default ExperienceList;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import ExperienceItem from './ExperienceItem';
 
-const Experiences = ({ experiences }) => {
+const ExperienceList = ({ experiences }) => {
   const renderedExps = experiences.map(experience => (
     <ExperienceItem experience={experience} key={experience._id} />
   ));
@@ -15,4 +15,4 @@ const Experiences = ({ experiences }) => {
   );
 };
 
-export default Experiences;
+export default ExperienceList;

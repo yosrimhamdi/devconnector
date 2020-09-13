@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Experiences from './Experiences';
-import Educations from './Educations';
+import ExperienceList from './ExperienceList';
+import EducationList from './EducationList';
 import Spinner from '../../../common/Spinner';
 
 const DashBoardContent = ({ profile, loading }) => {
@@ -38,8 +38,8 @@ const DashBoardContent = ({ profile, loading }) => {
           add education
         </Link>
       </div>
-      <Experiences experiences={experience} />
-      <Educations educations={education} />
+      <ExperienceList experiences={experience} />
+      <EducationList educations={education} />
     </div>
   );
 };

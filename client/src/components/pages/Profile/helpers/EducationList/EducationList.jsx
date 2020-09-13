@@ -2,7 +2,7 @@ import React from 'react';
 
 import EducationItem from './EducationItem';
 
-const Educations = ({ educations }) => {
+const EducationList = ({ educations }) => {
   const renderedEducations = educations.map(education => (
     <EducationItem education={education} key={education._id} />
   ));
@@ -15,4 +15,4 @@ const Educations = ({ educations }) => {
   );
 };
 
-export default Educations;
+export default EducationList;

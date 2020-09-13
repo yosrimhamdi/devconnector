@@ -3,7 +3,7 @@ import React from 'react';
 import Table from '../../../../common/Table';
 import EducationItem from './EducationItem';
 
-const Educations = ({ educations }) => {
+const EducationList = ({ educations }) => {
   if (!educations.length) {
     return (
       <div className="dashboard__empty-section">
@@ -27,4 +27,4 @@ const Educations = ({ educations }) => {
   );
 };
 
-export default Educations;
+export default EducationList;

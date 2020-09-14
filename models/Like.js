@@ -17,6 +17,10 @@ const postLikeSchema = new Schema({
 
 postLikeSchema.index({ user: 1, post: 1 }, { unique: true });
 
+postLikeSchema.pre(/^find/, function () {
+  this.select('user -_id');
+});
+
 const PostLike = model('Like', postLikeSchema);
 
 module.exports = PostLike;

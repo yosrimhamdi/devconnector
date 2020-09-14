@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import './PostItem.scss';
 
 import DeletePostButton from '../DeletePostButton';
-import like from '../../icons/like.svg';
+import Likes from './Likes';
 
 const PostItem = ({ post, auth }) => {
   const { _id, user, text } = post;
@@ -22,7 +22,7 @@ const PostItem = ({ post, auth }) => {
       </div>
       <div>
         <p className="post-item__post-text">{text}</p>
-        <img src={like} className="post-item__thumb-up" alt="like" />
+        <Likes postId={_id} />
         <Link to={`/posts/${_id}/comment`} className="link">
           comment
         </Link>

@@ -1,4 +1,4 @@
-import { FETCH_POSTS, ERROR_HAS_OCCURED } from '../types';
+import { FETCH_POSTS, ERROR_OCCURED } from '../types';
 import posts from '../../../apis/posts';
 
 export default () => async dispatch => {
@@ -11,7 +11,7 @@ export default () => async dispatch => {
     });
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

@@ -1,4 +1,4 @@
-import { DELETE_POST, ERROR_HAS_OCCURED } from '../types';
+import { DELETE_POST, ERROR_OCCURED } from '../types';
 import posts from '../../../apis/posts';
 
 export default id => async dispatch => {
@@ -11,7 +11,7 @@ export default id => async dispatch => {
     await posts.delete(`/${id}`);
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

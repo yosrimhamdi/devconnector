@@ -1,4 +1,4 @@
-import { REMOVE_EDUCATION, ERROR_HAS_OCCURED } from '../types';
+import { REMOVE_EDUCATION, ERROR_OCCURED } from '../types';
 import profiles from '../../../apis/profiles';
 
 export default id => async dispatch => {
@@ -11,7 +11,7 @@ export default id => async dispatch => {
     });
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

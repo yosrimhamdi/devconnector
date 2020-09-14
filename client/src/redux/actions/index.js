@@ -17,3 +17,7 @@ export { default as updateProfile } from './profiles/updateProfile';
 export { default as fetchPosts } from './posts/fetchPosts';
 export { default as createPost } from './posts/createPost';
 export { default as deletePost } from './posts/deletePost';
+
+export { default as getLikes } from './likes/getLikes';
+export { default as addLike } from './likes/addLike';
+export { default as removeLike } from './likes/removeLike';

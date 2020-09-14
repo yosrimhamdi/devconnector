@@ -1,4 +1,4 @@
-import { FETCH_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import { FETCH_PROFILE, ERROR_OCCURED } from '../types';
 import profiles from '../../../apis/profiles';
 
 export default handle => async dispatch => {
@@ -11,7 +11,7 @@ export default handle => async dispatch => {
     });
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

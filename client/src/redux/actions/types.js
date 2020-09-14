@@ -6,7 +6,7 @@ export const REGISTER_USER = 'REGISTER_USER';
 export const LOGIN_USER = 'LOGIN_USER';
 export const LOGOUT_USER = 'LOGOUT_USER';
 
-export const ERROR_HAS_OCCURED = 'ERROR_HAS_OCCURED';
+export const ERROR_OCCURED = 'ERROR_OCCURED';
 
 export const ADD_EXPERIENCE = 'ADD_EXPERIENCE';
 export const ADD_EDUCATION = 'ADD_EDUCATION';
@@ -22,3 +22,7 @@ export const LOADED = 'LOADED';
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const CREATE_POST = 'CREATE_POST';
 export const DELETE_POST = 'DELETE_POST';
+
+export const GET_LIKES = 'GET_LIKES';
+export const ADD_LIKE = 'ADD_LIKE';
+export const REMOVE_LIKE = 'REMOVE_LIKE';

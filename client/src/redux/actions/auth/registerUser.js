@@ -1,5 +1,5 @@
 import users from '../../../apis/users';
-import { REGISTER_USER, ERROR_HAS_OCCURED } from '../types';
+import { REGISTER_USER, ERROR_OCCURED } from '../types';
 import history from '../../../history';
 
 export default formValues => async dispatch => {
@@ -14,7 +14,7 @@ export default formValues => async dispatch => {
     history.push('/dashboard');
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

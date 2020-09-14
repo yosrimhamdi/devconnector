@@ -1,4 +1,4 @@
-import { LOGOUT_USER, ERROR_HAS_OCCURED } from '../types';
+import { LOGOUT_USER, ERROR_OCCURED } from '../types';
 import users from '../../../apis/users';
 
 import history from '../../../history';
@@ -12,7 +12,7 @@ export default () => async dispatch => {
     history.push('/login');
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

@@ -14,8 +14,6 @@ const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
     fetchPosts();
   }, [fetchPosts]);
 
-  console.log(posts);
-
   return (
     <div className="posts">
       <form

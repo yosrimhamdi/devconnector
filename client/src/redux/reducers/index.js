@@ -5,7 +5,8 @@ import profilesReducer from './profilesReducer';
 import authReducer from './authReducer';
 import errorReducer from './errorsReducer';
 import loadingReducer from './loadingReducer';
-import postsReducers from './postsReducer';
+import postsReducer from './postsReducer';
+import likesReducer from './likesReducer';
 
 export default combineReducers({
   auth: authReducer,
@@ -13,5 +14,6 @@ export default combineReducers({
   errors: errorReducer,
   form: reduxFormReducer,
   loading: loadingReducer,
-  posts: postsReducers,
+  posts: postsReducer,
+  likes: likesReducer,
 });

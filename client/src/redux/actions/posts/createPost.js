@@ -1,6 +1,6 @@
 import { reset } from 'redux-form';
 
-import { CREATE_POST, ERROR_HAS_OCCURED } from '../types';
+import { CREATE_POST, ERROR_OCCURED } from '../types';
 import posts from '../../../apis/posts';
 
 export default formValues => async dispatch => {
@@ -15,7 +15,7 @@ export default formValues => async dispatch => {
     dispatch(reset('createPost'));
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

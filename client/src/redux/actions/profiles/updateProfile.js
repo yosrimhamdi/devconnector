@@ -1,4 +1,4 @@
-import { UPDATE_PROFILE, ERROR_HAS_OCCURED } from '../types';
+import { UPDATE_PROFILE, ERROR_OCCURED } from '../types';
 import profiles from '../../../apis/profiles';
 import history from '../../../history';
 
@@ -14,7 +14,7 @@ export default formValues => async dispatch => {
     history.push('/dashboard');
   } catch (err) {
     dispatch({
-      type: ERROR_HAS_OCCURED,
+      type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }

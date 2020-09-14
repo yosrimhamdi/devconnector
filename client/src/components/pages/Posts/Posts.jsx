@@ -14,6 +14,8 @@ const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
     fetchPosts();
   }, [fetchPosts]);
 
+  console.log(posts);
+
   return (
     <div className="posts">
       <form
@@ -33,7 +35,7 @@ const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
 
 const wrappedForm = reduxForm({ form: 'createPost', validate })(Posts);
 
-const mapStateToProps = ({ posts }) => ({ posts: Object.values(posts) });
+const mapStateToProps = ({ posts }) => ({ posts });
 
 export default connect(mapStateToProps, { fetchPosts, createPost })(
   wrappedForm,

@@ -6,8 +6,7 @@ import { getLikes, addLike, removeLike } from '../../../../../redux/actions';
 
 const Likes = ({
   postId,
-  likesNum,
-  postLikes,
+  postLikes = [],
   getLikes,
   addLike,
   removeLike,
@@ -29,28 +28,18 @@ const Likes = ({
 
   return (
     <span>
-      <button type="button">
-        <img
-          src={like}
-          className="post-item__thumb-up"
-          alt="like"
-          onClick={toggleLike}
-        />
+      <button type="button" onClick={toggleLike}>
+        <img src={like} className="post-item__thumb-up" alt="like" />
       </button>
-      <span>{likesNum}</span>
+      <span>{postLikes.length}</span>
     </span>
   );
 };
 
-const mapStateToProps = (state, ownProps) => {
-  const likes = state.likes[ownProps.postId];
-
-  return {
-    likesNum: likes ? likes.length : 0,
-    postLikes: likes,
-    user: state.auth.user,
-  };
-};
+const mapStateToProps = (state, ownProps) => ({
+  postLikes: state.likes[ownProps.postId],
+  user: state.auth.user,
+});
 
 export default connect(mapStateToProps, { getLikes, addLike, removeLike })(
   Likes,

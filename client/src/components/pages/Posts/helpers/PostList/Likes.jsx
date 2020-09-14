@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import like from '../../icons/like.svg';
+import heart from '../../icons/heart.svg';
+import redHeart from '../../icons/heart-red.svg';
+
 import { getLikes, addLike, removeLike } from '../../../../../redux/actions';
 
 const Likes = ({
@@ -16,9 +18,9 @@ const Likes = ({
     getLikes(postId);
   }, [getLikes, postId]);
 
-  const toggleLike = () => {
-    const userId = user._id;
+  const userId = user._id;
 
+  const toggleLike = () => {
     if (postLikes.includes(userId)) {
       removeLike(userId, postId);
     } else {
@@ -26,10 +28,12 @@ const Likes = ({
     }
   };
 
+  const icon = postLikes.includes(userId) ? redHeart : heart;
+
   return (
     <span>
       <button type="button" onClick={toggleLike}>
-        <img src={like} className="post-item__thumb-up" alt="like" />
+        <img src={icon} className="post-item__thumb-up" alt="like" />
       </button>
       <span>{postLikes.length}</span>
     </span>

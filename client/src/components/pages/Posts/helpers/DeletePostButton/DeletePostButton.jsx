@@ -12,18 +12,9 @@ const DeletePostButton = ({ post, loggedInUser, deletePost }) => {
   }
 
   return (
-    <button
-      type="button"
-      onClick={() => deletePost(post._id)}
-      className="delete-post-button"
-    >
-      <img
-        src={remove}
-        alt="remove button"
-        className="delete-post-button__icon"
-        title="delete post"
-      />
-    </button>
+    <div>
+      <div>...</div>
+    </div>
   );
 };
 

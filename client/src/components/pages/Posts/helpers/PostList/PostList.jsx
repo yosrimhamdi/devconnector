@@ -7,7 +7,7 @@ const PostList = ({ posts }) => {
     <PostItem key={post._id} post={post} />
   ));
 
-  return <ul>{renderedPosts}</ul>;
+  return <ul className="collection">{renderedPosts}</ul>;
 };
 
 export default PostList;

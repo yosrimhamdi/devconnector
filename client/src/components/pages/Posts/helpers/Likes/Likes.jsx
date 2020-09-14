@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import heart from '../../icons/heart.svg';
 import redHeart from '../../icons/heart-red.svg';
 
+import './Likes.scss';
+
 import { getLikes, addLike, removeLike } from '../../../../../redux/actions';
+import LikesNum from './LikesNum';
 
 const Likes = ({
   postId,
@@ -31,12 +34,12 @@ const Likes = ({
   const icon = postLikes.includes(userId) ? redHeart : heart;
 
   return (
-    <span>
-      <button type="button" onClick={toggleLike}>
-        <img src={icon} className="post-item__thumb-up" alt="like" />
-      </button>
-      <span>{postLikes.length}</span>
-    </span>
+    <button type="button" onClick={toggleLike}>
+      <div className="likes">
+        <img src={icon} className="likes__thumb-up" alt="like" />
+        <LikesNum likesNum={postLikes.length} />
+      </div>
+    </button>
   );
 };
 

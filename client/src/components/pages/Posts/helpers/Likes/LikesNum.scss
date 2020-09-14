@@ -1,0 +1,10 @@
+.likes-num {
+  color: rgb(165, 165, 165);
+  font-size: 0.9rem;
+
+  &__likes-word {
+    margin-left: 0.2em;
+    display: inline-block;
+    text-transform: capitalize;
+  }
+}

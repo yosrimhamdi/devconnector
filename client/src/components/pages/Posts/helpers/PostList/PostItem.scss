@@ -1,42 +1,40 @@
-$greyBackground: #f8f9fa;
-$border: rgb(238, 237, 237);
+$imageDim: 120px;
 
 .post-item {
-  background-color: $greyBackground;
-  border: 1px solid $border;
+  position: relative;
+  background-color: #fdfbfb;
+  box-shadow: 0 1px 2px 1px rgba($color: #000000, $alpha: 0.3);
   padding: 1.5em;
   margin-bottom: 1em;
   border-radius: 4px;
   display: flex;
 
   &__user-details {
-    margin-right: 3em;
+    margin-right: 2.8em;
   }
 
   &__user-image {
-    border-radius: 15px;
-    width: 150px;
+    border-radius: 50%;
+    height: $imageDim;
+    width: $imageDim;
+    object-fit: cover;
     margin-bottom: 0.5em;
   }
 
   &__user-name {
-    text-align: center;
-    font-size: 1rem;
-    font-style: italic;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.2em;
   }
 
-  &__thumb-up {
-    width: 20px;
-    margin-right: 1em;
-    transform: translateY(2px);
-
-    &:hover {
-      cursor: pointer;
-    }
+  &__date {
+    color: rgb(163, 163, 163);
+    font-size: 0.9rem;
+    margin-bottom: 1.5em;
   }
 
   &__post-text {
-    margin-bottom: 2em;
+    margin-bottom: 0.8em;
     font-size: 1.7rem;
   }
 }

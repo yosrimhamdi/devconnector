@@ -25,7 +25,7 @@ import Posts from '../pages/Posts';
 import NotFound from '../pages/NotFound';
 
 const Others = () => (
-  <div style={{ margin: '6em 0' }}>
+  <div className="content-wrapper">
     <Switch>
       <PrivateRoute path="/dashboard" exact component={Dashboard} />
       <RestrictedRoute path="/register" exact component={Register} />

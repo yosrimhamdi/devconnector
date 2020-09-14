@@ -12,6 +12,7 @@ const Input = ({
   message,
   disabled,
   responseError,
+  autocomplete,
   meta,
 }) => {
   const className = getClassName(meta, responseError);
@@ -23,6 +24,7 @@ const Input = ({
         placeholder={placeholder}
         type={type}
         disabled={disabled}
+        autocomplete={autocomplete}
         {...input}
       />
       <Message message={message} />
@@ -34,6 +36,7 @@ const Input = ({
 
 Input.defaultProps = {
   type: 'text',
+  autocomplete: 'on',
 };
 
 export default Input;

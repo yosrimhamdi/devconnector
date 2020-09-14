@@ -1,13 +1,9 @@
 .likes {
   user-select: none;
 
-  &__thumb-up {
+  &__heart {
     width: 20px;
     margin-right: 0.6em;
     transform: translateY(4px);
-
-    &:hover {
-      cursor: pointer;
-    }
   }
 }

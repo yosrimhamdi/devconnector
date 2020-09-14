@@ -1,11 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import moment from 'moment';
-
 import './PostItem.scss';
 
-import DeletePostButton from '../DeletePostButton';
+import Settings from '../Settings';
 import Likes from '../Likes';
+import getTimeStamp from '../../../../../utils/getTimeStamp';
 
 const PostItem = ({ post, auth }) => {
   const { _id, user, text, createdAt } = post;
@@ -21,12 +20,10 @@ const PostItem = ({ post, auth }) => {
       </div>
       <div>
         <h2 className="post-item__user-name">{user.name}</h2>
-        <div className="post-item__date">
-          {moment(createdAt).startOf('day').fromNow()}
-        </div>
+        <div className="post-item__date">{getTimeStamp(createdAt)}</div>
         <p className="post-item__post-text">{text}</p>
         <Likes postId={_id} />
-        <DeletePostButton post={post} loggedInUser={auth.user} />
+        <Settings post={post} loggedInUser={auth.user} />
       </div>
     </li>
   );

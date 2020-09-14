@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import constructProfile from '../../../utils/constructProfile';
-import useToggleSocials from './useToggleSocials';
+import useToggle from '../../../hooks/useToggle';
 
 import Headline from '../Headline';
 import { Input, TextArea, Select, IconedInput } from '../form';
@@ -16,7 +16,9 @@ const ProfileForm = ({
   subHeader,
   onFormSubmit,
 }) => {
-  const [display, message, toggleSocials] = useToggleSocials();
+  const [display, toggle] = useToggle();
+
+  const message = display ? 'hide' : 'show';
 
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);
@@ -84,7 +86,7 @@ const ProfileForm = ({
           <button
             className="form__social-toggle-btn"
             type="button"
-            onClick={toggleSocials}
+            onClick={toggle}
           >
             <span className="form__social-toggle-message">{message}</span>
             <span>social network links</span>

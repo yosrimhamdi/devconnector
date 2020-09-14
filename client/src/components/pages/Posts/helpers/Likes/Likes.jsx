@@ -36,7 +36,7 @@ const Likes = ({
   return (
     <button type="button" onClick={toggleLike}>
       <div className="likes">
-        <img src={icon} className="likes__thumb-up" alt="like" />
+        <img src={icon} className="likes__heart" alt="like" />
         <LikesNum likesNum={postLikes.length} />
       </div>
     </button>

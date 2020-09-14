@@ -7,10 +7,12 @@ const LikesNum = ({ likesNum }) => {
     return null;
   }
 
+  const likesWord = likesNum === 1 ? 'like' : 'likes';
+
   return (
     <span className="likes-num">
       <span>{likesNum}</span>
-      <span className="likes-num__likes-word">likes</span>
+      <span className="likes-num__likes-word">{likesWord}</span>
     </span>
   );
 };

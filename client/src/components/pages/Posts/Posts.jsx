@@ -6,7 +6,7 @@ import './Posts.scss';
 
 import { fetchPosts, createPost } from '../../../redux/actions';
 import validate from './validate';
-import { TextArea } from '../../common/form';
+import { Input } from '../../common/form';
 import PostList from './helpers/PostList';
 
 const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
@@ -21,7 +21,12 @@ const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
         onSubmit={handleSubmit(createPost)}
         className="posts__form"
       >
-        <Field name="text" placeholder="create a post" component={TextArea} />
+        <Field
+          name="text"
+          placeholder="create a post"
+          autocomplete="off"
+          component={Input}
+        />
         <button className="form__submit-btn" type="submit">
           submit
         </button>

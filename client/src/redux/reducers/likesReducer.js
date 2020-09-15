@@ -12,7 +12,7 @@ export default (state = {}, action) => {
     case ADD_LIKE: {
       const { userId, postId } = action.payload;
 
-      state[postId] = _.concat(state[postId], userId);
+      state[postId] = [...state[postId], userId];
 
       return { ...state };
     }

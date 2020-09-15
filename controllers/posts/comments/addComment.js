@@ -8,5 +8,7 @@ module.exports = catchAsync(async (req, res) => {
     post: req.params.id,
   });
 
+  comment.user = req.user;
+
   res.status(200).json({ status: 'success', comment });
 });

@@ -20,7 +20,7 @@ const commentSchema = new Schema({
 });
 
 commentSchema.pre(/^find/, function () {
-  this.populate('user');
+  this.sort({ createdAt: -1 }).populate('user');
 });
 
 const Comment = model('Comment', commentSchema);

@@ -23,3 +23,4 @@ export { default as addLike } from './likes/addLike';
 export { default as removeLike } from './likes/removeLike';
 
 export { default as fetchComments } from './comments/fetchComments';
+export { default as addComment } from './comments/addComment';

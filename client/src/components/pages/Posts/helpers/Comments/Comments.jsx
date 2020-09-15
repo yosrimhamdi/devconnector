@@ -6,6 +6,7 @@ import { fetchComments } from '../../../../../redux/actions';
 import Comment from './Comment';
 import CommentInput from '../CommentInput';
 import { addComment } from '../../../../../redux/actions';
+import Spinner from '../../../../common/Spinner';
 
 const Comments = ({
   fetchComments,
@@ -13,10 +14,15 @@ const Comments = ({
   comments,
   handleSubmit,
   addComment,
+  loading,
 }) => {
   useEffect(() => {
     fetchComments(postId);
   }, [fetchComments, postId]);
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   const renderedComments = comments.map(comment => (
     <Comment comment={comment} key={comment._id} />
@@ -48,6 +54,7 @@ const wrappedForm = reduxForm({ form: 'addComment' })(Comments);
 
 const mapStateToProps = (state, ownProps) => ({
   comments: state.comments[ownProps.postId],
+  loading: state.loading,
 });
 
 export default connect(mapStateToProps, { fetchComments, addComment })(

@@ -1,14 +1,17 @@
-import React from 'react';
-import './PostItem.scss';
+import React, { useState } from 'react';
+import { connect } from 'react-redux';
 
+import './PostItem.scss';
 import Settings from '../Settings';
 import Likes from '../Likes';
 import getTimeStamp from '../../../../../utils/getTimeStamp';
 import { deletePost } from '../../../../../redux/actions';
 import Comments from '../Comments';
-import { connect } from 'react-redux';
+import comment from '../../icons/comment.svg';
 
 const PostItem = ({ post, deletePost }) => {
+  const [showComment, setShowComment] = useState(false);
+
   const { _id, user, text, createdAt } = post;
 
   return (
@@ -26,6 +29,17 @@ const PostItem = ({ post, deletePost }) => {
           <div className="post-item__date">{getTimeStamp(createdAt)}</div>
           <p className="post-item__post-text">{text}</p>
           <Likes postId={_id} />
+          <button
+            className="post-item__comment"
+            onClick={() => setShowComment(true)}
+          >
+            <img
+              src={comment}
+              alt="comment"
+              className="post-item__comment-icon"
+            />
+            <span className="post-item__comment-message">comment</span>
+          </button>
           <Settings
             post={post}
             deleteMessage="delete post"
@@ -33,7 +47,7 @@ const PostItem = ({ post, deletePost }) => {
           />
         </div>
       </div>
-      <Comments postId={_id} />
+      {showComment ? <Comments postId={_id} /> : null}
     </li>
   );
 };

@@ -1,7 +1,9 @@
-import { FETCH_COMMENTS } from '../types';
+import { FETCH_COMMENTS, LOADING, LOADED } from '../types';
 import posts from '../../../apis/posts';
 
 export default postId => async dispatch => {
+  dispatch({ type: LOADING });
+
   const response = await posts.get(`/${postId}/comments`);
 
   dispatch({
@@ -11,4 +13,6 @@ export default postId => async dispatch => {
       postId,
     },
   });
+
+  dispatch({ type: LOADED });
 };

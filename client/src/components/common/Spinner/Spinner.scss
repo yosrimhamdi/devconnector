@@ -1,12 +1,11 @@
 .spinner {
-  height: 30vh;
-  position: relative;
+  padding: 4em;
 
   &__container {
-    position: absolute;
-    top: 50%;
+    text-align: center;
+    position: relative;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
   }
   &__circle {
     animation: spin 1500ms linear infinite;

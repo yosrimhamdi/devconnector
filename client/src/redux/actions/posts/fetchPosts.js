@@ -1,7 +1,9 @@
-import { FETCH_POSTS, ERROR_OCCURED } from '../types';
+import { FETCH_POSTS, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import posts from '../../../apis/posts';
 
 export default () => async dispatch => {
+  dispatch({ type: LOADING });
+
   try {
     const response = await posts.get('/');
 
@@ -15,4 +17,6 @@ export default () => async dispatch => {
       payload: err.response.data,
     });
   }
+
+  dispatch({ type: LOADED });
 };

@@ -8,11 +8,16 @@ import { fetchPosts, createPost } from '../../../redux/actions';
 import validate from './validate';
 import { Input } from '../../common/form';
 import PostList from './helpers/PostList';
+import Spinner from '../../common/Spinner';
 
-const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
+const Posts = ({ fetchPosts, createPost, posts, handleSubmit, loading }) => {
   useEffect(() => {
     fetchPosts();
   }, [fetchPosts]);
+
+  if (loading && !posts.length) {
+    return <Spinner />;
+  }
 
   return (
     <div className="posts">
@@ -38,7 +43,7 @@ const Posts = ({ fetchPosts, createPost, posts, handleSubmit }) => {
 
 const wrappedForm = reduxForm({ form: 'createPost', validate })(Posts);
 
-const mapStateToProps = ({ posts }) => ({ posts });
+const mapStateToProps = ({ posts, loading }) => ({ posts, loading });
 
 export default connect(mapStateToProps, { fetchPosts, createPost })(
   wrappedForm,

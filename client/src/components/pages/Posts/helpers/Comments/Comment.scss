@@ -15,16 +15,12 @@ $imageDim: 120px;
     margin-bottom: 3.5em;
   }
 
-  &__user-details {
-    margin-right: 2.8em;
-  }
-
   &__user-image {
     border-radius: 50%;
     height: $imageDim;
     width: $imageDim;
     object-fit: cover;
-    margin-bottom: 0.5em;
+    margin-right: 2.8em;
   }
 
   &__user-name {

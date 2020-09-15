@@ -1,4 +1,4 @@
-$imageDim: 120px;
+$imageDim: 130px;
 
 .post-item {
   position: relative;
@@ -12,53 +12,39 @@ $imageDim: 120px;
     box-shadow: 0 1px 8px 1px rgba($color: #000000, $alpha: 0.1);
     margin-bottom: 1em;
   }
-
-  &__user-details {
-    margin-right: 2.8em;
-  }
-
   &__user-image {
     border-radius: 50%;
     height: $imageDim;
     width: $imageDim;
     object-fit: cover;
-    margin-bottom: 0.5em;
+    margin-right: 2.8em;
   }
 
   &__user-name {
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-transform: capitalize;
     margin-bottom: 0.2em;
   }
 
   &__date {
     color: rgb(163, 163, 163);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-bottom: 1.5em;
   }
 
   &__post-text {
     margin-bottom: 0.8em;
-    font-size: 1.7rem;
-  }
-
-  &__comment {
-    cursor: pointer;
+    font-size: 1.55rem;
   }
 
   &__comment-icon {
     width: 20px;
-    margin: 0 0.6em 0 0.7em;
+    margin-right: 0.5em;
     transform: translateY(4px);
   }
 
-  &__comment-message {
-    display: inline-block;
+  &__controller {
     color: rgb(165, 165, 165);
-    transform: translateY(1px);
-
-    &:first-letter {
-      text-transform: capitalize;
-    }
+    font-size: 0.9rem;
   }
 }

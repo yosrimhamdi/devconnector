@@ -11,13 +11,11 @@ const Comment = ({ comment, deleteComment }) => {
 
   return (
     <li className="comment">
-      <div className="comment__user-details">
-        <img
-          src={`/images/${user.photo}`}
-          className="comment__user-image"
-          alt="user"
-        />
-      </div>
+      <img
+        src={`/images/${user.photo}`}
+        className="comment__user-image"
+        alt="user"
+      />
       <div>
         <h2 className="comment__user-name">{user.name}</h2>
         <div className="comment__date">{getTimeStamp(createdAt)}</div>

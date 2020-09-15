@@ -3,15 +3,11 @@ import React from 'react';
 import './LikesNum.scss';
 
 const LikesNum = ({ likesNum }) => {
-  if (likesNum === 0) {
-    return null;
-  }
-
-  const likesWord = likesNum === 1 ? 'like' : 'likes';
+  const likesWord = likesNum === 1 ? 'Like' : 'Likes';
 
   return (
     <span className="likes-num">
-      <span>{likesNum}</span>
+      <span className="likes-num__number">{likesNum}</span>
       <span className="likes-num__likes-word">{likesWord}</span>
     </span>
   );

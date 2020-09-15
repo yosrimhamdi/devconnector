@@ -17,29 +17,26 @@ const PostItem = ({ post, deletePost }) => {
   return (
     <li className="post-item">
       <div className="post-item__wrapper">
-        <div className="post-item__user-details">
-          <img
-            src={`/images/${user.photo}`}
-            className="post-item__user-image"
-            alt="user"
-          />
-        </div>
+        <img
+          src={`/images/${user.photo}`}
+          className="post-item__user-image"
+          alt="user"
+        />
         <div>
           <h2 className="post-item__user-name">{user.name}</h2>
           <div className="post-item__date">{getTimeStamp(createdAt)}</div>
           <p className="post-item__post-text">{text}</p>
-          <Likes postId={_id} />
-          <button
-            className="post-item__comment"
-            onClick={() => setShowComment(true)}
-          >
-            <img
-              src={comment}
-              alt="comment"
-              className="post-item__comment-icon"
-            />
-            <span className="post-item__comment-message">comment</span>
-          </button>
+          <div className="post-item__controller">
+            <Likes postId={_id} />
+            <button onClick={() => setShowComment(true)}>
+              <img
+                src={comment}
+                alt="comment"
+                className="post-item__comment-icon"
+              />
+              <span>Comment</span>
+            </button>
+          </div>
           <Settings
             post={post}
             deleteMessage="delete post"

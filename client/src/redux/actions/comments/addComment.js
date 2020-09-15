@@ -1,5 +1,3 @@
-import { reset } from 'redux-form';
-
 import { ADD_COMMENT } from '../types';
 import posts from '../../../apis/posts';
 
@@ -13,6 +11,4 @@ export default (postId, formValues) => async dispatch => {
       postId,
     },
   });
-
-  dispatch(reset('addComment'));
 };

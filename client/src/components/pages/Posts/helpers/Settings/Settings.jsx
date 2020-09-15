@@ -9,17 +9,22 @@ import useToggle from '../../../../../hooks/useToggle';
 import Modal from '../../../../common/Modal';
 
 const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
-  const wrapperRef = useRef(null);
+  const dotsRef = useRef(null);
+  const settingsRef = useRef(null);
   const [display, toggle] = useToggle();
   const [isModalShown, setIsModalShow] = useState(false);
 
   const showModal = () => setIsModalShow(true);
 
   useEffect(() => {
-    const handleClickOutside = e => {
+    const { current: DOMsettings } = settingsRef;
+    const { current: DOMdots } = dotsRef;
+
+    const handleClickOutside = ({ target }) => {
       if (
-        wrapperRef.current &&
-        !wrapperRef.current.contains(e.target) &&
+        DOMsettings &&
+        !DOMsettings.contains(target) &&
+        target !== DOMdots &&
         display === 'block'
       ) {
         toggle();
@@ -39,10 +44,15 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
     <div className="settings">
       <div className="settings__open-menu-wrapper">
         <button type="button" onClick={toggle}>
-          <img src={dots} alt="open menu" className="settings__open-menu" />
+          <img
+            src={dots}
+            alt="open menu"
+            className="settings__open-menu"
+            ref={dotsRef}
+          />
         </button>
       </div>
-      <div className="settings__wrapper" ref={wrapperRef} style={{ display }}>
+      <div className="settings__wrapper" ref={settingsRef} style={{ display }}>
         <div className="settings__delete">
           <img src={trash} alt="trash" className="settings__trash-icon" />
           <button type="button" onClick={showModal}>

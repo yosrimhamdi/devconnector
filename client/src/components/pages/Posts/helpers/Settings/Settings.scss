@@ -12,6 +12,10 @@
     &:hover {
       background-color: rgb(238, 238, 238);
     }
+
+    &:active {
+      background-color: rgb(225, 225, 226);
+    }
   }
 
   &__open-menu-wrapper {
@@ -59,7 +63,11 @@
     border-radius: inherit;
 
     &:hover {
-      background-color: rgb(245, 243, 243);
+      background-color: rgb(247, 245, 245);
+    }
+
+    &:active {
+      background-color: rgb(238, 236, 236);
     }
   }
 }

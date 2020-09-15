@@ -48,6 +48,10 @@
     border-radius: 8px;
     text-transform: capitalize;
     font-weight: 600;
+
+    &:active {
+      transform: scale(0.97);
+    }
   }
 
   &__confirm-button {
@@ -66,6 +70,10 @@
 
     &:hover {
       background-color: rgb(247, 245, 245);
+    }
+
+    &:active {
+      background-color: #1876f217;
     }
   }
 }

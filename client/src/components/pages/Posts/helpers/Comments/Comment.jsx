@@ -1,10 +1,13 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import './Comment.scss';
 import getTimeStamp from '../../../../../utils/getTimeStamp';
+import Settings from '../Settings';
+import { deleteComment } from '../../../../../redux/actions';
 
-const Comment = ({ comment }) => {
-  const { user, text, createdAt } = comment;
+const Comment = ({ comment, deleteComment }) => {
+  const { _id, user, text, createdAt, post } = comment;
 
   return (
     <li className="comment">
@@ -20,8 +23,13 @@ const Comment = ({ comment }) => {
         <div className="comment__date">{getTimeStamp(createdAt)}</div>
         <p className="comment__post-text">{text}</p>
       </div>
+      <Settings
+        post={comment}
+        deleteMessage="delete comment"
+        deleteAction={() => deleteComment(post, _id)}
+      />
     </li>
   );
 };
 
-export default Comment;
+export default connect(null, { deleteComment })(Comment);

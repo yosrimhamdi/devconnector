@@ -1,4 +1,4 @@
-import { ADD_COMMENT, FETCH_COMMENTS } from '../actions/types';
+import { ADD_COMMENT, DELETE_COMMENT, FETCH_COMMENTS } from '../actions/types';
 
 export default (state = {}, action) => {
   switch (action.type) {
@@ -13,6 +13,17 @@ export default (state = {}, action) => {
       state[postId] = [comment, ...state[postId]];
 
       return { ...state };
+    }
+    case DELETE_COMMENT: {
+      const { postId, commentId } = action.payload;
+
+      const newState = { ...state };
+
+      newState[postId] = newState[postId].filter(
+        comment => comment._id !== commentId,
+      );
+
+      return newState;
     }
     default:
       return state;

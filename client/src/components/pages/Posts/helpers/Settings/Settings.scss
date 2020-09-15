@@ -27,6 +27,11 @@
   &__message {
     color: rgb(49, 49, 49);
     font-weight: 600;
+    display: block;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
   }
 
   &__wrapper {

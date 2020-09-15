@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 
 import './Settings.scss';
@@ -9,10 +9,27 @@ import useToggle from '../../../../../hooks/useToggle';
 import Modal from '../../../../common/Modal';
 
 const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
+  const wrapperRef = useRef(null);
   const [display, toggle] = useToggle();
   const [isModalShown, setIsModalShow] = useState(false);
 
   const showModal = () => setIsModalShow(true);
+
+  useEffect(() => {
+    const handleClickOutside = e => {
+      if (
+        wrapperRef.current &&
+        !wrapperRef.current.contains(e.target) &&
+        display === 'block'
+      ) {
+        toggle();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  });
 
   if (post.user._id !== auth.user._id) {
     return null;
@@ -25,7 +42,7 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
           <img src={dots} alt="open menu" className="settings__open-menu" />
         </button>
       </div>
-      <div className="settings__wrapper" style={{ display }}>
+      <div className="settings__wrapper" ref={wrapperRef} style={{ display }}>
         <div className="settings__delete">
           <img src={trash} alt="trash" className="settings__trash-icon" />
           <button type="button" onClick={showModal}>

@@ -26,6 +26,8 @@ const Comment = ({ comment, deleteComment }) => {
       <Settings
         post={comment}
         deleteMessage="delete comment"
+        modalTitle="delete comment?"
+        modalDescription="are you sure you want to delete this comment?"
         deleteAction={() => deleteComment(post, _id)}
       />
     </li>

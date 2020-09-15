@@ -8,7 +8,14 @@ import dots from '../../icons/dots.svg';
 import useToggle from '../../../../../hooks/useToggle';
 import Modal from '../../../../common/Modal';
 
-const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
+const Settings = ({
+  post,
+  auth,
+  deleteAction,
+  deleteMessage,
+  modalTitle,
+  modalDescription,
+}) => {
   const dotsRef = useRef(null);
   const settingsRef = useRef(null);
   const [display, toggle] = useToggle();
@@ -63,8 +70,8 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
       {isModalShown ? (
         <Modal
           deleteAction={deleteAction}
-          title="delete post?"
-          description="are you sure you want to delete this post?"
+          title={modalTitle}
+          description={modalDescription}
           setIsModalShow={setIsModalShow}
         />
       ) : null}

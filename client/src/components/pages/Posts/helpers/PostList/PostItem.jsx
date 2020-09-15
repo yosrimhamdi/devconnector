@@ -44,6 +44,8 @@ const PostItem = ({ post, deletePost }) => {
             post={post}
             deleteMessage="delete post"
             deleteAction={() => deletePost(_id)}
+            modalTitle="delete post?"
+            modalDescription="are you sure you want to delete this post?"
           />
         </div>
       </div>

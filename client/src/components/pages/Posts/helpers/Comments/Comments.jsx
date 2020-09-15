@@ -20,7 +20,7 @@ const Comments = ({
     fetchComments(postId);
   }, [fetchComments, postId]);
 
-  if (loading) {
+  if (loading && (!comments.length || !comments)) {
     return <Spinner />;
   }
 

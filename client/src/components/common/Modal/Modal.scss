@@ -1,5 +1,5 @@
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
@@ -13,7 +13,7 @@
   &__content {
     opacity: initial;
     background-color: #fff;
-    box-shadow: 0 3px 30px 2px rgba($color: #000000, $alpha: 0.3);
+    box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
     border-radius: 10px;
     width: 600px;
   }
@@ -30,7 +30,6 @@
   }
 
   &__description {
-    margin-bottom: 0.8em;
     padding: 0 1rem 0;
 
     &::first-letter {

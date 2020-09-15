@@ -7,6 +7,7 @@ import errorReducer from './errorsReducer';
 import loadingReducer from './loadingReducer';
 import postsReducer from './postsReducer';
 import likesReducer from './likesReducer';
+import commentsReducer from './commentsReducer';
 
 export default combineReducers({
   auth: authReducer,
@@ -16,4 +17,5 @@ export default combineReducers({
   loading: loadingReducer,
   posts: postsReducer,
   likes: likesReducer,
+  comments: commentsReducer,
 });

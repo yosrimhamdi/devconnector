@@ -24,7 +24,7 @@ const Input = ({
         placeholder={placeholder}
         type={type}
         disabled={disabled}
-        autocomplete={autocomplete}
+        autoComplete={autocomplete}
         {...input}
       />
       <Message message={message} />

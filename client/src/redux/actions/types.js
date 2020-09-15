@@ -26,3 +26,5 @@ export const DELETE_POST = 'DELETE_POST';
 export const GET_LIKES = 'GET_LIKES';
 export const ADD_LIKE = 'ADD_LIKE';
 export const REMOVE_LIKE = 'REMOVE_LIKE';
+
+export const FETCH_COMMENTS = 'FETCH_COMMENTS';

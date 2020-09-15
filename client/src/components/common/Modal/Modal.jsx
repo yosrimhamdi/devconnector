@@ -11,8 +11,6 @@ const Modal = ({ deleteAction, title, description, setIsModalShow }) => {
     setIsModalShow();
   };
 
-  console.log(isShown);
-
   let modal = null;
 
   if (isShown) {

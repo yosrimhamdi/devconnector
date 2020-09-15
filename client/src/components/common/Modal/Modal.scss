@@ -1,0 +1,71 @@
+.modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f3f3f4c9;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    opacity: initial;
+    background-color: #fff;
+    box-shadow: 0 3px 30px 2px rgba($color: #000000, $alpha: 0.3);
+    border-radius: 10px;
+    width: 600px;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    padding: 0.9rem 1rem 1rem;
+    margin-bottom: 0.4em;
+    border-bottom: 1px solid #e5e5e5;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__description {
+    margin-bottom: 0.8em;
+    padding: 0 1rem 0;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__actions {
+    text-align: right;
+    padding: 1em;
+  }
+
+  &__button {
+    padding: 0.5em 0.9em;
+    border-radius: 8px;
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  &__confirm-button {
+    background-color: #1877f2;
+    color: white;
+    margin-left: 0.6em;
+
+    &:hover {
+      color: rgb(247, 245, 245);
+      background-color: #1070ee;
+    }
+  }
+
+  &__cancel-button {
+    color: #1877f2;
+
+    &:hover {
+      background-color: rgb(247, 245, 245);
+    }
+  }
+}

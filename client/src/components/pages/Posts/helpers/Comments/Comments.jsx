@@ -31,6 +31,9 @@ Comments.defaultProps = {
   comments: [],
 };
 
-const mapStateToProps = ({ loading }) => ({ loading });
+const mapStateToProps = (state, ownProps) => ({
+  loading: state.loading,
+  comments: state.comments[ownProps.postId],
+});
 
 export default connect(mapStateToProps, { fetchComments })(Comments);

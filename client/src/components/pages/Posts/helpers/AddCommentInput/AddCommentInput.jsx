@@ -21,7 +21,7 @@ const AddCommentInput = ({ addComment, postId }) => {
     <form onSubmit={submitComment}>
       <input
         className="add-comment-input"
-        placeholder="write a comment..."
+        placeholder="Write a comment..."
         autoComplete="off"
         value={message}
         type="text"

@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import './Settings.scss';
 import trash from '../../icons/trash.svg';
 import dots from '../../icons/dots.svg';
-import ConfirmModal from '../../../../common/ConfirmModal';
+import ConfirmModal from '../../../../common/modal/ConfirmModal';
 import useHideOnBlur from './useHideOnBlur';
 
 const Settings = ({ relatedUser, auth, deleteMessage }) => {

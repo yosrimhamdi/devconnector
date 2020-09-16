@@ -5,7 +5,7 @@ import classnames from 'classnames';
 
 import './CreatePostModal.scss';
 import { createPost } from '../../../../../redux/actions';
-import ModalCloseButton from '../../../../common/ModalCloseButton';
+import ModalCloseButton from '../../../../common/modal/ModalCloseButton';
 
 const CreatePostModal = ({
   placeholder,

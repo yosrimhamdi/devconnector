@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import './ConfirmModal.scss';
-import ModalContext from '../../../contexts/ModalContext';
+import ModalContext from '../../../../contexts/ModalContext';
 import ModalCloseButton from '../ModalCloseButton';
 
 const ConfrimModal = ({ isModalShown, setIsModalShown }) => {

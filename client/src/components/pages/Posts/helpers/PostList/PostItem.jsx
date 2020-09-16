@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
+import './PostItem.scss';
 import Settings from '../Settings';
 import Likes from '../Likes';
 import getTimeStamp from '../../../../../utils/getTimeStamp';
@@ -21,25 +22,29 @@ const PostItem = ({ post, deletePost }) => {
   };
 
   return (
-    <li className="post">
-      <div className="post__wrapper">
+    <li className="post-item">
+      <div className="post-item__wrapper">
         <img
           src={`/images/${user.photo}`}
-          className="post__user-image"
+          className="post-item__user-image"
           alt="user"
         />
         <div>
-          <h2 className="post__user-name">{user.name}</h2>
-          <div className="post__date">{getTimeStamp(createdAt)}</div>
-          <p className="post__text">{text}</p>
-          <div className="post__controller">
+          <h2 className="post-item__user-name">{user.name}</h2>
+          <div className="post-item__date">{getTimeStamp(createdAt)}</div>
+          <p className="post-item__text">{text}</p>
+          <div className="post-item__controller">
             <Likes postId={_id} />
             <div
-              className="post__comment-wrapper"
+              className="post-item__comment-wrapper"
               role="button"
               onClick={() => setIsCommentsShown(true)}
             >
-              <img src={comment} alt="comment" className="post__comment-icon" />
+              <img
+                src={comment}
+                alt="comment"
+                className="post-item__comment-icon"
+              />
               <span>Comment</span>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './EducationList.scss';
 import EducationItem from './EducationItem';
 
 const EducationList = ({ educations }) => {
@@ -8,8 +9,8 @@ const EducationList = ({ educations }) => {
   ));
 
   return (
-    <div className="palet">
-      <div className="palet__title">education</div>
+    <div className="education-list">
+      <div className="education-list__title">education</div>
       <ul className="collection">{renderedEducations}</ul>
     </div>
   );

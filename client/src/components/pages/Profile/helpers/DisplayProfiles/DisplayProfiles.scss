@@ -18,6 +18,8 @@ $spaceBetweenVertical: 1.2rem;
     margin-bottom: 0.4em;
     border-radius: 50%;
     width: 230px;
+    height: 230px;
+    object-fit: cover;
   }
 
   &__user-name {

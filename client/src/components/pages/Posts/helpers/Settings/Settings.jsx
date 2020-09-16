@@ -38,12 +38,12 @@ const Settings = ({ relatedUser, auth, deleteMessage }) => {
         </button>
       </div>
       <div className={settingsClassName} ref={settingsRef}>
-        <div className="settings__delete">
-          <img src={trash} alt="trash" className="settings__trash-icon" />
-          <button type="button" onClick={() => setIsModalShown(true)}>
+        <button type="button" onClick={() => setIsModalShown(true)}>
+          <div className="settings__delete">
+            <img src={trash} alt="trash" className="settings__trash-icon" />
             <span className="settings__message">{deleteMessage}</span>
-          </button>
-        </div>
+          </div>
+        </button>
       </div>
       <ConfirmModal
         isModalShown={isModalShown}

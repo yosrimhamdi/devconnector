@@ -24,7 +24,6 @@
 
   &__trash-icon {
     width: 20px;
-    transform: translateY(3px);
     margin-right: 0.7em;
   }
 
@@ -63,8 +62,8 @@
   }
 
   &__delete {
-    cursor: pointer;
-    padding: 0.4em 0.8em;
+    display: flex;
+    padding: 0.6em 1em;
     border-radius: inherit;
 
     &:hover {

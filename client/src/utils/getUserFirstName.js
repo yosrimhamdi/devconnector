@@ -1,2 +1,7 @@
-export default userName =>
-  userName.split(' ')[0][0].toUpperCase() + userName.split(' ')[0].slice(1);
+export default userName => {
+  const [firstName] = userName.split(' ');
+
+  const [firstLetter] = firstName.split('');
+
+  return firstLetter.toUpperCase() + firstName.slice(1);
+};

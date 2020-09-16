@@ -6,12 +6,20 @@ import Comment from './Comment';
 import AddCommentInput from '../AddCommentInput';
 import Spinner from '../../../../common/Spinner';
 
-const Comments = ({ fetchComments, postId, comments, loading }) => {
+const Comments = ({
+  fetchComments,
+  postId,
+  isCommentsShown,
+  comments,
+  loading,
+}) => {
   useEffect(() => {
-    fetchComments(postId);
-  }, [fetchComments, postId]);
+    if (isCommentsShown) {
+      fetchComments(postId);
+    }
+  }, [fetchComments, postId, isCommentsShown]);
 
-  if (!loading && !comments) {
+  if ((!loading && !comments) || !isCommentsShown) {
     return null;
   }
 

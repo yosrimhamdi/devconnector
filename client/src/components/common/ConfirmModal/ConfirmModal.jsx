@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ReactDOM from 'react-dom';
 
 import './ConfirmModal.scss';
+import ModalContext from '../../../contexts/ModalContext';
 
-const ConfrimModal = ({ deleteAction, title, description, setIsModalShow }) => {
+const ConfrimModal = ({ deleteAction, setIsModalShow }) => {
   const [isShown, setIsShow] = useState(true);
+
+  const { title, description } = useContext(ModalContext);
 
   const removeFromScreen = () => {
     setIsShow(false);

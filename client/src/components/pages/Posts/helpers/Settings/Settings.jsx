@@ -8,14 +8,7 @@ import dots from '../../icons/dots.svg';
 import useToggle from '../../../../../hooks/useToggle';
 import ConfirmModal from '../../../../common/ConfirmModal';
 
-const Settings = ({
-  post,
-  auth,
-  deleteAction,
-  deleteMessage,
-  modalTitle,
-  modalDescription,
-}) => {
+const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
   const dotsRef = useRef(null);
   const settingsRef = useRef(null);
   const [display, toggle] = useToggle();
@@ -70,8 +63,6 @@ const Settings = ({
       {isModalShown ? (
         <ConfirmModal
           deleteAction={deleteAction}
-          title={modalTitle}
-          description={modalDescription}
           setIsModalShow={setIsModalShow}
         />
       ) : null}

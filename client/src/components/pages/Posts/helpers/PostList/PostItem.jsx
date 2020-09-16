@@ -7,11 +7,17 @@ import getTimeStamp from '../../../../../utils/getTimeStamp';
 import { deletePost } from '../../../../../redux/actions';
 import Comments from '../Comments';
 import comment from '../../icons/comment.svg';
+import ModalContext from '../../../../../contexts/ModalContext';
 
 const PostItem = ({ post, deletePost }) => {
-  const [showComment, setShowComment] = useState(false);
+  const [isCommentsShown, setIsCommentsShown] = useState(false);
 
   const { _id, user, text, createdAt } = post;
+
+  const modalDetails = {
+    title: 'delete post?',
+    description: 'are you sure you want to delete this post?',
+  };
 
   return (
     <li className="post">
@@ -27,21 +33,21 @@ const PostItem = ({ post, deletePost }) => {
           <p className="post__text">{text}</p>
           <div className="post__controller">
             <Likes postId={_id} />
-            <button onClick={() => setShowComment(true)}>
+            <button onClick={() => setIsCommentsShown(true)}>
               <img src={comment} alt="comment" className="post__comment-icon" />
               <span>Comment</span>
             </button>
           </div>
-          <Settings
-            post={post}
-            deleteMessage="delete post"
-            deleteAction={() => deletePost(_id)}
-            modalTitle="delete post?"
-            modalDescription="are you sure you want to delete this post?"
-          />
+          <ModalContext.Provider value={modalDetails}>
+            <Settings
+              post={post}
+              deleteMessage="delete post"
+              deleteAction={() => deletePost(_id)}
+            />
+          </ModalContext.Provider>
         </div>
       </div>
-      {showComment ? <Comments postId={_id} /> : null}
+      <Comments postId={_id} isCommentsShown={isCommentsShown} />
     </li>
   );
 };

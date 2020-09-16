@@ -14,25 +14,21 @@ const PostItem = ({ post, deletePost }) => {
   const { _id, user, text, createdAt } = post;
 
   return (
-    <li className="post-card">
-      <div className="post-card__wrapper">
+    <li className="post">
+      <div className="post__wrapper">
         <img
           src={`/images/${user.photo}`}
-          className="post-card__user-image"
+          className="post__user-image"
           alt="user"
         />
         <div>
-          <h2 className="post-card__user-name">{user.name}</h2>
-          <div className="post-card__date">{getTimeStamp(createdAt)}</div>
-          <p className="post-card__text">{text}</p>
-          <div className="post-card__controller">
+          <h2 className="post__user-name">{user.name}</h2>
+          <div className="post__date">{getTimeStamp(createdAt)}</div>
+          <p className="post__text">{text}</p>
+          <div className="post__controller">
             <Likes postId={_id} />
             <button onClick={() => setShowComment(true)}>
-              <img
-                src={comment}
-                alt="comment"
-                className="post-card__comment-icon"
-              />
+              <img src={comment} alt="comment" className="post__comment-icon" />
               <span>Comment</span>
             </button>
           </div>

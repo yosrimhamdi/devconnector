@@ -39,13 +39,13 @@ const CreatePostModal = ({
 
   const modal = (
     <div
-      className="modal create-post-modal"
+      className="create-post-modal"
       role="button"
       onClick={removeModalFromScreen}
       tabIndex="0"
     >
       <div
-        className="modal__content modal__content--500w modal__content--padding"
+        className="create-post-modal__content"
         onClick={e => e.stopPropagation()}
         role="button"
       >

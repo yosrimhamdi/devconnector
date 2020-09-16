@@ -1,4 +1,23 @@
 .confirm-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f3f3f4af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    position: relative;
+    opacity: initial;
+    background-color: #fff;
+    box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
+    border-radius: 10px;
+    width: 600px;
+  }
+
   &__title {
     font-size: 1.5rem;
     padding: 0.9rem 1rem 1rem;

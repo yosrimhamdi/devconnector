@@ -15,8 +15,16 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
   const removeModalFromScreen = () => setIsModalShown(false);
 
   const modal = (
-    <div className="modal confirm-modal" onClick={removeModalFromScreen}>
-      <div className=" modal__content" onClick={e => e.stopPropagation()}>
+    <div
+      className="confirm-modal"
+      role="button"
+      onClick={removeModalFromScreen}
+    >
+      <div
+        className="confirm-modal__content"
+        role="button"
+        onClick={e => e.stopPropagation()}
+      >
         <h1 className="confirm-modal__title">{title}</h1>
         <ModalCloseButton onClick={removeModalFromScreen} />
         <div className="confirm-modal__description">{description}</div>

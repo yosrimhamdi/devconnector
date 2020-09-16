@@ -12,5 +12,13 @@
     "sourceType": "module"
   },
   "plugins": ["react"],
-  "rules": {}
+  "rules": {
+    "linebreak-style": ["warn", "windows"],
+    "arrow-parens": "off",
+    "react/prop-types": "off",
+    "no-shadow": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-underscore-dangle": "off",
+    "no-unused-vars": "warn"
+  }
 }

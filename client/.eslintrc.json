@@ -19,6 +19,9 @@
     "no-shadow": "off",
     "react/jsx-props-no-spreading": "off",
     "no-underscore-dangle": "off",
-    "no-unused-vars": "warn"
+    "no-unused-vars": "warn",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-autofocus": "off",
+    "jsx-a11y/interactive-supports-focus": "off"
   }
 }

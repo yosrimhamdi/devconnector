@@ -34,12 +34,10 @@ const Likes = ({
   const icon = postLikes.includes(userId) ? redHeart : heart;
 
   return (
-    <button type="button" onClick={toggleLike}>
-      <div className="likes">
-        <img src={icon} className="likes__heart" alt="like" />
-        <LikesNum likesNum={postLikes.length} />
-      </div>
-    </button>
+    <div className="likes" role="button" onClick={toggleLike}>
+      <img src={icon} className="likes__heart" alt="like" />
+      <LikesNum likesNum={postLikes.length} />
+    </div>
   );
 };
 

@@ -45,5 +45,8 @@ $imageDim: 130px;
   &__controller {
     color: rgb(165, 165, 165);
     font-size: 0.9rem;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
   }
 }

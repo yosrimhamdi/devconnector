@@ -38,10 +38,16 @@ const CreatePostModal = ({
   });
 
   const modal = (
-    <div className="modal create-post-modal" onClick={removeModalFromScreen}>
+    <div
+      className="modal create-post-modal"
+      role="button"
+      onClick={removeModalFromScreen}
+      tabIndex="0"
+    >
       <div
         className="modal__content modal__content--500w modal__content--padding"
         onClick={e => e.stopPropagation()}
+        role="button"
       >
         <h1 className="create-post-modal__title">create post</h1>
         <ModalCloseButton onClick={removeModalFromScreen} />
@@ -53,8 +59,10 @@ const CreatePostModal = ({
             value={post}
             onChange={e => setPost(e.target.value)}
             autoFocus
-          ></textarea>
-          <button className={buttonClassName}>post</button>
+          />
+          <button className={buttonClassName} type="submit">
+            post
+          </button>
         </form>
       </div>
     </div>

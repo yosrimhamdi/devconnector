@@ -27,23 +27,27 @@ const Settings = ({ relatedUser, auth, deleteMessage }) => {
 
   return (
     <div className="settings">
-      <div className="settings__open-menu-wrapper">
-        <button type="button" onClick={toggleSettingsVisiblity}>
-          <img
-            src={dots}
-            alt="open menu"
-            className="settings__open-menu"
-            ref={dotsRef}
-          />
-        </button>
+      <div
+        className="settings__open-menu-icon-wrapper"
+        role="button"
+        onClick={toggleSettingsVisiblity}
+      >
+        <img
+          src={dots}
+          alt="open menu"
+          className="settings__open-menu-icon"
+          ref={dotsRef}
+        />
       </div>
       <div className={settingsClassName} ref={settingsRef}>
-        <button type="button" onClick={() => setIsModalShown(true)}>
-          <div className="settings__delete">
-            <img src={trash} alt="trash" className="settings__trash-icon" />
-            <span className="settings__message">{deleteMessage}</span>
-          </div>
-        </button>
+        <div
+          className="settings__delete"
+          role="button"
+          onClick={() => setIsModalShown(true)}
+        >
+          <img src={trash} alt="trash" className="settings__trash-icon" />
+          <span className="settings__message">{deleteMessage}</span>
+        </div>
       </div>
       <ConfirmModal
         isModalShown={isModalShown}

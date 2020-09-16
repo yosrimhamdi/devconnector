@@ -34,10 +34,14 @@ const PostItem = ({ post, deletePost }) => {
           <p className="post__text">{text}</p>
           <div className="post__controller">
             <Likes postId={_id} />
-            <button onClick={() => setIsCommentsShown(true)}>
+            <div
+              className="post__comment-wrapper"
+              role="button"
+              onClick={() => setIsCommentsShown(true)}
+            >
               <img src={comment} alt="comment" className="post__comment-icon" />
               <span>Comment</span>
-            </button>
+            </div>
           </div>
           <ModalContext.Provider value={modalDetails}>
             <Settings relatedUser={post.user} deleteMessage="delete post" />

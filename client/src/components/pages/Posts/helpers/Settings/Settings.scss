@@ -3,11 +3,12 @@
   right: 1em;
   top: 1em;
 
-  &__open-menu {
+  &__open-menu-icon {
     box-sizing: initial;
     width: 17px;
     padding: 0.5em;
     border-radius: 50%;
+    cursor: pointer;
 
     &:hover {
       background-color: rgb(238, 238, 238);
@@ -18,7 +19,7 @@
     }
   }
 
-  &__open-menu-wrapper {
+  &__open-menu-icon-wrapper {
     text-align: right;
   }
 
@@ -65,6 +66,7 @@
     display: flex;
     padding: 0.6em 1em;
     border-radius: inherit;
+    cursor: pointer;
 
     &:hover {
       background-color: rgb(247, 245, 245);

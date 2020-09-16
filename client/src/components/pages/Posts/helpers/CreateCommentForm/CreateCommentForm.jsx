@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import './AddCommentInput.scss';
+import './CreateCommentForm.scss';
 import { addComment } from '../../../../../redux/actions';
 
-const AddCommentInput = ({ addComment, postId }) => {
+const CreateCommentForm = ({ addComment, postId }) => {
   const [message, setMessage] = useState('');
 
   const submitComment = e => {
@@ -31,4 +31,4 @@ const AddCommentInput = ({ addComment, postId }) => {
   );
 };
 
-export default connect(null, { addComment })(AddCommentInput);
+export default connect(null, { addComment })(CreateCommentForm);

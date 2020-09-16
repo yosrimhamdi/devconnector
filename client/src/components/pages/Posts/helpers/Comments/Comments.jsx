@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchComments } from '../../../../../redux/actions';
 import Comment from './Comment';
-import AddCommentInput from '../AddCommentInput';
+import CreateCommentForm from '../CreateCommentForm';
 import Spinner from '../../../../common/Spinner';
 
 const Comments = ({
@@ -33,7 +33,7 @@ const Comments = ({
 
   return (
     <div>
-      <AddCommentInput postId={postId} />
+      <CreateCommentForm postId={postId} />
       <ul className="collection">{renderedComments}</ul>
     </div>
   );

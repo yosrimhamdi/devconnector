@@ -12,9 +12,7 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
   const dotsRef = useRef(null);
   const settingsRef = useRef(null);
   const [display, toggle] = useToggle();
-  const [isModalShown, setIsModalShow] = useState(false);
-
-  const showModal = () => setIsModalShow(true);
+  const [isModalShown, setIsModalShown] = useState(false);
 
   useEffect(() => {
     const { current: DOMsettings } = settingsRef;
@@ -55,17 +53,16 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
       <div className="settings__wrapper" ref={settingsRef} style={{ display }}>
         <div className="settings__delete">
           <img src={trash} alt="trash" className="settings__trash-icon" />
-          <button type="button" onClick={showModal}>
+          <button type="button" onClick={() => setIsModalShown(true)}>
             <span className="settings__message">{deleteMessage}</span>
           </button>
         </div>
       </div>
-      {isModalShown ? (
-        <ConfirmModal
-          deleteAction={deleteAction}
-          setIsModalShow={setIsModalShow}
-        />
-      ) : null}
+      <ConfirmModal
+        deleteAction={deleteAction}
+        isModalShown={isModalShown}
+        setIsModalShown={setIsModalShown}
+      />
     </div>
   );
 };

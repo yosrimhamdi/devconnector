@@ -5,9 +5,16 @@ import './Comment.scss';
 import getTimeStamp from '../../../../../utils/getTimeStamp';
 import Settings from '../Settings';
 import { deleteComment } from '../../../../../redux/actions';
+import ModalContext from '../../../../../contexts/ModalContext';
 
 const Comment = ({ comment, deleteComment }) => {
   const { _id, user, text, createdAt, post } = comment;
+
+  const modalDetails = {
+    title: 'delete comment?',
+    description: 'are you sure you want to delete this comment?',
+    action: () => deleteComment(post, _id),
+  };
 
   return (
     <li className="post comment">
@@ -21,13 +28,9 @@ const Comment = ({ comment, deleteComment }) => {
         <div className="post__date">{getTimeStamp(createdAt)}</div>
         <p className="post__text">{text}</p>
       </div>
-      <Settings
-        post={comment}
-        deleteMessage="delete comment"
-        modalTitle="delete comment?"
-        modalDescription="are you sure you want to delete this comment?"
-        deleteAction={() => deleteComment(post, _id)}
-      />
+      <ModalContext.Provider value={modalDetails}>
+        <Settings relatedUser={comment.user} deleteMessage="delete comment" />
+      </ModalContext.Provider>
     </li>
   );
 };

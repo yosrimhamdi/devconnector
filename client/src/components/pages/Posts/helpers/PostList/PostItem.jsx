@@ -17,6 +17,7 @@ const PostItem = ({ post, deletePost }) => {
   const modalDetails = {
     title: 'delete post?',
     description: 'are you sure you want to delete this post?',
+    action: () => deletePost(_id),
   };
 
   return (
@@ -39,11 +40,7 @@ const PostItem = ({ post, deletePost }) => {
             </button>
           </div>
           <ModalContext.Provider value={modalDetails}>
-            <Settings
-              post={post}
-              deleteMessage="delete post"
-              deleteAction={() => deletePost(_id)}
-            />
+            <Settings relatedUser={post.user} deleteMessage="delete post" />
           </ModalContext.Provider>
         </div>
       </div>

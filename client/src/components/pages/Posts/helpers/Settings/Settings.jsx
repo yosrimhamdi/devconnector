@@ -8,7 +8,7 @@ import dots from '../../icons/dots.svg';
 import useToggle from '../../../../../hooks/useToggle';
 import ConfirmModal from '../../../../common/ConfirmModal';
 
-const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
+const Settings = ({ relatedUser, auth, deleteMessage }) => {
   const dotsRef = useRef(null);
   const settingsRef = useRef(null);
   const [display, toggle] = useToggle();
@@ -34,7 +34,7 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   });
 
-  if (post.user._id !== auth.user._id) {
+  if (relatedUser._id !== auth.user._id) {
     return null;
   }
 
@@ -59,7 +59,6 @@ const Settings = ({ post, auth, deleteAction, deleteMessage }) => {
         </div>
       </div>
       <ConfirmModal
-        deleteAction={deleteAction}
         isModalShown={isModalShown}
         setIsModalShown={setIsModalShown}
       />

@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom';
 import './ConfirmModal.scss';
 import ModalContext from '../../../contexts/ModalContext';
 
-const ConfrimModal = ({ deleteAction, isModalShown, setIsModalShown }) => {
-  const { title, description } = useContext(ModalContext);
+const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
+  const { title, description, action } = useContext(ModalContext);
 
   if (!isModalShown) {
     return null;
@@ -29,7 +29,7 @@ const ConfrimModal = ({ deleteAction, isModalShown, setIsModalShown }) => {
           <button
             className="confirm-modal__confirm-button confirm-modal__button"
             type="button"
-            onClick={deleteAction}
+            onClick={action}
           >
             delete
           </button>

@@ -1,0 +1,9 @@
+.profile-list {
+  display: grid;
+  width: 80vw;
+  margin: 0 auto;
+  justify-content: center;
+
+  grid-template-columns: repeat(3, minmax(250px, 330px));
+  grid-gap: 2.2em;
+}

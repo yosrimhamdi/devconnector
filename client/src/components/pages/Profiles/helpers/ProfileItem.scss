@@ -3,41 +3,47 @@ $border: rgb(238, 237, 237);
 $linkBgColor: #17a2b8;
 
 .profile-item {
-  display: flex;
-  width: 70%;
-  margin: 0 auto 1em;
-  padding: 2em;
-  background-color: $greyBackground;
-  border: 1px solid $border;
-  border-radius: 2px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 0 3px 1px rgba($color: #000000, $alpha: 0.3);
 
   &__image {
-    width: 180px;
-    height: 180px;
+    width: 100%;
+    height: 320px;
     object-fit: cover;
-    border-radius: 50%;
-    margin-right: 3em;
+    display: block;
+    margin-bottom: 0.5em;
   }
 
-  &__user-details {
+  &__details {
     text-align: left;
+    padding: 0 0.8em 0.8em;
+    border-bottom: 0.8px solid #f2f2f2;
   }
 
   &__user-name {
-    font-size: 2rem;
-    text-transform: capitalize;
-    margin-bottom: 0.3em;
-  }
-
-  &__user-job-details {
-    margin-bottom: 0.9em;
-  }
-
-  &__user-status {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #262626;
     text-transform: capitalize;
   }
 
-  &__user-location {
-    margin-bottom: 1.5em;
+  &__date {
+    color: #a3abb3;
+    font-size: 0.9rem;
+    margin-bottom: 0.6em;
+  }
+
+  &__user-job {
+    color: #525252;
+    font-size: 0.9rem;
+  }
+
+  &__button {
+    display: block;
+    height: 100%;
+    padding: 0.8em 0;
+    color: white;
+    background-color: #17a2b8;
   }
 }

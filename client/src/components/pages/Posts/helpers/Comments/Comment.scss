@@ -1,42 +1,20 @@
 $imageDim: 120px;
 
 .comment {
-  position: relative;
   background-color: #f0f2f5;
-  box-shadow: 0 1px 3px 1px rgba($color: #000000, $alpha: 0.1);
-  padding: 1.5em;
-  margin-bottom: 1em;
-  border-radius: 8px;
-  display: flex;
   width: 90%;
   margin-left: auto;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 1px rgba($color: #000000, $alpha: 0.1);
+  display: flex;
+  padding: 1.5em;
 
   &:last-child {
     margin-bottom: 3.5em;
   }
 
   &__user-image {
-    border-radius: 50%;
     height: $imageDim;
     width: $imageDim;
-    object-fit: cover;
-    margin-right: 2.8em;
-  }
-
-  &__user-name {
-    font-size: 1.2rem;
-    text-transform: capitalize;
-    margin-bottom: 0.2em;
-  }
-
-  &__date {
-    color: rgb(163, 163, 163);
-    font-size: 0.9rem;
-    margin-bottom: 1.5em;
-  }
-
-  &__post-text {
-    margin-bottom: 0.8em;
-    font-size: 1.7rem;
   }
 }

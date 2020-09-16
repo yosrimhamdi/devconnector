@@ -1,6 +1,6 @@
 $imageDim: 130px;
 
-.post-item {
+.post-card {
   position: relative;
   background-color: white;
   margin-bottom: 1em;
@@ -10,7 +10,6 @@ $imageDim: 130px;
     padding: 1.5em;
     display: flex;
     box-shadow: 0 1px 8px 1px rgba($color: #000000, $alpha: 0.1);
-    margin-bottom: 1em;
   }
   &__user-image {
     border-radius: 50%;
@@ -32,7 +31,7 @@ $imageDim: 130px;
     margin-bottom: 1.5em;
   }
 
-  &__post-text {
+  &__text {
     margin-bottom: 0.8em;
     font-size: 1.55rem;
   }

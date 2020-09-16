@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import './PostItem.scss';
 import Settings from '../Settings';
 import Likes from '../Likes';
 import getTimeStamp from '../../../../../utils/getTimeStamp';
@@ -15,24 +14,24 @@ const PostItem = ({ post, deletePost }) => {
   const { _id, user, text, createdAt } = post;
 
   return (
-    <li className="post-item">
-      <div className="post-item__wrapper">
+    <li className="post-card">
+      <div className="post-card__wrapper">
         <img
           src={`/images/${user.photo}`}
-          className="post-item__user-image"
+          className="post-card__user-image"
           alt="user"
         />
         <div>
-          <h2 className="post-item__user-name">{user.name}</h2>
-          <div className="post-item__date">{getTimeStamp(createdAt)}</div>
-          <p className="post-item__post-text">{text}</p>
-          <div className="post-item__controller">
+          <h2 className="post-card__user-name">{user.name}</h2>
+          <div className="post-card__date">{getTimeStamp(createdAt)}</div>
+          <p className="post-card__text">{text}</p>
+          <div className="post-card__controller">
             <Likes postId={_id} />
             <button onClick={() => setShowComment(true)}>
               <img
                 src={comment}
                 alt="comment"
-                className="post-item__comment-icon"
+                className="post-card__comment-icon"
               />
               <span>Comment</span>
             </button>

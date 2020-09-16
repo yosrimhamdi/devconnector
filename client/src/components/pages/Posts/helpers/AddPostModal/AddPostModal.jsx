@@ -43,14 +43,6 @@ const AddPostModal = ({
           onClick={e => e.stopPropagation()}
         >
           <h1 className="add-post-modal__title">create post</h1>
-          <div className="add-post-modal__user-details">
-            <img
-              src={`/images/${user.photo}`}
-              alt={`${user.name}`}
-              className="add-post-modal__user-image"
-            />
-            <div className="add-post-modal__user-name">{user.name}</div>
-          </div>
           <form onSubmit={submitPost}>
             <textarea
               placeholder={placeholder}

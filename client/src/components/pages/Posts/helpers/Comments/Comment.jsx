@@ -10,16 +10,16 @@ const Comment = ({ comment, deleteComment }) => {
   const { _id, user, text, createdAt, post } = comment;
 
   return (
-    <li className="comment">
+    <li className="post-card comment">
       <img
         src={`/images/${user.photo}`}
-        className="comment__user-image"
+        className="post-card__user-image comment__user-image"
         alt="user"
       />
       <div>
-        <h2 className="comment__user-name">{user.name}</h2>
-        <div className="comment__date">{getTimeStamp(createdAt)}</div>
-        <p className="comment__post-text">{text}</p>
+        <h2 className="post-card__user-name">{user.name}</h2>
+        <div className="post-card__date">{getTimeStamp(createdAt)}</div>
+        <p className="post-card__text">{text}</p>
       </div>
       <Settings
         post={comment}

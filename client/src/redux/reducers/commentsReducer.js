@@ -10,9 +10,11 @@ export default (state = {}, action) => {
     case ADD_COMMENT: {
       const { postId, comment } = action.payload;
 
-      state[postId] = [comment, ...state[postId]];
+      const newState = { ...state };
 
-      return { ...state };
+      newState[postId] = [comment, ...newState[postId]];
+
+      return newState;
     }
     case DELETE_COMMENT: {
       const { postId, commentId } = action.payload;

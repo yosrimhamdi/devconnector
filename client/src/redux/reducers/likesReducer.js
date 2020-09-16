@@ -12,16 +12,20 @@ export default (state = {}, action) => {
     case ADD_LIKE: {
       const { userId, postId } = action.payload;
 
-      state[postId] = [...state[postId], userId];
+      const newState = { ...state };
 
-      return { ...state };
+      newState[postId] = [...newState[postId], userId];
+
+      return newState;
     }
     case REMOVE_LIKE: {
       const { userId, postId } = action.payload;
 
-      state[postId] = state[postId].filter(user => userId !== user);
+      const newState = { ...state };
 
-      return { ...state };
+      newState[postId] = newState[postId].filter(user => userId !== user);
+
+      return newState;
     }
     default:
       return state;

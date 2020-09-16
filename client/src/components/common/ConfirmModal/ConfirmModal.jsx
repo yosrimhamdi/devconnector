@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-import './Modal.scss';
+import './ConfirmModal.scss';
 
-const Modal = ({ deleteAction, title, description, setIsModalShow }) => {
+const ConfrimModal = ({ deleteAction, title, description, setIsModalShow }) => {
   const [isShown, setIsShow] = useState(true);
 
   const removeFromScreen = () => {
@@ -15,20 +15,20 @@ const Modal = ({ deleteAction, title, description, setIsModalShow }) => {
 
   if (isShown) {
     modal = (
-      <div className="modal" onClick={removeFromScreen}>
-        <div className="modal__content" onClick={e => e.stopPropagation()}>
-          <h1 className="modal__title">{title}</h1>
-          <div className="modal__description">{description}</div>
-          <div className="modal__actions">
+      <div className="modal confirm-modal" onClick={removeFromScreen}>
+        <div className=" modal__content" onClick={e => e.stopPropagation()}>
+          <h1 className="confirm-modal__title">{title}</h1>
+          <div className="confirm-modal__description">{description}</div>
+          <div className="confirm-modal__actions">
             <button
-              className="modal__cancel-button modal__button"
+              className="confirm-modal__cancel-button confirm-modal__button"
               type="button"
               onClick={removeFromScreen}
             >
               cancel
             </button>
             <button
-              className="modal__confirm-button modal__button"
+              className="confirm-modal__confirm-button confirm-modal__button"
               type="button"
               onClick={deleteAction}
             >
@@ -43,4 +43,4 @@ const Modal = ({ deleteAction, title, description, setIsModalShow }) => {
   return ReactDOM.createPortal(modal, document.getElementById('modal'));
 };
 
-export default Modal;
+export default ConfrimModal;

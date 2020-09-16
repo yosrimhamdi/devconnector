@@ -6,7 +6,7 @@ import './Settings.scss';
 import trash from '../../icons/trash.svg';
 import dots from '../../icons/dots.svg';
 import useToggle from '../../../../../hooks/useToggle';
-import Modal from '../../../../common/Modal';
+import ConfirmModal from '../../../../common/ConfirmModal';
 
 const Settings = ({
   post,
@@ -68,7 +68,7 @@ const Settings = ({
         </div>
       </div>
       {isModalShown ? (
-        <Modal
+        <ConfirmModal
           deleteAction={deleteAction}
           title={modalTitle}
           description={modalDescription}

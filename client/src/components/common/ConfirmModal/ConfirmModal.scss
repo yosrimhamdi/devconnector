@@ -1,23 +1,4 @@
-.modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: #f3f3f4af;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__content {
-    opacity: initial;
-    background-color: #fff;
-    box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
-    border-radius: 10px;
-    width: 600px;
-  }
-
+.confirm-modal {
   &__title {
     font-size: 1.5rem;
     padding: 0.9rem 1rem 1rem;

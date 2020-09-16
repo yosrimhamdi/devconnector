@@ -8,6 +8,8 @@ import establishAuth from './utils/establishAuth';
 
 establishAuth(store);
 
+const x = 3;
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

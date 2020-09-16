@@ -11,7 +11,11 @@ const Comments = ({ fetchComments, postId, comments, loading }) => {
     fetchComments(postId);
   }, [fetchComments, postId]);
 
-  if (loading && (!comments.length || !comments)) {
+  if (!loading && !comments) {
+    return null;
+  }
+
+  if (loading && !comments) {
     return <Spinner />;
   }
 
@@ -25,10 +29,6 @@ const Comments = ({ fetchComments, postId, comments, loading }) => {
       <ul className="collection">{renderedComments}</ul>
     </div>
   );
-};
-
-Comments.defaultProps = {
-  comments: [],
 };
 
 const mapStateToProps = (state, ownProps) => ({

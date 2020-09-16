@@ -5,7 +5,7 @@ import './Profile.scss';
 
 import { fetchProfile } from '../../../redux/actions';
 import Spinner from '../../common/Spinner';
-import ProfileDisplay from './helpers/DisplayProfiles/ProfileDisplay';
+import ProfileDisplay from './helpers/ProfileDisplay/ProfileDisplay';
 
 const Profile = ({ profile, fetchProfile, match, history, errors }) => {
   useEffect(() => {

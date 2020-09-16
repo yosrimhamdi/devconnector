@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './DisplayProfiles.scss';
+import './ProfileDisplay.scss';
 
 import Socials from '../Socials';
 import SkillList from '../../../../common/SkillList';
@@ -27,15 +27,15 @@ const ProfileDisplay = ({ profile }) => {
   }
 
   return (
-    <div className="display-profiles">
-      <section className="display-profiles__intro">
+    <div className="profile-display">
+      <section className="profile-display__intro">
         <img
-          className="display-profiles__user-image"
+          className="profile-display__user-image"
           src={`/images/${photo}`}
           alt={`${name} avatar`}
         />
-        <div className="display-profiles__user-name">{name}</div>
-        <div className="display-profiles__user-job">
+        <div className="profile-display__user-name">{name}</div>
+        <div className="profile-display__user-job">
           <div>
             <span>{status}</span>
             <Company company={company} />
@@ -44,17 +44,17 @@ const ProfileDisplay = ({ profile }) => {
         </div>
         <Socials socials={social} />
       </section>
-      <section className="display-profiles__details">
-        <div className="display-profiles__bio-wrapper">
-          <div className="display-profiles__header">{`${name}'s Bio`}</div>
+      <section className="profile-display__details">
+        <div className="profile-display__bio-wrapper">
+          <div className="profile-display__header">{`${name}'s Bio`}</div>
           <div>{bio}</div>
         </div>
-        <div className="display-profiles__skills-wrapper">
-          <div className="display-profiles__header">skill set</div>
+        <div className="profile-display__skills-wrapper">
+          <div className="profile-display__header">skill set</div>
           <SkillList skills={skills} />
         </div>
       </section>
-      <section className="display-profiles__cridentials">
+      <section className="profile-display__cridentials">
         <ExperienceList experiences={experience} />
         <EducationList educations={education} />
       </section>

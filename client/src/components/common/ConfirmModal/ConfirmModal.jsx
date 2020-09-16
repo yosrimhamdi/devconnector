@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 
 import './ConfirmModal.scss';
 import ModalContext from '../../../contexts/ModalContext';
+import ModalCloseButton from '../ModalCloseButton';
 
 const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
   const { title, description, action } = useContext(ModalContext);
@@ -17,6 +18,7 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
     <div className="modal confirm-modal" onClick={removeModalFromScreen}>
       <div className=" modal__content" onClick={e => e.stopPropagation()}>
         <h1 className="confirm-modal__title">{title}</h1>
+        <ModalCloseButton onClick={removeModalFromScreen} />
         <div className="confirm-modal__description">{description}</div>
         <div className="confirm-modal__actions">
           <button

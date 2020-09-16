@@ -5,6 +5,7 @@ import classnames from 'classnames';
 
 import './CreatePostModal.scss';
 import { createPost } from '../../../../../redux/actions';
+import ModalCloseButton from '../../../../common/ModalCloseButton';
 
 const CreatePostModal = ({
   placeholder,
@@ -18,7 +19,7 @@ const CreatePostModal = ({
     return null;
   }
 
-  const hideModal = () => setIsModalShown(false);
+  const removeModalFromScreen = () => setIsModalShown(false);
 
   const submitPost = e => {
     e.preventDefault();
@@ -28,25 +29,26 @@ const CreatePostModal = ({
 
       setPost('');
 
-      hideModal();
+      removeModalFromScreen();
     }
   };
 
-  const buttonClassName = classnames('add-post-modal__button', {
-    'add-post-modal__button--valid': post,
+  const buttonClassName = classnames('create-post-modal__button', {
+    'create-post-modal__button--valid': post,
   });
 
   const modal = (
-    <div className="add-post-modal" onClick={hideModal}>
+    <div className="modal create-post-modal" onClick={removeModalFromScreen}>
       <div
-        className="add-post-modal__content"
+        className="modal__content modal__content--500w modal__content--padding"
         onClick={e => e.stopPropagation()}
       >
-        <h1 className="add-post-modal__title">create post</h1>
+        <h1 className="create-post-modal__title">create post</h1>
+        <ModalCloseButton onClick={removeModalFromScreen} />
         <form onSubmit={submitPost}>
           <textarea
             placeholder={placeholder}
-            className="add-post-modal__textarea"
+            className="create-post-modal__textarea"
             spellCheck="false"
             value={post}
             onChange={e => setPost(e.target.value)}

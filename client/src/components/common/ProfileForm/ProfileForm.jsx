@@ -18,7 +18,7 @@ const ProfileForm = ({
 }) => {
   const [display, toggle] = useToggle();
 
-  const message = display ? 'hide' : 'show';
+  const message = display === 'block' ? 'hide' : 'show';
 
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);

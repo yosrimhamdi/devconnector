@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import './AddPostForm.scss';
+import './CreatePostForm.scss';
 import getUserFirstName from '../../../../../utils/getUserFirstName';
-import AddPostModal from '../AddPostModal';
+import CreatePostModal from '../CreatePostModal';
 
-const AddPostForm = ({ user }) => {
-  const [showPostModal, setShowPostModal] = useState(false);
+const CreatePostForm = ({ user }) => {
+  const [isModalShown, setIsModalShown] = useState(false);
+
   const [post, setPost] = useState('');
 
-  let value = '';
+  const placeholder = `What's on your mind, ${getUserFirstName(user.name)}?`;
 
-  if ((post, showPostModal === false)) {
-    value = post;
+  let inputValue = '';
+
+  if (post && !isModalShown) {
+    inputValue = post;
   }
-
-  const userFirstName = getUserFirstName(user.name);
-  const placeholder = `What's on your mind, ${userFirstName}?`;
 
   return (
     <form className="add-post-form">
@@ -30,17 +30,16 @@ const AddPostForm = ({ user }) => {
         text="text"
         className="add-post-form__input"
         spellCheck="false"
-        value={value}
+        value={inputValue}
         onChange={() => {}}
-        onClick={() => setShowPostModal(true)}
+        onClick={() => setIsModalShown(true)}
       />
-      <AddPostModal
-        showPostModal={showPostModal}
-        setShowPostModal={setShowPostModal}
+      <CreatePostModal
+        isModalShown={isModalShown}
+        setIsModalShown={setIsModalShown}
+        placeholder={placeholder}
         post={post}
         setPost={setPost}
-        user={user}
-        placeholder={placeholder}
       />
     </form>
   );
@@ -48,4 +47,4 @@ const AddPostForm = ({ user }) => {
 
 const mapStateToProps = ({ auth }) => ({ user: auth.user });
 
-export default connect(mapStateToProps)(AddPostForm);
+export default connect(mapStateToProps)(CreatePostForm);

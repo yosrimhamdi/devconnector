@@ -15,8 +15,6 @@ a {
 
 button {
   background: none;
-  border: none;
-  outline: none;
   text-align: center;
   color: inherit;
   font-weight: inherit;
@@ -26,7 +24,8 @@ button {
   cursor: pointer;
 }
 
-input {
+input,
+button {
   border: none;
   outline: none;
 }

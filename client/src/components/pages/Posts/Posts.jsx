@@ -6,7 +6,7 @@ import './Posts.scss';
 import { fetchPosts } from '../../../redux/actions';
 import PostList from './helpers/PostList';
 import Spinner from '../../common/Spinner';
-import AddPostForm from './helpers/AddPostForm';
+import CreatePostForm from './helpers/CreatePostForm';
 
 const Posts = ({ fetchPosts, posts, loading }) => {
   useEffect(() => {
@@ -19,7 +19,7 @@ const Posts = ({ fetchPosts, posts, loading }) => {
 
   return (
     <div className="posts">
-      <AddPostForm />
+      <CreatePostForm />
       <PostList posts={posts} />
     </div>
   );

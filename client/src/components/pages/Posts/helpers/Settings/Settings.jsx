@@ -1,47 +1,34 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import classnames from 'classnames';
 
 import './Settings.scss';
-
 import trash from '../../icons/trash.svg';
 import dots from '../../icons/dots.svg';
-import useToggle from '../../../../../hooks/useToggle';
 import ConfirmModal from '../../../../common/ConfirmModal';
+import useHideOnBlur from './useHideOnBlur';
 
 const Settings = ({ relatedUser, auth, deleteMessage }) => {
-  const dotsRef = useRef(null);
-  const settingsRef = useRef(null);
-  const [display, toggle] = useToggle();
+  const [isSettingsShow, setIsSettingShown] = useState(false);
+
   const [isModalShown, setIsModalShown] = useState(false);
 
-  useEffect(() => {
-    const { current: DOMsettings } = settingsRef;
-    const { current: DOMdots } = dotsRef;
-
-    const handleClickOutside = ({ target }) => {
-      if (
-        DOMsettings &&
-        !DOMsettings.contains(target) &&
-        target !== DOMdots &&
-        display === 'block'
-      ) {
-        toggle();
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  });
+  const [dotsRef, settingsRef] = useHideOnBlur(setIsSettingShown);
 
   if (relatedUser._id !== auth.user._id) {
     return null;
   }
 
+  const toggleSettingsVisiblity = () => setIsSettingShown(!isSettingsShow);
+
+  const settingsClassName = classnames('settings__wrapper', {
+    'settings__wrapper--visible': isSettingsShow,
+  });
+
   return (
     <div className="settings">
       <div className="settings__open-menu-wrapper">
-        <button type="button" onClick={toggle}>
+        <button type="button" onClick={toggleSettingsVisiblity}>
           <img
             src={dots}
             alt="open menu"
@@ -50,7 +37,7 @@ const Settings = ({ relatedUser, auth, deleteMessage }) => {
           />
         </button>
       </div>
-      <div className="settings__wrapper" ref={settingsRef} style={{ display }}>
+      <div className={settingsClassName} ref={settingsRef}>
         <div className="settings__delete">
           <img src={trash} alt="trash" className="settings__trash-icon" />
           <button type="button" onClick={() => setIsModalShown(true)}>

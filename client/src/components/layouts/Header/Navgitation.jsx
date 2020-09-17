@@ -13,9 +13,9 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
             src={`/images/${user.photo}`}
             alt={`${user.name} avatar`}
           />
-          <button onClick={logoutUser} type="button">
+          <div onClick={logoutUser} role="button">
             logout
-          </button>
+          </div>
         </div>
       </>
     );

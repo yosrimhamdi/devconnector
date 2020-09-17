@@ -22,13 +22,13 @@ const Profile = ({ profile, fetchProfile, match, history, errors }) => {
 
   return (
     <div className="profile">
-      <button
+      {/*       <button
         type="button"
         className="link link--grey"
         onClick={history.goBack}
       >
         go back
-      </button>
+      </button> */}
       <ProfileDisplay profile={profile} />
     </div>
   );

@@ -27,34 +27,32 @@ import NotFound from '../pages/NotFound';
 const App = () => (
   <Router history={history}>
     <Header />
-    <div className="content-wrapper">
-      <Switch>
-        <Route path="/" exact component={Landing} />
-        <PrivateRoute path="/dashboard" exact component={Dashboard} />
-        <RestrictedRoute path="/register" exact component={Register} />
-        <RestrictedRoute path="/login" exact component={Login} />
-        <Route path="/profiles" exact component={Profiles} />
-        <Route path="/profiles/new" exact component={CreateProfile} />
-        <RestrictedRequireProfileRoute
-          path="/profiles/update"
-          exact
-          component={UpdateProfile}
-        />
-        <RestrictedRequireProfileRoute
-          path="/profiles/experience/new"
-          exact
-          component={AddExperience}
-        />
-        <RestrictedRequireProfileRoute
-          path="/profiles/education/new"
-          exact
-          component={AddEducation}
-        />
-        <Route path="/profiles/:handle" exact component={Profile} />
-        <PrivateRoute path="/posts" exact component={Posts} />
-        <Route path="*" component={NotFound} />
-      </Switch>
-    </div>
+    <Switch>
+      <Route path="/" exact component={Landing} />
+      <PrivateRoute path="/dashboard" exact component={Dashboard} />
+      <RestrictedRoute path="/register" exact component={Register} />
+      <RestrictedRoute path="/login" exact component={Login} />
+      <Route path="/profiles" exact component={Profiles} />
+      <Route path="/profiles/new" exact component={CreateProfile} />
+      <RestrictedRequireProfileRoute
+        path="/profiles/update"
+        exact
+        component={UpdateProfile}
+      />
+      <RestrictedRequireProfileRoute
+        path="/profiles/experience/new"
+        exact
+        component={AddExperience}
+      />
+      <RestrictedRequireProfileRoute
+        path="/profiles/education/new"
+        exact
+        component={AddEducation}
+      />
+      <Route path="/profiles/:handle" exact component={Profile} />
+      <PrivateRoute path="/posts" exact component={Posts} />
+      <Route path="*" component={NotFound} />
+    </Switch>
   </Router>
 );
 

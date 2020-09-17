@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './Socials.scss';
 import SocialItem from './SocialItem';
 
 const Socials = ({ socials = {} }) => {
@@ -11,7 +12,7 @@ const Socials = ({ socials = {} }) => {
     />
   ));
 
-  return <ul>{renderedSocials}</ul>;
+  return <ul className="socials collection">{renderedSocials}</ul>;
 };
 
 export default Socials;

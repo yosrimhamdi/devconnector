@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './EducationList.scss';
 import EducationItem from './EducationItem';
 
 const EducationList = ({ educations }) => {
@@ -8,12 +7,7 @@ const EducationList = ({ educations }) => {
     <EducationItem education={education} key={education._id} />
   ));
 
-  return (
-    <div className="education-list">
-      <div className="education-list__title">education</div>
-      <ul className="collection">{renderedEducations}</ul>
-    </div>
-  );
+  return <ul className="credentials collection">{renderedEducations}</ul>;
 };
 
 export default EducationList;

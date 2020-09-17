@@ -3,10 +3,9 @@ import React from 'react';
 import './ProfileDisplay.scss';
 
 import Socials from '../Socials';
-import SkillList from '../../../../common/SkillList';
+import SkillList from '../SkillList';
 import ExperienceList from '../ExperienceList';
 import EducationList from '../EducationList';
-import Company from '../../../../common/Company';
 
 const ProfileDisplay = ({ profile }) => {
   const {
@@ -16,7 +15,6 @@ const ProfileDisplay = ({ profile }) => {
     location,
     website,
     social,
-    bio,
     skills,
     experience,
     education,
@@ -28,34 +26,38 @@ const ProfileDisplay = ({ profile }) => {
 
   return (
     <div className="profile-display">
-      <section className="profile-display__intro">
+      <section className="profile-display__user-intro">
         <img
           className="profile-display__user-image"
           src={`/images/${photo}`}
           alt={`${name} avatar`}
         />
-        <div className="profile-display__user-name">{name}</div>
-        <div className="profile-display__user-job">
-          <div>
-            <span>{status}</span>
-            <Company company={company} />
-          </div>
-          <div>{location}</div>
+      </section>
+      <section className="profile-display__user-details">
+        <div className="profile-display__detail-title">name surname</div>
+        <div className="profile-display__detail">{name}</div>
+        <div className="profile-display__detail-title">position</div>
+        <div className="profile-display__detail">{status}</div>
+        <div className="profile-display__detail-title">location</div>
+        <div className="profile-display__detail">{location}</div>
+        <div className="profile-display__detail-title">company</div>
+        <div className="profile-display__detail">{company}</div>
+        <div className="profile-display__detail-title profile-display__detail-title--mb-small">
+          socials
         </div>
         <Socials socials={social} />
-      </section>
-      <section className="profile-display__details">
-        <div className="profile-display__bio-wrapper">
-          <div className="profile-display__header">{`${name}'s Bio`}</div>
-          <div>{bio}</div>
+        <div className="profile-display__detail-title profile-display__detail-title--mb-small">
+          skills
         </div>
-        <div className="profile-display__skills-wrapper">
-          <div className="profile-display__header">skill set</div>
-          <SkillList skills={skills} />
+        <SkillList skills={skills} />
+        <div className="profile-display__detail-title profile-display__detail-title--mb-medium">
+          experiences
         </div>
-      </section>
-      <section className="profile-display__cridentials">
         <ExperienceList experiences={experience} />
+        <div className="profile-display__detail-title profile-display__detail-title--mb-medium">
+          educations
+        </div>
+
         <EducationList educations={education} />
       </section>
     </div>

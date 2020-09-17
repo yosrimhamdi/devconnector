@@ -7,7 +7,7 @@ import { fetchProfile } from '../../../redux/actions';
 import Spinner from '../../common/Spinner';
 import ProfileDisplay from './helpers/ProfileDisplay/ProfileDisplay';
 
-const Profile = ({ profile, fetchProfile, match, history, errors }) => {
+const Profile = ({ profile, fetchProfile, match, errors }) => {
   useEffect(() => {
     fetchProfile(match.params.handle);
   }, [fetchProfile, match.params.handle]);
@@ -22,13 +22,6 @@ const Profile = ({ profile, fetchProfile, match, history, errors }) => {
 
   return (
     <div className="profile">
-      {/*       <button
-        type="button"
-        className="link link--grey"
-        onClick={history.goBack}
-      >
-        go back
-      </button> */}
       <ProfileDisplay profile={profile} />
     </div>
   );

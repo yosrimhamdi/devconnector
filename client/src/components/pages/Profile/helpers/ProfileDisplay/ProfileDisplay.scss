@@ -12,11 +12,16 @@
   }
 
   &__user-image {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 0 20px 2px rgba($color: #000000, $alpha: 0.1);
+
+    @media (min-width: 1400px) {
+      width: 200px;
+      height: 200px;
+    }
   }
 
   &__user-details {

@@ -3,9 +3,9 @@ $lightGreyLinkHover: rgba(255, 255, 255, 0.75);
 $greyLink: rgba(255, 255, 255, 0.5);
 
 .header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100vw;
+  width: 100%;
   padding: 1em 8%;
   z-index: 2;
   color: white;

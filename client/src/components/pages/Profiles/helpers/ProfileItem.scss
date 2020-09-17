@@ -42,12 +42,13 @@ $imageDim: 100px;
     display: inline-block;
     color: #b6b7c1;
     border: 1px solid #b6b7c1;
-    transition: all 150ms;
+    transition: all 120ms;
 
     &:hover {
       background-color: #6f8cff;
       color: white;
-      box-shadow: 0 5px 10px 3px rgba($color: #000000, $alpha: 0.1);
+      border: none;
+      box-shadow: 0 0 10px 3px rgba($color: #000000, $alpha: 0.1);
     }
   }
 }

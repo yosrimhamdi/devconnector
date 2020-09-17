@@ -1,3 +1,5 @@
+@import '../../../assets/styles/mixins';
+
 .headline {
   text-align: center;
   margin-bottom: 4em;
@@ -9,16 +11,27 @@
   }
 
   &__title {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-size: 400;
     text-transform: uppercase;
+
+    @include atLarge {
+      font-size: 3.5rem;
+    }
   }
 
   &__sub-title {
-    font-size: 1.2rem;
     font-weight: 400;
     text-align: left;
-    transform: translateX(5px);
+    transform: translateX(1px);
+
+    @include atLarge {
+      font-size: 1.2rem;
+    }
+
+    &::after {
+      content: '.';
+    }
   }
 
   &__title,

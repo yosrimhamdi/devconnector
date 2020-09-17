@@ -1,3 +1,5 @@
+@import '../../../assets/styles/mixins';
+
 .landing {
   height: 100vh;
   background-image: url('./showcase.jpg');
@@ -20,22 +22,32 @@
     color: white;
     z-index: 2;
     text-align: center;
-
+    width: 100%;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  &__header {
-    font-size: 5rem;
-    font-weight: 300;
-    margin-bottom: 0.05em;
+  &__header,
+  &__sub-header {
+    font-family: 'Montserrat';
   }
 
-  &__paragraph {
+  &__header {
+    font-size: 3.6rem;
+    font-weight: 300;
+    margin-bottom: 0.1em;
+
+    @include atLarge {
+      font-size: 5rem;
+    }
+  }
+
+  &__sub-header {
+    font-size: 1rem;
     font-weight: 200;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
   }
 
   &__button-container > a:not(:last-child) {

@@ -7,10 +7,10 @@ const Landing = () => (
   <div className="landing">
     <div className="landing__content">
       <h1 className="landing__header">Developer Connector</h1>
-      <p className="landing__paragraph">
+      <h2 className="landing__sub-header">
         Create a developer profile/portfolio, share posts and get help from
         other developers
-      </p>
+      </h2>
       <div className="landing__button-container">
         <Link to="/register" className="link">
           sign up

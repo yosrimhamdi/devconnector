@@ -8,7 +8,7 @@ const Profiles = () => (
   <div className="profiles content-wrapper">
     <Headline
       header="developer profiles"
-      subHeader="Browse and connect with developers."
+      subHeader="Browse and connect with developers"
     />
     <ProfileList />
   </div>

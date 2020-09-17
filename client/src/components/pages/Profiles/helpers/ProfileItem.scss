@@ -1,4 +1,6 @@
 $imageDim: 100px;
+$buttonBlueBg: #6f8cff;
+$buttonTextGrey: #b6b7c1;
 
 .profile-item {
   border-radius: 10px;
@@ -40,14 +42,14 @@ $imageDim: 100px;
     padding: 0.6em 1em;
     border-radius: 3px;
     display: inline-block;
-    color: #b6b7c1;
-    border: 1px solid #b6b7c1;
+    color: $buttonTextGrey;
+    border: 1px solid $buttonTextGrey;
     transition: all 120ms;
 
     &:hover {
-      background-color: #6f8cff;
+      background-color: $buttonBlueBg;
       color: white;
-      border: none;
+      border-color: $buttonBlueBg;
       box-shadow: 0 0 10px 3px rgba($color: #000000, $alpha: 0.1);
     }
   }

@@ -13,7 +13,7 @@ const Dashboard = ({ profile, auth, loading, fetchUserProfile }) => {
   }, [fetchUserProfile]);
 
   return (
-    <div className="dashboard">
+    <div className="dashboard content-wrapper">
       <div className="dashboard__container">
         <h1 className="dashboard__title">dashboard</h1>
         <UserProfileLink user={auth.user} profile={profile} />

@@ -3,23 +3,27 @@
   color: white;
   border-radius: 3px;
   padding: 0.6em 1em;
+  margin-bottom: 1em;
   display: inline-block;
   text-transform: capitalize;
-  transition: all 200ms;
-  box-shadow: 0 1px 3px rgba($color: #000, $alpha: 0.2);
+  transition: background-color 200ms;
 
   &--grey {
-    background-color: rgb(236, 235, 235);
-    color: black;
+    background-color: #f2f3f5;
+    color: #050523;
+
+    &:hover {
+      color: #050523 !important;
+      background-color: #e3e4e6 !important;
+    }
   }
 
   &:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 3px 5px rgba($color: #000, $alpha: 0.2);
+    background-color: #1394a8;
+    color: #f0f0f0;
   }
 
   &:active {
-    transform: translateY(0);
-    box-shadow: 0 1px 3px rgba($color: #000, $alpha: 0.2);
+    transform: scale(0.97);
   }
 }

@@ -1,9 +1,11 @@
 .landing {
-  height: 100vh;
+  height: calc(100vh - 58px);
+
   background-image: url('./showcase.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
+  margin: -3.5em -10px;
 
   &::after {
     content: '';
@@ -30,13 +32,12 @@
   &__header {
     font-size: 5rem;
     font-weight: 300;
-    margin-bottom: 0.2em;
-    white-space: nowrap;
+    margin-bottom: 0.05em;
   }
 
   &__paragraph {
     font-weight: 200;
-    margin-bottom: 2.6em;
+    margin-bottom: 3em;
   }
 
   &__button-container > a:not(:last-child) {

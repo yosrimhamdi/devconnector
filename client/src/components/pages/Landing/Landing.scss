@@ -1,11 +1,9 @@
 .landing {
-  height: calc(100vh - 58px);
-
+  height: 100vh;
   background-image: url('./showcase.jpg');
   background-size: cover;
   background-position: center;
   position: relative;
-  margin: -3.5em -10px;
 
   &::after {
     content: '';

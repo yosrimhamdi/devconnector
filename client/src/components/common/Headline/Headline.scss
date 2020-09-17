@@ -1,22 +1,29 @@
 .headline {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 1.5em;
+  margin-bottom: 5em;
+  font-family: 'Montserrat';
+
+  &__wrapper {
+    margin: 0 auto;
+    display: inline-block;
+  }
 
   &__title {
-    font-size: 4rem;
-    font-weight: 400;
+    font-size: 3.5rem;
+    font-size: 400;
+    text-transform: uppercase;
   }
 
   &__sub-title {
     font-size: 1.2rem;
     font-weight: 400;
-    font-style: italic;
-    margin-bottom: 2em;
-    text-decoration: underline;
+    text-align: left;
+    transform: translateX(5px);
   }
 
   &__title,
-  &__message {
+  &__sub-title {
     &:first-letter {
       text-transform: capitalize;
     }

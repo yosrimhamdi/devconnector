@@ -1,47 +1,28 @@
-import React from 'react';
-import { Field, reduxForm } from 'redux-form';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './Login.scss';
-import validate from './validate';
 import { loginUser } from '../../../redux/actions';
-import Headline from '../../common/Headline';
-import { Input } from '../../common/form';
+import Email from './Email';
+import Password from './Password';
 
-const Login = ({ handleSubmit, loginUser, errors }) => (
-  <div className="login">
-    <div className="login__content">
-      <Headline
-        header="log in"
-        subHeader="sign in to your DevConnector account"
-      />
-      <form onSubmit={handleSubmit(loginUser)} className="form">
-        <Field
-          name="email"
-          placeholder="email"
-          component={Input}
-          responseError={errors.wrongEmailOrPassword}
-        />
-        <Field
-          name="password"
-          type="password"
-          placeholder="password"
-          component={Input}
-          responseError={errors.wrongEmailOrPassword}
-        />
-        <button className="form__submit-btn" type="submit">
-          submit
-        </button>
-      </form>
+const Login = ({ loginUser }) => {
+  const [page, setPage] = useState(1);
+
+  const next = () => setPage(page + 1);
+  const prev = () => setPage(page - 1);
+
+  let content = <Email onSubmit={next} />;
+
+  if (page === 2) {
+    content = <Password previousPage={prev} onSubmit={loginUser} />;
+  }
+
+  return (
+    <div className="login">
+      <div className="login__content">{content}</div>
     </div>
-  </div>
-);
+  );
+};
 
-const wrappedForm = reduxForm({ form: 'login', validate })(Login);
-
-const mapStateToProps = ({ auth, errors }) => ({
-  auth,
-  errors,
-});
-
-export default connect(mapStateToProps, { loginUser })(wrappedForm);
+export default connect(null, { loginUser })(Login);

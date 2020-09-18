@@ -13,7 +13,7 @@ const Header = ({ auth, logoutUser }) => (
       <Link to="/" className="header__devconnector">
         devConnector
       </Link>
-      <Link to="/profiles" className="header__developer">
+      <Link to="/profiles" className="header__link">
         developers
       </Link>
     </div>

@@ -5,15 +5,23 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   if (isAuthenticated) {
     return (
       <>
-        <Link to="/posts">post feed</Link>
-        <Link to="/dashboard">dashboard</Link>
+        <Link to="/posts" className="header__link">
+          post feed
+        </Link>
+        <Link to="/dashboard" className="header__link">
+          dashboard
+        </Link>
         <div className="header__logout">
           <img
             className="header__user-image"
             src={`/images/${user.photo}`}
             alt={`${user.name} avatar`}
           />
-          <div onClick={logoutUser} role="button">
+          <div
+            className="header__logout-button"
+            onClick={logoutUser}
+            role="button"
+          >
             logout
           </div>
         </div>
@@ -23,10 +31,12 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
 
   return (
     <>
-      <Link to="/register" className="header__sign-up">
+      <Link to="/register" className="header__sign-up header__link">
         sign up
       </Link>
-      <Link to="/login">login</Link>
+      <Link to="/login" className="header__link">
+        login
+      </Link>
     </>
   );
 };

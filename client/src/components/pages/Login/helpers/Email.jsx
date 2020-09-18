@@ -1,14 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
-import { Input } from '../../../common/form';
+import logo from '../../../../assets/images/programming.svg';
+import Input from './Input';
 import validate from '../validate';
 
 const Email = ({ handleSubmit }) => {
   return (
-    <form onSubmit={handleSubmit}>
-      <Field name="email" placeholder="email" component={Input} />
-      <button type="submit">submit</button>
+    <form noValidate onSubmit={handleSubmit}>
+      <img className="login__website-logo" src={logo} alt="webiste logo" />
+      <h1 className="login__title">sign in</h1>
+      <Field name="email" component={Input} placeholder="email" type="email" />
+      <div className="login__message">
+        <span>No accout?</span>
+        <Link to="/register" className="login__link">
+          Create one!
+        </Link>
+      </div>
+      <div className="login__submit-button-wrapper">
+        <button type="submit" className="login__submit-button">
+          next
+        </button>
+      </div>
     </form>
   );
 };

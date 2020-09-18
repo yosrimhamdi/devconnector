@@ -1,29 +1,49 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
+import logo from '../../../../assets/images/programming.svg';
+import arrow from './arrow.svg';
 import validate from '../validate';
-import { Input } from '../../../common/form';
+import Input from './Input';
 
-const Password = ({ handleSubmit, previousPage }) => {
+const Password = ({ handleSubmit, previousPage, email }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form noValidate onSubmit={handleSubmit}>
+      <img className="login__website-logo" src={logo} alt="webiste logo" />
+      <div className="login__back-arrow-icon-wrapper">
+        <img
+          onClick={previousPage}
+          className="login__back-arrow-icon"
+          src={arrow}
+          alt="back arrow"
+        />
+        <div className="login__user-email">{email}</div>
+      </div>
+      <h1 className="login__title">enter password</h1>
       <Field
         name="password"
         type="password"
         placeholder="password"
         component={Input}
       />
-      <button type="submit">submit</button>
-      <button type="button" onClick={previousPage}>
-        back
-      </button>
+      <div className="login__submit-button-wrapper">
+        <button type="submit" className="login__submit-button">
+          sign in
+        </button>
+      </div>
     </form>
   );
 };
-
-export default reduxForm({
+const wrappedForm = reduxForm({
   form: 'login',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,
 })(Password);
+
+const mapStateToProps = state => ({
+  email: state.form.login.values.email,
+});
+
+export default connect(mapStateToProps)(wrappedForm);

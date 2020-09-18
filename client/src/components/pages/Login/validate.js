@@ -1,4 +1,4 @@
-import { isEmail, isLength } from 'validator';
+import { isEmail } from 'validator';
 
 export default ({ email = '', password = '' }) => {
   const err = {};
@@ -7,8 +7,8 @@ export default ({ email = '', password = '' }) => {
     err.email = 'invalid email';
   }
 
-  if (!isLength(password, { min: 6, max: 30 })) {
-    err.password = 'password in required: between 6 and 30 characters';
+  if (!password) {
+    err.password = 'please enter the password of DevConnector account';
   }
 
   return err;

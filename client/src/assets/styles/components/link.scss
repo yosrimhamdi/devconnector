@@ -1,5 +1,5 @@
 .link {
-  background-color: #17a2b8;
+  background-color: var(--blue-button);
   color: white;
   border-radius: 3px;
   padding: 0.6em 1em;
@@ -9,21 +9,19 @@
   transition: background-color 200ms;
 
   &--grey {
-    background-color: #f2f3f5;
+    background-color: var(--grey-button);
     color: #050523;
 
     &:hover {
-      color: #050523 !important;
-      background-color: #e3e4e6 !important;
+      background-color: var(--grey-button-hover) !important;
     }
   }
 
   &:hover {
-    background-color: #1394a8;
-    color: #f0f0f0;
+    background-color: var(--blue-button-hover);
   }
 
   &:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
   }
 }

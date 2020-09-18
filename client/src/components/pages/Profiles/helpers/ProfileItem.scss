@@ -1,5 +1,4 @@
 $imageDim: 100px;
-$buttonBlueBg: #6f8cff;
 $buttonTextGrey: #b6b7c1;
 
 .profile-item {
@@ -47,9 +46,9 @@ $buttonTextGrey: #b6b7c1;
     transition: all 120ms;
 
     &:hover {
-      background-color: $buttonBlueBg;
+      background-color: var(--blue-button);
       color: white;
-      border-color: $buttonBlueBg;
+      border-color: var(--blue-button);
       box-shadow: 0 0 10px 3px rgba($color: #000000, $alpha: 0.1);
     }
   }

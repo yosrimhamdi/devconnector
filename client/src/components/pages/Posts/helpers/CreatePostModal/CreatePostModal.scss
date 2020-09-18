@@ -57,12 +57,12 @@
   }
 
   &__button--valid {
-    background-color: #1877f2;
+    background-color: var(--blue-button);
     color: white;
     cursor: pointer;
 
     &:hover {
-      background-color: #1170ec;
+      background-color: var(--blue-button-hover);
     }
 
     &:active {

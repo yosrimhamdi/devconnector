@@ -21,10 +21,12 @@ $greyLink: rgba(255, 255, 255, 0.5);
   }
 
   &__right-section,
-  &__left-section {
+  &__left-section,
+  &__logout {
     cursor: pointer;
     display: flex;
     display: flex;
+    align-items: center;
   }
 
   &__right-section > *:hover,
@@ -47,11 +49,5 @@ $greyLink: rgba(255, 255, 255, 0.5);
     object-fit: cover;
     border-radius: 50%;
     margin-right: 0.5em;
-    position: relative;
-    top: -1px;
-  }
-
-  &__logout {
-    display: flex;
   }
 }

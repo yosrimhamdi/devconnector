@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 
 import './Login.scss';
 import { loginUser } from '../../../redux/actions';
-import Email from './Email';
-import Password from './Password';
+import Email from './helpers/Email';
+import Password from './helpers/Password';
 
 const Login = ({ loginUser }) => {
   const [page, setPage] = useState(1);

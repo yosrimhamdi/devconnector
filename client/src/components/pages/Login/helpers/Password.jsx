@@ -1,8 +1,8 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-import validate from './validate';
-import { Input } from '../../common/form';
+import validate from '../validate';
+import { Input } from '../../../common/form';
 
 const Password = ({ handleSubmit, previousPage }) => {
   return (

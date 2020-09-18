@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
-import logo from '../../../../assets/images/programming.svg';
+import code from '../../../../assets/images/code-logo.svg';
 import arrow from './arrow.svg';
 import validate from '../validate';
 import Input from './Input';
@@ -10,7 +10,7 @@ import Input from './Input';
 const Password = ({ handleSubmit, previousPage, email }) => {
   return (
     <form noValidate onSubmit={handleSubmit}>
-      <img className="login__website-logo" src={logo} alt="webiste logo" />
+      <img className="login__website-logo" src={code} alt="code logo" />
       <div className="login__back-arrow-icon-wrapper">
         <img
           onClick={previousPage}

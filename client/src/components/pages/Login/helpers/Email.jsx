@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
-import logo from '../../../../assets/images/programming.svg';
+import code from '../../../../assets/images/code-logo.svg';
 import Input from './Input';
 import validate from '../validate';
 
 const Email = ({ handleSubmit }) => {
   return (
     <form noValidate onSubmit={handleSubmit}>
-      <img className="login__website-logo" src={logo} alt="webiste logo" />
+      <img className="login__website-logo" src={code} alt="webiste logo" />
       <h1 className="login__title">sign in</h1>
       <Field name="email" component={Input} placeholder="email" type="email" />
       <div className="login__message">

@@ -26,13 +26,13 @@ const UserName = ({ handleSubmit, previousFormPage, email }) => (
       <Field
         name="firstName"
         type="text"
-        placeholder="first name"
+        placeholder="First name"
         component={AuthInput}
       />
       <Field
         name="surname"
         type="text"
-        placeholder="surname"
+        placeholder="Surname"
         component={AuthInput}
       />
     </div>

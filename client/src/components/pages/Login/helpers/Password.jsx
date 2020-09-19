@@ -24,7 +24,7 @@ const Password = ({ handleSubmit, previousFormPage, email, errors }) => (
       <Field
         name="password"
         type="password"
-        placeholder="password"
+        placeholder="Password"
         responseError={errors.wrongEmailOrPassword}
         component={AuthInput}
       />

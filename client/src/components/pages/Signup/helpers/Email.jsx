@@ -13,7 +13,7 @@ const Email = ({ handleSubmit }) => (
       <Field
         name="email"
         component={AuthInput}
-        placeholder="someone@exemple.com"
+        placeholder="Someone@exemple.com"
         type="email"
       />
     </div>

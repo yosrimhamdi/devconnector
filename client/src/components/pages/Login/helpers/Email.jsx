@@ -14,13 +14,13 @@ const Email = ({ handleSubmit }) => (
       <Field
         name="email"
         component={AuthInput}
-        placeholder="email"
+        placeholder="Email"
         type="email"
       />
     </div>
     <div className="auth__message">
       <span>No accout?</span>
-      <Link to="/register" className="auth__link">
+      <Link to="/signup" className="auth__link">
         Create one!
       </Link>
     </div>

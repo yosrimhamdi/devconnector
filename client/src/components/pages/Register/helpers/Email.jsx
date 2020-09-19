@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
@@ -10,20 +9,14 @@ const Email = ({ handleSubmit }) => {
   return (
     <form noValidate onSubmit={handleSubmit}>
       <img className="login__website-logo" src={code} alt="webiste logo" />
-      <h1 className="login__title">log in</h1>
+      <h1 className="login__title">create account</h1>
       <div className="login__inputs-wrapper">
         <Field
           name="email"
           component={Input}
-          placeholder="email"
+          placeholder="Someone@exemple.com"
           type="email"
         />
-      </div>
-      <div className="login__message">
-        <span>No accout?</span>
-        <Link to="/register" className="login__link">
-          Create one!
-        </Link>
       </div>
       <div className="login__submit-button-wrapper">
         <button type="submit" className="login__submit-button">
@@ -35,7 +28,7 @@ const Email = ({ handleSubmit }) => {
 };
 
 export default reduxForm({
-  form: 'login',
+  form: 'signup',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,

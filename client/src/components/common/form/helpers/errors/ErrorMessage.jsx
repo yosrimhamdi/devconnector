@@ -1,12 +1,12 @@
 import React from 'react';
 
-const ErrorMessage = ({ meta }) => {
-  const { error, touched, active } = meta;
+const ErrorMessage = ({ meta, responseError }) => {
+  const { error, active, submitFailed } = meta;
 
-  if (touched && !active && error) {
+  if ((submitFailed && !active && error) || responseError) {
     return (
       <div className="auth__error-message">
-        <span>{error}</span>
+        <span>{error || responseError}</span>
         <span>.</span>
       </div>
     );

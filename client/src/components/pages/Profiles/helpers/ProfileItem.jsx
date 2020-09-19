@@ -7,7 +7,7 @@ import Company from '../../../common/Company';
 const ProfileItem = ({ profile, i }) => {
   const { user, handle, status, company } = profile;
 
-  const timing = 150;
+  const timing = 120;
 
   const style = {
     animation: `zoom ${timing}ms forwards ${i * timing}ms`,

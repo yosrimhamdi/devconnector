@@ -4,7 +4,7 @@ import './Profiles.scss';
 import ProfileList from './helpers/ProfileList';
 
 const Profiles = () => (
-  <div className="profiles content-wrapper">
+  <div className="profiles">
     <ProfileList />
   </div>
 );

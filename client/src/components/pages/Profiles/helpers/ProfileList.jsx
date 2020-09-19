@@ -12,7 +12,7 @@ const ProfileList = ({ fetchProfiles, profiles, loading }) => {
   }, [fetchProfiles]);
 
   if (loading) {
-    return <Spinner />;
+    return <Spinner white fullScreen />;
   }
 
   const renderedProfiles = profiles.map(profile => (

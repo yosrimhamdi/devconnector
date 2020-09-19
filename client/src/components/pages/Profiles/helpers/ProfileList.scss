@@ -2,8 +2,10 @@
   display: grid;
   width: 80vw;
   margin: 0 auto;
-  padding-top: 1em;
+  padding: 9em 0 3em;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 
   grid-template-columns: repeat(3, minmax(250px, 330px));
   grid-gap: 2.2em;

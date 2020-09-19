@@ -14,7 +14,7 @@ const Posts = ({ fetchPosts, posts, loading }) => {
   }, [fetchPosts]);
 
   if (loading && !posts.length) {
-    return <Spinner />;
+    return <Spinner fullScreen />;
   }
 
   return (

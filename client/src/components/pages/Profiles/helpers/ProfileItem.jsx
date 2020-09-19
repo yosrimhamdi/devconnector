@@ -4,11 +4,17 @@ import { Link } from 'react-router-dom';
 import './ProfileItem.scss';
 import Company from '../../../common/Company';
 
-const ProfileItem = ({ profile }) => {
+const ProfileItem = ({ profile, i }) => {
   const { user, handle, status, company } = profile;
 
+  const timing = 150;
+
+  const style = {
+    animation: `zoom ${timing}ms forwards ${i * timing}ms`,
+  };
+
   return (
-    <li className="profile-item">
+    <li className="profile-item" style={style}>
       <img
         className="profile-item__image"
         src={`/images/${user.photo}`}

@@ -9,7 +9,7 @@ $buttonTextGrey: #b6b7c1;
   text-transform: capitalize;
   transition: all 150ms;
   background-color: white;
-  animation: zoom 200ms;
+  opacity: 0;
 
   &:hover {
     transform: scale(1.05);
@@ -66,5 +66,6 @@ $buttonTextGrey: #b6b7c1;
 
   to {
     transform: scale(1);
+    opacity: 1;
   }
 }

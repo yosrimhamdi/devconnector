@@ -15,8 +15,8 @@ const ProfileList = ({ fetchProfiles, profiles, loading }) => {
     return <Spinner white fullScreen />;
   }
 
-  const renderedProfiles = profiles.map(profile => (
-    <ProfileItem key={profile._id} profile={profile} />
+  const renderedProfiles = profiles.map((profile, i) => (
+    <ProfileItem key={profile._id} profile={profile} i={i} />
   ));
 
   return <ul className="profile-list collection">{renderedProfiles}</ul>;

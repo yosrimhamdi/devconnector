@@ -6,27 +6,48 @@ import Email from './helpers/Email';
 import Password from './helpers/Password';
 import UserName from './helpers/UserName';
 
-const Register = ({ registerUser }) => {
+const Register = ({ registerUser, email }) => {
   const [page, setPage] = useState(1);
 
-  const next = () => setPage(page + 1);
-  const prev = () => setPage(page - 1);
-
-  let form = <Email onSubmit={next} />;
+  let form = <Email onSubmit={() => setPage(page + 1)} />;
 
   if (page === 2) {
-    form = <Password onSubmit={next} previousPage={prev} />;
+    form = (
+      <Password
+        onSubmit={() => setPage(page + 1)}
+        previousFormPage={() => setPage(page - 1)}
+        email={email}
+      />
+    );
   }
 
   if (page === 3) {
-    form = <UserName onSubmit={registerUser} previousPage={prev} />;
+    form = (
+      <UserName
+        onSubmit={registerUser}
+        previousFormPage={() => setPage(page - 1)}
+        email={email}
+      />
+    );
   }
 
   return (
-    <div className="login">
-      <div className="login__content">{form}</div>
+    <div className="auth">
+      <div className="auth__content">{form}</div>
     </div>
   );
 };
 
-export default connect(null, { registerUser })(Register);
+const mapStateToProps = state => {
+  if (state.form.signup) {
+    if (state.form.signup.values) {
+      return {
+        email: state.form.signup.values.email,
+      };
+    }
+  }
+
+  return {};
+};
+
+export default connect(mapStateToProps, { registerUser })(Register);

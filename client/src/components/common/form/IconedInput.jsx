@@ -3,11 +3,11 @@ import React from 'react';
 import getClassName from './helpers/getClassName';
 import ValidationError from './helpers/errors/ValidationError';
 
-import youtube from '../../../assets/icons/youtube.svg';
-import facebook from '../../../assets/icons/facebook.svg';
-import twitter from '../../../assets/icons/twitter.svg';
-import linkedin from '../../../assets/icons/linkedin.svg';
-import instagram from '../../../assets/icons/instagram.svg';
+import youtube from '../../../assets/icons/socials/youtube.svg';
+import facebook from '../../../assets/icons/socials/facebook.svg';
+import twitter from '../../../assets/icons/socials/twitter.svg';
+import linkedin from '../../../assets/icons/socials/linkedin.svg';
+import instagram from '../../../assets/icons/socials/instagram.svg';
 
 const icons = { youtube, facebook, twitter, linkedin, instagram };
 

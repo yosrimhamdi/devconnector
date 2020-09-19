@@ -1,4 +1,4 @@
-.login {
+.auth {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -102,7 +102,7 @@
     }
   }
 
-  &__submit-button {
+  &__button {
     background-color: var(--blue-auth-button);
     color: white;
     padding: 0.4em 2em;
@@ -112,7 +112,7 @@
     }
   }
 
-  &__submit-button-wrapper {
+  &__button-wrapper {
     text-align: right;
   }
 

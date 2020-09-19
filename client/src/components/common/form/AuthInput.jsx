@@ -1,15 +1,15 @@
 import React from 'react';
 import classnames from 'classnames';
-import ValidationError from './ValidationError';
+import ErrorMessage from './helpers/errors/ErrorMessage';
 
 const Input = ({ input, placeholder, type, meta }) => {
-  const className = classnames('login__input', {
-    'login__input--invalid': meta.error,
+  const className = classnames('auth__input', {
+    'auth__input--invalid': meta.error,
   });
 
   return (
     <div>
-      <ValidationError meta={meta} />
+      <ErrorMessage meta={meta} />
       <input
         {...input}
         placeholder={placeholder}

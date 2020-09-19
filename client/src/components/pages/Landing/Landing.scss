@@ -28,15 +28,11 @@
     transform: translate(-50%, -50%);
   }
 
-  &__header,
-  &__sub-header {
-    font-family: 'Montserrat';
-  }
-
   &__header {
     font-size: 3.6rem;
     font-weight: 300;
-    margin-bottom: 0.1em;
+    margin-bottom: 0.2em;
+    display: inline-block;
 
     @include atLarge {
       font-size: 5rem;
@@ -44,9 +40,19 @@
   }
 
   &__sub-header {
+    width: 603px;
     font-size: 1rem;
     font-weight: 200;
+    margin: 0 auto;
     margin-bottom: 2em;
+    transform: translateX(3px);
+    text-align: justify;
+    text-align-last: center;
+    line-height: 1.6;
+  }
+
+  &__button-container {
+    text-align: center;
   }
 
   &__button-container > a:not(:last-child) {

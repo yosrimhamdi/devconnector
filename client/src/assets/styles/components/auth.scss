@@ -80,7 +80,7 @@
   }
 
   &__link {
-    color: #0067b8;
+    color: var(--blue-button);
     margin-left: 0.3em;
 
     &:hover {
@@ -99,12 +99,17 @@
   }
 
   &__button {
-    background-color: var(--blue-auth-button);
+    background-color: var(--blue-button);
     color: white;
     padding: 0.4em 2em;
+    transition: background-color 200ms;
 
     &::first-letter {
       text-transform: capitalize;
+    }
+
+    &:hover {
+      background-color: var(--blue-button-hover);
     }
   }
 

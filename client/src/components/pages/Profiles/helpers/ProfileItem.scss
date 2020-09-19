@@ -49,7 +49,11 @@ $buttonTextGrey: #b6b7c1;
       background-color: var(--blue-button);
       color: white;
       border-color: var(--blue-button);
-      box-shadow: 0 0 10px 3px rgba($color: #000000, $alpha: 0.1);
+      box-shadow: 0 0 15px 5px rgba($color: #000000, $alpha: 0.13);
+    }
+
+    &:active {
+      transform: var(--button-active-scale);
     }
   }
 }

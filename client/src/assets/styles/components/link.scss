@@ -1,27 +1,27 @@
 .link {
   background-color: var(--blue-button);
   color: white;
-  border-radius: 3px;
   padding: 0.6em 1em;
   margin-bottom: 1em;
   display: inline-block;
   text-transform: capitalize;
   transition: background-color 200ms;
 
-  &--grey {
-    background-color: var(--grey-button);
-    color: #050523;
-
-    &:hover {
-      background-color: var(--grey-button-hover) !important;
-    }
-  }
-
   &:hover {
     background-color: var(--blue-button-hover);
   }
 
   &:active {
-    transform: scale(0.98);
+    transform: var(--button-active-scale);
+  }
+
+  &--grey {
+    background-color: var(--grey-button);
+    color: #6e6e6e;
+
+    &:hover {
+      background-color: var(--grey-button-hover);
+      color: #555555;
+    }
   }
 }

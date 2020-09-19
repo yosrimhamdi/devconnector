@@ -3,22 +3,35 @@
 .profile-display {
   display: flex;
   height: 100%;
-  font-family: 'Montserrat';
 
   &__user-intro {
     flex-basis: 50%;
-    background-color: var(--yellow-background);
+    position: relative;
+    background: url('../../../../../assets/images/test.jpg') center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.322);
+    }
   }
 
   &__user-image {
     width: 160px;
     height: 160px;
     object-fit: cover;
+    position: relative;
     border-radius: 50%;
     box-shadow: 0 0 20px 2px rgba($color: #000000, $alpha: 0.1);
+    z-index: 1;
 
     @include atLarge {
       width: 200px;

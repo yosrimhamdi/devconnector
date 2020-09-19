@@ -5,7 +5,7 @@ import { loginUser } from '../../../redux/actions';
 import Email from './helpers/Email';
 import Password from './helpers/Password';
 
-const Login = ({ authUser, email }) => {
+const Login = ({ loginUser, email }) => {
   const [page, setPage] = useState(1);
 
   let form = <Email onSubmit={() => setPage(page + 1)} />;
@@ -14,7 +14,7 @@ const Login = ({ authUser, email }) => {
     form = (
       <Password
         previousFormPage={() => setPage(page - 1)}
-        onSubmit={authUser}
+        onSubmit={loginUser}
         email={email}
       />
     );

@@ -24,7 +24,7 @@ const UserName = ({ handleSubmit, previousFormPage, email }) => (
     </h2>
     <div className="auth__inputs-wrapper">
       <Field
-        name="firstName"
+        name="firstname"
         type="text"
         placeholder="First name"
         component={AuthInput}

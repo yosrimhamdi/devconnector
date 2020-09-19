@@ -21,10 +21,10 @@ const Comment = ({ comment, deleteComment }) => {
       <img
         src={`/images/${user.photo}`}
         className="comment__user-image"
-        alt="user"
+        alt={user.fullname}
       />
       <div>
-        <h2 className="comment__user-name">{user.name}</h2>
+        <h2 className="comment__user-name">{user.fullname}</h2>
         <div className="comment__date">{getTimeStamp(createdAt)}</div>
         <p className="comment__text">{text}</p>
       </div>

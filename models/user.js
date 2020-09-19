@@ -2,9 +2,19 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
-  name: {
+  firstname: {
     type: String,
-    required: [true, 'A user must have a name.'],
+    required: [true, 'A user must have a firstname.'],
+  },
+  surname: {
+    type: String,
+    required: [true, 'A user must have a surname.'],
+  },
+  fullname: {
+    type: String,
+    default: function () {
+      return `${this.firstname} ${this.surname}`;
+    },
   },
   email: {
     type: String,
@@ -15,16 +25,6 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: [true, 'A user must have a password.'],
     select: false,
-  },
-  passwordConfirm: {
-    type: String,
-    required: [true, 'no password confirm. Confirm your Password.'],
-    validate: {
-      validator(passwordConfirm) {
-        return this.password === passwordConfirm;
-      },
-      message: 'password/ passwordConfirm do not match.',
-    },
   },
   photo: {
     type: String,
@@ -43,10 +43,6 @@ userSchema.pre('save', async function (next) {
   }
 
   next();
-});
-
-userSchema.pre(/^find/, function () {
-  this.select('name photo');
 });
 
 userSchema.methods.validatePassword = async function (password) {

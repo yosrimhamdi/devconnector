@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const UserProfileLink = ({ user, profile }) => {
-  let userLink = <span className="dashboard__username">{user.name}</span>;
+  let userLink = <span className="dashboard__username">{user.firstname}</span>;
 
   if (profile) {
     userLink = (
       <Link to={`/profiles/${profile.handle}`} className="dashboard__username">
-        {user.name}
+        {user.firstname}
       </Link>
     );
   }

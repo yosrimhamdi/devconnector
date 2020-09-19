@@ -15,7 +15,7 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
           <img
             className="header__user-image"
             src={`/images/${user.photo}`}
-            alt={`${user.name} avatar`}
+            alt={user.fullname}
           />
           <div
             className="header__logout-button"

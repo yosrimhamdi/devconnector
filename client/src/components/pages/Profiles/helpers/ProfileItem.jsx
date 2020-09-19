@@ -12,9 +12,9 @@ const ProfileItem = ({ profile }) => {
       <img
         className="profile-item__image"
         src={`/images/${user.photo}`}
-        alt={`${user.name}'s user avatar`}
+        alt={user.fullname}
       />
-      <div className="profile-item__user-name">{user.name}</div>
+      <div className="profile-item__user-name">{user.fullname}</div>
       <div className="profile-item__user-job">
         <span className="profile-item__user-status">{status}</span>
         <Company company={company} />

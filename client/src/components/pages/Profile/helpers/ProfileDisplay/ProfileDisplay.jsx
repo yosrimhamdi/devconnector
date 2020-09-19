@@ -9,7 +9,7 @@ import EducationList from '../EducationList';
 
 const ProfileDisplay = ({ profile }) => {
   const {
-    user: { name, photo },
+    user: { fullname, photo },
     status,
     company,
     location,
@@ -30,12 +30,12 @@ const ProfileDisplay = ({ profile }) => {
         <img
           className="profile-display__user-image"
           src={`/images/${photo}`}
-          alt={`${name} avatar`}
+          alt={fullname}
         />
       </section>
       <section className="profile-display__user-details">
         <div className="profile-display__detail-title">name surname</div>
-        <div className="profile-display__detail">{name}</div>
+        <div className="profile-display__detail">{fullname}</div>
         <div className="profile-display__detail-title">position</div>
         <div className="profile-display__detail">{status}</div>
         <div className="profile-display__detail-title">location</div>

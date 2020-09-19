@@ -27,10 +27,10 @@ const PostItem = ({ post, deletePost }) => {
         <img
           src={`/images/${user.photo}`}
           className="post-item__user-image"
-          alt="user"
+          alt={user.fullname}
         />
         <div>
-          <h2 className="post-item__user-name">{user.name}</h2>
+          <h2 className="post-item__user-name">{user.fullname}</h2>
           <div className="post-item__date">{getTimeStamp(createdAt)}</div>
           <p className="post-item__text">{text}</p>
           <div className="post-item__controller">

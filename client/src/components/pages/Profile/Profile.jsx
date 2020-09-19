@@ -17,7 +17,7 @@ const Profile = ({ profile, fetchProfile, match, errors }) => {
   }
 
   if (!profile) {
-    return <Spinner />;
+    return <Spinner fullScreen />;
   }
 
   return (

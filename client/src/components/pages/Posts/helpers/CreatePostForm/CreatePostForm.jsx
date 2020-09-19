@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './CreatePostForm.scss';
-import getUserFirstName from '../../../../../utils/getUserFirstName';
+import getCapitalFirstName from '../../../../../utils/getCapitalFirstName';
 import CreatePostModal from '../CreatePostModal';
 
 const CreatePostForm = ({ user }) => {
@@ -10,7 +10,9 @@ const CreatePostForm = ({ user }) => {
 
   const [post, setPost] = useState('');
 
-  const placeholder = `What's on your mind, ${getUserFirstName(user.name)}?`;
+  const placeholder = `What's on your mind, ${getCapitalFirstName(
+    user.firstname,
+  )}?`;
 
   let inputValue = '';
 
@@ -22,7 +24,7 @@ const CreatePostForm = ({ user }) => {
     <form className="add-post-form">
       <img
         src={`/images/${user.photo}`}
-        alt={user.name}
+        alt={user.fullname}
         className="add-post-form__user-image"
       />
       <input

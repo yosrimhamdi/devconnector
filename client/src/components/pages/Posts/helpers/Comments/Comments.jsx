@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+import './Comments.scss';
 import { fetchComments } from '../../../../../redux/actions';
 import Comment from './Comment';
 import CreateCommentForm from '../CreateCommentForm';
@@ -32,7 +33,7 @@ const Comments = ({
   ));
 
   return (
-    <div>
+    <div className="comments">
       <CreateCommentForm postId={postId} />
       <ul className="collection">{renderedComments}</ul>
     </div>

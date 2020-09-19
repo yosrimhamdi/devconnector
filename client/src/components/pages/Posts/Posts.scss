@@ -1,5 +1,9 @@
 .posts {
-  padding-top: calc(58px + 1.5em);
-  max-width: 80vw;
-  margin: 0 auto;
+  background-color: whitesmoke;
+
+  &__content {
+    padding-top: calc(58px + 1.5em);
+    max-width: 80vw;
+    margin: 0 auto;
+  }
 }

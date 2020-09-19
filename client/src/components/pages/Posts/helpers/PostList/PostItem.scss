@@ -1,7 +1,7 @@
 $imageDim: 130px;
 
 .post-item {
-  background-color: white;
+  background-color: whitesmoke;
   position: relative;
   margin-bottom: 1em;
 
@@ -10,7 +10,9 @@ $imageDim: 130px;
     padding: 1.5em;
     display: flex;
     box-shadow: 0 1px 8px 1px rgba($color: #000000, $alpha: 0.1);
+    background-color: white;
   }
+
   &__user-image {
     height: $imageDim;
     width: $imageDim;

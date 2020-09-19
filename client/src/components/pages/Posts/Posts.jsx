@@ -19,8 +19,10 @@ const Posts = ({ fetchPosts, posts, loading }) => {
 
   return (
     <div className="posts content-wrapper">
-      <CreatePostForm />
-      <PostList posts={posts} />
+      <div className="posts__content">
+        <CreatePostForm />
+        <PostList posts={posts} />
+      </div>
     </div>
   );
 };

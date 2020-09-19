@@ -11,6 +11,10 @@
 
   &--full-screen {
     height: 100vh;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    left: 0;
   }
 
   &__container {

@@ -7,7 +7,7 @@ import Spinner from '../../../common/Spinner';
 
 const DashBoardContent = ({ profile, loading }) => {
   if (loading) {
-    return <Spinner />;
+    return <Spinner fullScreen />;
   }
 
   if (!profile) {

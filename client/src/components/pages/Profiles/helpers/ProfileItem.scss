@@ -9,6 +9,7 @@ $buttonTextGrey: #b6b7c1;
   text-transform: capitalize;
   transition: all 150ms;
   background-color: white;
+  animation: zoom 200ms;
 
   &:hover {
     transform: scale(1.05);
@@ -55,5 +56,15 @@ $buttonTextGrey: #b6b7c1;
     &:active {
       transform: var(--button-active-scale);
     }
+  }
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0.9);
+  }
+
+  to {
+    transform: scale(1);
   }
 }

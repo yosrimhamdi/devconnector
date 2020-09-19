@@ -12,7 +12,7 @@ const Landing = () => (
         other developers
       </h2>
       <div className="landing__button-container">
-        <Link to="/register" className="link">
+        <Link to="/signup" className="link">
           sign up
         </Link>
         <Link to="/login" className="link link--grey">

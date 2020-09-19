@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
 import AuthInput from '../../../common/form/AuthInput';
-import validate from '../validate';
+import validate from './validate';
 
 const Email = ({ handleSubmit }) => (
   <form noValidate onSubmit={handleSubmit}>

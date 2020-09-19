@@ -13,7 +13,7 @@ import {
 import Header from '../layouts/Header';
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
-import Register from '../pages/Register';
+import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import CreateProfile from '../pages/CreateProfile';
@@ -30,7 +30,7 @@ const App = () => (
     <Switch>
       <Route path="/" exact component={Landing} />
       <PrivateRoute path="/dashboard" exact component={Dashboard} />
-      <RestrictedRoute path="/register" exact component={Register} />
+      <RestrictedRoute path="/signup" exact component={Signup} />
       <RestrictedRoute path="/login" exact component={Login} />
       <Route path="/profiles" exact component={Profiles} />
       <Route path="/profiles/new" exact component={CreateProfile} />

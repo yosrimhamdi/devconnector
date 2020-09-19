@@ -3,7 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
-import validate from '../validate';
+import validate from './validate';
 import AuthInput from '../../../common/form/AuthInput';
 
 const UserName = ({ handleSubmit, previousFormPage, email }) => (

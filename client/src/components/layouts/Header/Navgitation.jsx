@@ -31,7 +31,7 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
 
   return (
     <>
-      <Link to="/register" className="header__sign-up header__link">
+      <Link to="/signup" className="header__sign-up header__link">
         sign up
       </Link>
       <Link to="/login" className="header__link">

@@ -12,15 +12,15 @@ const Login = ({ loginUser }) => {
   const next = () => setPage(page + 1);
   const prev = () => setPage(page - 1);
 
-  let content = <Email onSubmit={next} />;
+  let form = <Email onSubmit={next} />;
 
   if (page === 2) {
-    content = <Password previousPage={prev} onSubmit={loginUser} />;
+    form = <Password previousPage={prev} onSubmit={loginUser} />;
   }
 
   return (
     <div className="login">
-      <div className="login__content">{content}</div>
+      <div className="login__content">{form}</div>
     </div>
   );
 };

@@ -14,7 +14,7 @@ const Email = ({ handleSubmit }) => {
         <Field
           name="email"
           component={Input}
-          placeholder="Someone@exemple.com"
+          placeholder="someone@exemple.com"
           type="email"
         />
       </div>

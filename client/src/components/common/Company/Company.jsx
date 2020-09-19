@@ -10,7 +10,7 @@ const Company = ({ company }) => {
   return (
     <span className="company">
       <span className="company__at">at</span>
-      <span className="company__name">{company}</span>
+      <span>{company}</span>
     </span>
   );
 };

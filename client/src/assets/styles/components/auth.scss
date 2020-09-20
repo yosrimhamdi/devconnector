@@ -54,12 +54,12 @@
     padding: 0.6em 0.1em;
     font-size: 0.965rem;
 
-    &--invalid {
-      border-bottom-color: var(--red-error-message);
-    }
-
     &::placeholder {
       color: #666666;
+    }
+
+    &--invalid {
+      border-bottom-color: var(--red-error-message);
     }
   }
 
@@ -101,7 +101,7 @@
     background-color: var(--blue-button);
     color: white;
     padding: 0.4em 2em;
-    transition: all 200ms;
+    transition: all 100ms;
 
     &::first-letter {
       text-transform: capitalize;
@@ -110,10 +110,6 @@
     &:hover {
       background-color: var(--blue-button-hover);
     }
-  }
-
-  &__button--scale-on-active:active {
-    transform: scale(var(--button-active-scale));
   }
 
   &__button-wrapper {
@@ -128,6 +124,10 @@
 
   &__button-wrapper--with-spinner &__button {
     margin-left: 1.5em;
+
+    &:active {
+      transform: scale(var(--button-active-scale));
+    }
   }
 
   &__back-arrow-icon {
@@ -137,9 +137,14 @@
     padding: 5px;
     cursor: pointer;
     transform: translate(-5px, 6px);
+    transition: all 100ms;
 
     &:hover {
       background-color: #e9e7e7;
+    }
+
+    &:active {
+      transform: translate(-5px, 6px) scale(0.9);
     }
   }
 

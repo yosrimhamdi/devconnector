@@ -5,11 +5,10 @@ import whiteSpinner from './spinner-white.svg';
 import darkSpinner from './spinner.svg';
 import './Spinner.scss';
 
-const Spinner = ({ white, fullScreen, noMessage }) => {
+const Spinner = ({ white, fullScreen }) => {
   const className = classnames('spinner', {
     'spinner--full-screen': fullScreen,
     'spinner--white': white,
-    'spinner--no-message': noMessage,
   });
 
   const spinner = white ? whiteSpinner : darkSpinner;
@@ -17,7 +16,6 @@ const Spinner = ({ white, fullScreen, noMessage }) => {
   return (
     <div className={className}>
       <img src={spinner} className="spinner__circle" alt="loading..." />
-      <div className="spinner__message">loading...</div>
     </div>
   );
 };

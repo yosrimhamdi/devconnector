@@ -6,8 +6,15 @@ import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import AuthInput from '../../../common/form/AuthInput';
+import Spinner from '../../../common/Spinner';
 
-const Password = ({ handleSubmit, previousFormPage, email, errors }) => (
+const Password = ({
+  handleSubmit,
+  previousFormPage,
+  email,
+  errors,
+  loading,
+}) => (
   <form noValidate onSubmit={handleSubmit}>
     <img className="auth__website-logo" src={code} alt="code logo" />
     <div className="auth__back-arrow-icon-wrapper">
@@ -29,7 +36,8 @@ const Password = ({ handleSubmit, previousFormPage, email, errors }) => (
         component={AuthInput}
       />
     </div>
-    <div className="auth__button-wrapper">
+    <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
+      {loading ? <Spinner noMessage /> : null}
       <button type="submit" className="auth__button">
         sign in
       </button>
@@ -44,6 +52,6 @@ const wrappedForm = reduxForm({
   validate,
 })(Password);
 
-const mapStateToProps = state => ({ errors: state.errors });
+const mapStateToProps = ({ errors, loading }) => ({ errors, loading });
 
 export default connect(mapStateToProps)(wrappedForm);

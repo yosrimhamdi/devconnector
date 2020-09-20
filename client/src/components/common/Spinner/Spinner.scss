@@ -1,6 +1,5 @@
 .spinner {
   text-align: center;
-  height: 120px;
   position: relative;
   z-index: 1;
   color: #343a40;
@@ -17,19 +16,14 @@
     left: 0;
   }
 
-  &__container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  &--no-message &__message {
+    display: none;
   }
 
   &__circle {
     animation: spin 1500ms linear infinite;
-    transform: translateX(-4px);
     width: 30px;
     display: block;
-    margin: 0 auto 0.5em;
   }
 
   &__message {
@@ -41,6 +35,6 @@
 
 @keyframes spin {
   to {
-    transform: translateX(-4px) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

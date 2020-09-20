@@ -1,8 +1,10 @@
 import users from '../../../apis/users';
-import { LOGIN_USER, ERROR_OCCURED } from '../types';
+import { LOGIN_USER, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import history from '../../../history';
 
 export default formValues => async dispatch => {
+  dispatch({ type: LOADING });
+
   try {
     const response = await users.post('/login', formValues);
 
@@ -18,4 +20,6 @@ export default formValues => async dispatch => {
       payload: err.response.data,
     });
   }
+
+  dispatch({ type: LOADED });
 };

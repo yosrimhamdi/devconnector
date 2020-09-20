@@ -1,12 +1,14 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 
 import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import AuthInput from '../../../common/form/AuthInput';
+import Spinner from '../../../common/Spinner';
 
-const UserName = ({ handleSubmit, previousFormPage, email }) => (
+const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
   <form noValidate onSubmit={handleSubmit}>
     <img className="auth__website-logo" src={code} alt="code logo" />
     <div className="auth__back-arrow-icon-wrapper">
@@ -36,7 +38,8 @@ const UserName = ({ handleSubmit, previousFormPage, email }) => (
         component={AuthInput}
       />
     </div>
-    <div className="auth__button-wrapper">
+    <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
+      {loading ? <Spinner noMessage /> : null}
       <button type="submit" className="auth__button">
         sign in
       </button>
@@ -44,9 +47,13 @@ const UserName = ({ handleSubmit, previousFormPage, email }) => (
   </form>
 );
 
-export default reduxForm({
+const wrappedForm = reduxForm({
   form: 'signup',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
   validate,
 })(UserName);
+
+const mapStateToProps = ({ loading }) => ({ loading });
+
+export default connect(mapStateToProps)(wrappedForm);

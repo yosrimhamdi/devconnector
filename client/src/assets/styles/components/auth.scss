@@ -116,6 +116,16 @@
     text-align: right;
   }
 
+  &__button-wrapper--with-spinner {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &__button-wrapper--with-spinner &__button {
+    margin-left: 2em;
+  }
+
   &__back-arrow-icon {
     box-sizing: initial;
     width: 15px;

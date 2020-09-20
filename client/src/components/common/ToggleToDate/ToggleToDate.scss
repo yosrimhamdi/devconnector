@@ -1,0 +1,19 @@
+.toggle-to-date {
+  color: #404246;
+  user-select: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  transform: translateY(-1.4em);
+  margin-bottom: 0.8em;
+  font-size: 1.1em;
+
+  #toggle-input {
+    margin-right: 0.5em;
+    width: 15px;
+    height: 15px;
+    cursor: pointer;
+    transform: translateY(1px);
+  }
+}

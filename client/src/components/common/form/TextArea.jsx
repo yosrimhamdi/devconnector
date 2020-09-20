@@ -8,16 +8,17 @@ export default ({ input, name, placeholder, message, meta }) => {
   const className = getClassName(meta);
 
   return (
-    <div>
+    <div className="form__input-group">
       <textarea
         style={{ resize: 'vertical' }}
         {...input}
         name={name}
         className={className}
-        placeholder={placeholder}
+        placeholder="&nbsp;"
       />
-      <Message message={message} />
-      <ValidationError meta={meta} />
+      <div className="form__input-placeholder form__input-placeholder--on-top">
+        {placeholder}
+      </div>
     </div>
   );
 };

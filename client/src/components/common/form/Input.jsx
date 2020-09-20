@@ -1,35 +1,17 @@
 import React from 'react';
 
-import ValidationError from './helpers/errors/ValidationError';
-import ResponseError from './helpers/errors/ResponseError';
-import Message from './helpers/Message';
-import getClassName from './helpers/getClassName';
-
-const Input = ({
-  input,
-  type,
-  placeholder,
-  message,
-  disabled,
-  responseError,
-  autocomplete,
-  meta,
-}) => {
-  const className = getClassName(meta, responseError);
-
+const Input = ({ input, type, placeholder, disabled, autocomplete }) => {
   return (
-    <div>
+    <div className="form__input-group">
       <input
-        className={className}
-        placeholder={placeholder}
+        className="form__input"
+        placeholder="&nbsp;"
         type={type}
         disabled={disabled}
         autoComplete={autocomplete}
         {...input}
       />
-      <Message message={message} />
-      <ValidationError meta={meta} />
-      <ResponseError responseError={responseError} />
+      <div className="form__input-placeholder">{placeholder}</div>
     </div>
   );
 };

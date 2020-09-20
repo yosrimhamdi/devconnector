@@ -9,8 +9,8 @@ export default ({ input, name, meta }) => {
   return (
     <div>
       <select {...input} name={name} className={className}>
-        <option value="* select professional status">
-          * select professional status
+        <option value="select professional status**">
+          select professional status**
         </option>
         <option value="developer">developer</option>
         <option value="junior developer">junior developer</option>

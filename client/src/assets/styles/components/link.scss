@@ -12,7 +12,7 @@
   }
 
   &:active {
-    transform: var(--button-active-scale);
+    transform: scale(var(--button-active-scale));
   }
 
   &--grey {

@@ -101,7 +101,7 @@
     background-color: var(--blue-button);
     color: white;
     padding: 0.4em 2em;
-    transition: background-color 200ms;
+    transition: all 200ms;
 
     &::first-letter {
       text-transform: capitalize;
@@ -110,6 +110,10 @@
     &:hover {
       background-color: var(--blue-button-hover);
     }
+  }
+
+  &__button--scale-on-active:active {
+    transform: scale(var(--button-active-scale));
   }
 
   &__button-wrapper {

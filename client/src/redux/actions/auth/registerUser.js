@@ -1,3 +1,5 @@
+import { destroy } from 'redux-form';
+
 import users from '../../../apis/users';
 import { REGISTER_USER, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import history from '../../../history';
@@ -14,6 +16,8 @@ export default formValues => async dispatch => {
     });
 
     history.push('/dashboard');
+
+    dispatch(destroy('signup'));
   } catch (err) {
     dispatch({
       type: ERROR_OCCURED,

@@ -38,7 +38,10 @@ const Password = ({
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
       {loading ? <Spinner noMessage /> : null}
-      <button type="submit" className="auth__button">
+      <button
+        type="submit"
+        className="auth__button auth__button--scale-on-active"
+      >
         sign in
       </button>
     </div>

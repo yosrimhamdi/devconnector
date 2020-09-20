@@ -15,11 +15,11 @@ const AddExperience = ({ handleSubmit, addExperience }) => {
   return (
     <form onSubmit={handleSubmit(addExperience)} className="form">
       <h1 className="form__title">add experience</h1>
-      <div className="form__require-message">* = required</div>
-      <Field name="company" placeholder="* company" component={Input} />
-      <Field name="title" placeholder="* job title" component={Input} />
+      <div className="form__require-message">** = required</div>
+      <Field name="company" placeholder="company**" component={Input} />
+      <Field name="title" placeholder="job title**" component={Input} />
       <Field name="location" placeholder="location" component={Input} />
-      <div className="form__date-header">* from date</div>
+      <div className="form__date-header">from date**</div>
       <Field name="from" type="date" component={Input} />
       <div className="form__date-header">to date</div>
       <Field name="to" type="date" component={Input} disabled={disabled} />

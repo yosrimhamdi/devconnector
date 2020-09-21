@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import AnimateHeight from 'react-animate-height';
 
 import './SocialForm.scss';
-import IconedInput from './IconedInput';
+import SocialInput from '../../form/SocialInput';
 
 const SocialsForm = () => {
   const [height, setHeight] = useState(0);
@@ -30,27 +30,27 @@ const SocialsForm = () => {
           <Field
             name="youtube"
             placeholder="youtube channel URL"
-            component={IconedInput}
+            component={SocialInput}
           />
           <Field
             name="facebook"
             placeholder="facebook page URL"
-            component={IconedInput}
+            component={SocialInput}
           />
           <Field
             name="linkedin"
             placeholder="linkedin profile URL"
-            component={IconedInput}
+            component={SocialInput}
           />
           <Field
             name="twitter"
             placeholder="twitter profile URL"
-            component={IconedInput}
+            component={SocialInput}
           />
           <Field
             name="instagram"
             placeholder="instagram page URL"
-            component={IconedInput}
+            component={SocialInput}
           />
         </div>
       </AnimateHeight>

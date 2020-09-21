@@ -1,13 +1,13 @@
 import React from 'react';
 
-import './IconedInput.scss';
-import getClassName from '../../form/helpers/getClassName';
+import './SocialInput.scss';
+import getClassName from '../helpers/getClassName';
 import youtube from '../../../../assets/icons/socials/youtube.svg';
 import facebook from '../../../../assets/icons/socials/facebook.svg';
 import twitter from '../../../../assets/icons/socials/twitter.svg';
 import linkedin from '../../../../assets/icons/socials/linkedin.svg';
 import instagram from '../../../../assets/icons/socials/instagram.svg';
-import ErrorMessage from '../../form/helpers/ErrorMessage';
+import ErrorMessage from '../helpers/ErrorMessage';
 
 const icons = { youtube, facebook, twitter, linkedin, instagram };
 
@@ -17,16 +17,16 @@ const IconedInput = ({ input, placeholder, meta }) => {
   return (
     <>
       <ErrorMessage meta={meta} morespace />
-      <div className={`${className} iconed-input`}>
-        <div className="iconed-input__icon-wrapper">
+      <div className={`${className} social-input`}>
+        <div className="social-input__icon-wrapper">
           <img
             src={icons[input.name]}
-            className="iconed-input__icon"
+            className="social-input__icon"
             alt={input.name}
           />
         </div>
         <input
-          className="form__input iconed-input__input"
+          className="form__input social-input__input"
           placeholder="&nbsp;"
           type="text"
           {...input}

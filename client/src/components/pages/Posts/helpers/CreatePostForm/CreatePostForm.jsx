@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './CreatePostForm.scss';
-import getCapitalFirstName from '../../../../../utils/getCapitalFirstName';
+import getCapitalName from '../getCapitalName';
 import CreatePostModal from '../CreatePostModal';
 
 const CreatePostForm = ({ user }) => {
@@ -10,9 +10,7 @@ const CreatePostForm = ({ user }) => {
 
   const [post, setPost] = useState('');
 
-  const placeholder = `What's on your mind, ${getCapitalFirstName(
-    user.firstname,
-  )}?`;
+  const placeholder = `What's on your mind, ${getCapitalName(user.firstname)}?`;
 
   let inputValue = '';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { deleteEducation } from '../../../../../redux/actions';
-import getFormattedDate from '../../../../../utils/getFomatedDate';
+import getFormattedDate from '../getFormattedDate';
 import remove from '../../icons/remove.svg';
 
 const EducationItem = ({

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './Comment.scss';
-import getTimeStamp from '../../../../../utils/getTimeStamp';
+import getElapsedTime from '../getElapsedTime';
 import Settings from '../Settings';
 import { deleteComment } from '../../../../../redux/actions';
 import ModalContext from '../../../../../contexts/ModalContext';
@@ -25,7 +25,7 @@ const Comment = ({ comment, deleteComment }) => {
       />
       <div>
         <h2 className="comment__user-name">{user.fullname}</h2>
-        <div className="comment__date">{getTimeStamp(createdAt)}</div>
+        <div className="comment__date">{getElapsedTime(createdAt)}</div>
         <p className="comment__text">{text}</p>
       </div>
       <ModalContext.Provider value={modalDetails}>

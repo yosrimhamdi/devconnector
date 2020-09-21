@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './PostItem.scss';
 import Settings from '../Settings';
 import Likes from '../Likes';
-import getTimeStamp from '../../../../../utils/getTimeStamp';
+import getElapsedTime from '../getElapsedTime';
 import { deletePost } from '../../../../../redux/actions';
 import Comments from '../Comments';
 import comment from '../../icons/comment.svg';
@@ -31,7 +31,7 @@ const PostItem = ({ post, deletePost }) => {
         />
         <div>
           <h2 className="post-item__user-name">{user.fullname}</h2>
-          <div className="post-item__date">{getTimeStamp(createdAt)}</div>
+          <div className="post-item__date">{getElapsedTime(createdAt)}</div>
           <p className="post-item__text">{text}</p>
           <div className="post-item__controller">
             <Likes postId={_id} />

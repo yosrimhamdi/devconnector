@@ -1,17 +1,14 @@
 import React from 'react';
 
 import getClassName from './helpers/getClassName';
-import ValidationError from './helpers/errors/ValidationError';
 
 export default ({ input, name, meta }) => {
   const className = getClassName(meta);
 
   return (
-    <div>
-      <select {...input} name={name} className={className}>
-        <option value="select professional status**">
-          select professional status**
-        </option>
+    <div className="form__input-group">
+      <select {...input} name={name} className={className} placeholder="test">
+        <option value="none">none</option>
         <option value="developer">developer</option>
         <option value="junior developer">junior developer</option>
         <option value="senior developer">senior developer</option>
@@ -21,7 +18,7 @@ export default ({ input, name, meta }) => {
         <option value="intern">intern</option>
         <option value="other">other</option>
       </select>
-      <ValidationError meta={meta} />
+      <div className="form__input-placeholder">professional status**</div>
     </div>
   );
 };

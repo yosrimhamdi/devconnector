@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import ErrorMessage from './helpers/errors/ErrorMessage';
+import ErrorMessage from './helpers/ErrorMessage';
 
 const AuthInput = ({ input, placeholder, type, meta, responseError }) => {
   const { error, active, submitFailed } = meta;
@@ -10,7 +10,7 @@ const AuthInput = ({ input, placeholder, type, meta, responseError }) => {
   });
 
   return (
-    <div>
+    <>
       <ErrorMessage meta={meta} responseError={responseError} />
       <input
         {...input}
@@ -18,7 +18,7 @@ const AuthInput = ({ input, placeholder, type, meta, responseError }) => {
         className={className}
         type={type}
       />
-    </div>
+    </>
   );
 };
 

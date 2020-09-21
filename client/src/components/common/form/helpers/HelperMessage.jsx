@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default ({ message }) => {
+const HelperMessage = ({ message }) => {
   if (!message) {
     return null;
   }
@@ -12,3 +12,5 @@ export default ({ message }) => {
     </div>
   );
 };
+
+export default HelperMessage;

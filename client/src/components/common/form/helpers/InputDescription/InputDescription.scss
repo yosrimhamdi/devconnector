@@ -1,0 +1,9 @@
+.input-description {
+  color: $message;
+  font-size: 0.8rem;
+  margin: -1em 0 1.2em;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}

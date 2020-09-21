@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
-import AuthInput from '../../../common/form/AuthInput';
+import Input from '../../../common/form/microsoft/Input';
 import validate from './validate';
 
 const Email = ({ handleSubmit }) => (
@@ -11,12 +11,7 @@ const Email = ({ handleSubmit }) => (
     <img className="auth__website-logo" src={code} alt="webiste logo" />
     <h1 className="auth__title">log in</h1>
     <div className="auth__inputs-wrapper">
-      <Field
-        name="email"
-        component={AuthInput}
-        placeholder="Email"
-        type="email"
-      />
+      <Field name="email" component={Input} placeholder="Email" type="email" />
     </div>
     <div className="auth__message">
       <span>No accout?</span>

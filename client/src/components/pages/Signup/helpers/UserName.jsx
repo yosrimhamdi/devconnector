@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
-import AuthInput from '../../../common/form/AuthInput';
+import Input from '../../../common/form/microsoft/Input';
 import Spinner from '../../../common/Spinner';
 
 const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
@@ -29,13 +29,13 @@ const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
         name="firstname"
         type="text"
         placeholder="First name"
-        component={AuthInput}
+        component={Input}
       />
       <Field
         name="surname"
         type="text"
         placeholder="Surname"
-        component={AuthInput}
+        component={Input}
       />
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">

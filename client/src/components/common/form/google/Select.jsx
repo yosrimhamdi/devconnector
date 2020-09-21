@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getClassName from './helpers/getClassName';
+import getClassName from '../helpers/getClassName';
 
 export default ({ input, name, meta }) => {
   const className = getClassName(meta);

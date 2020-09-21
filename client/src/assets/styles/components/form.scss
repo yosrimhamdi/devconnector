@@ -121,16 +121,6 @@ $marginBottom: 2em;
     margin-right: 0.4em;
   }
 
-  &__input-message {
-    color: $message;
-    font-size: 0.8rem;
-    margin: -1em 0 1.2em;
-
-    &:first-letter {
-      text-transform: capitalize;
-    }
-  }
-
   &__submit-button {
     text-transform: capitalize;
     background-color: var(--blue-button);

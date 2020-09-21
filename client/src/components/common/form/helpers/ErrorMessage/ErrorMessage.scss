@@ -1,0 +1,9 @@
+.error-message {
+  color: var(--red-error-message);
+  margin-bottom: 0.5em;
+  font-size: 0.9rem;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}

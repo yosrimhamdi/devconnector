@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import constructProfile from '../../../utils/constructProfile';
-import { Input, TextArea, Select } from '../form';
+import Input from '../form/google/Input';
+import TextArea from '../form/google/TextArea';
+import Select from '../form/google/Select';
 import SocialsForm from './helpers/SocialsForm';
 
 const ProfileForm = ({ handleSubmit, errors, onFormSubmit }) => {

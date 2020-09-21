@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { deleteExperience } from '../../../../../redux/actions';
-import getFormattedDate from '../getFormattedDate';
+import getFormattedDate from '../../../../../utils/getFormattedDate';
 import remove from '../../icons/remove.svg';
 
 const ExpItem = ({

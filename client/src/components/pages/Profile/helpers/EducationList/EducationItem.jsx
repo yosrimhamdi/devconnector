@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getFormattedDate from '../../../../../utils/getFomatedDate';
+import getFormattedDate from '../../../../../utils/getFormattedDate';
 
 const EducationItem = ({ education }) => {
   const { school, from, to, degree, fieldOfStudy } = education;

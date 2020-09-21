@@ -1,6 +1,6 @@
 import React from 'react';
 
-import getFormattedDate from '../../../../../utils/getFomatedDate';
+import getFormattedDate from '../../../../../utils/getFormattedDate';
 
 const ExperienceItem = ({ experience }) => {
   const { company, from, to, title, location, description } = experience;

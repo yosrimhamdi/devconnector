@@ -5,6 +5,7 @@ export { default as fetchProfile } from './profiles/fetchProfile';
 export { default as registerUser } from './auth/registerUser';
 export { default as loginUser } from './auth/loginUser';
 export { default as logoutUser } from './auth/logoutUser';
+export { default as checkUserExistence } from './auth/checkUserExistence';
 
 export { default as addExperience } from './profiles/addExperience';
 export { default as addEducation } from './profiles/addEducation';
@@ -25,3 +26,5 @@ export { default as removeLike } from './likes/removeLike';
 export { default as fetchComments } from './comments/fetchComments';
 export { default as addComment } from './comments/addComment';
 export { default as deleteComment } from './comments/deleteComment';
+
+export { default as clearErrors } from './clearErorrs';

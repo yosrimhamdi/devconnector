@@ -26,6 +26,7 @@ const Email = ({ handleSubmit }) => (
     </div>
   </form>
 );
+
 export default reduxForm({
   form: 'login',
   destroyOnUnmount: false,

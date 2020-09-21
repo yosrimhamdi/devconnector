@@ -9,7 +9,7 @@ import UserName from './helpers/UserName';
 const Register = ({ registerUser, email }) => {
   const [page, setPage] = useState(1);
 
-  let form = <Email onSubmit={() => setPage(page + 1)} />;
+  let form = <Email nextPage={() => setPage(page + 1)} />;
 
   if (page === 2) {
     form = (

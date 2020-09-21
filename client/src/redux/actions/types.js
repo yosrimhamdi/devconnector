@@ -30,3 +30,5 @@ export const REMOVE_LIKE = 'REMOVE_LIKE';
 export const FETCH_COMMENTS = 'FETCH_COMMENTS';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
+
+export const CLEAR_ERRORS = 'CLEAR_ERRORS';

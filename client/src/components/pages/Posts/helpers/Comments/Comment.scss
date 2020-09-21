@@ -20,7 +20,13 @@ $imageDim: 120px;
     width: $imageDim;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 2.8em;
+  }
+
+  &__content {
+    flex-grow: 1;
+    width: 40%;
+    padding-left: 2.5em;
+    padding-right: 3em;
   }
 
   &__user-name {
@@ -38,5 +44,6 @@ $imageDim: 120px;
   &__text {
     margin-bottom: 0.8em;
     font-size: 1.55rem;
+    overflow-wrap: break-word;
   }
 }

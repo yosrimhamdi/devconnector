@@ -29,7 +29,7 @@ const PostItem = ({ post, deletePost }) => {
           className="post-item__user-image"
           alt={user.fullname}
         />
-        <div>
+        <div className="post-item__content">
           <h2 className="post-item__user-name">{user.fullname}</h2>
           <div className="post-item__date">{getElapsedTime(createdAt)}</div>
           <p className="post-item__text">{text}</p>

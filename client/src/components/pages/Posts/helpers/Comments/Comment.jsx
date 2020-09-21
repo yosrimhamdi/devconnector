@@ -23,7 +23,7 @@ const Comment = ({ comment, deleteComment }) => {
         className="comment__user-image"
         alt={user.fullname}
       />
-      <div>
+      <div className="comment__content">
         <h2 className="comment__user-name">{user.fullname}</h2>
         <div className="comment__date">{getElapsedTime(createdAt)}</div>
         <p className="comment__text">{text}</p>

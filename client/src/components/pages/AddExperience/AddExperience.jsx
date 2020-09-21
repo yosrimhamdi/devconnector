@@ -28,7 +28,7 @@ const AddExperience = ({ handleSubmit, addExperience }) => {
       <Field
         name="description"
         placeholder="job description"
-        message="tell us about the position"
+        description="tell us about the position"
         component={TextArea}
       />
       <div className="form__buttons-wrapper">

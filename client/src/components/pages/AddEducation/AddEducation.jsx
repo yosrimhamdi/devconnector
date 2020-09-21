@@ -36,7 +36,7 @@ const AddEducation = ({ handleSubmit, addEducation }) => {
       <Field
         name="description"
         placeholder="program description"
-        message="tell us about the program that you were in"
+        description="tell us about the program that you were in"
         component={TextArea}
       />
       <div className="form__buttons-wrapper">

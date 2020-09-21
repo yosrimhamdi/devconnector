@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import ReactDOM from 'react-dom';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
@@ -15,6 +15,29 @@ const CreatePostModal = ({
   isModalShown,
   setIsModalShown,
 }) => {
+  const textAreaRef = useRef(null);
+
+  useEffect(() => {
+    const moveCursorToEnd = field => {
+      const el = field;
+
+      if (typeof el.selectionStart === 'number') {
+        el.selectionStart = el.value.length;
+        el.selectionEnd = el.value.length;
+      } else if (typeof el.createTextRange !== 'undefined') {
+        el.focus();
+        const range = el.createTextRange();
+
+        range.collapse(false);
+        range.select();
+      }
+    };
+
+    if (textAreaRef.current) {
+      moveCursorToEnd(textAreaRef.current);
+    }
+  });
+
   if (!isModalShown) {
     return null;
   }
@@ -53,6 +76,7 @@ const CreatePostModal = ({
         <ModalCloseButton onClick={removeModalFromScreen} />
         <form onSubmit={submitPost}>
           <textarea
+            ref={textAreaRef}
             placeholder={placeholder}
             className="create-post-modal__textarea"
             spellCheck="false"

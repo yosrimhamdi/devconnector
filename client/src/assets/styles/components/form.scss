@@ -1,10 +1,9 @@
-$error: rgb(253, 99, 99);
-$message: #6c757d;
 $inputBorderColor: #80868b;
 $placeholderColor: #7a7e83;
 $inputColor: #4b4e51;
 $borderRadius: 5px;
-$marginBottom: 2em;
+$marginBottom: 3em;
+$transitionDuration: 120ms;
 
 @mixin placeholderOnBorder {
   top: 0;
@@ -34,9 +33,20 @@ $marginBottom: 2em;
     font-weight: 400;
   }
 
-  &__input-group {
+  &__input-wrapper {
     position: relative;
     margin-bottom: $marginBottom;
+
+    &--invalid {
+      .form__input {
+        box-shadow: none;
+        border-color: var(--red-error-message);
+      }
+
+      .input-description {
+        color: var(--red-error-message);
+      }
+    }
   }
 
   &__input {
@@ -47,6 +57,7 @@ $marginBottom: 2em;
     padding: 0.8em 1em;
     font-size: 1.2rem;
     border-radius: $borderRadius;
+    transition: all $transitionDuration;
   }
 
   &__input-placeholder {
@@ -57,10 +68,11 @@ $marginBottom: 2em;
     color: $placeholderColor;
     font-weight: 500;
     margin-left: 1.2em;
+    padding: 1px;
     background-color: white;
     display: inline-block;
     pointer-events: none;
-    transition: all 120ms, color 50ms;
+    transition: all $transitionDuration, color 50ms;
 
     &::first-letter {
       text-transform: uppercase;
@@ -90,35 +102,14 @@ $marginBottom: 2em;
   }
 
   select {
-    text-transform: capitalize;
     color: $placeholderColor;
   }
 
   textarea {
     resize: vertical;
     height: 100px;
-    color: $inputColor;
     font-weight: 500;
-  }
-
-  &__input--error {
-    border-color: $error;
-  }
-
-  &__input-error-message {
-    margin: -1.2em 0 1em;
-    font-size: 0.8rem;
-    color: $error;
-
-    &:first-letter {
-      text-transform: capitalize;
-    }
-  }
-
-  &__error-icon {
-    width: 12px;
-    transform: translateY(1px);
-    margin-right: 0.4em;
+    font-family: 'Montserrat';
   }
 
   &__submit-button {
@@ -135,7 +126,7 @@ $marginBottom: 2em;
   &__cancel-button,
   &__submit-button {
     padding: 0.7em 1.5em;
-    transition: all 120ms;
+    transition: all $transitionDuration;
   }
 
   &__cancel-button {

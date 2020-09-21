@@ -1,13 +1,18 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import './ErrorMessage.scss';
 
-const ErrorMessage = ({ meta, responseError }) => {
+const ErrorMessage = ({ meta, responseError, morespace }) => {
   const { error, active, submitFailed } = meta;
+
+  const className = classnames('error-message', {
+    'error-message--mb': morespace,
+  });
 
   if ((submitFailed && !active && error) || responseError) {
     return (
-      <div className="error-message">
+      <div className={className}>
         <span>{error || responseError}</span>
         <span>.</span>
       </div>

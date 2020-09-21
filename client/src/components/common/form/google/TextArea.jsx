@@ -1,22 +1,20 @@
 import React from 'react';
+import InputDescription from '../helpers/InputDescription';
 
-import getClassName from '../helpers/getClassName';
-
-export default ({ input, name, placeholder, meta }) => {
-  const className = getClassName(meta);
-
-  return (
-    <div className="form__input-group">
-      <textarea
-        style={{ resize: 'vertical' }}
-        {...input}
-        name={name}
-        className={className}
-        placeholder="&nbsp;"
-      />
-      <div className="form__input-placeholder form__input-placeholder--on-top">
-        {placeholder}
-      </div>
+const TextArea = ({ input, name, placeholder, description }) => (
+  <div className="form__input-wrapper">
+    <textarea
+      style={{ resize: 'vertical' }}
+      {...input}
+      name={name}
+      className="form__input"
+      placeholder="&nbsp;"
+    />
+    <div className="form__input-placeholder form__input-placeholder--on-top">
+      {placeholder}
     </div>
-  );
-};
+    <InputDescription description={description} />
+  </div>
+);
+
+export default TextArea;

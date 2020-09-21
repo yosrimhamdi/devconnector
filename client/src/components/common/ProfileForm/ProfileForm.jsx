@@ -23,49 +23,49 @@ const ProfileForm = ({ handleSubmit, errors, onFormSubmit }) => {
       <Field
         name="handle"
         placeholder="profile handle**"
-        message="a unique handle for your profile URL. Your full name, company name, nickname"
+        description="a unique handle for your profile URL. Your full name, company name, nickname"
         component={Input}
         responseError={errors.handleExists}
       />
       <Field
         name="status"
-        message="give us an idea of where you are at in your career"
+        description="give us an idea of where you are at in your career"
         component={Select}
       />
       <Field
         name="company"
         placeholder="company"
-        message="could be your own company or one you work for"
+        description="could be your own company or one you work for"
         component={Input}
       />
       <Field
         name="website"
         placeholder="website"
-        message="could be your own website or company one"
+        description="could be your own website or company one"
         component={Input}
       />
       <Field
         name="location"
         placeholder="location"
-        message="city or city & state suggested (eg. Boston, MA"
+        description="city or city & state suggested (eg. Boston, MA)"
         component={Input}
       />
       <Field
         name="skills"
         placeholder="skills**"
-        message="please use comma, separated values (eg. HTML, CSS, PHP)"
+        description="please use comma, separated values (eg. HTML, CSS, PHP)"
         component={Input}
       />
       <Field
         name="githubUserName"
         placeholder="github username"
-        message="if you want your latest repos and a Github link, include your username"
+        description="if you want your latest repos and a Github link, include your username"
         component={Input}
       />
       <Field
         name="bio"
         placeholder="short bio"
-        message="tell us a little about yourself"
+        description="tell us a little about yourself"
         component={TextArea}
       />
       <SocialsForm />

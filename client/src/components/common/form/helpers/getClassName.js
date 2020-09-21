@@ -1,7 +1,10 @@
 import classnames from 'classnames';
 
-export default ({ touched, active, error: validationError }, responseError) =>
-  classnames('form__input', {
-    'form__input--error':
-      responseError || (validationError && touched && !active),
+export default (
+  { submitFailed, active, error: validationError },
+  responseError,
+) =>
+  classnames('form__input-wrapper', {
+    'form__input-wrapper--invalid':
+      responseError || (submitFailed && !active && validationError),
   });

@@ -21,7 +21,7 @@ export default ({
     errors.handle = 'the handle must not contain spaces';
   }
 
-  if (status === '* select professional status') {
+  if (status === 'none') {
     errors.status = 'status is required';
   }
 

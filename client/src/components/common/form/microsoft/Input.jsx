@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import ErrorMessage from './helpers/errors/ErrorMessage';
+import ErrorMessage from '../helpers/ErrorMessage';
 
 const AuthInput = ({ input, placeholder, type, meta, responseError }) => {
   const { error, active, submitFailed } = meta;

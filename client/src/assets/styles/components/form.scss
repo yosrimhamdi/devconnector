@@ -1,160 +1,154 @@
-$error: rgb(253, 99, 99);
-$message: #6c757d;
-$inputBorder: rgb(212, 212, 212);
+$inputBorderColor: #80868b;
+$placeholderColor: #7a7e83;
+$inputColor: #4b4e51;
+$borderRadius: 5px;
+$marginBottom: 3em;
+$transitionDuration: 120ms;
+
+@mixin placeholderOnBorder {
+  top: 0;
+  left: 0;
+  font-size: 0.8rem;
+}
 
 .form {
-  width: 55%;
-  margin: 0 auto;
+  width: 600px;
+  margin: 8em auto 3em;
+  box-shadow: 0 0 2px 1px rgba($color: #000000, $alpha: 0.2);
+  padding: 2em;
+  border-radius: $borderRadius;
 
-  &__input {
-    width: 100%;
-    border: 1px solid $inputBorder;
-    color: rgb(83, 83, 83);
-    padding: 0.6em 0.7em;
+  &__title {
+    font-weight: 400;
+    color: #5f6368;
+    text-transform: uppercase;
     font-size: 1.2rem;
-    margin-bottom: 1em;
+    margin-bottom: 0.2em;
+  }
 
-    &::placeholder {
-      font-size: 1.3rem;
-      color: rgb(196, 196, 196);
-      text-transform: capitalize;
-      position: relative;
-      top: 1px;
-      left: -1px;
+  &__require-message {
+    color: #494c50;
+    font-size: 0.75rem;
+    margin-bottom: 2em;
+    font-weight: 400;
+  }
+
+  &__input-wrapper {
+    position: relative;
+    margin-bottom: $marginBottom;
+
+    &--invalid {
+      .form__input {
+        box-shadow: none;
+        border-color: var(--red-error-message);
+      }
+
+      .input-description {
+        color: var(--red-error-message);
+      }
     }
   }
 
+  &__input {
+    width: 100%;
+    border: 2px solid transparent;
+    box-shadow: 0 0 0 1px $inputBorderColor;
+    color: $inputColor;
+    padding: 0.8em 1em;
+    font-size: 1.2rem;
+    border-radius: $borderRadius;
+    transition: all $transitionDuration;
+  }
+
+  &__input-placeholder {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: $placeholderColor;
+    font-weight: 500;
+    margin-left: 1.2em;
+    padding: 1px;
+    background-color: white;
+    display: inline-block;
+    pointer-events: none;
+    transition: all $transitionDuration, color 50ms;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &--to-left {
+      left: 2em;
+    }
+
+    &--on-top {
+      top: 22px;
+    }
+  }
+
+  &__input:focus {
+    border-color: var(--blue-button);
+    box-shadow: none;
+  }
+
+  &__input:focus + .form__input-placeholder {
+    @include placeholderOnBorder;
+    color: var(--blue-button);
+  }
+
+  &__input:not(:placeholder-shown) + .form__input-placeholder {
+    @include placeholderOnBorder;
+  }
+
   select {
-    text-transform: capitalize;
+    color: $placeholderColor;
   }
 
   textarea {
     resize: vertical;
     height: 100px;
+    font-weight: 500;
+    font-family: 'Montserrat';
   }
 
-  &__input-header {
-    font-size: 1.2rem;
-    margin-bottom: 0.3em;
-    font-style: italic;
-  }
-
-  &__input--error {
-    border-color: $error;
-  }
-
-  &__input-error-message {
-    margin: -1.2em 0 1em;
-    font-size: 0.8rem;
-    color: $error;
-
-    &:first-letter {
-      text-transform: capitalize;
-    }
-  }
-
-  &__error-icon {
-    width: 12px;
-    transform: translateY(1px);
-    margin-right: 0.4em;
-  }
-
-  &__input-message {
-    color: $message;
-    font-size: 0.8rem;
-    margin: -1em 0 1.2em;
-
-    &:first-letter {
-      text-transform: capitalize;
-    }
-  }
-
-  &__submit-btn {
-    width: 100%;
-    padding: 1em 0;
+  &__submit-button {
     text-transform: capitalize;
-    background-color: #17a2b8;
+    background-color: var(--blue-button);
     color: white;
     font-size: 0.9rem;
-  }
-
-  &__input,
-  &__submit-btn {
-    border-radius: 4px;
-  }
-
-  &__require-message {
-    color: rgb(88, 88, 88);
-    font-size: 0.75rem;
-    margin-bottom: 1em;
-  }
-
-  #toggle-input {
-    margin-right: 0.3em;
-  }
-
-  &__toggle-to-date-label,
-  #toggle-input {
-    cursor: pointer;
-  }
-
-  &__toggle-to-date-label {
-    display: inline-block;
-    transform: translateY(-2px);
-    user-select: none;
-    margin: -0.5em 0 1em;
-  }
-
-  &__social-toggle-btn {
-    background: none;
-    margin-right: 0.5em;
-    font-size: 1rem;
-    background-color: rgb(248, 248, 248);
-    color: #363636;
-    padding: 0.5em 1em;
 
     &:hover {
-      background-color: rgb(240, 240, 240);
+      background-color: var(--blue-button-hover);
     }
   }
 
-  &__social-toggle-btn-wrapper {
-    margin-bottom: 1em;
+  &__cancel-button,
+  &__submit-button {
+    padding: 0.7em 1.5em;
+    transition: all $transitionDuration;
   }
 
-  &__social-toggle-message {
-    margin-right: 0.25em;
+  &__cancel-button {
+    color: var(--blue-button);
+    margin-right: 1em;
+
+    &:hover {
+      color: var(--blue-button-hover);
+      background-color: #f3f3f3;
+    }
   }
 
-  &__social-toggle-optional-message {
-    color: $message;
+  &__buttons-wrapper {
+    font-weight: 500;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
-  &__socials {
-    margin-bottom: 1em;
-  }
-
-  &__social-input {
-    padding-left: 3em;
-    display: block;
-  }
-
-  &__social-input-wrapper {
-    position: relative;
-  }
-
-  &__social-icon {
-    width: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &__social-icon-wrapper {
-    position: absolute;
-    border-right: 1px solid $inputBorder;
-    height: 100%;
-    width: 50px;
+  &__date-header {
+    margin-bottom: 0.4em;
+    color: #404246;
+    font-style: italic;
   }
 }

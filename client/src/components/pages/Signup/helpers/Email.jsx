@@ -2,7 +2,7 @@ import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
-import AuthInput from '../../../common/form/AuthInput';
+import Input from '../../../common/form/microsoft/Input';
 import validate from './validate';
 
 const Email = ({ handleSubmit }) => (
@@ -12,7 +12,7 @@ const Email = ({ handleSubmit }) => (
     <div className="auth__inputs-wrapper">
       <Field
         name="email"
-        component={AuthInput}
+        component={Input}
         placeholder="Someone@exemple.com"
         type="email"
       />

@@ -1,0 +1,30 @@
+.socials-form {
+  &__form {
+    padding: 4px 1px;
+  }
+
+  &__toggle-button {
+    background: none;
+    margin-right: 0.5em;
+    font-size: 1rem;
+    background-color: rgb(245, 245, 245);
+    color: #363636;
+    padding: 0.5em 1em;
+
+    &:hover {
+      background-color: rgb(240, 240, 240);
+    }
+  }
+
+  &__toggle-button-wrapper {
+    margin-bottom: 2em;
+  }
+
+  &__toggle-message {
+    margin-right: 0.25em;
+  }
+
+  &__option-message {
+    color: #6c757d;
+  }
+}

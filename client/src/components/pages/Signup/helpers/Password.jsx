@@ -4,7 +4,7 @@ import { Field, reduxForm } from 'redux-form';
 import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
-import AuthInput from '../../../common/form/AuthInput';
+import Input from '../../../common/form/microsoft/Input';
 
 const Password = ({ handleSubmit, previousFormPage, email }) => {
   const [type, setType] = useState('password');
@@ -33,7 +33,7 @@ const Password = ({ handleSubmit, previousFormPage, email }) => {
           name="password"
           type={type}
           placeholder="Create password"
-          component={AuthInput}
+          component={Input}
         />
       </div>
       <label className="auth__label" htmlFor="password-visibility-input">

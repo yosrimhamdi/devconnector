@@ -1,0 +1,10 @@
+.input-description {
+  color: #6c757d;
+  font-size: 0.8rem;
+  position: absolute;
+  margin-top: 0.5em;
+
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}

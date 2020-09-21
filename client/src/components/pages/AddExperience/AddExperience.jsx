@@ -6,43 +6,40 @@ import { Link } from 'react-router-dom';
 import validate from './validate';
 import { addExperience } from '../../../redux/actions';
 
-import Headline from '../../common/Headline';
-import { Input, TextArea } from '../../common/form';
+import Input from '../../common/form/google/Input';
+import TextArea from '../../common/form/google/TextArea';
 import { ToggleToDate, useToggleToDate } from '../../common/toggleToDate';
 
 const AddExperience = ({ handleSubmit, addExperience }) => {
   const [disabled, toggleToDate] = useToggleToDate();
 
   return (
-    <div>
-      <Headline
-        header="add experience"
-        subHeader="add any job or position that you have had in the past or current."
+    <form onSubmit={handleSubmit(addExperience)} className="form">
+      <h1 className="form__title">add experience</h1>
+      <div className="form__require-message">** = required</div>
+      <Field name="company" placeholder="company**" component={Input} />
+      <Field name="title" placeholder="job title**" component={Input} />
+      <Field name="location" placeholder="location" component={Input} />
+      <div className="form__date-header">from date**</div>
+      <Field name="from" type="date" component={Input} />
+      <div className="form__date-header">to date</div>
+      <Field name="to" type="date" component={Input} disabled={disabled} />
+      <ToggleToDate toggleToDate={toggleToDate} />
+      <Field
+        name="description"
+        placeholder="job description"
+        message="tell us about the position"
+        component={TextArea}
       />
-      <form onSubmit={handleSubmit(addExperience)} className="form">
-        <Link to="/dashboard" className="link link--grey">
-          go back
+      <div className="form__buttons-wrapper">
+        <Link to="/dashboard" className="form__cancel-button">
+          cancel
         </Link>
-        <div className="form__require-message">* = required</div>
-        <Field name="company" placeholder="* company" component={Input} />
-        <Field name="title" placeholder="* job title" component={Input} />
-        <Field name="location" placeholder="location" component={Input} />
-        <div className="form__input-header">* from date</div>
-        <Field name="from" type="date" component={Input} />
-        <div className="form__input-header">to date</div>
-        <Field name="to" type="date" component={Input} disabled={disabled} />
-        <ToggleToDate toggleToDate={toggleToDate} />
-        <Field
-          name="description"
-          placeholder="job description"
-          message="tell us about the position"
-          component={TextArea}
-        />
-        <button className="form__submit-btn" type="submit">
+        <button className="form__submit-button" type="submit">
           submit
         </button>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

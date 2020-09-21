@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
-import AuthInput from '../../../common/form/AuthInput';
+import Input from '../../../common/form/microsoft/Input';
 import Spinner from '../../../common/Spinner';
 
 const Password = ({
@@ -33,7 +33,7 @@ const Password = ({
         type="password"
         placeholder="Password"
         responseError={errors.wrongEmailOrPassword}
-        component={AuthInput}
+        component={Input}
       />
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">

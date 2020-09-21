@@ -24,7 +24,7 @@ const Comments = ({
   }
 
   if (loading && !comments) {
-    return <Spinner />;
+    return <Spinner spaceAround />;
   }
 
   const renderedComments = comments.map(comment => (

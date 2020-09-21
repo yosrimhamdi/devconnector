@@ -39,7 +39,7 @@ const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
       />
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
-      {loading ? <Spinner /> : null}
+      <Spinner hidden={loading === false} />
       <button
         type="submit"
         className="auth__button auth__button--scale-on-active"

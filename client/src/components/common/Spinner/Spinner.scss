@@ -3,10 +3,18 @@
   position: relative;
   z-index: 1;
   color: #343a40;
-  padding: 1.5em 0;
+  transform: translateY(2px);
 
   &--white {
     color: #f4f5f4;
+  }
+
+  &--hidden {
+    opacity: 0;
+  }
+
+  &--space-around {
+    padding: 1.5em 0;
   }
 
   &--full-screen {
@@ -15,21 +23,22 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  }
+
+  &--full-screen &__circle {
+    position: absolute;
+    top: 30%;
+    left: 50%;
   }
 
   &__circle {
     animation: spin 1500ms linear infinite;
     width: 30px;
-    display: inline-block;
-    transform: translateY(2px);
   }
 }
 
 @keyframes spin {
   to {
-    transform: translateY(2px) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

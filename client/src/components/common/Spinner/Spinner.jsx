@@ -5,10 +5,12 @@ import whiteSpinner from './spinner-white.svg';
 import darkSpinner from './spinner.svg';
 import './Spinner.scss';
 
-const Spinner = ({ white, fullScreen }) => {
+const Spinner = ({ white, fullScreen, spaceAround, hidden }) => {
   const className = classnames('spinner', {
     'spinner--full-screen': fullScreen,
     'spinner--white': white,
+    'spinner--space-around': spaceAround,
+    'spinner--hidden': hidden,
   });
 
   const spinner = white ? whiteSpinner : darkSpinner;
@@ -18,6 +20,10 @@ const Spinner = ({ white, fullScreen }) => {
       <img src={spinner} className="spinner__circle" alt="loading..." />
     </div>
   );
+};
+
+Spinner.defaultProps = {
+  hidden: false,
 };
 
 export default Spinner;

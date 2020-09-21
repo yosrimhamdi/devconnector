@@ -14,7 +14,7 @@ const ProfileDisplay = ({ profile }) => {
     company,
     location,
     website,
-    social,
+    social = {},
     skills,
     experience,
     education,

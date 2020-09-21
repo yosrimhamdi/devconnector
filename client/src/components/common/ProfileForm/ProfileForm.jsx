@@ -8,8 +8,9 @@ import Input from '../form/google/Input';
 import TextArea from '../form/google/TextArea';
 import Select from '../form/google/Select';
 import SocialsForm from './helpers/SocialsForm';
+import { clearErrors } from '../../../redux/actions';
 
-const ProfileForm = ({ handleSubmit, errors, onFormSubmit }) => {
+const ProfileForm = ({ handleSubmit, errors, onFormSubmit, clearErrors }) => {
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);
 
@@ -26,6 +27,7 @@ const ProfileForm = ({ handleSubmit, errors, onFormSubmit }) => {
         description="a unique handle for your profile URL. Your full name, company name, nickname"
         component={Input}
         responseError={errors.handleExists}
+        onFocus={clearErrors}
       />
       <Field
         name="status"
@@ -83,4 +85,4 @@ const ProfileForm = ({ handleSubmit, errors, onFormSubmit }) => {
 
 const mapStateToProps = ({ errors }) => ({ errors });
 
-export default connect(mapStateToProps)(ProfileForm);
+export default connect(mapStateToProps, { clearErrors })(ProfileForm);

@@ -12,12 +12,13 @@ const Input = ({
   autocomplete,
   description,
   meta,
+  responseError,
 }) => {
-  const className = getClassName(meta);
+  const className = getClassName(meta, responseError);
 
   return (
     <>
-      <ErrorMessage meta={meta} />
+      <ErrorMessage meta={meta} responseError={responseError} />
       <div className={className}>
         <input
           className="form__input"

@@ -9,7 +9,7 @@ export default ({ input, name, meta }) => {
   return (
     <>
       <ErrorMessage meta={meta} />
-      <div className={className}>
+      <div className={`${className} form__input-wrapper--mb-medium`}>
         <select {...input} name={name} className="form__input">
           <option value="professional status**">Professional status**</option>
           <option value="developer">Developer</option>

@@ -47,6 +47,14 @@ $transitionDuration: 120ms;
         color: var(--red-error-message);
       }
     }
+
+    &--mb-small {
+      margin-bottom: 2em;
+    }
+
+    &--mb-medium {
+      margin-bottom: 2.5em;
+    }
   }
 
   &__input {
@@ -126,6 +134,7 @@ $transitionDuration: 120ms;
   &__cancel-button,
   &__submit-button {
     padding: 0.7em 1.5em;
+    border-radius: 4px;
     transition: all $transitionDuration;
   }
 

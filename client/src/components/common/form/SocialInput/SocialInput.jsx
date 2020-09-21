@@ -17,7 +17,9 @@ const IconedInput = ({ input, placeholder, meta }) => {
   return (
     <>
       <ErrorMessage meta={meta} morespace />
-      <div className={`${className} social-input`}>
+      <div
+        className={`${className} form__input-wrapper--mb-small  social-input`}
+      >
         <div className="social-input__icon-wrapper">
           <img
             src={icons[input.name]}

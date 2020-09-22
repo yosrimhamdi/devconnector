@@ -1,13 +1,11 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import './Select.scss';
 import ErrorMessage from '../../helpers/ErrorMessage';
+import getClasssName from '../../helpers/getClassName';
 
 const Select = ({ input, name, meta }) => {
-  const className = classnames('input', {
-    'inpud--invalid': meta.submitFailed && !meta.active && meta.error,
-  });
+  const className = getClasssName('select', meta);
 
   return (
     <>

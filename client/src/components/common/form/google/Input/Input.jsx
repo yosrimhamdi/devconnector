@@ -1,9 +1,9 @@
 import React from 'react';
-import classnames from 'classnames';
 
 import './Input.scss';
 import ErrorMessage from '../../helpers/ErrorMessage';
 import FieldDescription from '../fieldDescription';
+import getClassName from '../../helpers/getClassName';
 
 const Input = ({
   input,
@@ -15,10 +15,7 @@ const Input = ({
   responseError,
   marginBottom,
 }) => {
-  const className = classnames('input', {
-    'inpud--invalid':
-      responseError || (meta.submitFailed && !meta.active && meta.error),
-  });
+  const className = getClassName('input', meta, responseError);
 
   return (
     <>

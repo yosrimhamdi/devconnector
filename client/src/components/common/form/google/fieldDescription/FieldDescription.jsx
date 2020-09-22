@@ -1,18 +1,18 @@
 import React from 'react';
 
-import './InputDescription.scss';
+import './FieldDescription.scss';
 
-const InputDescription = ({ description }) => {
+const FieldDescription = ({ description }) => {
   if (!description) {
     return null;
   }
 
   return (
-    <div className="input-description">
+    <div className="field-description">
       <span>{description}</span>
       <span>.</span>
     </div>
   );
 };
 
-export default InputDescription;
+export default FieldDescription;

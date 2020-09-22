@@ -1,4 +1,4 @@
-@import '../../../assets/styles/utils/mixins';
+@import '../../../assets/styles/utils/mixins/responsive';
 
 .landing {
   height: 100vh;
@@ -33,7 +33,7 @@
     margin-bottom: 0.2em;
     display: inline-block;
 
-    @include atLarge {
+    @include at-large {
       font-size: 5rem;
     }
   }

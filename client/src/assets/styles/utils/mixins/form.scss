@@ -1,0 +1,51 @@
+@mixin basic-field-styles {
+  width: 100%;
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1px var(--input-border-color);
+  color: var(--input-color);
+  padding: 0.8em 1em;
+  font-size: 1.2rem;
+  border-radius: var(--input-border-radius);
+  transition: all var(--input-transition-duration);
+}
+
+@mixin placeholder-styles {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  color: var(--input-placeholder-color);
+  font-weight: 500;
+  margin-left: 1.2em;
+  padding: 1px;
+  background-color: white;
+  display: inline-block;
+  pointer-events: none;
+  transition: all var(--input-transition-duration), color 50ms;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+@mixin placeholer-position-on-border {
+  top: 0;
+  left: 0;
+  font-size: 0.8rem;
+}
+
+@mixin placeholder-field-interactions {
+  &__field:focus {
+    border-color: var(--blue-button);
+    box-shadow: none;
+  }
+
+  &__field:focus + &__placeholder {
+    @include placeholer-position-on-border;
+    color: var(--blue-button);
+  }
+
+  &__field:not(:placeholder-shown) + &__placeholder {
+    @include placeholer-position-on-border;
+  }
+}

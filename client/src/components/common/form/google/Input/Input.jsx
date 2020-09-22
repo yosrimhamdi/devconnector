@@ -2,7 +2,7 @@ import React from 'react';
 
 import './Input.scss';
 import ErrorMessage from '../../helpers/ErrorMessage';
-import InputDescription from '../InputDescription';
+import FieldDescription from '../fieldDescription';
 import getClassName from '../../helpers/getClassName';
 
 const Input = ({
@@ -22,7 +22,7 @@ const Input = ({
       <ErrorMessage meta={meta} responseError={responseError} />
       <div className={className}>
         <input
-          className="input__input"
+          className="input__field"
           placeholder="&nbsp;"
           type={type}
           disabled={disabled}
@@ -30,7 +30,7 @@ const Input = ({
           {...input}
         />
         <div className="input__placeholder">{placeholder}</div>
-        <InputDescription description={description} />
+        <FieldDescription description={description} />
       </div>
     </>
   );

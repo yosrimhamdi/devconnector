@@ -11,7 +11,7 @@ export default ({ input, name, meta }) => {
     <>
       <ErrorMessage meta={meta} />
       <div className={`${className} select`}>
-        <select {...input} name={name} className="select__input">
+        <select {...input} name={name} className="select__field">
           <option value="professional status**">Professional status**</option>
           <option value="developer">Developer</option>
           <option value="junior developer">Junior developer</option>

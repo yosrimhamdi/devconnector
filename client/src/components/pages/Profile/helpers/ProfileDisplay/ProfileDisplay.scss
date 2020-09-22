@@ -1,4 +1,4 @@
-@import '../../../../../assets/styles/utils/mixins';
+@import '../../../../../assets/styles/utils/mixins/responsive';
 
 .profile-display {
   display: flex;
@@ -33,7 +33,7 @@
     box-shadow: 0 0 20px 2px rgba($color: #000000, $alpha: 0.1);
     z-index: 1;
 
-    @include atLarge {
+    @include at-large {
       width: 200px;
       height: 200px;
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import InputDescription from '../InputDescription';
+import FieldDescription from '../fieldDescription';
 
 import './TextArea.scss';
 
@@ -9,12 +9,12 @@ const TextArea = ({ input, name, placeholder, description }) => (
       style={{ resize: 'vertical' }}
       {...input}
       name={name}
-      className="text-area__input"
+      className="text-area__field"
       spellCheck="false"
       placeholder="&nbsp;"
     />
     <div className="text-area__placeholder">{placeholder}</div>
-    <InputDescription description={description} />
+    <FieldDescription description={description} />
   </div>
 );
 

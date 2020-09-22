@@ -18,7 +18,7 @@ const Posts = ({ fetchPosts, posts, loading }) => {
   }
 
   return (
-    <div className="posts content-wrapper">
+    <div className="posts">
       <div className="posts__content">
         <CreatePostForm />
         <PostList posts={posts} />

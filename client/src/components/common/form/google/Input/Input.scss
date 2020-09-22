@@ -12,10 +12,6 @@
 
   &__placeholder {
     @include placeholder-styles;
-
-    &--to-left {
-      left: 2em;
-    }
   }
 
   @include placeholder-field-interactions;

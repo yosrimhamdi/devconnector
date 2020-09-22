@@ -1,8 +1,22 @@
+@import '../../../../assets/styles/utils/mixins/form';
+
 .social-input {
-  &__input {
+  position: relative;
+  margin-bottom: 2em;
+
+  @include invalid-field-styles;
+
+  &__field {
+    @include basic-field-styles;
     padding-left: 2.5em;
-    display: block;
   }
+
+  &__placeholder {
+    @include placeholder-styles;
+    left: 2em;
+  }
+
+  @include placeholder-field-interactions;
 
   &__icon-wrapper {
     position: absolute;

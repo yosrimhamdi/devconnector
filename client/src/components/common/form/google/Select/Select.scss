@@ -1,0 +1,15 @@
+@import '../../../../../assets/styles/utils/mixins';
+
+.select {
+  position: relative;
+  margin-bottom: 2.5em;
+
+  &__input {
+    @include basic-field-styles;
+  }
+
+  &__input:focus {
+    border-color: var(--blue-button);
+    box-shadow: none;
+  }
+}

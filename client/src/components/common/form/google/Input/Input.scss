@@ -1,0 +1,56 @@
+@import '../../../../../assets/styles/utils/mixins';
+
+.input {
+  position: relative;
+  margin-bottom: 3em;
+
+  &--invalid &__input {
+    box-shadow: none;
+    border-color: var(--red-error-message);
+  }
+
+  &--invalid .input-description {
+    color: var(--red-error-message);
+  }
+
+  &__input {
+    @include basic-field-styles;
+  }
+
+  &__input:focus {
+    border-color: var(--blue-button);
+    box-shadow: none;
+  }
+
+  &__input:focus + &__placeholder {
+    @include placeholer-position-on-border;
+    color: var(--blue-button);
+  }
+
+  &__input:not(:placeholder-shown) + &__placeholder {
+    @include placeholer-position-on-border;
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    color: var(--input-placeholder-color);
+    font-weight: 500;
+    margin-left: 1.2em;
+    padding: 1px;
+    background-color: white;
+    display: inline-block;
+    pointer-events: none;
+    transition: all var(--input-transition-duration), color 50ms;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+
+    &--to-left {
+      left: 2em;
+    }
+  }
+}

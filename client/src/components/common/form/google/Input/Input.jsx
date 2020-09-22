@@ -1,8 +1,9 @@
 import React from 'react';
 
-import ErrorMessage from '../helpers/ErrorMessage';
-import InputDescription from '../helpers/InputDescription';
-import getClassName from '../helpers/getClassName';
+import './Input.scss';
+import ErrorMessage from '../../helpers/ErrorMessage';
+import InputDescription from '../InputDescription';
+import getClassName from '../../helpers/getClassName';
 
 const Input = ({
   input,
@@ -21,14 +22,14 @@ const Input = ({
       <ErrorMessage meta={meta} responseError={responseError} />
       <div className={className}>
         <input
-          className="form__input"
+          className="input__input"
           placeholder="&nbsp;"
           type={type}
           disabled={disabled}
           autoComplete={autocomplete}
           {...input}
         />
-        <div className="form__input-placeholder">{placeholder}</div>
+        <div className="input__placeholder">{placeholder}</div>
         <InputDescription description={description} />
       </div>
     </>

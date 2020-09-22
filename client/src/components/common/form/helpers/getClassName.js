@@ -4,7 +4,7 @@ export default (
   { submitFailed, active, error: validationError },
   responseError,
 ) =>
-  classnames('form__input-wrapper', {
-    'form__input-wrapper--invalid':
+  classnames('input', {
+    'inpud--invalid':
       responseError || (submitFailed && !active && validationError),
   });

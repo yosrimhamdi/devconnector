@@ -1,18 +1,19 @@
 import React from 'react';
-import InputDescription from '../helpers/InputDescription';
+import InputDescription from '../InputDescription';
+
+import './TextArea.scss';
 
 const TextArea = ({ input, name, placeholder, description }) => (
-  <div className="form__input-wrapper">
+  <div className="text-area">
     <textarea
       style={{ resize: 'vertical' }}
       {...input}
       name={name}
-      className="form__input"
+      className="text-area__input"
+      spellCheck="false"
       placeholder="&nbsp;"
     />
-    <div className="form__input-placeholder form__input-placeholder--on-top">
-      {placeholder}
-    </div>
+    <div className="text-area__placeholder">{placeholder}</div>
     <InputDescription description={description} />
   </div>
 );

@@ -1,7 +1,8 @@
 import React from 'react';
-import ErrorMessage from '../helpers/ErrorMessage';
 
-import getClassName from '../helpers/getClassName';
+import './Select.scss';
+import ErrorMessage from '../../helpers/ErrorMessage';
+import getClassName from '../../helpers/getClassName';
 
 export default ({ input, name, meta }) => {
   const className = getClassName(meta);
@@ -9,8 +10,8 @@ export default ({ input, name, meta }) => {
   return (
     <>
       <ErrorMessage meta={meta} />
-      <div className={`${className} form__input-wrapper--mb-medium`}>
-        <select {...input} name={name} className="form__input">
+      <div className={`${className} select`}>
+        <select {...input} name={name} className="select__input">
           <option value="professional status**">Professional status**</option>
           <option value="developer">Developer</option>
           <option value="junior developer">Junior developer</option>

@@ -9,23 +9,22 @@ const Input = ({
   input,
   type,
   placeholder,
-  disabled,
   autocomplete,
   description,
   meta,
   responseError,
+  marginBottom,
 }) => {
   const className = getClassName(meta, responseError);
 
   return (
     <>
       <ErrorMessage meta={meta} responseError={responseError} />
-      <div className={className}>
+      <div className={className} style={{ marginBottom }}>
         <input
           className="input__field"
           placeholder="&nbsp;"
           type={type}
-          disabled={disabled}
           autoComplete={autocomplete}
           {...input}
         />

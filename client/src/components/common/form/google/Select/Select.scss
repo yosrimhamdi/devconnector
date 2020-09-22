@@ -4,6 +4,8 @@
   position: relative;
   margin-bottom: 2.5em;
 
+  @include invalid-field-styles;
+
   &__field {
     @include basic-field-styles;
   }

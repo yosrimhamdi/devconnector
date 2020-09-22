@@ -9,6 +9,17 @@
   transition: all var(--input-transition-duration);
 }
 
+@mixin invalid-field-styles {
+  &--invalid &__field {
+    box-shadow: none;
+    border-color: var(--red-error-message);
+  }
+
+  &--invalid .field-description {
+    color: var(--red-error-message);
+  }
+}
+
 @mixin placeholder-styles {
   position: absolute;
   top: 50%;

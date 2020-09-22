@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './SocialInput.scss';
-import getClassName from '../helpers/getClassName';
+// import getClassName from '../helpers/getClassName';
 import youtube from '../../../../assets/icons/socials/youtube.svg';
 import facebook from '../../../../assets/icons/socials/facebook.svg';
 import twitter from '../../../../assets/icons/socials/twitter.svg';
@@ -12,7 +12,7 @@ import ErrorMessage from '../helpers/ErrorMessage';
 const icons = { youtube, facebook, twitter, linkedin, instagram };
 
 const IconedInput = ({ input, placeholder, meta }) => {
-  const className = getClassName(meta);
+  const className = null;
 
   return (
     <>

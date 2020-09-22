@@ -4,14 +4,7 @@
   position: relative;
   margin-bottom: 3.5em;
 
-  &--invalid &__field {
-    box-shadow: none;
-    border-color: var(--red-error-message);
-  }
-
-  &--invalid .field-description {
-    color: var(--red-error-message);
-  }
+  @include invalid-field-styles;
 
   &__field {
     @include basic-field-styles;

@@ -1,11 +1,13 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import './Select.scss';
 import ErrorMessage from '../../helpers/ErrorMessage';
-import getClassName from '../../helpers/getClassName';
 
-export default ({ input, name, meta }) => {
-  const className = getClassName(meta);
+const Select = ({ input, name, meta }) => {
+  const className = classnames('input', {
+    'inpud--invalid': meta.submitFailed && !meta.active && meta.error,
+  });
 
   return (
     <>
@@ -26,3 +28,5 @@ export default ({ input, name, meta }) => {
     </>
   );
 };
+
+export default Select;

@@ -20,7 +20,6 @@ const ProfileForm = ({ handleSubmit, errors, onFormSubmit, clearErrors }) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="form">
       <h1 className="form__title">update profile</h1>
-      <h3 className="form__require-message">** = required</h3>
       <Field
         name="handle"
         placeholder="profile handle**"

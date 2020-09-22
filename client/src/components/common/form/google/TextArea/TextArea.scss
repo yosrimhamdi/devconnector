@@ -6,29 +6,16 @@
 
   &__field {
     resize: vertical;
-    height: 100px;
+    min-height: 100px;
     font-weight: 500;
     font-family: 'Montserrat';
     @include basic-field-styles;
   }
 
   &__placeholder {
-    position: absolute;
-    top: 22px;
-    left: 0;
-    transform: translateY(-50%);
-    color: var(--input-placeholder-color);
-    font-weight: 500;
-    margin-left: 1.2em;
-    padding: 1px;
-    background-color: white;
-    display: inline-block;
-    pointer-events: none;
-    transition: all var(--input-transition-duration), color 50ms;
+    @include placeholder-styles;
 
-    &::first-letter {
-      text-transform: uppercase;
-    }
+    top: 22px;
   }
 
   @include placeholder-field-interactions;

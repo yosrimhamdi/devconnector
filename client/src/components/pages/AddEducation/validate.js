@@ -14,7 +14,7 @@ export default ({ school, degree, fieldOfStudy, from }) => {
   }
 
   if (!from) {
-    errors.from = 'from data is required';
+    errors.from = 'from date is required';
   }
 
   return errors;

@@ -16,7 +16,6 @@ const AddEducation = ({ handleSubmit, addEducation }) => {
   return (
     <form onSubmit={handleSubmit(addEducation)} className="form">
       <h1 className="form__title">add education</h1>
-      <div className="form__require-message">** = required</div>
       <Field name="school" placeholder="school**" component={Input} />
       <Field
         name="degree"
@@ -28,10 +27,19 @@ const AddEducation = ({ handleSubmit, addEducation }) => {
         placeholder="field of study**"
         component={Input}
       />
-      <div className="form__date-header">from date**</div>
-      <Field name="from" type="date" component={Input} />
-      <div className="form__date-header">to date</div>
-      <Field name="to" type="date" component={Input} disabled={disabled} />
+      <Field
+        name="from"
+        type="date"
+        component={Input}
+        description="from date**"
+      />
+      <Field
+        name="to"
+        type="date"
+        component={Input}
+        disabled={disabled}
+        description="to date"
+      />
       <ToggleToDate toggleToDate={toggleToDate} />
       <Field
         name="description"

@@ -12,22 +12,23 @@ const {
   resizePhoto,
   updateUserPhoto,
   deletePreviousUserPhoto,
-  isRegistered,
+  checkUserExistence,
 } = require('../controllers/users');
 
 const router = express.Router();
 
 router.post('/register', register);
 
-router.post('/register/check', isRegistered);
+router.post('/register/check', checkUserExistence);
 
 router.post('/login', logIn);
 
 router.get('/logout', logOut);
 
+router.use(requireLogIn);
+
 router.post(
   '/update/photo',
-  requireLogIn,
   uploadPhoto,
   deletePreviousUserPhoto,
   resizePhoto,

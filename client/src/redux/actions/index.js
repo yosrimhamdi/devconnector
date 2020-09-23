@@ -5,7 +5,7 @@ export { default as fetchProfile } from './profiles/fetchProfile';
 export { default as registerUser } from './auth/registerUser';
 export { default as loginUser } from './auth/loginUser';
 export { default as logoutUser } from './auth/logoutUser';
-export { default as checkUserExistence } from './auth/checkUserExistence';
+export { default as checkUserExistence } from './users/checkUserExistence';
 
 export { default as addExperience } from './profiles/addExperience';
 export { default as addEducation } from './profiles/addEducation';

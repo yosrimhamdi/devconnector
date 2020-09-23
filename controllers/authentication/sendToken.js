@@ -15,5 +15,5 @@ module.exports = (res, statusCode, user) => {
     expires: new Date(Date.now() + JWT_COOKIE_EXPIRES_IN * 3600000),
   });
 
-  res.status(statusCode).json({ status: 'succes', user: payload });
+  res.status(statusCode).json({ status: 'success', user: payload });
 };

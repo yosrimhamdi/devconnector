@@ -1,11 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { updatePhoto } from '../../../../redux/actions';
 
 import ExperienceList from './ExperienceList';
 import EducationList from './EducationList';
 import Spinner from '../../../common/Spinner';
 
-const DashBoardContent = ({ profile, loading }) => {
+const DashBoardContent = ({ profile, loading, updatePhoto }) => {
+  const handleInputChange = e => {
+    const form = new FormData();
+
+    form.append('photo', e.target.files[0]);
+
+    updatePhoto(form);
+  };
+
   if (loading) {
     return <Spinner fullScreen />;
   }
@@ -38,10 +48,11 @@ const DashBoardContent = ({ profile, loading }) => {
           add education
         </Link>
       </div>
+      <input type="file" onChange={handleInputChange} accept="image/*" />
       <ExperienceList experiences={experience} />
       <EducationList educations={education} />
     </div>
   );
 };
 
-export default DashBoardContent;
+export default connect(null, { updatePhoto })(DashBoardContent);

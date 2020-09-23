@@ -32,3 +32,5 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
 
 export const CLEAR_ERRORS = 'CLEAR_ERRORS';
+
+export const UPDATE_PHOTO = 'UPDATE_PHOTO';

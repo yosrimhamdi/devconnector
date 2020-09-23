@@ -12,7 +12,7 @@ module.exports = catchAsync(async (req, res, next) => {
       new AppError(
         'alreadyRegisterd',
         `${email} is already a DevConnector account. Please try a different email address`,
-        401,
+        400,
       ),
     );
   }

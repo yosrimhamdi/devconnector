@@ -5,19 +5,33 @@ const {
   logIn,
   requireLogIn,
   logOut,
-  checkUserExistence,
 } = require('../controllers/authentication');
+
+const {
+  uploadPhoto,
+  resizePhoto,
+  updateUserPhoto,
+  deletePreviousUserPhoto,
+  isRegistered,
+} = require('../controllers/users');
 
 const router = express.Router();
 
-router.route('/register').post(register);
+router.post('/register', register);
 
-router.route('/login').post(logIn);
+router.post('/register/check', isRegistered);
 
-router.route('/logout').get(logOut);
+router.post('/login', logIn);
 
-router.route('/register/check').post(checkUserExistence);
+router.get('/logout', logOut);
 
-router.get('/test', requireLogIn, (req, res) => res.json({ user: req.user }));
+router.post(
+  '/update/photo',
+  requireLogIn,
+  uploadPhoto,
+  deletePreviousUserPhoto,
+  resizePhoto,
+  updateUserPhoto,
+);
 
 module.exports = router;

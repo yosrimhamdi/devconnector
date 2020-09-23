@@ -28,3 +28,5 @@ export { default as addComment } from './comments/addComment';
 export { default as deleteComment } from './comments/deleteComment';
 
 export { default as clearErrors } from './clearErorrs';
+
+export { default as updatePhoto } from './users/updatePhoto';

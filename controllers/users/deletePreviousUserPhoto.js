@@ -6,7 +6,6 @@ module.exports = (req, res, next) => {
 
   if (photo !== 'default.png') {
     fs.unlink(`static/images/${photo}`, err => {
-      console.log(err);
       if (err) {
         return next(
           new AppError('couldNotUpdatePhoto', 'something went wrong', 500),

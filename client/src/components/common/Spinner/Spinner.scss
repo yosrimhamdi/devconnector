@@ -2,8 +2,6 @@
   text-align: center;
   position: relative;
   z-index: 1;
-  color: #343a40;
-  transform: translateY(2px);
 
   &--white {
     color: #f4f5f4;
@@ -19,18 +17,21 @@
 
   &--full-screen {
     position: absolute;
-    transform: translateY(0);
     top: 0;
     left: 0;
     height: 100vh;
     width: 100vw;
   }
 
-  &--full-screen &__circle {
+  &--full-screen &__wrapper {
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translate(-50%, 0);
+  }
+
+  &__wrapper {
+    transform: translate(0, 2px);
   }
 
   &__circle {
@@ -41,6 +42,6 @@
 
 @keyframes spin {
   to {
-    transform: translateX(-50%) rotate(360deg);
+    transform: rotate(360deg);
   }
 }

@@ -17,7 +17,9 @@ const Spinner = ({ white, fullScreen, spaceAround, hidden }) => {
 
   return (
     <div className={className}>
-      <img src={spinner} className="spinner__circle" alt="loading..." />
+      <div className="spinner__wrapper">
+        <img src={spinner} className="spinner__circle" alt="loading..." />
+      </div>
     </div>
   );
 };

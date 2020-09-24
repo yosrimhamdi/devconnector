@@ -1,15 +1,17 @@
 const getProfile = require('./getProfile');
 const createProfile = require('./createProfile');
 const updateProfile = require('./updateProfile');
-const getAllProfiles = require('./getAllProfiles');
+const getProfiles = require('./getProfiles');
 const getProfileByHandle = require('./getProfileByHandle');
 const requireProfile = require('./requireProfile');
+const getProfilesCount = require('./getProfilesCount');
 
 module.exports = {
   getProfile,
   createProfile,
   updateProfile,
-  getAllProfiles,
+  getProfiles,
   getProfileByHandle,
   requireProfile,
+  getProfilesCount,
 };

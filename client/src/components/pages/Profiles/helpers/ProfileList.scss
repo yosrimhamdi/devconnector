@@ -4,7 +4,8 @@
   display: grid;
   width: 80vw;
   margin: 0 auto;
-  padding: 9em 0 2em;
+  padding-top: 9em;
+  padding-bottom: 150px;
   justify-content: center;
 
   grid-template-columns: repeat(3, minmax(250px, 330px));

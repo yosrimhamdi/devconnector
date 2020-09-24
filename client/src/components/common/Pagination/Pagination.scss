@@ -1,16 +1,10 @@
-@import '../../../assets/styles/utils/mixins/responsive';
-
 .pagination {
   position: absolute;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  padding: 2em 0;
+  padding-bottom: 3em;
   z-index: 2;
-
-  @include at-large {
-    padding: 2em 0 5em;
-  }
 }
 
 .MuiPaginationItem-root {

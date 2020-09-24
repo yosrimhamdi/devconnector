@@ -7,7 +7,7 @@ const ExperienceList = ({ experiences }) => {
     <ExperienceItem experience={experience} key={experience._id} />
   ));
 
-  return <ul className="credentials collection">{renderedExps}</ul>;
+  return <ul className="credentials">{renderedExps}</ul>;
 };
 
 export default ExperienceList;

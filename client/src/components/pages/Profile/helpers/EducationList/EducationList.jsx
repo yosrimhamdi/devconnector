@@ -7,7 +7,7 @@ const EducationList = ({ educations }) => {
     <EducationItem education={education} key={education._id} />
   ));
 
-  return <ul className="credentials collection">{renderedEducations}</ul>;
+  return <ul className="credentials">{renderedEducations}</ul>;
 };
 
 export default EducationList;

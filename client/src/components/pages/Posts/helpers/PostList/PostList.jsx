@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './PostList.scss';
 import PostItem from './PostItem';
 
 const PostList = ({ posts }) => {
@@ -7,7 +8,7 @@ const PostList = ({ posts }) => {
     <PostItem key={post._id} post={post} />
   ));
 
-  return <ul className="collection">{renderedPosts}</ul>;
+  return <ul className="post-list">{renderedPosts}</ul>;
 };
 
 export default PostList;

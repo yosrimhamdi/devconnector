@@ -1,7 +1,7 @@
 .posts {
   &__content {
-    padding-top: calc(58px + 1.5em);
-    padding-bottom: 4em;
+    padding-top: calc(var(--header-height) + 2em);
+    padding-bottom: 3em;
     max-width: 80vw;
     margin: 0 auto;
   }

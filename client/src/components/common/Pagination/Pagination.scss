@@ -5,6 +5,10 @@
   transform: translateX(-50%);
   padding-bottom: 3em;
   z-index: 2;
+
+  &--hidden {
+    display: none;
+  }
 }
 
 .MuiPaginationItem-root {
@@ -17,4 +21,12 @@
 
 .MuiPaginationItem-textPrimary.Mui-selected:hover {
   background-color: var(--blue-button-hover) !important;
+}
+
+.MuiPaginationItem-icon {
+  background-color: #d1d1d128;
+  border-radius: 50%;
+  box-sizing: initial;
+  padding: 6px;
+  margin: 0 0.4em !important;
 }

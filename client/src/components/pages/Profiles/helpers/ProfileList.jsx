@@ -8,7 +8,7 @@ import Spinner from '../../../common/Spinner';
 
 const ProfileList = ({ fetchProfiles, profiles, loading }) => {
   useEffect(() => {
-    fetchProfiles();
+    fetchProfiles(1);
   }, [fetchProfiles]);
 
   if (loading) {
@@ -19,7 +19,7 @@ const ProfileList = ({ fetchProfiles, profiles, loading }) => {
     <ProfileItem key={profile._id} profile={profile} i={i} />
   ));
 
-  return <ul className="profile-list collection">{renderedProfiles}</ul>;
+  return <ul className="profile-list">{renderedProfiles}</ul>;
 };
 
 const mapStateToProps = ({ profiles, loading }) => ({

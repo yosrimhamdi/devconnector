@@ -5,9 +5,10 @@ const {
   getProfile,
   createProfile,
   updateProfile,
-  getAllProfiles,
+  getProfiles,
   getProfileByHandle,
   requireProfile,
+  getProfilesCount,
 } = require('../controllers/profiles');
 
 const {
@@ -22,7 +23,9 @@ const {
 
 const router = express.Router();
 
-router.get('/all', getAllProfiles);
+router.get('/all', getProfiles);
+
+router.get('/all/count', getProfilesCount);
 
 router.get('/:handle', getProfileByHandle);
 

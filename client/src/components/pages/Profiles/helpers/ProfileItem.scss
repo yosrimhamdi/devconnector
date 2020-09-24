@@ -4,17 +4,11 @@ $buttonTextGrey: #b6b7c1;
 .profile-item {
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 5px 1px rgba($color: #000000, $alpha: 0.1);
+  box-shadow: 0 0 5px 1px rgba($color: #000000, $alpha: 0.2);
   padding: 3em 0;
   text-transform: capitalize;
-  transition: all 150ms;
   background-color: white;
   opacity: 0;
-
-  &:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.1);
-  }
 
   &__image {
     width: $imageDim;

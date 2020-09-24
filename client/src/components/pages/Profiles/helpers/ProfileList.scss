@@ -1,12 +1,13 @@
 .profile-list {
+  position: relative;
+  z-index: 1;
   display: grid;
   width: 80vw;
   margin: 0 auto;
-  padding: 9em 0 4em;
+  padding: 9em 0 2em;
   justify-content: center;
-  position: relative;
-  z-index: 1;
 
   grid-template-columns: repeat(3, minmax(250px, 330px));
   grid-gap: 2.2em;
+  list-style: none;
 }

@@ -28,8 +28,9 @@
 
   &--full-screen &__circle {
     position: absolute;
-    top: 30%;
+    top: 35%;
     left: 50%;
+    transform: translateX(-50%);
   }
 
   &__circle {
@@ -40,6 +41,6 @@
 
 @keyframes spin {
   to {
-    transform: rotate(360deg);
+    transform: translateX(-50%) rotate(360deg);
   }
 }

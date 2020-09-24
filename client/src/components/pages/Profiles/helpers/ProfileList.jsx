@@ -8,7 +8,7 @@ import Spinner from '../../../common/Spinner';
 
 const ProfileList = ({ fetchProfiles, profiles, loading }) => {
   useEffect(() => {
-    fetchProfiles(1);
+    fetchProfiles();
   }, [fetchProfiles]);
 
   if (loading) {

@@ -1,13 +1,11 @@
 const createPost = require('./createPost');
-const getAllPosts = require('./getAllPosts');
-const getPost = require('./getPost');
+const getPosts = require('./getPosts');
 const deletePost = require('./deletePost');
 const postMustExist = require('./postMustExist');
 
 module.exports = {
   createPost,
-  getAllPosts,
-  getPost,
+  getPosts,
   deletePost,
   postMustExist,
 };

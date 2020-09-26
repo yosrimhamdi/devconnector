@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const path = require('path');
 
-const users = require('./routers/users');
+// const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 const posts = require('./routers/posts');
 
@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.get('/', (req, res) => res.status(200).json({ done: true }));
 app.get('/favicon.ico', (req, res) => res.status(200).json({ done: 'okayh' }));
 
-app.use('/api/users', users);
+// app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);
 

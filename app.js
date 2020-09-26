@@ -3,7 +3,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const path = require('path');
 
-// const users = require('./routers/users');
+const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 const posts = require('./routers/posts');
 
@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
-// app.use('/api/users', users);
+app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);
 

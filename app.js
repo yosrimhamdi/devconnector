@@ -30,6 +30,8 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
 
+app.get('/', (req, res) => res.status(200).json({ done: true }));
+
 app.use('/api/users', users);
 
 app.use('/api/profiles', profiles);

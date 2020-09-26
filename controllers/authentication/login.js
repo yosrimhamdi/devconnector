@@ -1,4 +1,4 @@
-const User = require('../../models/User');
+const User = require('../../models/Users');
 const AppError = require('../../errors/appError');
 const sendToken = require('./sendToken');
 const catchAsync = require('../../errors/catchAsync');

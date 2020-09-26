@@ -8,12 +8,10 @@ module.exports = (req, res) => {
   const response = { status, [errName]: message };
 
   if (NODE_ENV === 'production') {
-    delete response.error;
+    delete response[errName];
 
     if (!operational) {
       message = 'something went wrong.';
-
-      console.error(req.err);
     }
   }
 

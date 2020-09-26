@@ -7,7 +7,11 @@ const users = require('./routers/users');
 const profiles = require('./routers/profiles');
 const posts = require('./routers/posts');
 
-const { handleExpectedErrors, sendError } = require('./errors/global');
+const {
+  handleExpectedErrors,
+  logError,
+  sendError,
+} = require('./errors/global');
 const notFound = require('./errors/notFound');
 
 const { NODE_ENV } = process.env;
@@ -34,6 +38,6 @@ app.use('/api/posts', posts);
 
 app.all('*', notFound);
 
-app.use(handleExpectedErrors, sendError);
+app.use(handleExpectedErrors, logError, sendError);
 
 module.exports = app;

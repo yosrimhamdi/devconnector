@@ -1,6 +1,6 @@
 const { verifyToken } = require('../../utils/jwt');
 const catchAsync = require('../../errors/catchAsync');
-const User = require('../../models/Users');
+const User = require('../../models/Test123');
 const AppError = require('../../errors/appError');
 
 const requireLogIn = catchAsync(async (req, res, next) => {

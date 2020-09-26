@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 app.get('/', (req, res) => res.status(200).json({ done: true }));
+app.get('/favicon.ico', (req, res) => res.status(200).json({ done: 'okayh' }));
 
 app.use('/api/users', users);
 

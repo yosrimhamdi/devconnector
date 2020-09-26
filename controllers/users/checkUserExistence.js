@@ -1,4 +1,4 @@
-const User = require('../authentication/Test123');
+const User = require('../../models/User');
 const catchAsync = require('../../errors/catchAsync');
 const AppError = require('../../errors/appError');
 

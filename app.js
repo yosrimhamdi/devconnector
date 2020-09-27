@@ -13,6 +13,7 @@ const {
   sendError,
 } = require('./errors/global');
 const notFound = require('./errors/notFound');
+const sendApp = require('./view/sendApp');
 
 const { NODE_ENV } = process.env;
 
@@ -36,11 +37,13 @@ app.use('/api/profiles', profiles);
 
 app.use('/api/posts', posts);
 
-app.use(express.static(path.join(__dirname, 'client/build')));
+if (NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-});
+  app.get('*', sendApp);
+}
+
+app.all('*', notFound);
 
 app.use(handleExpectedErrors, logError, sendError);
 

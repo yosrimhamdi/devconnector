@@ -40,8 +40,10 @@ app.use('/api/posts', posts);
 if (NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 
-  app.all('*', sendApp);
+  app.get('*', sendApp);
 }
+
+app.all('*', notFound);
 
 app.use(handleExpectedErrors, logError, sendError);
 

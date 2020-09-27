@@ -20,9 +20,8 @@
     "start": "node server",
     "server": "nodemon --ignore client/ server.js",
     "client": "npm start --prefix client",
-    "client-install": "npm i --prefix client",
-    "install-all": "npm i && npm run client-install",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\""
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm i --prefix client && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",

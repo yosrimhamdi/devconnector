@@ -6,4 +6,8 @@
   &--rounded {
     @include rounded-button;
   }
+
+  &--long {
+    padding: 0.5em 2em;
+  }
 }

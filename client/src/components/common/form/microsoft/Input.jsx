@@ -13,6 +13,7 @@ const AuthInput = ({ input, placeholder, type, meta, responseError }) => {
         placeholder={placeholder}
         className={className}
         type={type}
+        autoComplete="on"
       />
     </div>
   );

@@ -5,9 +5,12 @@ import { registerUser } from '../../../redux/actions';
 import Email from './helpers/Email';
 import Password from './helpers/Password';
 import UserName from './helpers/UserName';
+import useDestroyFormOnUnmount from '../../../hooks/useDestroyFormOnUnmount';
 
 const Register = ({ registerUser, email }) => {
   const [page, setPage] = useState(1);
+
+  useDestroyFormOnUnmount('signup');
 
   let form = <Email nextPage={() => setPage(page + 1)} />;
 

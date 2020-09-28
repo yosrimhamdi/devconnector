@@ -4,9 +4,12 @@ import { connect } from 'react-redux';
 import { loginUser } from '../../../redux/actions';
 import Email from './helpers/Email';
 import Password from './helpers/Password';
+import useDestroyFormOnUnmount from '../../../hooks/useDestroyFormOnUnmount';
 
 const Login = ({ loginUser, email }) => {
   const [page, setPage] = useState(1);
+
+  useDestroyFormOnUnmount('login');
 
   let form = <Email onSubmit={() => setPage(page + 1)} />;
 

@@ -1,3 +1,5 @@
+@import '../../../../assets/styles/utils/mixins/button';
+
 .confirm-modal {
   position: fixed;
   top: 0;
@@ -14,7 +16,7 @@
     opacity: initial;
     background-color: #fff;
     box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
-    border-radius: 10px;
+    border-radius: 5px;
     width: 600px;
   }
 
@@ -31,6 +33,7 @@
 
   &__description {
     padding: 0 1rem 0;
+    margin-bottom: 1.5em;
 
     &::first-letter {
       text-transform: uppercase;
@@ -42,36 +45,17 @@
     padding: 1em;
   }
 
-  &__button {
-    padding: 0.5em 0.9em;
-    border-radius: 8px;
-    text-transform: capitalize;
-    font-weight: 600;
-
-    &:active {
-      transform: scale(0.97);
-    }
+  &__confirm-button {
+    @include blue-button;
   }
 
-  &__confirm-button {
-    background-color: var(--main-color);
-    color: white;
-    margin-left: 0.6em;
-
-    &:hover {
-      background-color: var(--main-color-dark);
-    }
+  &__confirm-button,
+  &__cancel-button {
+    @include rounded-button;
   }
 
   &__cancel-button {
-    color: var(--main-color);
-
-    &:hover {
-      background-color: rgb(247, 245, 245);
-    }
-
-    &:active {
-      background-color: #1876f217;
-    }
+    @include transparent-button;
+    margin-right: 1em;
   }
 }

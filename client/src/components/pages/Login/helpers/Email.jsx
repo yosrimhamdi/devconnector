@@ -5,6 +5,7 @@ import { Field, reduxForm } from 'redux-form';
 import code from '../../../../assets/images/code-logo.svg';
 import Input from '../../../common/form/microsoft/Input';
 import validate from './validate';
+import Button from '../../../common/Button';
 
 const Email = ({ handleSubmit }) => (
   <form noValidate onSubmit={handleSubmit}>
@@ -20,9 +21,7 @@ const Email = ({ handleSubmit }) => (
       </Link>
     </div>
     <div className="auth__button-wrapper">
-      <button type="submit" className="auth__button">
-        next
-      </button>
+      <Button text="next" />
     </div>
   </form>
 );

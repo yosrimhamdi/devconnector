@@ -30,14 +30,14 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
         <div className="confirm-modal__description">{description}</div>
         <div className="confirm-modal__actions">
           <button
-            className="confirm-modal__cancel-button confirm-modal__button"
+            className="confirm-modal__cancel-button"
             type="button"
             onClick={removeModalFromScreen}
           >
             cancel
           </button>
           <button
-            className="confirm-modal__confirm-button confirm-modal__button"
+            className="confirm-modal__confirm-button"
             type="button"
             onClick={action}
           >

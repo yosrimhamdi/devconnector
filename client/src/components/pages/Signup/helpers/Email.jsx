@@ -7,6 +7,7 @@ import Input from '../../../common/form/microsoft/Input';
 import validate from './validate';
 import { checkUserExistence, clearErrors } from '../../../../redux/actions';
 import Spinner from '../../../common/Spinner';
+import Button from '../../../common/Button';
 
 const Email = ({
   handleSubmit,
@@ -35,10 +36,8 @@ const Email = ({
         />
       </div>
       <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
-        {loading ? <Spinner /> : null}
-        <button type="submit" className="auth__button">
-          next
-        </button>
+        <Spinner hidden={loading === false} />
+        <Button text="next" />
       </div>
     </form>
   );

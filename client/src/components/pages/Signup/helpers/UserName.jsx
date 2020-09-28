@@ -7,6 +7,7 @@ import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import Input from '../../../common/form/microsoft/Input';
 import Spinner from '../../../common/Spinner';
+import Button from '../../../common/Button';
 
 const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
   <form noValidate onSubmit={handleSubmit}>
@@ -40,12 +41,7 @@ const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
       <Spinner hidden={loading === false} />
-      <button
-        type="submit"
-        className="auth__button auth__button--scale-on-active"
-      >
-        sign in
-      </button>
+      <Button text="sign in" />
     </div>
   </form>
 );

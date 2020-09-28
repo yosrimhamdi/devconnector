@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { updatePhoto } from '../../../../redux/actions';
 
 import ExperienceList from './ExperienceList';
 import EducationList from './EducationList';
 import Spinner from '../../../common/Spinner';
+import Link from '../../../common/Link';
 
 const DashBoardContent = ({ profile, loading, updatePhoto }) => {
   const handleInputChange = e => {
@@ -26,9 +26,7 @@ const DashBoardContent = ({ profile, loading, updatePhoto }) => {
         <div className="dashboard__create-profile-message">
           yo have no profile yet. Please create one.
         </div>
-        <Link to="/profiles/new" className="link">
-          create profile
-        </Link>
+        <Link to="/profiles/new" text="create profile" />
       </div>
     );
   }
@@ -38,15 +36,9 @@ const DashBoardContent = ({ profile, loading, updatePhoto }) => {
   return (
     <div>
       <div className="dashboard__navigation-links">
-        <Link to="/profiles/update" className="link">
-          update profile
-        </Link>
-        <Link to="/profiles/experience/new" className="link">
-          add experience
-        </Link>
-        <Link to="/profiles/education/new" className="link">
-          add education
-        </Link>
+        <Link to="/profiles/update" text="update profile" />
+        <Link to="/profiles/experience/new" text="add experience" />
+        <Link to="/profiles/education/new" text="add education" />
       </div>
       <input type="file" onChange={handleInputChange} accept="image/*" />
       <ExperienceList experiences={experience} />

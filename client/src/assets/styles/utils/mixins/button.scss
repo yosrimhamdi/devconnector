@@ -1,0 +1,47 @@
+@mixin blue-button {
+  text-transform: capitalize;
+  background-color: var(--main-color);
+  color: white;
+  padding: 0.4em 2em;
+  transition: all 120ms;
+  display: inline-block;
+
+  &:hover {
+    background-color: var(--main-color-dark);
+  }
+
+  &:active {
+    transform: scale(0.96);
+  }
+}
+
+@mixin grey-button {
+  background-color: var(--grey-button);
+  color: #3a3a3a;
+
+  &:hover {
+    background-color: var(--grey-button-hover);
+  }
+}
+
+@mixin transparent-button {
+  color: var(--main-color);
+  background-color: white;
+  transition: all 120ms;
+
+  &:hover {
+    color: var(--main-color-dark);
+    background-color: #f3f3f3;
+  }
+
+  &:active {
+    background-color: #1876f217;
+  }
+}
+
+@mixin rounded-button {
+  font-size: 0.9rem;
+  padding: 0.7em 1.5em;
+  border-radius: 4px;
+  font-weight: 500;
+}

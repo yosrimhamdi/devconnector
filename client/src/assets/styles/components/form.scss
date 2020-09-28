@@ -1,3 +1,5 @@
+@import '../utils/mixins/button';
+
 .form {
   width: 600px;
   margin: calc(var(--header-height) + 6em) auto 3em;
@@ -14,35 +16,20 @@
   }
 
   &__submit-button {
-    text-transform: capitalize;
-    background-color: var(--blue-button);
-    color: white;
-    font-size: 0.9rem;
-
-    &:hover {
-      background-color: var(--blue-button-hover);
-    }
+    @include blue-button;
   }
 
   &__cancel-button,
   &__submit-button {
-    padding: 0.7em 1.5em;
-    border-radius: 4px;
-    transition: all 120ms;
+    @include rounded-button;
   }
 
   &__cancel-button {
-    color: var(--blue-button);
+    @include transparent-button;
     margin-right: 1em;
-
-    &:hover {
-      color: var(--blue-button-hover);
-      background-color: #f3f3f3;
-    }
   }
 
   &__buttons-wrapper {
-    font-weight: 500;
     display: flex;
     justify-content: flex-end;
     align-items: center;

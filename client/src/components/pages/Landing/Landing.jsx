@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './Landing.scss';
+import Link from '../../common/Link';
 
 const Landing = () => (
   <div className="landing">
@@ -14,12 +14,8 @@ const Landing = () => (
         other developers
       </h2>
       <div className="landing__button-container">
-        <Link to="/signup" className="link">
-          sign up
-        </Link>
-        <Link to="/login" className="link link--grey">
-          login
-        </Link>
+        <Link to="signup" text="sign up" />
+        <Link grey to="login" text="login" />
       </div>
     </div>
   </div>

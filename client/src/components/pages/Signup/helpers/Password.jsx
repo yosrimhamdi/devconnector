@@ -5,6 +5,7 @@ import code from '../../../../assets/images/code-logo.svg';
 import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import Input from '../../../common/form/microsoft/Input';
+import Button from '../../../common/Button';
 
 const Password = ({ handleSubmit, previousFormPage, email }) => {
   const [type, setType] = useState('password');
@@ -45,9 +46,7 @@ const Password = ({ handleSubmit, previousFormPage, email }) => {
         <span className="auth__label-message">show password</span>
       </label>
       <div className="auth__button-wrapper">
-        <button type="submit" className="auth__button">
-          next
-        </button>
+        <Button text="next" />
       </div>
     </form>
   );

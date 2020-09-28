@@ -1,0 +1,10 @@
+@import '../../../assets/styles/utils/mixins/button';
+
+.link {
+  @include blue-button;
+  padding: 0.5em 2em;
+
+  &--grey {
+    @include grey-button;
+  }
+}

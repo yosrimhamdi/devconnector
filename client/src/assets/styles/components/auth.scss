@@ -78,26 +78,11 @@
   }
 
   &__link {
-    color: var(--blue-button);
+    color: var(--main-color);
     margin-left: 0.3em;
 
     &:hover {
       text-decoration: underline;
-    }
-  }
-
-  &__button {
-    background-color: var(--blue-button);
-    color: white;
-    padding: 0.4em 2em;
-    transition: all 100ms;
-
-    &::first-letter {
-      text-transform: capitalize;
-    }
-
-    &:hover {
-      background-color: var(--blue-button-hover);
     }
   }
 
@@ -119,12 +104,8 @@
     align-items: center;
   }
 
-  &__button-wrapper--with-spinner &__button {
-    margin-left: 1.5em;
-
-    &:active {
-      transform: scale(var(--button-active-scale));
-    }
+  &__button-wrapper--with-spinner .spinner {
+    margin-right: 1.5em;
   }
 
   &__back-arrow-icon {

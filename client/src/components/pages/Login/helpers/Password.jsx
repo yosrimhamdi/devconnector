@@ -42,7 +42,7 @@ const Password = ({
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
       <Spinner hidden={!loading} />
-      <Button text="sign in" long />
+      <Button text="sign in" />
     </div>
   </form>
 );

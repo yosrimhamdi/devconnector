@@ -3,10 +3,9 @@ import classnames from 'classnames';
 
 import './Button.scss';
 
-const Button = ({ text, rounded, long }) => {
+const Button = ({ text, rounded }) => {
   const className = classnames('button', {
     'button--rounded': rounded,
-    'button--long': long,
   });
 
   return (

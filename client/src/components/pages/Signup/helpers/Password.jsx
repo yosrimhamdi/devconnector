@@ -46,7 +46,7 @@ const Password = ({ handleSubmit, previousFormPage, email }) => {
         <span className="auth__label-message">show password</span>
       </label>
       <div className="auth__button-wrapper">
-        <Button text="next" long />
+        <Button text="next" />
       </div>
     </form>
   );

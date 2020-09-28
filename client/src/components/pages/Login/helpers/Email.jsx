@@ -21,7 +21,7 @@ const Email = ({ handleSubmit }) => (
       </Link>
     </div>
     <div className="auth__button-wrapper">
-      <Button text="next" long />
+      <Button text="next" />
     </div>
   </form>
 );

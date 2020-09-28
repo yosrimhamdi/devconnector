@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
 import code from '../../../../assets/images/code-logo.svg';
@@ -6,12 +6,13 @@ import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import Input from '../../../common/form/microsoft/Input';
 import Button from '../../../common/Button';
+import {
+  TogglePassword,
+  useTogglePassword,
+} from '../../../common/togglePassword';
 
 const Password = ({ handleSubmit, previousFormPage, email }) => {
-  const [type, setType] = useState('password');
-
-  const togglePassword = () =>
-    type === 'password' ? setType('text') : setType('password');
+  const [type, togglePassword] = useTogglePassword();
 
   return (
     <form noValidate onSubmit={handleSubmit}>
@@ -37,14 +38,7 @@ const Password = ({ handleSubmit, previousFormPage, email }) => {
           component={Input}
         />
       </div>
-      <label className="auth__label" htmlFor="password-visibility-input">
-        <input
-          type="checkbox"
-          id="password-visibility-input"
-          onClick={togglePassword}
-        />
-        <span className="auth__label-message">show password</span>
-      </label>
+      <TogglePassword togglePassword={togglePassword} />
       <div className="auth__button-wrapper">
         <Button text="next" />
       </div>

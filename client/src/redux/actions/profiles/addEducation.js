@@ -1,8 +1,10 @@
-import { ADD_EDUCATION, ERROR_OCCURED } from '../types';
+import { ADD_EDUCATION, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import profiles from '../../../apis/profiles';
 import history from '../../../history';
 
 export default formValues => async dispatch => {
+  dispatch({ type: LOADING });
+
   try {
     const response = await profiles.post('/education', formValues);
 
@@ -18,4 +20,6 @@ export default formValues => async dispatch => {
       payload: err.response.data,
     });
   }
+
+  dispatch({ type: LOADED });
 };

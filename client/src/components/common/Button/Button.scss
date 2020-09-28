@@ -2,4 +2,8 @@
 
 .button {
   @include blue-button;
+
+  &--rounded {
+    @include rounded-button;
+  }
 }

@@ -1,15 +1,16 @@
 import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import validate from './validate';
 import { addExperience } from '../../../redux/actions';
-
 import Input from '../../common/form/google/Input';
 import TextArea from '../../common/form/google/TextArea';
+import Button from '../../common/Button';
+import Link from '../../common/Link';
+import Spinner from '../../common/Spinner';
 
-const AddExperience = ({ handleSubmit, addExperience }) => (
+const AddExperience = ({ handleSubmit, addExperience, loading }) => (
   <form onSubmit={handleSubmit(addExperience)} className="form">
     <h1 className="form__title">add experience</h1>
     <Field
@@ -44,12 +45,9 @@ const AddExperience = ({ handleSubmit, addExperience }) => (
       component={TextArea}
     />
     <div className="form__buttons-wrapper">
-      <Link to="/dashboard" className="form__cancel-button">
-        cancel
-      </Link>
-      <button className="form__submit-button" type="submit">
-        submit
-      </button>
+      <Spinner hidden={!loading} />
+      <Link to="/dashboard" text="cancel" transparent rounded />
+      <Button text="submit" rounded />
     </div>
   </form>
 );
@@ -58,6 +56,6 @@ const wrappedForm = reduxForm({ form: 'addExperience', validate })(
   AddExperience,
 );
 
-const mapStateToProps = ({ errors }) => ({ errors });
+const mapStateToProps = ({ errors, loading }) => ({ errors, loading });
 
 export default connect(mapStateToProps, { addExperience })(wrappedForm);

@@ -47,13 +47,13 @@
 
 @mixin placeholder-field-interactions {
   &__field:focus {
-    border-color: var(--blue-button);
+    border-color: var(--main-color);
     box-shadow: none;
   }
 
   &__field:focus + &__placeholder {
     @include placeholer-position-on-border;
-    color: var(--blue-button);
+    color: var(--main-color);
   }
 
   &__field:not(:placeholder-shown) + &__placeholder {

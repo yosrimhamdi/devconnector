@@ -1,11 +1,17 @@
 import React from 'react';
+import classnames from 'classnames';
 
 import './Button.scss';
 
-const Button = ({ text }) => (
-  <button type="submit" className="button">
-    {text}
-  </button>
-);
+const Button = ({ text, rounded }) => {
+  const className = classnames('button', {
+    'button--rounded': rounded,
+  });
 
+  return (
+    <button type="submit" className={className}>
+      {text}
+    </button>
+  );
+};
 export default Button;

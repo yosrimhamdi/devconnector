@@ -2,9 +2,16 @@
 
 .link {
   @include blue-button;
-  padding: 0.5em 2em;
 
   &--grey {
     @include grey-button;
+  }
+
+  &--transparent {
+    @include transparent-button;
+  }
+
+  &--rounded {
+    @include rounded-button;
   }
 }

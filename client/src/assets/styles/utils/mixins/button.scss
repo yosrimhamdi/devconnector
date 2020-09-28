@@ -2,9 +2,10 @@
   text-transform: capitalize;
   background-color: var(--main-color);
   color: white;
-  padding: 0.4em 2em;
   transition: all 120ms;
   display: inline-block;
+  font-size: 0.9rem;
+  padding: 0.6em 1.7em;
 
   &:hover {
     background-color: var(--main-color-dark);
@@ -27,7 +28,6 @@
 @mixin transparent-button {
   color: var(--main-color);
   background-color: white;
-  transition: all 120ms;
 
   &:hover {
     color: var(--main-color-dark);
@@ -40,8 +40,5 @@
 }
 
 @mixin rounded-button {
-  font-size: 0.9rem;
-  padding: 0.7em 1.5em;
   border-radius: 4px;
-  font-weight: 500;
 }

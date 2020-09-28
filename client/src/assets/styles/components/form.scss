@@ -15,23 +15,17 @@
     margin-bottom: 2em;
   }
 
-  &__submit-button {
-    @include blue-button;
-  }
-
-  &__cancel-button,
-  &__submit-button {
-    @include rounded-button;
-  }
-
-  &__cancel-button {
-    @include transparent-button;
-    margin-right: 1em;
-  }
-
   &__buttons-wrapper {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+
+    & .spinner {
+      margin-right: 2em;
+    }
+
+    & .link {
+      margin-right: 1em;
+    }
   }
 }

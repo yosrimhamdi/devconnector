@@ -4,9 +4,11 @@ import classnames from 'classnames';
 
 import './Link.scss';
 
-const Link = ({ to, text, grey }) => {
+const Link = ({ to, text, grey, transparent, rounded }) => {
   const className = classnames('link', {
     'link--grey': grey,
+    'link--transparent': transparent,
+    'link--rounded': rounded,
   });
 
   return (

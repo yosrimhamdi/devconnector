@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import constructProfile from '../../../utils/constructProfile';
 import Input from '../form/google/Input';
@@ -9,8 +8,17 @@ import TextArea from '../form/google/TextArea';
 import Select from '../form/google/Select';
 import SocialsForm from './helpers/SocialsForm';
 import { clearErrors } from '../../../redux/actions';
+import Spinner from '../Spinner';
+import Link from '../Link';
+import Button from '../Button';
 
-const ProfileForm = ({ handleSubmit, errors, onFormSubmit, clearErrors }) => {
+const ProfileForm = ({
+  handleSubmit,
+  errors,
+  onFormSubmit,
+  clearErrors,
+  loading,
+}) => {
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);
 
@@ -71,17 +79,14 @@ const ProfileForm = ({ handleSubmit, errors, onFormSubmit, clearErrors }) => {
       />
       <SocialsForm />
       <div className="form__buttons-wrapper">
-        <Link to="/dashboard" className="form__cancel-button">
-          cancel
-        </Link>
-        <button className="form__submit-button" type="submit">
-          submit
-        </button>
+        <Spinner hidden={!loading} />
+        <Link to="/dashboard" text="cancel" transparent rounded />
+        <Button text="submit" rounded />
       </div>
     </form>
   );
 };
 
-const mapStateToProps = ({ errors }) => ({ errors });
+const mapStateToProps = ({ errors, loading }) => ({ errors, loading });
 
 export default connect(mapStateToProps, { clearErrors })(ProfileForm);

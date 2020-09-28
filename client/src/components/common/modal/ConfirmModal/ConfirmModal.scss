@@ -54,18 +54,17 @@
   }
 
   &__confirm-button {
-    background-color: var(--blue-button);
+    background-color: var(--main-color);
     color: white;
     margin-left: 0.6em;
 
     &:hover {
-      color: rgb(247, 245, 245);
-      background-color: var(--blue-button-hover);
+      background-color: var(--main-color-dark);
     }
   }
 
   &__cancel-button {
-    color: var(--blue-button);
+    color: var(--main-color);
 
     &:hover {
       background-color: rgb(247, 245, 245);

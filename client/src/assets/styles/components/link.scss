@@ -1,5 +1,5 @@
 .link {
-  background-color: var(--blue-button);
+  background-color: var(--main-color);
   color: white;
   padding: 0.6em 1.5em;
   margin-bottom: 1em;
@@ -8,7 +8,7 @@
   transition: background-color 200ms;
 
   &:hover {
-    background-color: var(--blue-button-hover);
+    background-color: var(--main-color-dark);
   }
 
   &:active {

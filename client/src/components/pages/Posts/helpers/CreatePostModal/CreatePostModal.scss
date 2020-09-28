@@ -57,12 +57,12 @@
   }
 
   &__button--valid {
-    background-color: var(--blue-button);
+    background-color: var(--main-color);
     color: white;
     cursor: pointer;
 
     &:hover {
-      background-color: var(--blue-button-hover);
+      background-color: var(--main-color-dark);
     }
 
     &:active {

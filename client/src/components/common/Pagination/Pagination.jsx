@@ -17,8 +17,12 @@ const Pagination = ({ fetchProfiles }) => {
     const getCount = async () => {
       const response = await profiles.get('/all/count');
 
-      setCount(response.data.count);
-      setHidden(false);
+      const { count } = response.data;
+
+      if (count > 1) {
+        setCount(response.data.count);
+        setHidden(false);
+      }
     };
 
     getCount();

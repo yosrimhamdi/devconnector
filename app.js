@@ -2,6 +2,7 @@ const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const path = require('path');
+const compression = require('compression');
 
 const users = require('./routers/users');
 const profiles = require('./routers/profiles');
@@ -30,6 +31,8 @@ app.use(express.static(path.join(__dirname, 'static')));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cookieParser());
+
+app.use(compression());
 
 app.use('/api/users', users);
 

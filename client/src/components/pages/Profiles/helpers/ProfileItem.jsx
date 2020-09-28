@@ -6,10 +6,10 @@ import './ProfileItem.scss';
 import Company from '../../../common/Company';
 
 const ProfileItem = ({ profile, i }) => {
-  const { user, handle, status, company, admin } = profile;
+  const { user, handle, status, company } = profile;
 
   const className = classnames('profile-item', {
-    'profile-item--admin': admin,
+    'profile-item--admin': user.role === 'admin',
   });
 
   const timing = 120;

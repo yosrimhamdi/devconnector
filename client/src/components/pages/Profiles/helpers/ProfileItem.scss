@@ -9,6 +9,24 @@ $buttonTextGrey: #b6b7c1;
   text-transform: capitalize;
   background-color: white;
   opacity: 0;
+  position: relative;
+  overflow: hidden;
+
+  &--admin {
+    &::after {
+      content: 'admin';
+      background-color: var(--main-color);
+      position: absolute;
+      color: white;
+      top: 2em;
+      left: 2em;
+      padding: 1px 0;
+      transform: translate(-50%, -50%) rotate(-45deg);
+      width: 200px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+  }
 
   &__image {
     width: $imageDim;

@@ -1,11 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import classnames from 'classnames';
 
 import './ProfileItem.scss';
 import Company from '../../../common/Company';
 
 const ProfileItem = ({ profile, i }) => {
-  const { user, handle, status, company } = profile;
+  const { user, handle, status, company, admin } = profile;
+
+  const className = classnames('profile-item', {
+    'profile-item--admin': admin,
+  });
 
   const timing = 120;
 
@@ -14,7 +19,7 @@ const ProfileItem = ({ profile, i }) => {
   };
 
   return (
-    <li className="profile-item" style={style}>
+    <li className={className} style={style}>
       <img
         className="profile-item__image"
         src={`/images/${user.photo}`}

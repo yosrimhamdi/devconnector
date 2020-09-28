@@ -66,8 +66,8 @@
     margin-bottom: 2em;
   }
 
-  &__inputs-wrapper div:not(:last-child) {
-    margin-bottom: 0.7em;
+  &__inputs-wrapper > div:not(:last-child) {
+    margin-bottom: 1em;
   }
 
   &__message {
@@ -137,10 +137,12 @@
   }
 
   &__label {
+    display: inline-block;
     cursor: pointer;
     user-select: none;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    margin-bottom: 2em;
   }
 
   &__label-message {
@@ -152,8 +154,8 @@
   }
 
   & #password-visibility-input {
-    width: 20px;
-    height: 20px;
+    width: 17px;
+    height: 17px;
     margin-right: 0.6em;
   }
 }

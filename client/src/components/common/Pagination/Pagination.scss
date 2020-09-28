@@ -28,10 +28,13 @@
   border-radius: 50%;
   box-sizing: initial;
   padding: 6px;
-  margin: 0 0.4em !important;
 }
 
 .MuiPaginationItem-root.MuiPaginationItem-ellipsis {
   font-size: 1rem;
   transform: translateY(-4px);
+}
+
+.MuiPagination-ul li:not(:last-child) {
+  margin-right: 0.4em;
 }

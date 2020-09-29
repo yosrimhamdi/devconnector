@@ -20,7 +20,7 @@ const Pagination = ({ fetchProfiles }) => {
       const { count } = response.data;
 
       if (count > 1) {
-        setCount(response.data.count);
+        setCount(count);
         setHidden(false);
       }
     };

@@ -11,6 +11,7 @@ const UpdateProfile = ({ handleSubmit, initialValues, updateProfile }) => (
     handleSubmit={handleSubmit}
     onFormSubmit={updateProfile}
     initialValues={initialValues}
+    title="update profile"
   />
 );
 

@@ -8,7 +8,11 @@ import { createProfile } from '../../../redux/actions';
 import ProfileForm from '../../common/ProfileForm/ProfileForm';
 
 const CreateProfile = ({ handleSubmit, createProfile }) => (
-  <ProfileForm handleSubmit={handleSubmit} onFormSubmit={createProfile} />
+  <ProfileForm
+    handleSubmit={handleSubmit}
+    onFormSubmit={createProfile}
+    title="create profile"
+  />
 );
 
 const wrappedForm = reduxForm({ form: 'createProfile', validate })(

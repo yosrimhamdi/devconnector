@@ -2,9 +2,11 @@
 
 .form {
   width: 600px;
-  margin: calc(var(--header-height) + 6em) auto 3em;
-  box-shadow: 0 0 2px 1px rgba($color: #000000, $alpha: 0.2);
+  position: relative;
+  left: 20%;
+  box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.2);
   padding: 2em;
+  margin-bottom: 3em;
   border-radius: 5px;
 
   &__title {

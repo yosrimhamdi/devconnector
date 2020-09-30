@@ -1,13 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { updatePhoto } from '../../../../redux/actions';
 
+import Link from '../../../common/Link';
 import ExperienceList from './ExperienceList';
 import EducationList from './EducationList';
-import Spinner from '../../../common/Spinner';
-import Link from '../../../common/Link';
+import { updatePhoto } from '../../../../redux/actions';
 
-const DashBoardContent = ({ profile, loading, updatePhoto }) => {
+const DashBoardPanel = ({ profile, updatePhoto }) => {
+  const { experience, education } = profile;
+
   const handleInputChange = e => {
     const form = new FormData();
 
@@ -16,26 +17,9 @@ const DashBoardContent = ({ profile, loading, updatePhoto }) => {
     updatePhoto(form);
   };
 
-  if (loading) {
-    return <Spinner fullScreen />;
-  }
-
-  if (!profile) {
-    return (
-      <div>
-        <div className="dashboard__create-profile-message">
-          yo have no profile yet. Please create one.
-        </div>
-        <Link to="/profiles/new" text="create profile" />
-      </div>
-    );
-  }
-
-  const { experience, education } = profile;
-
   return (
     <div>
-      <div className="dashboard__navigation-links">
+      <div>
         <Link to="/profiles/update" text="update profile" />
         <Link to="/profiles/experience/new" text="add experience" />
         <Link to="/profiles/education/new" text="add education" />
@@ -47,4 +31,4 @@ const DashBoardContent = ({ profile, loading, updatePhoto }) => {
   );
 };
 
-export default connect(null, { updatePhoto })(DashBoardContent);
+export default connect(null, { updatePhoto })(DashBoardPanel);

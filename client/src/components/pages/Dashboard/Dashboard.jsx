@@ -2,29 +2,32 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './Dashboard.scss';
-
+import Spinner from '../../common/Spinner';
 import { fetchUserProfile } from '../../../redux/actions';
-import DashboardContent from './helpers/DashboardContent';
-import UserProfileLink from './helpers/UserProfileLink';
+import CreateProfile from './helpers/CreateProfile';
+import DashboardPanel from './helpers/DashBoardPanel';
 
-const Dashboard = ({ profile, auth, loading, fetchUserProfile }) => {
+const Dashboard = ({ profile, loading, fetchUserProfile }) => {
   useEffect(() => {
     fetchUserProfile();
   }, [fetchUserProfile]);
 
-  return (
-    <div className="dashboard">
-      <div className="dashboard__container">
-        <h1 className="dashboard__title">dashboard</h1>
-        <UserProfileLink user={auth.user} profile={profile} />
-        <DashboardContent profile={profile} loading={loading} />
-      </div>
-    </div>
-  );
+  let content = null;
+
+  if (loading) {
+    content = <Spinner fullScreen />;
+  }
+
+  if (!profile && !loading) {
+    content = <CreateProfile />;
+  } else if (profile) {
+    content = <DashboardPanel profile={profile} />;
+  }
+
+  return <div className="dashboard">{content}</div>;
 };
 
 const mapStateToProps = ({ auth, profiles, loading }) => ({
-  auth,
   profile: auth.user ? profiles[auth.user._id] : null,
   loading,
 });

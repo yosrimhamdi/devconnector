@@ -8,7 +8,7 @@
   z-index: 1;
   transition: box-shadow 120ms;
 
-  &--scrolled {
+  &--elevated {
     box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.15);
   }
 

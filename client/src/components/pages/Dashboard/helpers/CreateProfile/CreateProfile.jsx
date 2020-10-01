@@ -11,7 +11,7 @@ const CreateProfile = () => (
       <img src={tools} alt="tools" className="create-profile__icon" />
       <div className="create-profile__messages-wrapper">
         <p className="create-profile__message">
-          it looks likes you have no profile yet
+          it looks like you have no profile yet
         </p>
         <p className="create-profile__message"> feel free to create one!</p>
       </div>

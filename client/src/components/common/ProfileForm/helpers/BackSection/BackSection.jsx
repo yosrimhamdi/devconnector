@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 import './BackSection.scss';
 import backArrow from '../../icons/back-arrow.svg';
 
-const BackSection = ({ scrolled }) => {
+const BackSection = () => {
+  const [elevated, setElevated] = useState(false);
+
+  useEffect(() => {
+    const onDocumentScroll = () => {
+      if (window.scrollY > 5) {
+        setElevated(true);
+      } else if (window.scrollY === 0) {
+        setElevated(false);
+      }
+    };
+
+    document.addEventListener('scroll', onDocumentScroll);
+
+    return () => document.removeEventListener('scroll', onDocumentScroll);
+  });
+
   const className = classnames('back-section', {
-    'back-section--scrolled': scrolled,
+    'back-section--elevated': elevated,
   });
 
   return (

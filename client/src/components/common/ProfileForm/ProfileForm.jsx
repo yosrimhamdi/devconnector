@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
@@ -22,21 +22,6 @@ const ProfileForm = ({
   loading,
   title,
 }) => {
-  const [scrolled, setScrolled] = useState(false);
-  useEffect(() => {
-    const onDocumentScroll = () => {
-      if (window.scrollY > 5) {
-        setScrolled(true);
-      } else if (window.scrollY === 0) {
-        setScrolled(false);
-      }
-    };
-
-    document.addEventListener('scroll', onDocumentScroll);
-
-    return () => document.removeEventListener('scroll', onDocumentScroll);
-  }, []);
-
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);
 
@@ -45,7 +30,7 @@ const ProfileForm = ({
 
   return (
     <div className="profile-form">
-      <BackSection scrolled={scrolled} />
+      <BackSection />
       <form onSubmit={handleSubmit(onSubmit)} className="form">
         <h1 className="form__title">{title}</h1>
         <Field

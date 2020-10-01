@@ -3,7 +3,7 @@ import { Field } from 'redux-form';
 import AnimateHeight from 'react-animate-height';
 
 import './SocialsForm.scss';
-import SocialInput from '../../../form/SocialInput';
+import SocialInput from '../../form/SocialInput';
 
 const SocialsForm = () => {
   const [height, setHeight] = useState(0);

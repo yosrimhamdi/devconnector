@@ -2,7 +2,6 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
-import './ProfileForm.scss';
 import constructProfile from '../../../utils/constructProfile';
 import Input from '../form/google/Input';
 import TextArea from '../form/google/TextArea';
@@ -12,7 +11,7 @@ import { clearErrors } from '../../../redux/actions';
 import Spinner from '../Spinner';
 import Link from '../Link';
 import Button from '../Button';
-import BackSection from './helpers/BackSection';
+import BackSection from '../BackSection';
 
 const ProfileForm = ({
   handleSubmit,
@@ -29,9 +28,9 @@ const ProfileForm = ({
   };
 
   return (
-    <div className="profile-form">
-      <BackSection />
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <BackSection title="profile" />
+      <div className="form__container">
         <h1 className="form__title">{title}</h1>
         <Field
           name="handle"
@@ -88,8 +87,8 @@ const ProfileForm = ({
           <Link to="/dashboard" text="cancel" transparent rounded />
           <Button text="submit" rounded />
         </div>
-      </form>
-    </div>
+      </div>
+    </form>
   );
 };
 

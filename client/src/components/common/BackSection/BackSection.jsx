@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 import './BackSection.scss';
-import backArrow from '../../icons/back-arrow.svg';
+import backArrow from './back-arrow.svg';
 
-const BackSection = () => {
+const BackSection = ({ title }) => {
   const [elevated, setElevated] = useState(false);
 
   useEffect(() => {
     const onDocumentScroll = () => {
-      if (window.scrollY > 5) {
+      if (window.scrollY > 0) {
         setElevated(true);
       } else if (window.scrollY === 0) {
         setElevated(false);
@@ -20,7 +20,7 @@ const BackSection = () => {
     document.addEventListener('scroll', onDocumentScroll);
 
     return () => document.removeEventListener('scroll', onDocumentScroll);
-  });
+  }, []);
 
   const className = classnames('back-section', {
     'back-section--elevated': elevated,
@@ -36,7 +36,7 @@ const BackSection = () => {
             className="back-section__back-arrow"
           />
         </Link>
-        <div className="back-section__title">profile</div>
+        <div className="back-section__title">{title}</div>
       </div>
     </div>
   );

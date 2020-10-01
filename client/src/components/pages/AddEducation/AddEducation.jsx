@@ -9,45 +9,49 @@ import TextArea from '../../common/form/google/TextArea';
 import Button from '../../common/Button';
 import Link from '../../common/Link';
 import Spinner from '../../common/Spinner';
+import BackSection from '../../common/BackSection';
 
 const AddEducation = ({ handleSubmit, addEducation, loading }) => (
   <form onSubmit={handleSubmit(addEducation)} className="form">
-    <h1 className="form__title">add education</h1>
-    <Field
-      name="school"
-      placeholder="school"
-      component={Input}
-      marginBottom="2.5em"
-    />
-    <Field
-      name="degree"
-      placeholder="degree or certification"
-      component={Input}
-      marginBottom="2.5em"
-    />
-    <Field
-      name="fieldOfStudy"
-      placeholder="field of study**"
-      component={Input}
-      marginBottom="2.5em"
-    />
-    <Field
-      name="from"
-      type="date"
-      component={Input}
-      description="from date**"
-    />
-    <Field name="to" type="date" component={Input} description="to date" />
-    <Field
-      name="description"
-      placeholder="program description"
-      description="tell us about the program that you were in"
-      component={TextArea}
-    />
-    <div className="form__buttons-wrapper">
-      <Spinner hidden={!loading} />
-      <Link to="/dashboard" text="cancel" transparent rounded />
-      <Button text="submit" rounded />
+    <BackSection title="education" />
+    <div className="form__container">
+      <h1 className="form__title">add education</h1>
+      <Field
+        name="school"
+        placeholder="school"
+        component={Input}
+        marginBottom="2.5em"
+      />
+      <Field
+        name="degree"
+        placeholder="degree or certification"
+        component={Input}
+        marginBottom="2.5em"
+      />
+      <Field
+        name="fieldOfStudy"
+        placeholder="field of study**"
+        component={Input}
+        marginBottom="2.5em"
+      />
+      <Field
+        name="from"
+        type="date"
+        component={Input}
+        description="from date**"
+      />
+      <Field name="to" type="date" component={Input} description="to date" />
+      <Field
+        name="description"
+        placeholder="program description"
+        description="tell us about the program that you were in"
+        component={TextArea}
+      />
+      <div className="form__buttons-wrapper">
+        <Spinner hidden={!loading} />
+        <Link to="/dashboard" text="cancel" transparent rounded />
+        <Button text="submit" rounded />
+      </div>
     </div>
   </form>
 );

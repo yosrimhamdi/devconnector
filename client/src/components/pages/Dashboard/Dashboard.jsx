@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './Dashboard.scss';
 import Spinner from '../../common/Spinner';
 import { fetchUserProfile } from '../../../redux/actions';
-import CreateProfile from './helpers/CreateProfile';
+import CreateProfileModal from './helpers/CreateProfileModal';
 import DashboardPanel from './helpers/DashBoardPanel';
 
 const Dashboard = ({ profile, loading, fetchUserProfile }) => {
@@ -19,7 +19,7 @@ const Dashboard = ({ profile, loading, fetchUserProfile }) => {
   }
 
   if (!profile && !loading) {
-    content = <CreateProfile />;
+    content = <CreateProfileModal />;
   } else if (profile) {
     content = <DashboardPanel profile={profile} />;
   }

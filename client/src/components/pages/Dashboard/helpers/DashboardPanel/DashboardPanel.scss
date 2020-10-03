@@ -54,7 +54,7 @@
     position: relative;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 0 3px rgba($color: #000, $alpha: 0.3);
+    box-shadow: 0 0 2px rgba($color: #000, $alpha: 0.3);
     cursor: pointer;
 
     &:hover .dashboard-panel__update-photo-label {

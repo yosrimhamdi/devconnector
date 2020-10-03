@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import { deleteEducation } from '../../../../../redux/actions';
 import getFormattedDate from '../../../../../utils/getFormattedDate';
+import ConfirmModal from '../../../../common/modal/ConfirmModal';
+import ModalContext from '../../../../../contexts/ModalContext';
 
 const EducationItem = ({
   education: { school, degree, from, to, _id },
@@ -10,12 +12,26 @@ const EducationItem = ({
 }) => {
   const [isModalShown, setIsModalShown] = useState(false);
 
+  const modal = {
+    title: school,
+    description: `are you sure you want to delete this education`,
+    action: () => deleteEducation(_id),
+  };
+
   return (
-    <tr onClick={() => deleteEducation(_id)}>
-      <td>{school}</td>
-      <td>{degree}</td>
-      <td>{getFormattedDate(from, to)}</td>
-    </tr>
+    <>
+      <tr onClick={() => setIsModalShown(true)}>
+        <td>{school}</td>
+        <td>{degree}</td>
+        <td>{getFormattedDate(from, to)}</td>
+      </tr>
+      <ModalContext.Provider value={modal}>
+        <ConfirmModal
+          isModalShown={isModalShown}
+          setIsModalShown={setIsModalShown}
+        />
+      </ModalContext.Provider>
+    </>
   );
 };
 

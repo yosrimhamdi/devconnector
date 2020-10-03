@@ -1,8 +1,9 @@
 .dashboard-panel {
-  padding: 3em 0;
+  padding-top: 4em;
+  padding-bottom: 5em;
 
   &__nav {
-    margin-bottom: 5em;
+    margin-bottom: 4em;
     text-align: center;
   }
 
@@ -12,6 +13,7 @@
     cursor: pointer;
     padding: 0.7em 1em;
     margin-right: 1em;
+    border-radius: 5px;
     background-color: var(--main-color);
     box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.17);
     transition: all 200ms;
@@ -19,6 +21,10 @@
     &:hover {
       background-color: var(--main-color-dark);
       box-shadow: 0 0 15px rgba($color: #000, $alpha: 0.13);
+    }
+
+    &:active {
+      text-decoration: underline;
     }
   }
 
@@ -88,7 +94,7 @@
     text-align: center;
     font-size: 1.8rem;
     font-weight: 500;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
 
     &::first-letter {
       text-transform: uppercase;
@@ -98,10 +104,7 @@
   &__cridentials {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     padding: 0 2em;
-
-    & > table:not(:last-child) {
-      margin-right: 2em;
-    }
   }
 }

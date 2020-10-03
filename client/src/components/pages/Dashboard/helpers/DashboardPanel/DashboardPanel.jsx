@@ -86,8 +86,8 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
         </div>
       </div>
       <div className="dashboard-panel__cridentials">
-        <ExperienceList experiences={experience} />
         <EducationList educations={education} />
+        <ExperienceList experiences={experience} />
       </div>
     </div>
   );

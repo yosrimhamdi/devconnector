@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './ExperienceList.scss';
 import ExperienceItem from './ExperienceItem';
 import Table from '../../../../common/Table';
 
@@ -10,12 +9,9 @@ const ExperienceList = ({ experiences }) => {
   ));
 
   return (
-    <div className="experience-list">
-      <h1 className="experience-list__title">experience cridentials</h1>
-      <Table columnNames={['company', 'title', 'years']}>
-        {renderedExperiences}
-      </Table>
-    </div>
+    <Table columnNames={['company', 'title', 'years']}>
+      {renderedExperiences}
+    </Table>
   );
 };
 

@@ -28,6 +28,10 @@
     &:active {
       text-decoration: underline;
     }
+
+    span::first-letter {
+      text-transform: uppercase;
+    }
   }
 
   &__icon {

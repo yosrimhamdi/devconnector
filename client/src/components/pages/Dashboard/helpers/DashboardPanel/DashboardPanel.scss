@@ -7,9 +7,11 @@
     text-align: center;
   }
 
-  &__link-wrapper {
+  &__link {
     display: inline-flex;
     align-items: center;
+    color: white;
+    font-weight: 500;
     cursor: pointer;
     padding: 0.7em 1em;
     margin-right: 1em;
@@ -26,11 +28,6 @@
     &:active {
       text-decoration: underline;
     }
-  }
-
-  &__link {
-    color: white;
-    font-weight: 500;
   }
 
   &__icon {

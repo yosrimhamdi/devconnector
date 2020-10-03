@@ -1,3 +1,5 @@
+@import '../../../assets/styles/utils/mixins/responsive';
+
 .pagination {
   position: absolute;
   bottom: 0;
@@ -5,6 +7,10 @@
   transform: translateX(-50%);
   padding-bottom: 4em;
   z-index: 2;
+
+  @include at-large {
+    padding-bottom: 6em;
+  }
 
   &--hidden {
     display: none;

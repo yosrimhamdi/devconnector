@@ -54,36 +54,31 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
       </div>
       <h1 className="dashboard-panel__greetings">{`welcome, ${user.fullname}`}</h1>
       <div className="dashboard-panel__nav">
-        <div className="dashboard-panel__link-wrapper">
+        <Link to="/profiles/update" className="dashboard-panel__link">
           <img
             src={profileIcon}
             alt="profile"
             className="dashboard-panel__icon"
           />
-          <Link to="/profiles/update" className="dashboard-panel__link">
-            update profile
-          </Link>
-        </div>
-        <div className="dashboard-panel__link-wrapper">
+          <span>update profile</span>
+        </Link>
+
+        <Link to="/profiles/experience/new" className="dashboard-panel__link">
           <img
             src={experienceIcon}
             alt="experience"
             className="dashboard-panel__icon"
           />
-          <Link to="/profiles/experience/new" className="dashboard-panel__link">
-            add experience
-          </Link>
-        </div>
-        <div className="dashboard-panel__link-wrapper">
+          <span>add experience</span>
+        </Link>
+        <Link to="/profiles/education/new" className="dashboard-panel__link">
           <img
             src={educationIcon}
             alt="education"
             className="dashboard-panel__icon"
           />
-          <Link to="/profiles/education/new" className="dashboard-panel__link">
-            add education
-          </Link>
-        </div>
+          <span>add education</span>
+        </Link>
       </div>
       <div className="dashboard-panel__cridentials">
         <EducationList educations={education} />

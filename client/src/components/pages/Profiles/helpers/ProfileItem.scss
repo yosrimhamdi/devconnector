@@ -16,13 +16,15 @@ $buttonTextGrey: #b6b7c1;
     &::after {
       content: 'admin';
       background-color: var(--main-color);
+      text-transform: uppercase;
       position: absolute;
       color: white;
-      top: 2em;
-      left: 2em;
-      padding: 1px 0;
-      transform: translate(-50%, -50%) rotate(-45deg);
-      width: 200px;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      padding: 0;
+      display: inline-block;
       font-size: 0.7rem;
       font-weight: 700;
     }

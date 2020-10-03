@@ -1,0 +1,101 @@
+.dashboard-panel {
+  padding-top: 3em;
+
+  &__nav {
+    margin-bottom: 5em;
+    text-align: center;
+  }
+
+  &__link-wrapper {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 0.7em 1em;
+    margin-right: 1em;
+    background-color: var(--main-color);
+    box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.2);
+    transition: all 200ms;
+
+    &:hover {
+      background-color: var(--main-color-dark);
+      box-shadow: 0 0 20px 1px rgba($color: #000, $alpha: 0.1);
+    }
+  }
+
+  &__link {
+    color: white;
+    font-weight: 500;
+  }
+
+  &__icon {
+    width: 20px;
+    margin-right: 1em;
+  }
+
+  &__main {
+    margin: 0 auto;
+  }
+
+  &__photo-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5em;
+  }
+
+  &__photo-container {
+    display: inline-block;
+    position: relative;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 0 3px rgba($color: #000, $alpha: 0.3);
+    cursor: pointer;
+
+    &:hover .dashboard-panel__update-photo-label {
+      opacity: 1;
+    }
+  }
+
+  &__user-photo {
+    border-radius: 50%;
+    display: block;
+    width: 100px;
+  }
+
+  &__camera-icon {
+    width: 20px;
+  }
+
+  &__update-photo-input {
+    display: none;
+  }
+
+  &__update-photo-label {
+    cursor: pointer;
+
+    width: 100%;
+    padding: 0.2em 0;
+    text-align: center;
+    background-color: #0000006c;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 220ms;
+  }
+
+  &__greetings {
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 2em;
+
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__cridentials {
+    padding: 0 2em;
+  }
+}

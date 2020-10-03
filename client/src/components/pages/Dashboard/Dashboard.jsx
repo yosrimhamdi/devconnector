@@ -5,7 +5,7 @@ import './Dashboard.scss';
 import Spinner from '../../common/Spinner';
 import { fetchUserProfile } from '../../../redux/actions';
 import CreateProfileModal from './helpers/CreateProfileModal';
-import DashboardPanel from './helpers/DashBoardPanel';
+import DashboardPanel from './helpers/DashboardPanel';
 
 const Dashboard = ({ profile, loading, fetchUserProfile }) => {
   useEffect(() => {

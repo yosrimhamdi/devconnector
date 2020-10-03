@@ -52,7 +52,10 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
           </label>
         </div>
       </div>
-      <h1 className="dashboard-panel__greetings">{`welcome, ${user.fullname}`}</h1>
+      <h1 className="dashboard-panel__greetings">
+        <span>welcome, </span>
+        <Link to={`/profiles/${profile.handle}`}>{user.fullname}</Link>
+      </h1>
       <div className="dashboard-panel__nav">
         <Link to="/profiles/update" className="dashboard-panel__link">
           <img

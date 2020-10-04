@@ -5,6 +5,8 @@
   &__nav {
     margin-bottom: 4em;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   &__link {
@@ -14,11 +16,14 @@
     font-weight: 500;
     cursor: pointer;
     padding: 0.7em 1em;
-    margin-right: 1em;
     border-radius: 5px;
     background-color: var(--main-color);
     box-shadow: 0 0 5px rgba($color: #000, $alpha: 0.17);
     transition: all 200ms;
+
+    &:not(:last-child) {
+      margin-right: 1em;
+    }
 
     &:hover {
       background-color: var(--main-color-dark);

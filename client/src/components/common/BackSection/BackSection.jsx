@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import classnames from 'classnames';
+import history from '../../../history';
 
 import './BackSection.scss';
 import backArrow from './back-arrow.svg';
 
-const BackSection = ({ title, location, aligned }) => {
+const BackSection = ({ title, aligned }) => {
   const [elevated, setElevated] = useState(false);
 
   useEffect(() => {
@@ -30,13 +30,17 @@ const BackSection = ({ title, location, aligned }) => {
   return (
     <div className={className}>
       <div className="back-section__wrapper">
-        <Link to={location} className="back-section__link">
+        <div
+          role="button"
+          onClick={history.goBack}
+          className="back-section__link"
+        >
           <img
             src={backArrow}
             alt="arrow"
             className="back-section__back-arrow"
           />
-        </Link>
+        </div>
         <div className="back-section__title">{title}</div>
       </div>
     </div>

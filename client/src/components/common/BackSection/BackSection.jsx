@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import './BackSection.scss';
 import backArrow from './back-arrow.svg';
 
-const BackSection = ({ title }) => {
+const BackSection = ({ title, location, aligned }) => {
   const [elevated, setElevated] = useState(false);
 
   useEffect(() => {
@@ -24,12 +24,13 @@ const BackSection = ({ title }) => {
 
   const className = classnames('back-section', {
     'back-section--elevated': elevated,
+    'back-section--aligned-with-content': aligned,
   });
 
   return (
     <div className={className}>
       <div className="back-section__wrapper">
-        <Link to="/dashboard" className="back-section__link">
+        <Link to={location} className="back-section__link">
           <img
             src={backArrow}
             alt="arrow"
@@ -40,6 +41,10 @@ const BackSection = ({ title }) => {
       </div>
     </div>
   );
+};
+
+BackSection.defaultProps = {
+  location: '/dashboard',
 };
 
 export default BackSection;

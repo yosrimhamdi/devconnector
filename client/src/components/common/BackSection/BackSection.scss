@@ -12,6 +12,10 @@
     box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.15);
   }
 
+  &--aligned-with-content &__wrapper {
+    left: 3em;
+  }
+
   &__wrapper {
     position: relative;
     left: 20%;

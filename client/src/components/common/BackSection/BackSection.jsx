@@ -47,8 +47,4 @@ const BackSection = ({ title, aligned }) => {
   );
 };
 
-BackSection.defaultProps = {
-  location: '/dashboard',
-};
-
 export default BackSection;

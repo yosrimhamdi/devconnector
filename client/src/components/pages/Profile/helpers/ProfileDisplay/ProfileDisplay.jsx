@@ -35,7 +35,7 @@ const ProfileDisplay = ({ profile }) => {
         />
       </section>
       <section className="profile-display__user-details">
-        <BackSection title="go back" aligned />
+        <BackSection title="profile" aligned />
         <div className="profile-display__content-wrapper">
           <div className="profile-display__detail-title">name surname</div>
           <div className="profile-display__detail">{fullname}</div>

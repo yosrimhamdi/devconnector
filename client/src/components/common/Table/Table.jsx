@@ -8,7 +8,7 @@ const Table = ({ columnNames: [first, second, third], children }) => (
       <tr className="table__headers">
         <th>{first}</th>
         <th>{second}</th>
-        <th className="table__third-column">{third}</th>
+        <th>{third}</th>
       </tr>
       {children}
     </tbody>

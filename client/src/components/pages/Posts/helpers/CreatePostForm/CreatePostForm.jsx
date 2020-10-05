@@ -19,16 +19,16 @@ const CreatePostForm = ({ user }) => {
   }
 
   return (
-    <form className="add-post-form">
+    <form className="create-post-form">
       <img
         src={`/images/${user.photo}`}
         alt={user.fullname}
-        className="add-post-form__user-image"
+        className="create-post-form__user-image"
       />
       <input
         placeholder={placeholder}
         text="text"
-        className="add-post-form__input"
+        className="create-post-form__input"
         spellCheck="false"
         value={inputValue}
         onChange={() => {}}

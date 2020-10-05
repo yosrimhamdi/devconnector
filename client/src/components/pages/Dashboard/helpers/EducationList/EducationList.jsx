@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './EducationList.scss';
 import Table from '../../../../common/Table';
 import EducationItem from './EducationItem';
 
@@ -14,11 +13,9 @@ const EducationList = ({ educations }) => {
   ));
 
   return (
-    <div className="education-list">
-      <Table columnNames={['school', 'degree', 'years']}>
-        {renderedEducations}
-      </Table>
-    </div>
+    <Table columnNames={['school', 'degree', 'years']}>
+      {renderedEducations}
+    </Table>
   );
 };
 

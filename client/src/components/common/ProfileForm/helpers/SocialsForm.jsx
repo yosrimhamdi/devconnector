@@ -21,7 +21,7 @@ const SocialsForm = () => {
           onClick={toggleHeight}
         >
           <span className="socials-form__toggle-message">{message}</span>
-          <span>social network links</span>
+          <span>social links</span>
         </button>
         <span className="socials-form__option-message">Optional</span>
       </div>

@@ -1,12 +1,18 @@
+@import '../../../assets/styles/utils/mixins/responsive';
+
 .back-section {
-  margin-bottom: 3em;
   padding: 1em;
   box-shadow: 0 1px rgba($color: #eeeeee, $alpha: 1);
   background-color: white;
   position: sticky;
   top: 0;
   z-index: 1;
+  margin-bottom: 1em;
   transition: box-shadow 120ms;
+
+  @include at-small {
+    margin-bottom: 3em;
+  }
 
   &--elevated {
     box-shadow: 0 2px 5px rgba($color: #000000, $alpha: 0.15);
@@ -18,9 +24,18 @@
 
   &__wrapper {
     position: relative;
-    left: 20%;
     display: flex;
     align-items: center;
+    padding-left: 1em;
+
+    @include at-small {
+      padding-left: 2em;
+    }
+
+    @include at-medium {
+      left: 20%;
+      padding-left: 0;
+    }
   }
 
   &__title {

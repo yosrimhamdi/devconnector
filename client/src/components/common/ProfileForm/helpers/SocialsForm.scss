@@ -11,6 +11,7 @@
     background-color: rgb(245, 245, 245);
     color: #363636;
     padding: 0.5em 1em;
+    display: block;
 
     &:hover {
       background-color: rgb(240, 240, 240);
@@ -19,6 +20,8 @@
 
   &__toggle-button-wrapper {
     margin-bottom: 2em;
+    display: flex;
+    align-items: center;
   }
 
   &__toggle-message {

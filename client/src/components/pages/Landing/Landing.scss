@@ -25,13 +25,18 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    padding: 1em 5px;
   }
 
   &__header {
-    font-size: 3.6rem;
+    font-size: 2rem;
     font-weight: 300;
-    margin-bottom: 0.2em;
-    display: inline-block;
+    margin-bottom: 0.5em;
+
+    @include at-medium {
+      margin-bottom: 0.2em;
+      font-size: 3.6rem;
+    }
 
     @include at-large {
       font-size: 5rem;
@@ -39,15 +44,13 @@
   }
 
   &__sub-header {
-    width: 603px;
     font-size: 1rem;
     font-weight: 200;
-    margin: 0 auto;
     margin-bottom: 3em;
-    transform: translateX(3px);
-    text-align: justify;
-    text-align-last: center;
-    line-height: 1.6;
+
+    @mixin at-medium {
+      font-size: 1.2rem;
+    }
   }
 
   &__button-container > a:not(:last-child) {

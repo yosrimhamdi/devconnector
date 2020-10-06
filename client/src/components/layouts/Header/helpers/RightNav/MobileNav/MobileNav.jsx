@@ -4,16 +4,19 @@ import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './MobileNav.scss';
-import menu from './menu.svg';
 
-const MobileNav = ({ auth }) => {
-  const navRef = useRef(null);
-  const menuRef = useRef(null);
+import { logoutUser } from '../../../../../../redux/actions';
+
+const MobileNav = ({ auth, logoutUser }) => {
+  const slideNavRef = useRef(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onDocClick = e => {
-      if (!e.target.contains(navRef.current) && e.target !== menuRef.current) {
+    const onDocClick = ({ target }) => {
+      if (
+        target !== slideNavRef.current &&
+        !target.classList.contains('mobile-nav__burger-line')
+      ) {
         setVisible(false);
       }
     };
@@ -23,11 +26,15 @@ const MobileNav = ({ auth }) => {
     return () => document.removeEventListener('click', onDocClick);
   }, []);
 
-  const className = classnames('mobile-nav__nav', {
-    'mobile-nav__nav--visible': visible,
+  const slideNavClass = classnames('mobile-nav__slide-nav', {
+    'mobile-nav__slide-nav--visible': visible,
   });
 
-  let links = (
+  const burgerMenuClass = classnames('mobile-nav__burger-menu', {
+    'mobile-nav__burger-menu--open': visible,
+  });
+
+  let slideNavLinks = (
     <>
       <NavLink to="/profiles" activeClassName="mobile-nav__active-link">
         developers
@@ -42,7 +49,7 @@ const MobileNav = ({ auth }) => {
   );
 
   if (auth.isAuthenticated) {
-    links = (
+    slideNavLinks = (
       <>
         <NavLink to="/dashboard" activeClassName="mobile-nav__active-link">
           dashboard
@@ -53,32 +60,37 @@ const MobileNav = ({ auth }) => {
         <NavLink to="/profiles" activeClassName="mobile-nav__active-link">
           developers
         </NavLink>
+        <div className="mobile-nav__logout" role="button" onClick={logoutUser}>
+          logout
+        </div>
       </>
     );
   }
 
   return (
-    <div className="mobile-nav">
-      <img
-        src={menu}
-        alt="hamburger menu"
-        className="mobile-nav__hamburger-menu"
+    <nav className="mobile-nav">
+      <div
+        className={burgerMenuClass}
+        role="button"
         onClick={() => setVisible(!visible)}
-        ref={menuRef}
-      />
-      <div className={className} ref={navRef}>
+      >
+        <div className="mobile-nav__burger-line" />
+        <div className="mobile-nav__burger-line" />
+        <div className="mobile-nav__burger-line" />
+      </div>
+      <div className={slideNavClass} ref={slideNavRef}>
         <div
           className="mobile-nav__links-wrapper"
           role="button"
           onClick={() => setVisible(false)}
         >
-          {links}
+          {slideNavLinks}
         </div>
       </div>
-    </div>
+    </nav>
   );
 };
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-export default connect(mapStateToProps)(MobileNav);
+export default connect(mapStateToProps, { logoutUser })(MobileNav);

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import { logoutUser } from '../../../../redux/actions';
+import { logoutUser } from '../../../../../../redux/actions';
 
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   if (isAuthenticated) {

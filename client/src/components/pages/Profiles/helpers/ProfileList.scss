@@ -1,10 +1,16 @@
+@import '../../../../assets/styles/utils/mixins/responsive';
+
 .profile-list {
   position: relative;
   z-index: 1;
   list-style: none;
-  padding: calc(var(--header-height) + 4em) 10px 160px 10px;
+  padding: calc(var(--header-height) + 4em) 1.5em 4em;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2.2em;
+  gap: 1.2em;
+
+  @include at-medium {
+    gap: 2em;
+  }
 }

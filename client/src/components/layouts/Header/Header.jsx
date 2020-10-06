@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
 
 import './Header.scss';
-import { logoutUser } from '../../../redux/actions';
 
-import Navigation from './Navgitation';
+import Navigation from './helpers/Navigation';
 
-const Header = ({ auth, logoutUser }) => {
+const Header = () => {
   const headerRef = useRef(null);
 
   useEffect(() => {
@@ -25,17 +23,15 @@ const Header = ({ auth, logoutUser }) => {
         <Link to="/" className="header__devconnector">
           devConnector
         </Link>
-        <Link to="/profiles" className="header__link">
+        {/* <Link to="/profiles" className="header__link">
           developers
-        </Link>
+        </Link> */}
       </div>
       <div className="header__right-section">
-        <Navigation auth={auth} logoutUser={logoutUser} />
+        <Navigation />
       </div>
     </div>
   );
 };
 
-const mapStateToProps = ({ auth }) => ({ auth });
-
-export default connect(mapStateToProps, { logoutUser })(Header);
+export default Header;

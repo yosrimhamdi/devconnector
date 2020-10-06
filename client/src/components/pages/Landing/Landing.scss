@@ -18,7 +18,7 @@
 
   &__content {
     color: white;
-    z-index: 2;
+    z-index: 1;
     text-align: center;
     width: 100%;
     position: absolute;
@@ -48,7 +48,7 @@
     font-weight: 200;
     margin-bottom: 3em;
 
-    @mixin at-medium {
+    @include at-medium {
       font-size: 1.2rem;
     }
   }

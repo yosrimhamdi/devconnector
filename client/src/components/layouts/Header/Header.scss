@@ -1,19 +1,24 @@
-$bgColor: #343a40;
-$lightGreyLinkHover: rgba(255, 255, 255, 0.75);
-$greyLink: rgba(255, 255, 255, 0.5);
+@import '../../../assets/styles/utils/mixins/responsive';
+
+$lightGreyLinkHover: #ffffffbf;
+$greyLink: #ffffff80;
 
 .header {
   position: fixed;
   top: 0;
   width: 100vw;
-  padding: 1em 8%;
   z-index: 2;
+  padding: 0.9em 1em;
   color: white;
-  background-color: $bgColor;
+  background-color: var(--header-bg-color);
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
   box-shadow: 0 3px 6px 3px rgba($color: #000000, $alpha: 0.1);
+
+  @include at-medium {
+    padding: 1em 8%;
+  }
 
   &__link,
   &__logout-button {
@@ -34,8 +39,8 @@ $greyLink: rgba(255, 255, 255, 0.5);
     color: $lightGreyLinkHover;
   }
 
-  &__right-section > * {
-    margin-right: 1em;
+  &__devconnector:active {
+    text-decoration: underline;
   }
 
   &__devconnector,

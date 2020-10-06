@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
-const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
+import { logoutUser } from '../../../../redux/actions';
+
+const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   if (isAuthenticated) {
     return (
       <>
@@ -41,4 +44,6 @@ const ShowNavigation = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   );
 };
 
-export default ShowNavigation;
+const mapStateToProps = ({ auth }) => ({ auth });
+
+export default connect(mapStateToProps, { logoutUser })(DesktopNav);

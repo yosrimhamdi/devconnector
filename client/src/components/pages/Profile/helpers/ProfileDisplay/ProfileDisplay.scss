@@ -4,7 +4,6 @@
   height: 100vh;
 
   &__user-photo-wrapper {
-    width: 50vw;
     height: 100vh;
     position: relative;
     background: url('../../../../../assets/images/nature-3--960-640--q50.jpg')
@@ -13,7 +12,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
+
+    @include at-medium {
+      position: fixed;
+      width: 50vw;
+    }
 
     &::after {
       content: '';
@@ -42,15 +45,21 @@
   }
 
   &__user-details {
-    width: 50vw;
-    position: absolute;
-    top: 0;
-    right: 0;
+    @include at-medium {
+      width: 50vw;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
 
   &__content-wrapper {
-    padding: 0 3em;
+    padding: 0 1em;
     padding-bottom: 4em;
+
+    @include at-small {
+      padding: 0 3em;
+    }
   }
 
   &__detail-title {

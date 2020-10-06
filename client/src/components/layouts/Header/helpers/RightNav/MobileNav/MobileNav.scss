@@ -1,3 +1,5 @@
+$timing: 150ms;
+
 .mobile-nav {
   &__burger-menu {
     width: 20px;
@@ -25,7 +27,7 @@
     height: 2px;
     width: 100%;
     background-color: white;
-    transition: all 200ms;
+    transition: all $timing;
 
     &:first-child {
       top: -6px;
@@ -43,7 +45,7 @@
     left: 0;
     height: 100vh;
     transform: translate(-100%, 100%);
-    transition: all 300ms;
+    transition: all $timing;
 
     &--visible {
       box-shadow: 0 14px 10px 2px rgba($color: #000000, $alpha: 0.5);

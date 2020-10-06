@@ -1,5 +1,5 @@
 @mixin at-small {
-  @media (min-width: 520px) {
+  @media (min-width: 601px) {
     @content;
   }
 }

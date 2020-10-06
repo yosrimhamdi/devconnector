@@ -53,14 +53,7 @@ const ProfileDisplay = ({ profile }) => {
             skills
           </div>
           <SkillList skills={skills} />
-          <div className="profile-display__detail-title profile-display__detail-title--mb-medium">
-            experiences
-          </div>
           <ExperienceList experiences={experience} />
-          <div className="profile-display__detail-title profile-display__detail-title--mb-medium">
-            educations
-          </div>
-
           <EducationList educations={education} />
         </div>
       </section>

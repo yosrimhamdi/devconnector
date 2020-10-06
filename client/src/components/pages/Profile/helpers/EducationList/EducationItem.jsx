@@ -4,22 +4,13 @@ import getFormattedDate from '../../../../../utils/getFormattedDate';
 
 const EducationItem = ({ education }) => {
   const { school, from, to, degree, fieldOfStudy } = education;
-
   return (
-    <li className="credentials__item">
-      <h2 className="credentials__title">{school}</h2>
-      <div className="credentials__details">
-        <div>{getFormattedDate(from, to)}</div>
-        <div>
-          <span className="credentials__detail-info">degree:</span>
-          <span>{degree}</span>
-        </div>
-        <div>
-          <span className="credentials__detail-info">field of study:</span>
-          <span>{fieldOfStudy}</span>
-        </div>
-      </div>
-    </li>
+    <tr>
+      <td>{school}</td>
+      <td>{degree}</td>
+      <td>{fieldOfStudy}</td>
+      <t>{getFormattedDate(from, to)}</t>
+    </tr>
   );
 };
 

@@ -6,24 +6,13 @@ const ExperienceItem = ({ experience }) => {
   const { company, from, to, title, location, description } = experience;
 
   return (
-    <li className="credentials__item">
-      <h2 className="credentials__title">{company}</h2>
-      <div className="credentials__details">
-        <div>{getFormattedDate(from, to)}</div>
-        <div>
-          <span className="credentials__detail-info">position:</span>
-          <span>{title}</span>
-        </div>
-        <div>
-          <span className="credentials__detail-info">location:</span>
-          <span>{location}</span>
-        </div>
-        <div>
-          <span className="credentials__detail-info">description:</span>
-          <span>{description}</span>
-        </div>
-      </div>
-    </li>
+    <tr>
+      <td>{company}</td>
+      <td>{title}</td>
+      <td>{location}</td>
+      <td>{description || 'none'}</td>
+      <td>{getFormattedDate(from, to)}</td>
+    </tr>
   );
 };
 

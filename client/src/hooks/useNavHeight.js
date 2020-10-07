@@ -5,7 +5,7 @@ export default navRef => {
     const navHeight = navRef.current.clientHeight;
 
     document.documentElement.style.setProperty(
-      '--header-height',
+      '--nav-height',
       `${navHeight}px`,
     );
   }, [navRef]);

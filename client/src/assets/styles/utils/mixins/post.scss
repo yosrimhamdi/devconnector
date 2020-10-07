@@ -1,0 +1,57 @@
+@import './responsive';
+
+@mixin post-wrapper {
+  border-radius: 8px;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 8px 1px rgba($color: #000000, $alpha: 0.1);
+
+  @include at-small {
+    flex-direction: row;
+  }
+}
+
+@mixin post-content {
+  flex-grow: 1;
+  width: 100%;
+
+  @include at-small {
+    padding-left: 2.5em;
+    padding-right: 3em;
+  }
+}
+
+@mixin post-user-photo {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 1em;
+  border-radius: 50%;
+  object-fit: cover;
+
+  @include at-small {
+    height: 130px;
+    width: 130px;
+  }
+}
+
+@mixin post-user-name {
+  font-size: 1rem;
+  text-transform: capitalize;
+  margin-bottom: 0.2em;
+}
+
+@mixin post-date {
+  color: rgb(163, 163, 163);
+  font-size: 0.85rem;
+  margin-bottom: 1.5em;
+}
+
+@mixin post-text {
+  margin-bottom: 0.8em;
+  overflow-wrap: break-word;
+
+  @include at-small {
+    font-size: 1.45rem;
+  }
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import './Comment.scss';
+import './CommentItem.scss';
 import getElapsedTime from '../getElapsedTime';
 import Settings from '../Settings';
 import { deleteComment } from '../../../../../redux/actions';
@@ -17,16 +17,16 @@ const Comment = ({ comment, deleteComment }) => {
   };
 
   return (
-    <li className="comment">
+    <li className="comment-item">
       <img
         src={`/images/${user.photo}`}
-        className="comment__user-image"
+        className="comment-item__user-image"
         alt={user.fullname}
       />
-      <div className="comment__content">
-        <h2 className="comment__user-name">{user.fullname}</h2>
-        <div className="comment__date">{getElapsedTime(createdAt)}</div>
-        <p className="comment__text">{text}</p>
+      <div className="comment-item__content">
+        <h2 className="comment-item__user-name">{user.fullname}</h2>
+        <div className="comment-item__date">{getElapsedTime(createdAt)}</div>
+        <p className="comment-item__text">{text}</p>
       </div>
       <ModalContext.Provider value={modalDetails}>
         <Settings relatedUser={comment.user} deleteMessage="delete comment" />

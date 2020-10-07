@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { connect } from 'react-redux';
 
 import './PostList.scss';
-import PostItem from './PostItem';
+import PostItem from '../PostItem';
 import { fetchPosts } from '../../../../../redux/actions';
 import Spinner from '../../../../common/Spinner';
 

@@ -1,0 +1,44 @@
+@import '../../../../../assets/styles/utils/mixins/post';
+
+.post-item {
+  position: relative;
+  margin-bottom: 1em;
+
+  &__wrapper {
+    @include post-wrapper;
+  }
+
+  &__user-image {
+    @include post-user-photo;
+  }
+
+  &__content {
+    @include post-content;
+  }
+
+  &__text {
+    @include post-text;
+  }
+
+  &__user-name {
+    @include post-user-name;
+  }
+
+  &__date {
+    @include post-date;
+  }
+
+  &__comment-icon {
+    width: 20px;
+    margin-right: 0.5em;
+    transform: translateY(4px);
+  }
+
+  &__controller {
+    color: rgb(165, 165, 165);
+    font-size: 0.9rem;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+  }
+}

@@ -1,7 +1,14 @@
+@import '../../../assets/styles/utils/mixins/responsive';
+
 .posts {
   &__content {
     padding-top: calc(var(--nav-height) + 2em);
-    max-width: 80vw;
-    margin: 0 auto;
+    padding-right: 10px;
+    padding-left: 10px;
+
+    @include at-small {
+      max-width: 80vw;
+      margin: 0 auto;
+    }
   }
 }

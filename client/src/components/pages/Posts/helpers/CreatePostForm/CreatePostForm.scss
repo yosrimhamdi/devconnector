@@ -1,5 +1,4 @@
-$userImageDim: 40px;
-
+@import '../../../../../assets/styles/utils/mixins/responsive';
 .create-post-form {
   background-color: white;
   margin-bottom: 1em;
@@ -12,11 +11,16 @@ $userImageDim: 40px;
   border: 1px solid rgba(67, 78, 168, 0.295);
 
   &__user-image {
-    width: $userImageDim;
-    height: $userImageDim;
+    width: 33px;
+    height: 33px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 0.8em;
+
+    @include at-small {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   &__input {
@@ -25,10 +29,14 @@ $userImageDim: 40px;
     border-radius: 16px;
     width: 100%;
     padding: 0.6em 1em;
-    font-size: 1.45rem;
-    caret-color: transparent;
+    font-size: 4.3vw;
     cursor: pointer;
     transition: background-color 50ms;
+    caret-color: transparent;
+
+    @include at-small {
+      font-size: 1.45rem;
+    }
 
     &::placeholder {
       color: #65676b;

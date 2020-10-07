@@ -1,0 +1,33 @@
+@import '../../../../../assets/styles/utils/mixins/post';
+
+.comment-item {
+  @include post-wrapper;
+
+  background-color: #f0f2f5;
+  position: relative;
+  margin-bottom: 1em;
+
+  &:last-child {
+    margin-bottom: 2em;
+  }
+
+  &__user-image {
+    @include post-user-photo;
+  }
+
+  &__content {
+    @include post-content;
+  }
+
+  &__user-name {
+    @include post-user-name;
+  }
+
+  &__date {
+    @include post-date;
+  }
+
+  &__text {
+    @include post-text;
+  }
+}

@@ -22,7 +22,6 @@ const CreateCommentForm = ({ addComment, postId }) => {
       <input
         className="add-comment-input"
         placeholder="Write a comment..."
-        autoFocus
         value={message}
         type="text"
         onChange={e => setMessage(e.target.value)}

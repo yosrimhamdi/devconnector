@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
+import './CommentList.scss';
 import { fetchComments } from '../../../../../redux/actions';
-import Comment from './Comment';
+import CommentItem from '../CommentItem';
 import CreateCommentForm from '../CreateCommentForm';
 import Spinner from '../../../../common/Spinner';
 
@@ -28,11 +29,11 @@ const Comments = ({
   }
 
   const renderedComments = comments.map(comment => (
-    <Comment comment={comment} key={comment._id} />
+    <CommentItem comment={comment} key={comment._id} />
   ));
 
   return (
-    <div className="comments">
+    <div className="comment-list">
       <CreateCommentForm postId={postId} />
       <ul className="collection">{renderedComments}</ul>
     </div>

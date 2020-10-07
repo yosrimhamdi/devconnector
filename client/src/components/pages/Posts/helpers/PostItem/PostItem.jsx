@@ -6,7 +6,7 @@ import Settings from '../Settings';
 import Likes from '../Likes';
 import getElapsedTime from '../getElapsedTime';
 import { deletePost } from '../../../../../redux/actions';
-import Comments from '../Comments';
+import CommentList from '../CommentList';
 import comment from '../../icons/comment.svg';
 import ModalContext from '../../../../../contexts/ModalContext';
 
@@ -53,7 +53,7 @@ const PostItem = ({ post, deletePost }) => {
           </ModalContext.Provider>
         </div>
       </div>
-      <Comments postId={_id} isCommentsShown={isCommentsShown} />
+      <CommentList postId={_id} isCommentsShown={isCommentsShown} />
     </li>
   );
 };

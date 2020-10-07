@@ -2,14 +2,13 @@
 
 .pagination {
   position: absolute;
-  bottom: 0;
+  bottom: 60px;
   left: 50%;
   transform: translateX(-50%);
-  padding-bottom: 4em;
   z-index: 2;
 
   @include at-large {
-    padding-bottom: 6em;
+    bottom: 200px;
   }
 
   &--hidden {

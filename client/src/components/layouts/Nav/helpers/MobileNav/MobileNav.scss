@@ -1,0 +1,21 @@
+@import '../../../../../assets/styles/utils/mixins/nav';
+
+.mobile-nav {
+  @include nav-container;
+
+  &__dashboard-link {
+    display: flex;
+    align-items: center;
+
+    &:active {
+      text-decoration: underline;
+    }
+  }
+
+  &__user-photo {
+    display: block;
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+}

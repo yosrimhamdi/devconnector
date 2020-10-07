@@ -10,7 +10,7 @@ import {
   RestrictedRoute,
   RestrictedRequireProfileRoute,
 } from '../common/Routes';
-import Header from '../layouts/Header';
+import Nav from '../layouts/Nav';
 import Landing from '../pages/Landing';
 import Profiles from '../pages/Profiles';
 import Signup from '../pages/Signup';
@@ -26,7 +26,7 @@ import NotFound from '../pages/NotFound';
 
 const App = () => (
   <Router history={history}>
-    <Header />
+    <Nav />
     <Switch>
       <Route path="/" exact component={Landing} />
       <PrivateRoute path="/dashboard" exact component={Dashboard} />

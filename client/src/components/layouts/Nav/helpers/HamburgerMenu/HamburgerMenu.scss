@@ -1,0 +1,37 @@
+.hamburger-menu {
+  width: 20px;
+  position: relative;
+  align-self: center;
+
+  &--open {
+    .hamburger-menu__line:first-child {
+      top: 0;
+      transform: rotate(42deg);
+    }
+
+    .hamburger-menu__line:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger-menu__line:last-child {
+      top: 0;
+      transform: rotate(-42deg);
+    }
+  }
+
+  &__line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: all 120ms;
+
+    &:first-child {
+      top: -6px;
+    }
+
+    &:last-child {
+      top: 6px;
+    }
+  }
+}

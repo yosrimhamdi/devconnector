@@ -1,0 +1,34 @@
+.slider {
+  background-color: var(--nav-bg-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100vh;
+  transform: translate(-100%, 100%);
+  transition: all 120ms;
+
+  &--visible {
+    box-shadow: 0 14px 10px 2px rgba($color: #000000, $alpha: 0.5);
+    transform: translate(0, 100%);
+    position: absolute;
+  }
+
+  a,
+  &__logout {
+    display: block;
+    padding: 1em;
+    padding-right: 3em;
+  }
+
+  &__logout:active {
+    text-decoration: underline;
+  }
+
+  a:active {
+    background-color: var(--main-color);
+  }
+
+  &__active-link {
+    background-color: var(--main-color);
+  }
+}

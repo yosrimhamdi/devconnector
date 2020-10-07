@@ -1,0 +1,39 @@
+@import '../../../../../assets/styles/utils/mixins/nav';
+
+.desktop-nav {
+  @include nav-container;
+
+  &__section {
+    display: flex;
+    align-items: center;
+  }
+
+  &__section > *:not(:last-child) {
+    margin-right: 1em;
+  }
+
+  &__link {
+    color: var(--nav-link-color);
+    transition: color 100ms;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--nav-link-hover-color);
+    }
+
+    &--active {
+      color: var(--main-color) !important;
+    }
+  }
+
+  &__logout-container {
+    display: flex;
+    align-items: center;
+  }
+
+  &__user-image {
+    width: 25px;
+    border-radius: 50%;
+    margin-right: 0.5em;
+  }
+}

@@ -4,9 +4,8 @@ import './ProfileDisplay.scss';
 
 import Socials from '../Socials';
 import SkillList from '../SkillList';
-import ExperienceList from '../ExperienceList';
-import EducationList from '../EducationList';
-import BackSection from '../../../../common/BackSection';
+// import ExperienceList from '../ExperienceList';
+// import EducationList from '../EducationList';
 
 const ProfileDisplay = ({ profile }) => {
   const {
@@ -17,8 +16,8 @@ const ProfileDisplay = ({ profile }) => {
     website,
     social = {},
     skills,
-    experience,
-    education,
+    // experience,
+    // education,
   } = profile;
 
   if (website) {
@@ -35,7 +34,6 @@ const ProfileDisplay = ({ profile }) => {
         />
       </section>
       <section className="profile-display__user-details">
-        <BackSection title="profile" aligned />
         <div className="profile-display__content-wrapper">
           <div className="profile-display__detail-title">name surname</div>
           <div className="profile-display__detail">{fullname}</div>
@@ -53,8 +51,8 @@ const ProfileDisplay = ({ profile }) => {
             skills
           </div>
           <SkillList skills={skills} />
-          <ExperienceList experiences={experience} />
-          <EducationList educations={education} />
+          {/* <ExperienceList experiences={experience} />
+          <EducationList educations={education} /> */}
         </div>
       </section>
     </div>

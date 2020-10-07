@@ -1,6 +1,6 @@
 .posts {
   &__content {
-    padding-top: calc(var(--header-height) + 2em);
+    padding-top: calc(var(--nav-height) + 2em);
     max-width: 80vw;
     margin: 0 auto;
   }

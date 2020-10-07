@@ -5,7 +5,7 @@ import history from '../../../history';
 import './BackSection.scss';
 import backArrow from './back-arrow.svg';
 
-const BackSection = ({ title, aligned }) => {
+const BackSection = ({ title }) => {
   const [elevated, setElevated] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,6 @@ const BackSection = ({ title, aligned }) => {
 
   const className = classnames('back-section', {
     'back-section--elevated': elevated,
-    'back-section--aligned-with-content': aligned,
   });
 
   return (

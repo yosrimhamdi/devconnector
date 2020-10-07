@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './DashboardPanel.scss';
-import ExperienceList from '../ExperienceList';
-import EducationList from '../EducationList';
+// import ExperienceList from '../ExperienceList';
+// import EducationList from '../EducationList';
 import { updatePhoto } from '../../../../../redux/actions';
 import profileIcon from '../../icons/profile.svg';
 import experienceIcon from '../../icons/experience.svg';
@@ -12,7 +12,7 @@ import educationIcon from '../../icons/education.svg';
 import cameraIcon from '../../icons/camera.svg';
 
 const DashBoardPanel = ({ profile, updatePhoto, user }) => {
-  const { experience, education } = profile;
+  // const { experience, education } = profile;
 
   const handleInputChange = e => {
     const form = new FormData();
@@ -84,8 +84,8 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
         </Link>
       </div>
       <div className="dashboard-panel__cridentials">
-        <EducationList educations={education} />
-        <ExperienceList experiences={experience} />
+        {/* <EducationList educations={education} />
+        <ExperienceList experiences={experience} /> */}
       </div>
     </div>
   );

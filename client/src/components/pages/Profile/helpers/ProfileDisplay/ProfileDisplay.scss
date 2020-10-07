@@ -1,10 +1,8 @@
 @import '../../../../../assets/styles/utils/mixins/responsive';
 
 .profile-display {
-  height: 100vh;
-
   &__user-photo-wrapper {
-    height: 100vh;
+    height: calc(100vh - var(--nav-height));
     position: relative;
     background: url('../../../../../assets/images/nature-3--960-640--q50.jpg')
       center;
@@ -14,6 +12,7 @@
     align-items: center;
 
     @include at-medium {
+      height: 100vh;
       position: fixed;
       width: 50vw;
     }

@@ -15,7 +15,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
     const handleScroll = () => {
       const { current: postList } = postListRef;
 
-      if (postListRef.current) {
+      if (postList) {
         const { offsetTop, clientHeight } = postList;
 
         const postListBounding = clientHeight + offsetTop - window.innerHeight;

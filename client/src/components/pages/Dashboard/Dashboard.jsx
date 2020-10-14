@@ -18,6 +18,8 @@ const Dashboard = ({ profile, loading, fetchUserProfile }) => {
     content = <Spinner fullScreen />;
   }
 
+  console.log({ loading, profile });
+
   if (!profile && !loading) {
     content = <CreateProfileModal />;
   } else if (profile) {

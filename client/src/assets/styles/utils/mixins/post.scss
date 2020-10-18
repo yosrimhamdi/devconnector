@@ -22,14 +22,25 @@
   }
 }
 
+@mixin post-user-details {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5em;
+
+  @include at-small {
+    flex-direction: column;
+  }
+}
+
 @mixin post-user-photo {
   height: 60px;
   width: 60px;
-  margin-bottom: 1em;
   border-radius: 50%;
   object-fit: cover;
+  margin-right: 1em;
 
   @include at-small {
+    margin-right: 0;
     height: 130px;
     width: 130px;
   }
@@ -44,7 +55,10 @@
 @mixin post-date {
   color: rgb(163, 163, 163);
   font-size: 0.85rem;
-  margin-bottom: 1.5em;
+
+  @include at-small {
+    margin-bottom: 1.5em;
+  }
 }
 
 @mixin post-text {

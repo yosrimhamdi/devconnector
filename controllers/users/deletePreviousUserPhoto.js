@@ -4,7 +4,7 @@ const AppError = require('../../errors/appError');
 module.exports = (req, res, next) => {
   const { photo } = req.user;
 
-  if (photo !== 'default.png') {
+  if (photo !== 'default.svg') {
     fs.unlink(`static/images/${photo}`, err => {
       if (err) {
         return next(

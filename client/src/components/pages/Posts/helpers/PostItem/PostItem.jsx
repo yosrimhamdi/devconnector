@@ -21,6 +21,48 @@ const PostItem = ({ post, deletePost }) => {
     action: () => deletePost(_id),
   };
 
+  if (window.innerWidth < 601) {
+    return (
+      <li className="post-item">
+        <div className="post-item__wrapper">
+          <div className="post-item__user-details">
+            <img
+              src={`/images/${user.photo}`}
+              className="post-item__user-image"
+              alt={user.fullname}
+            />
+            <div>
+              <h2 className="post-item__user-name">{user.fullname}</h2>
+              <div className="post-item__date">{getElapsedTime(createdAt)}</div>
+            </div>
+          </div>
+          <div className="post-item__content">
+            <p className="post-item__text">{text}</p>
+            <div className="post-item__controller">
+              <Likes postId={_id} />
+              <div
+                className="post-item__comment-wrapper"
+                role="button"
+                onClick={() => setIsCommentsShown(true)}
+              >
+                <img
+                  src={comment}
+                  alt="comment"
+                  className="post-item__comment-icon"
+                />
+                <span>Comment</span>
+              </div>
+            </div>
+            <ModalContext.Provider value={modalDetails}>
+              <Settings relatedUser={post.user} deleteMessage="delete post" />
+            </ModalContext.Provider>
+          </div>
+        </div>
+        <CommentList postId={_id} isCommentsShown={isCommentsShown} />
+      </li>
+    );
+  }
+
   return (
     <li className="post-item">
       <div className="post-item__wrapper">

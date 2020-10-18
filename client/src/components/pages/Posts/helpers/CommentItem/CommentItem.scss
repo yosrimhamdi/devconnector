@@ -11,6 +11,10 @@
     margin-bottom: 2em;
   }
 
+  &__user-details {
+    @include post-user-details;
+  }
+
   &__user-image {
     @include post-user-photo;
   }

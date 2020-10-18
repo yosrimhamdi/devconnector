@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -9,10 +9,13 @@ import { updatePhoto } from '../../../../../redux/actions';
 import profileIcon from '../../icons/profile.svg';
 import experienceIcon from '../../icons/experience.svg';
 import educationIcon from '../../icons/education.svg';
-import cameraIcon from '../../icons/camera.svg';
+import greyCamera from '../../icons/camera.svg';
+import blueCamera from '../../icons/camera-blue.svg';
 
 const DashBoardPanel = ({ profile, updatePhoto, user }) => {
   // const { experience, education } = profile;
+
+  const [camera, setCamera] = useState(greyCamera);
 
   const handleInputChange = e => {
     const form = new FormData();
@@ -34,6 +37,8 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
           <label
             htmlFor="update-photo-input"
             className="dashboard-panel__update-photo-label"
+            onMouseEnter={() => setCamera(blueCamera)}
+            onMouseLeave={() => setCamera(greyCamera)}
           >
             <input
               type="file"
@@ -44,7 +49,7 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
             />
             <span>
               <img
-                src={cameraIcon}
+                src={camera}
                 alt="education"
                 className="dashboard-panel__camera-icon"
               />

@@ -7,7 +7,7 @@ import { fetchUserProfile } from '../../../redux/actions';
 import CreateProfileModal from './helpers/CreateProfileModal';
 import DashboardPanel from './helpers/DashboardPanel';
 
-const Dashboard = ({ profile, loading, fetchUserProfile }) => {
+const Dashboard = ({ profile, loading, fetchUserProfile, errors }) => {
   useEffect(() => {
     fetchUserProfile();
   }, [fetchUserProfile]);
@@ -18,9 +18,7 @@ const Dashboard = ({ profile, loading, fetchUserProfile }) => {
     content = <Spinner fullScreen />;
   }
 
-  console.log({ loading, profile });
-
-  if (!profile && !loading) {
+  if (errors.noProfileYet) {
     content = <CreateProfileModal />;
   } else if (profile) {
     content = <DashboardPanel profile={profile} />;
@@ -29,9 +27,10 @@ const Dashboard = ({ profile, loading, fetchUserProfile }) => {
   return <div className="dashboard">{content}</div>;
 };
 
-const mapStateToProps = ({ auth, profiles, loading }) => ({
-  profile: auth.user ? profiles[auth.user._id] : null,
+const mapStateToProps = ({ auth, profiles, loading, errors }) => ({
+  profile: profiles[auth.user._id],
   loading,
+  errors,
 });
 
 export default connect(mapStateToProps, { fetchUserProfile })(Dashboard);

@@ -14,7 +14,7 @@ export default () => async dispatch => {
   } catch (err) {
     dispatch({
       type: ERROR_OCCURED,
-      payload: err,
+      payload: err.response.data,
     });
   }
 

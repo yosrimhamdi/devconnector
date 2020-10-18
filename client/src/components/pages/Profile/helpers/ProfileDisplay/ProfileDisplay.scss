@@ -2,7 +2,7 @@
 
 .profile-display {
   &__user-photo-wrapper {
-    height: calc(100vh - var(--nav-height));
+    height: 100vh;
     position: relative;
     background: url('../../../../../assets/images/nature-3--960-640--q50.jpg')
       center;
@@ -53,11 +53,10 @@
   }
 
   &__content-wrapper {
-    padding: 0 1em;
-    padding-bottom: 4em;
+    padding: 2em 1em;
 
     @include at-small {
-      padding: 0 3em;
+      padding: calc(var(--nav-height) + 2em) 3em 2em;
     }
   }
 

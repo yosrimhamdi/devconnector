@@ -1,12 +1,18 @@
+@import '../../../../../assets/styles/utils/mixins/responsive';
+
 .add-comment-input {
   display: block;
   width: 100%;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  padding: 0.6em 1em;
+  padding: 0.7em 1em;
   box-shadow: 0 1px 8px 1px rgba($color: #000000, $alpha: 0.1);
   border-radius: 8px;
-  font-size: 1.2rem;
+
+  @include at-small {
+    font-size: 1.2rem;
+    // font-size: 1rem;
+  }
 
   &::placeholder {
     font-size: 1rem;

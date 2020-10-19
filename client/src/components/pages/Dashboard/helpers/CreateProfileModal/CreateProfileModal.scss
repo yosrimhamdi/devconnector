@@ -12,11 +12,10 @@
   &__content {
     display: flex;
     align-items: center;
-    padding: 2.5em 1em;
+    padding: 1.5em 1em;
 
     @include at-small {
       border-bottom: 1px solid #e9e9e9;
-      padding: 2.5em 2em;
     }
   }
 
@@ -72,10 +71,6 @@
   }
 
   &__link-wrapper {
-    padding: 1em;
-
-    @include at-small {
-      padding: 2em;
-    }
+    padding: 1.5em 1em;
   }
 }

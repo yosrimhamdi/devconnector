@@ -15,7 +15,7 @@ const ProfileItem = ({ profile, i }) => {
   const timing = 120;
 
   const style = {
-    animation: `zoom ${timing}ms forwards ${i * timing}ms`,
+    animation: `zoom ${timing}ms forwards ${(i % 6) * timing}ms`,
   };
 
   return (

@@ -1,3 +1,5 @@
+@import '../../../assets/styles/utils/mixins/responsive';
+
 .profiles {
   position: relative;
   background: url('../../../assets/images/nature-3--1920-1280--q50.jpg') center;
@@ -5,6 +7,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
+  padding-bottom: 3em;
 
   &::after {
     content: '';
@@ -14,5 +17,20 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.322);
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    padding: calc(var(--nav-height) + 4em) 1.5em 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2em;
+
+    @include at-medium {
+      gap: 2em;
+    }
   }
 }

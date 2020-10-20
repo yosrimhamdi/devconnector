@@ -15,7 +15,7 @@ import {
 export default (state = {}, action) => {
   switch (action.type) {
     case FETCH_PROFILES:
-      return { ..._.mapKeys(action.payload.profiles, 'user._id') };
+      return { ..._.mapKeys(action.payload.profiles, '_id') };
     case FETCH_USER_PROFILE:
     case FETCH_PROFILE:
     case ADD_EXPERIENCE:

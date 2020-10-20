@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import axios from 'axios';
 
 import './PostList.scss';
 import PostItem from '../PostItem';
 import { fetchPosts } from '../../../../../redux/actions';
 import Spinner from '../../../../common/Spinner';
+import postsAPI from '../../../../../apis/posts';
+import EndOfContent from '../../../../common/EndOfContent';
 
 const PostList = ({ posts, loading, fetchPosts }) => {
-  const [pages, setPages] = useState(1);
+  const [pages, setPages] = useState(null);
+
   const [currentPage, setCurrentPage] = useState(1);
-  const [noPosts, setNoPosts] = useState(false);
 
   useEffect(() => {
     const fetchPages = async () => {
-      const response = await axios.get('/api/posts/pages');
+      const response = await postsAPI.get('/pages');
 
       setPages(response.data.pages);
     };
@@ -24,20 +25,14 @@ const PostList = ({ posts, loading, fetchPosts }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const { documentElement } = document;
-
       if (
-        window.innerHeight + documentElement.scrollTop ===
-        documentElement.offsetHeight
+        document.documentElement.offsetHeight ===
+          window.innerHeight + document.documentElement.scrollTop &&
+        currentPage + 1 <= pages
       ) {
-        if (currentPage + 1 <= pages) {
-          fetchPosts(currentPage + 1);
+        fetchPosts(currentPage + 1);
 
-          setCurrentPage(currentPage + 1);
-        } else {
-          setNoPosts(true);
-          document.removeEventListener('scroll', handleScroll);
-        }
+        setCurrentPage(currentPage + 1);
       }
     };
 
@@ -54,7 +49,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
     <ul className="post-list">
       {renderedPosts}
       {loading ? <Spinner /> : null}
-      {noPosts ? 'no more posts' : ''}
+      <EndOfContent currentPage={currentPage} pages={pages} />
     </ul>
   );
 };

@@ -1,0 +1,10 @@
+.end-of-content {
+  font-style: italic;
+  position: relative;
+  z-index: 1;
+
+  &__white {
+    color: white;
+    text-align: center;
+  }
+}

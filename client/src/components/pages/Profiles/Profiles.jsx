@@ -6,11 +6,12 @@ import { fetchProfiles } from '../../../redux/actions';
 import ProfileItem from './helpers/ProfileItem';
 import Spinner from '../../common/Spinner';
 import profilesAPI from '../../../apis/profiles';
+import EndOfContent from '../../common/EndOfContent';
 
 const Profiles = ({ fetchProfiles, profiles, loading }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const [pages, setPages] = useState(1);
+  const [pages, setPages] = useState(null);
 
   useEffect(() => {
     fetchProfiles();
@@ -27,7 +28,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
   }, []);
 
   useEffect(() => {
-    const onScroll = () => {
+    const handleScroll = () => {
       if (
         document.documentElement.offsetHeight ===
           document.documentElement.scrollTop + window.innerHeight &&
@@ -39,9 +40,9 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       }
     };
 
-    document.addEventListener('scroll', onScroll);
+    document.addEventListener('scroll', handleScroll);
 
-    return () => document.removeEventListener('scroll', onScroll);
+    return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchProfiles, pages]);
 
   const renderedProfiles = profiles.map((profile, i) => (
@@ -52,6 +53,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
       {loading ? <Spinner white spaceAround /> : null}
+      <EndOfContent currentPage={currentPage} pages={pages} white />
     </div>
   );
 };

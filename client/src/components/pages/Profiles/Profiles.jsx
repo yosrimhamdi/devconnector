@@ -9,6 +9,8 @@ import profilesAPI from '../../../apis/profiles';
 import EndOfContent from '../../common/EndOfContent';
 
 const Profiles = ({ fetchProfiles, profiles, loading }) => {
+  const [test, setTest] = useState({});
+
   const [currentPage, setCurrentPage] = useState(1);
 
   const [pages, setPages] = useState(null);
@@ -29,6 +31,11 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      setTest({
+        offsetHeight: document.documentElement.offsetHeight,
+        offset: window.innerHeight + document.documentElement.scrollTop,
+      });
+
       if (
         document.documentElement.offsetHeight ===
           document.documentElement.scrollTop + window.innerHeight &&
@@ -54,6 +61,12 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       <ul className="profiles__content">{renderedProfiles}</ul>
       {loading ? <Spinner white spaceAround /> : null}
       <EndOfContent currentPage={currentPage} pages={pages} white />
+      <div>
+        offsetHeight:
+        {test.offsetHeight}
+        offset:
+        {test.offset}
+      </div>
     </div>
   );
 };

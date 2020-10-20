@@ -61,7 +61,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       <ul className="profiles__content">{renderedProfiles}</ul>
       {loading ? <Spinner white spaceAround /> : null}
       <EndOfContent currentPage={currentPage} pages={pages} white />
-      <div>
+      <div style={{ color: 'white' }}>
         offsetHeight:
         {test.offsetHeight}
         offset:

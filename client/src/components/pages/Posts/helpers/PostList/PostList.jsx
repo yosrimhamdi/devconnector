@@ -57,7 +57,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
       {renderedPosts}
       {loading ? <Spinner /> : null}
       <EndOfContent currentPage={currentPage} pages={pages} />
-      <div style={{ color: 'white' }}>
+      <div>
         offsetHeight:
         {test.offsetHeight}
         offset:

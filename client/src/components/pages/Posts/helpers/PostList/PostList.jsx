@@ -9,6 +9,8 @@ import postsAPI from '../../../../../apis/posts';
 import EndOfContent from '../../../../common/EndOfContent';
 
 const PostList = ({ posts, loading, fetchPosts }) => {
+  const [test, setTest] = useState({});
+
   const [pages, setPages] = useState(null);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -25,6 +27,11 @@ const PostList = ({ posts, loading, fetchPosts }) => {
 
   useEffect(() => {
     const handleScroll = () => {
+      setTest({
+        offsetHeight: document.documentElement.offsetHeight,
+        offset: window.innerHeight + document.documentElement.scrollTop,
+      });
+
       if (
         document.documentElement.offsetHeight ===
           window.innerHeight + document.documentElement.scrollTop &&
@@ -50,6 +57,12 @@ const PostList = ({ posts, loading, fetchPosts }) => {
       {renderedPosts}
       {loading ? <Spinner /> : null}
       <EndOfContent currentPage={currentPage} pages={pages} />
+      <div>
+        offsetHeight:
+        {test.offsetHeight}
+        offset:
+        {test.offset}
+      </div>
     </ul>
   );
 };

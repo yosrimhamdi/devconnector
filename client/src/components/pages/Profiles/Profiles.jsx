@@ -35,8 +35,6 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
         !loading &&
         currentPage + 1 <= pages
       ) {
-        console.log(`will fetch profile page ${currentPage + 1}`);
-
         fetchProfiles(currentPage + 1);
 
         setCurrentPage(currentPage + 1);

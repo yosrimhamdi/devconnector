@@ -2,10 +2,9 @@
 
 .posts {
   &__content {
-    padding: 1em 10px 0;
+    padding: 2em 10px 0;
 
     @include at-small {
-      padding: 2em 10px 0;
       max-width: 80vw;
       margin: 0 auto;
     }

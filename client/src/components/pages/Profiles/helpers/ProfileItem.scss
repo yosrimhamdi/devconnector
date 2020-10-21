@@ -1,13 +1,18 @@
 .profile-item {
   border-radius: 10px;
   text-align: center;
-  box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.3);
+  box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.2);
   padding: 3em 0;
   background-color: white;
-  opacity: 0;
   position: relative;
   overflow: hidden;
   flex-basis: 330px;
+  transition: transform 120ms, box-shadow 120ms;
+
+  &:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px 1px rgba($color: #000000, $alpha: 0.22);
+  }
 
   &--admin {
     &::after {

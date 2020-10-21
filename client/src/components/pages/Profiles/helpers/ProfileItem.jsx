@@ -5,21 +5,15 @@ import classnames from 'classnames';
 import './ProfileItem.scss';
 import Company from '../../../common/Company';
 
-const ProfileItem = ({ profile, i }) => {
+const ProfileItem = ({ profile }) => {
   const { user, handle, status, company } = profile;
 
   const className = classnames('profile-item', {
     'profile-item--admin': user.role === 'admin',
   });
 
-  const timing = 120;
-
-  const style = {
-    animation: `zoom ${timing}ms forwards ${(i % 6) * timing}ms`,
-  };
-
   return (
-    <li className={className} style={style}>
+    <li className={className}>
       <img
         className="profile-item__image"
         src={`/images/${user.photo}`}

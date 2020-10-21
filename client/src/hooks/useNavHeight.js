@@ -5,10 +5,12 @@ export default navRef => {
     setTimeout(() => {
       const navHeight = navRef.current.offsetHeight;
 
+      console.log(navHeight);
+
       document.documentElement.style.setProperty(
         '--nav-height',
         `${navHeight}px`,
       );
-    }, 100);
+    }, 500);
   }, [navRef]);
 };

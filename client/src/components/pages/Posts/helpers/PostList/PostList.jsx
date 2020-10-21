@@ -40,18 +40,18 @@ const PostList = ({ posts, loading, fetchPosts }) => {
     document.addEventListener('scroll', handleScroll);
 
     return () => document.removeEventListener('scroll', handleScroll);
-  }, [fetchPosts, setCurrentPage, currentPage, pages, loading]);
+  }, [currentPage, fetchPosts, pages, loading]);
 
   const renderedPosts = posts.map(post => (
     <PostItem key={post._id} post={post} />
   ));
 
   return (
-    <div>
+    <>
       <ul className="post-list">{renderedPosts}</ul>
       <Spinner removed={!loading} />
       <EndOfContent currentPage={currentPage} pages={pages} loading={loading} />
-    </div>
+    </>
   );
 };
 

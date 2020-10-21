@@ -18,13 +18,13 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
   }, [fetchProfiles]);
 
   useEffect(() => {
-    const getPages = async () => {
+    const fetchPages = async () => {
       const response = await profilesAPI.get('/pages');
 
       setPages(response.data.pages);
     };
 
-    getPages();
+    fetchPages();
   }, []);
 
   useEffect(() => {

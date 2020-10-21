@@ -9,7 +9,7 @@
   background-color: #f2f2f2;
   background-size: cover;
   background-position: center;
-  margin-top: var(--nav-height);
+  padding-top: var(--nav-height);
 
   @include at-small {
     background-image: url('../../../assets/images/nature-1.jpg');

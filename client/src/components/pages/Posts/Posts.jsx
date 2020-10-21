@@ -4,18 +4,15 @@ import { connect } from 'react-redux';
 import './Posts.scss';
 
 import { fetchPosts } from '../../../redux/actions';
-import clearPosts from '../../../redux/actions/posts/clearPosts';
 
 import PostList from './helpers/PostList';
 import Spinner from '../../common/Spinner';
 import CreatePostForm from './helpers/CreatePostForm';
 
-const Posts = ({ fetchPosts, posts, loading, clearPosts }) => {
+const Posts = ({ fetchPosts, posts, loading }) => {
   useEffect(() => {
     fetchPosts();
-
-    return clearPosts;
-  }, [fetchPosts, clearPosts]);
+  }, [fetchPosts]);
 
   if (loading && !posts.length) {
     return <Spinner fullScreen />;
@@ -33,4 +30,4 @@ const Posts = ({ fetchPosts, posts, loading, clearPosts }) => {
 
 const mapStateToProps = ({ posts, loading }) => ({ posts, loading });
 
-export default connect(mapStateToProps, { fetchPosts, clearPosts })(Posts);
+export default connect(mapStateToProps, { fetchPosts })(Posts);

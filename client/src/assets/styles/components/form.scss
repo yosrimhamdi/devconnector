@@ -2,7 +2,9 @@
 @import '../utils/mixins/responsive';
 
 .form {
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100vw;
   z-index: 3;
 
   &__container {

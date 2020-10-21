@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import './Dashboard.scss';
 import Spinner from '../../common/Spinner';
 import { fetchUserProfile } from '../../../redux/actions';
 import CreateProfileModal from './helpers/CreateProfileModal';
@@ -12,19 +11,18 @@ const Dashboard = ({ profile, loading, fetchUserProfile, errors }) => {
     fetchUserProfile();
   }, [fetchUserProfile]);
 
-  let content = null;
-
   if (loading) {
-    content = <Spinner fullScreen />;
+    return <Spinner fullScreen />;
   }
 
   if (errors.noProfileYet) {
-    content = <CreateProfileModal />;
+    return <CreateProfileModal />;
+    // eslint-disable-next-line
   } else if (profile) {
-    content = <DashboardPanel profile={profile} />;
+    return <DashboardPanel profile={profile} />;
   }
 
-  return <div className="dashboard">{content}</div>;
+  return null;
 };
 
 const mapStateToProps = ({ auth, profiles, loading, errors }) => ({

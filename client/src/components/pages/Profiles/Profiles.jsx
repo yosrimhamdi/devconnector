@@ -37,7 +37,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       });
 
       if (
-        document.documentElement.offsetHeight ===
+        document.documentElement.offsetHeight - 100 <=
           document.documentElement.scrollTop + window.innerHeight &&
         currentPage + 1 <= pages
       ) {

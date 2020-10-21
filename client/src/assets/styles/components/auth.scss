@@ -9,6 +9,7 @@
   background-color: #f2f2f2;
   background-size: cover;
   background-position: center;
+  margin-top: var(--nav-height);
 
   @include at-small {
     background-image: url('../../../assets/images/nature-1.jpg');
@@ -18,7 +19,6 @@
     width: 100%;
     height: 100%;
     padding: 2em;
-    padding-top: 2em;
     background-color: white;
     box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.3);
 

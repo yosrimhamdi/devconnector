@@ -1,8 +1,10 @@
 @import '../../../assets/styles/utils/mixins/responsive';
 
 .posts {
+  margin: var(--nav-height) 0 2em;
+
   &__content {
-    padding: calc(var(--nav-height) + 2em) 10px 0;
+    padding: 2em 10px 0;
 
     @include at-small {
       max-width: 80vw;

@@ -53,7 +53,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      {loading ? <Spinner white spaceAround /> : null}
+      <Spinner white removed={!loading} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}

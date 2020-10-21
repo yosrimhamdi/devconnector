@@ -2,7 +2,10 @@
 
 .post-item {
   position: relative;
-  margin-bottom: 1em;
+
+  &:not(:last-child) {
+    margin-bottom: 1em;
+  }
 
   &__wrapper {
     @include post-wrapper;

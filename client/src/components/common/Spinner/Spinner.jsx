@@ -5,7 +5,11 @@ import whiteSpinner from './spinner-white.svg';
 import darkSpinner from './spinner.svg';
 import './Spinner.scss';
 
-const Spinner = ({ white, fullScreen, spaceAround, hidden }) => {
+const Spinner = ({ white, fullScreen, spaceAround, hidden, removed }) => {
+  if (removed) {
+    return null;
+  }
+
   const className = classnames('spinner', {
     'spinner--full-screen': fullScreen,
     'spinner--white': white,

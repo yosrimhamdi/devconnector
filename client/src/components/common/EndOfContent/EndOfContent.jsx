@@ -8,7 +8,7 @@ const EndOfContent = ({ currentPage, pages, loading, white }) => {
     'end-of-content__white': white,
   });
 
-  if (currentPage === pages && !loading) {
+  if (currentPage === pages && pages !== 1 && !loading) {
     return <div className={className}>end of content</div>;
   }
 

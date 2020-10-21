@@ -2,7 +2,7 @@
 
 .posts {
   &__content {
-    padding: 2em 10px 0;
+    padding: calc(var(--nav-height) + 2em) 10px 0;
 
     @include at-small {
       max-width: 80vw;

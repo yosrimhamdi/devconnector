@@ -1,0 +1,4 @@
+@mixin disable-scroll {
+  overflow-y: hidden;
+  padding-right: 15px;
+}

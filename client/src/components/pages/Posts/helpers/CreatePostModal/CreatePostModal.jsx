@@ -38,7 +38,10 @@ const CreatePostModal = ({
     }
   });
 
-  if (!isModalShown) {
+  if (isModalShown) {
+    document.body.classList.add('create-post-modal--disable-scroll');
+  } else {
+    document.body.classList.remove('create-post-modal--disable-scroll');
     return null;
   }
 

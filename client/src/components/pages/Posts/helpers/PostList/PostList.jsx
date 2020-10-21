@@ -26,7 +26,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
   useEffect(() => {
     const handleScroll = () => {
       if (
-        document.documentElement.offsetHeight ===
+        document.documentElement.offsetHeight - 100 <=
           window.innerHeight + document.documentElement.scrollTop &&
         currentPage + 1 <= pages
       ) {

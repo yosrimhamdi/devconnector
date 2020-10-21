@@ -1,3 +1,5 @@
+@import '../../../../../assets/styles/utils/mixins/disable-scroll';
+
 .create-post-modal {
   position: fixed;
   top: 0;
@@ -8,6 +10,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &--disable-scroll {
+    @include disable-scroll;
+  }
 
   &__content {
     position: relative;

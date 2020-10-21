@@ -28,6 +28,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
       if (
         document.documentElement.offsetHeight - 100 <=
           window.innerHeight + document.documentElement.scrollTop &&
+        !loading &&
         currentPage + 1 <= pages
       ) {
         fetchPosts(currentPage + 1);
@@ -39,7 +40,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
     document.addEventListener('scroll', handleScroll);
 
     return () => document.removeEventListener('scroll', handleScroll);
-  }, [fetchPosts, setCurrentPage, currentPage, pages]);
+  }, [fetchPosts, setCurrentPage, currentPage, pages, loading]);
 
   const renderedPosts = posts.map(post => (
     <PostItem key={post._id} post={post} />

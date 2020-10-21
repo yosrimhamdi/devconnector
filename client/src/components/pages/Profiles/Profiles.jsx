@@ -32,8 +32,11 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       if (
         document.documentElement.offsetHeight - 100 <=
           document.documentElement.scrollTop + window.innerHeight &&
+        !loading &&
         currentPage + 1 <= pages
       ) {
+        console.log(`will fetch profile page ${currentPage + 1}`);
+
         fetchProfiles(currentPage + 1);
 
         setCurrentPage(currentPage + 1);
@@ -43,7 +46,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
     document.addEventListener('scroll', handleScroll);
 
     return () => document.removeEventListener('scroll', handleScroll);
-  }, [currentPage, fetchProfiles, pages]);
+  }, [currentPage, fetchProfiles, pages, loading]);
 
   const renderedProfiles = profiles.map((profile, i) => (
     <ProfileItem key={profile._id} profile={profile} i={i} />

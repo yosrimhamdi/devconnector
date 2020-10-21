@@ -1,5 +1,6 @@
 @import '../../../../assets/styles/utils/mixins/button';
 @import '../../../../assets/styles/utils/mixins/disable-scroll';
+@import '../../../../assets/styles/utils/mixins/responsive';
 
 .confirm-modal {
   position: fixed;
@@ -8,10 +9,13 @@
   right: 0;
   bottom: 0;
   background-color: #ffffffc0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding-top: var(--nav-height);
 
+  @include at-small {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &--disable-scroll {
     @include disable-scroll;
   }
@@ -21,8 +25,13 @@
     opacity: initial;
     background-color: #fff;
     box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
-    border-radius: 10px;
-    width: 600px;
+    height: 100vh;
+
+    @include at-small {
+      border-radius: 10px;
+      width: 600px;
+      height: auto;
+    }
   }
 
   &__title {

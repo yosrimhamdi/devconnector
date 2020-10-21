@@ -2,11 +2,10 @@
 
 .posts {
   &__content {
-    padding-top: calc(var(--nav-height) + 2em);
-    padding-right: 10px;
-    padding-left: 10px;
+    padding: 1em 10px 0;
 
     @include at-small {
+      padding: 2em 10px 0;
       max-width: 80vw;
       margin: 0 auto;
     }

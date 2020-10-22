@@ -13,16 +13,14 @@ const ExperienceList = ({ experiences }) => {
   ));
 
   return (
-    <table className="experiences">
-      <tbody>
-        <tr className="experiences__header-row">
-          <th>company</th>
-          <th>title</th>
-          <th>year</th>
-        </tr>
-        {renderedExperiences}
-      </tbody>
-    </table>
+    <div className="experiences">
+      <div className="experiences__header-row">
+        <div>company</div>
+        <div>title</div>
+        <div>year</div>
+      </div>
+      {renderedExperiences}
+    </div>
   );
 };
 

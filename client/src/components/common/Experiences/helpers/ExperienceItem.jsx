@@ -21,11 +21,15 @@ const ExpItem = ({
 
   return (
     <>
-      <tr className="experience-item" onClick={() => setIsModalShown(true)}>
-        <td>{company}</td>
-        <td>{title}</td>
-        <td>{getFormattedDate(from, to)}</td>
-      </tr>
+      <div
+        className="experience-item"
+        role="button"
+        onClick={() => setIsModalShown(true)}
+      >
+        <div>{company}</div>
+        <div>{title}</div>
+        <div>{getFormattedDate(from, to)}</div>
+      </div>
       <ModalContext.Provider value={modal}>
         <ConfirmModal
           isModalShown={isModalShown}

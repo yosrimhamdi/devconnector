@@ -5,6 +5,10 @@
 
   &__header-row {
     @include table-header-row;
+
+    & > div {
+      @include table-cell;
+    }
   }
 
   &__data-row {

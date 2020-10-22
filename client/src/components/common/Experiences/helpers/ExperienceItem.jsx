@@ -26,9 +26,9 @@ const ExpItem = ({
         role="button"
         onClick={() => setIsModalShown(true)}
       >
-        <div>{company}</div>
-        <div>{title}</div>
-        <div>{getFormattedDate(from, to)}</div>
+        <div data-title="company">{company}</div>
+        <div data-title="title">{title}</div>
+        <div data-title="year">{getFormattedDate(from, to)}</div>
       </div>
       <ModalContext.Provider value={modal}>
         <ConfirmModal

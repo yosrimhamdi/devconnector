@@ -2,4 +2,8 @@
 
 .experience-item {
   @include table-data-row;
+
+  & > div {
+    @include table-cell;
+  }
 }

@@ -58,12 +58,8 @@
   transition: background-color 120ms;
   cursor: pointer;
 
-  &:hover {
-    background-color: #f5f5fd;
-  }
-
-  &:not(:last-child) {
-    border-bottom: 1px solid #ebebeb;
+  &:nth-child(odd) {
+    background-color: #f8f8ff;
   }
 
   @include at-small {

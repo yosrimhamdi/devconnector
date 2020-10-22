@@ -16,6 +16,7 @@
     width: 10px;
     background: linear-gradient(to right, transparent, white);
   }
+
   &__wrapper {
     display: flex;
     gap: 1em;
@@ -26,6 +27,13 @@
       justify-content: center;
       overflow-x: initial;
     }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 
   &__link {

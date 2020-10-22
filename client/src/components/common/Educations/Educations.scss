@@ -2,7 +2,6 @@
 
 .educations {
   @include table;
-  margin-bottom: 1.5em;
 
   &__header-row {
     @include table-header-row;

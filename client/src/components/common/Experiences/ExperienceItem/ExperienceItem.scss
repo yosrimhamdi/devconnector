@@ -1,0 +1,5 @@
+@import '../../../../assets/styles/utils/mixins/table';
+
+.experience-item {
+  @include table-data-row;
+}

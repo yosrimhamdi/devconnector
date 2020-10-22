@@ -4,8 +4,8 @@ import './ProfileDisplay.scss';
 
 import Socials from '../Socials';
 import SkillList from '../SkillList';
-// import ExperienceList from '../ExperienceList';
-// import EducationList from '../EducationList';
+import Experiences from '../../../../common/Experiences';
+import Educations from '../../../../common/Educations';
 
 const ProfileDisplay = ({ profile }) => {
   const {
@@ -16,8 +16,8 @@ const ProfileDisplay = ({ profile }) => {
     website,
     social = {},
     skills,
-    // experience,
-    // education,
+    experience,
+    education,
   } = profile;
 
   if (website) {
@@ -51,8 +51,8 @@ const ProfileDisplay = ({ profile }) => {
             skills
           </div>
           <SkillList skills={skills} />
-          {/* <ExperienceList experiences={experience} />
-          <EducationList educations={education} /> */}
+          <Experiences experiences={experience} />
+          <Educations educations={education} />
         </div>
       </section>
     </div>

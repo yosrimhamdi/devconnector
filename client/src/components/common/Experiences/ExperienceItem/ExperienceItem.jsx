@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { deleteExperience } from '../../../../../redux/actions';
-import getFormattedDate from '../../../../../utils/getFormattedDate';
-import ConfirmModal from '../../../../common/modal/ConfirmModal';
-import ModalContext from '../../../../../contexts/ModalContext';
+import './ExperienceItem.scss';
+import { deleteExperience } from '../../../../redux/actions';
+import getFormattedDate from '../../../../utils/getFormattedDate';
+import ConfirmModal from '../../modal/ConfirmModal';
+import ModalContext from '../../../../contexts/ModalContext';
 
 const ExpItem = ({
   experience: { company, title, from, to, _id },
@@ -20,7 +21,7 @@ const ExpItem = ({
 
   return (
     <>
-      <tr onClick={() => setIsModalShown(true)}>
+      <tr className="experience-item" onClick={() => setIsModalShown(true)}>
         <td>{company}</td>
         <td>{title}</td>
         <td>{getFormattedDate(from, to)}</td>

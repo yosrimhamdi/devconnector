@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { deleteEducation } from '../../../../../redux/actions';
-import getFormattedDate from '../../../../../utils/getFormattedDate';
-import ConfirmModal from '../../../../common/modal/ConfirmModal';
-import ModalContext from '../../../../../contexts/ModalContext';
+import './EducationItem.scss';
+import { deleteEducation } from '../../../../redux/actions';
+import getFormattedDate from '../../../../utils/getFormattedDate';
+import ConfirmModal from '../../modal/ConfirmModal';
+import ModalContext from '../../../../contexts/ModalContext';
 
 const EducationItem = ({
   education: { school, degree, from, to, _id },
@@ -20,7 +21,7 @@ const EducationItem = ({
 
   return (
     <>
-      <tr onClick={() => setIsModalShown(true)}>
+      <tr className="education-item" onClick={() => setIsModalShown(true)}>
         <td>{school}</td>
         <td>{degree}</td>
         <td>{getFormattedDate(from, to)}</td>

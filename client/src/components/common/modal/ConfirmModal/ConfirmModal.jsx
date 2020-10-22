@@ -28,8 +28,10 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
         role="button"
         onClick={e => e.stopPropagation()}
       >
-        <h1 className="confirm-modal__title">{title}</h1>
-        <ModalCloseButton onClick={removeModalFromScreen} />
+        <div className="confirm-modal__header">
+          <h1 className="confirm-modal__title">{title}</h1>
+          <ModalCloseButton onClick={removeModalFromScreen} />
+        </div>
         <div className="confirm-modal__description">{description}</div>
         <div className="confirm-modal__actions">
           <button

@@ -56,10 +56,10 @@
   padding: 1em 0;
   color: #676767;
   transition: background-color 120ms;
-  cursor: pointer;
+  transform: scale(1);
 
   &:nth-child(odd) {
-    background-color: #f8f8ff;
+    background-color: #f6f6ff;
   }
 
   @include at-small {
@@ -68,5 +68,19 @@
 
   & > div {
     @include table-cell;
+  }
+}
+
+@mixin table-delete-icon {
+  width: 20px;
+  cursor: pointer;
+  position: absolute;
+  right: 1em;
+  top: 1.5em;
+
+  @include at-small {
+    width: 15px;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }

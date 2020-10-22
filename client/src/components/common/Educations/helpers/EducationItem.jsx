@@ -6,6 +6,7 @@ import { deleteEducation } from '../../../../redux/actions';
 import getFormattedDate from '../../../../utils/getFormattedDate';
 import ConfirmModal from '../../modal/ConfirmModal';
 import ModalContext from '../../../../contexts/ModalContext';
+import deleteIcon from '../../../../assets/icons/close.svg';
 
 const EducationItem = ({
   education: { school, degree, from, to, _id },
@@ -21,14 +22,16 @@ const EducationItem = ({
 
   return (
     <>
-      <div
-        className="education-item"
-        role="button"
-        onClick={() => setIsModalShown(true)}
-      >
+      <div className="education-item">
         <div data-title="school">{school}</div>
         <div data-title="degree">{degree}</div>
         <div data-title="year">{getFormattedDate(from, to)}</div>
+        <img
+          className="experience-item__delete-icon"
+          src={deleteIcon}
+          alt="delete"
+          onClick={() => setIsModalShown(true)}
+        />
       </div>
       <ModalContext.Provider value={modal}>
         <ConfirmModal

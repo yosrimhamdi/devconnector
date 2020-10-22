@@ -1,6 +1,6 @@
 import React from 'react';
 
-import close from './close.svg';
+import close from '../../../../assets/icons/close.svg';
 import './ModalCloseButton.scss';
 
 const ModalCloseButton = ({ onClick }) => (

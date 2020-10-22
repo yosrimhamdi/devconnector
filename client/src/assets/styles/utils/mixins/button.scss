@@ -26,11 +26,10 @@
 
 @mixin transparent-button {
   color: var(--main-color);
-  background-color: white;
+  background-color: #f3f3f3;
 
   &:hover {
     color: var(--main-color-dark);
-    background-color: #f3f3f3;
   }
 
   &:active {

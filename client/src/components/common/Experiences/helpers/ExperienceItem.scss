@@ -2,4 +2,8 @@
 
 .experience-item {
   @include table-data-row;
+
+  &__delete-icon {
+    @include table-delete-icon;
+  }
 }

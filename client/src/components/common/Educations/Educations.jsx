@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './EducationList.scss';
-import EducationItem from '../EducationItem';
+import './Educations.scss';
+import EducationItem from './helpers/EducationItem';
 
 const EducationList = ({ educations }) => {
   if (!educations.length) {
@@ -13,9 +13,9 @@ const EducationList = ({ educations }) => {
   ));
 
   return (
-    <table className="education-list">
+    <table className="educations">
       <tbody>
-        <tr className="education-list__header-row">
+        <tr className="educations__header-row">
           <th>school</th>
           <th>degree</th>
           <th>years</th>

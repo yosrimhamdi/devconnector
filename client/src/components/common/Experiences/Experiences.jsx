@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './ExperienceList.scss';
-import ExperienceItem from '../ExperienceItem';
+import './Experiences.scss';
+import ExperienceItem from './helpers/ExperienceItem';
 
 const ExperienceList = ({ experiences }) => {
   if (!experiences.length) {
@@ -13,9 +13,9 @@ const ExperienceList = ({ experiences }) => {
   ));
 
   return (
-    <table className="experience-list">
+    <table className="experiences">
       <tbody>
-        <tr className="experience-list__header-row">
+        <tr className="experiences__header-row">
           <th>company</th>
           <th>title</th>
           <th>year</th>

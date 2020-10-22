@@ -1,6 +1,6 @@
-@import '../../../../assets/styles/utils/mixins/table.scss';
+@import '../../../assets/styles/utils/mixins/table.scss';
 
-.education-list {
+.experiences {
   @include table;
 
   &__header-row {

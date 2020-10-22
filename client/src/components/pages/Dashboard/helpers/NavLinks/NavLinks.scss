@@ -46,10 +46,13 @@
     border-radius: inherit;
     white-space: nowrap;
     background-color: var(--main-color);
-    transition: all 200ms;
 
-    &:hover {
-      background-color: var(--main-color-dark);
+    @include at-large {
+      transition: all 200ms;
+
+      &:hover {
+        background-color: var(--main-color-dark);
+      }
     }
 
     span::first-letter {

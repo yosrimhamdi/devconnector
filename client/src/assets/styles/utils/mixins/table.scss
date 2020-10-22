@@ -10,6 +10,7 @@
   @include at-small {
     display: table;
     border-collapse: collapse;
+    max-width: 800px;
   }
 }
 
@@ -43,6 +44,10 @@
     padding: 0;
     display: table-row;
   }
+
+  & > div {
+    @include table-cell;
+  }
 }
 
 @mixin table-data-row {
@@ -61,5 +66,9 @@
 
   @include at-small {
     display: table-row;
+  }
+
+  & > div {
+    @include table-cell;
   }
 }

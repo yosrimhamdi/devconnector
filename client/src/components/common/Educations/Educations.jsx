@@ -13,16 +13,14 @@ const EducationList = ({ educations }) => {
   ));
 
   return (
-    <table className="educations">
-      <tbody>
-        <tr className="educations__header-row">
-          <th>school</th>
-          <th>degree</th>
-          <th>years</th>
-        </tr>
-        {renderedEducations}
-      </tbody>
-    </table>
+    <div className="educations">
+      <div className="educations__header-row">
+        <div>school</div>
+        <div>degree</div>
+        <div>years</div>
+      </div>
+      {renderedEducations}
+    </div>
   );
 };
 

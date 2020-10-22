@@ -21,11 +21,15 @@ const EducationItem = ({
 
   return (
     <>
-      <tr className="education-item" onClick={() => setIsModalShown(true)}>
-        <td>{school}</td>
-        <td>{degree}</td>
-        <td>{getFormattedDate(from, to)}</td>
-      </tr>
+      <div
+        className="education-item"
+        role="button"
+        onClick={() => setIsModalShown(true)}
+      >
+        <div data-title="school">{school}</div>
+        <div data-title="degree">{degree}</div>
+        <div data-title="year">{getFormattedDate(from, to)}</div>
+      </div>
       <ModalContext.Provider value={modal}>
         <ConfirmModal
           isModalShown={isModalShown}

@@ -1,17 +1,21 @@
 .modal-close-button {
-  width: 18px;
-  height: 18px;
-  box-sizing: initial;
-  padding: 7px;
-  background-color: #e4e6eb;
-  border-radius: 50%;
-  cursor: pointer;
+  margin-left: auto;
 
-  &:hover {
-    background-color: #dcdddf;
-  }
+  &__close-icon {
+    width: 18px;
+    height: 18px;
+    box-sizing: initial;
+    padding: 7px;
+    background-color: #e4e6eb;
+    border-radius: 50%;
+    cursor: pointer;
 
-  &:active {
-    transform: scale(0.95);
+    &:hover {
+      background-color: #dcdddf;
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
   }
 }

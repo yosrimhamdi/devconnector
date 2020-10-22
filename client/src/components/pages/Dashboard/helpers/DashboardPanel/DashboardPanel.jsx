@@ -1,16 +1,13 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import './DashboardPanel.scss';
 import Experiences from '../../../../common/Experiences';
 import Educations from '../../../../common/Educations';
 import { updatePhoto } from '../../../../../redux/actions';
-import profileIcon from '../../icons/profile.svg';
-import experienceIcon from '../../icons/experience.svg';
-import educationIcon from '../../icons/education.svg';
 import greyCamera from '../../icons/camera.svg';
 import blueCamera from '../../icons/camera-blue.svg';
+import NavLinks from '../NavLinks';
 
 const DashBoardPanel = ({ profile, updatePhoto, user }) => {
   const { experience, education } = profile;
@@ -59,39 +56,11 @@ const DashBoardPanel = ({ profile, updatePhoto, user }) => {
       </div>
       <h1 className="dashboard-panel__greetings">
         <span>welcome, </span>
-        <Link to={`/profiles/${profile.handle}`}>{user.fullname}</Link>
+        <span>{user.fullname}</span>
       </h1>
-      <div className="dashboard-panel__nav">
-        <Link to="/profiles/update" className="dashboard-panel__link">
-          <img
-            src={profileIcon}
-            alt="profile"
-            className="dashboard-panel__icon"
-          />
-          <span>update profile</span>
-        </Link>
-
-        <Link to="/profiles/experience/new" className="dashboard-panel__link">
-          <img
-            src={experienceIcon}
-            alt="experience"
-            className="dashboard-panel__icon"
-          />
-          <span>add experience</span>
-        </Link>
-        <Link to="/profiles/education/new" className="dashboard-panel__link">
-          <img
-            src={educationIcon}
-            alt="education"
-            className="dashboard-panel__icon"
-          />
-          <span>add education</span>
-        </Link>
-      </div>
-      <div className="dashboard-panel__cridentials">
-        <Educations educations={education} />
-        <Experiences experiences={experience} />
-      </div>
+      <NavLinks />
+      <Experiences experiences={experience} />
+      <Educations educations={education} />
     </div>
   );
 };

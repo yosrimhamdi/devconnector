@@ -6,11 +6,12 @@
   width: 100vw;
   z-index: 2;
   padding: 0 1em;
-  height: 55px;
+  height: var(--nav-height);
   color: white;
   background-color: var(--nav-bg-color);
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-transform: capitalize;
   box-shadow: 0 3px 6px 3px rgba($color: #000000, $alpha: 0.1);
 

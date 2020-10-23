@@ -1,16 +1,11 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 
 import './DesktopNav.scss';
 import { logoutUser } from '../../../../../redux/actions';
-import useNavHeight from '../../../../../hooks/useNavHeight';
 
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
-  const navRef = useRef(null);
-
-  useNavHeight(navRef);
-
   const left = (
     <div className="desktop-nav__section">
       <Link to="/">devConnector</Link>
@@ -75,7 +70,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   }
 
   return (
-    <nav className="desktop-nav" ref={navRef}>
+    <nav className="desktop-nav">
       {left}
       {right}
     </nav>

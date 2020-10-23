@@ -1,17 +1,12 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './MobileNav.scss';
 import HamburgerMenu from '../HamburgerMenu';
 import Slider from '../Slider';
-import useNavHeight from '../../../../../hooks/useNavHeight';
 
 const MobileNav = ({ auth: { user, isAuthenticated } }) => {
-  const navRef = useRef(null);
-
-  useNavHeight(navRef);
-
   const [isSliderVisible, setIsSliderVisible] = useState(false);
 
   const right = (
@@ -43,7 +38,7 @@ const MobileNav = ({ auth: { user, isAuthenticated } }) => {
   }
 
   return (
-    <nav className="mobile-nav" ref={navRef}>
+    <nav className="mobile-nav">
       {left}
       {right}
     </nav>

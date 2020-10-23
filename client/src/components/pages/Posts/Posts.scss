@@ -2,7 +2,11 @@
 
 .posts {
   margin-top: var(--nav-height);
-  padding-top: 2em;
+  padding-top: 1em;
+
+  @include at-small {
+    padding-top: 1.5em;
+  }
 
   &__content {
     padding: 0 1em;

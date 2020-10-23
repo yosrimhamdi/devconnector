@@ -49,7 +49,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
   return (
     <>
       <ul className="post-list">{renderedPosts}</ul>
-      <Spinner removed={!loading} />
+      <Spinner removed={!loading} spaceAround />
       <EndOfContent currentPage={currentPage} pages={pages} loading={loading} />
     </>
   );

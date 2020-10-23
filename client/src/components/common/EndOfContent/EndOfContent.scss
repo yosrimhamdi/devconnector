@@ -1,7 +1,9 @@
 .end-of-content {
   font-style: italic;
+  text-align: center;
   position: relative;
   z-index: 1;
+  padding: 2em 0;
 
   &__white {
     color: white;

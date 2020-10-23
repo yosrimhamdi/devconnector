@@ -12,6 +12,7 @@
   padding-top: var(--nav-height);
 
   @include at-small {
+    padding-top: 0;
     display: flex;
     justify-content: center;
     align-items: center;

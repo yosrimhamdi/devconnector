@@ -21,6 +21,14 @@
     @include disable-scroll;
   }
 
+  &__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+  }
+
   &__content {
     position: relative;
     opacity: initial;
@@ -38,9 +46,7 @@
 
   &__title {
     font-size: 1.2rem;
-    padding-bottom: 0.9em;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 0.8em;
+    line-height: 1;
 
     &::first-letter {
       text-transform: uppercase;

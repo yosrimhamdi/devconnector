@@ -75,8 +75,10 @@ const CreatePostModal = ({
         onClick={e => e.stopPropagation()}
         role="button"
       >
-        <h1 className="create-post-modal__title">create post</h1>
-        <ModalCloseButton onClick={removeModalFromScreen} />
+        <div className="create-post-modal__header">
+          <h1 className="create-post-modal__title">create post</h1>
+          <ModalCloseButton onClick={removeModalFromScreen} />
+        </div>
         <form onSubmit={submitPost}>
           <textarea
             ref={textAreaRef}

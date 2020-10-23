@@ -2,15 +2,11 @@ import { useEffect } from 'react';
 
 export default navRef => {
   useEffect(() => {
-    navRef.current.style.height = `${navRef.current.offsetHeight}px`;
+    const navHeight = navRef.current.offsetHeight;
 
-    setTimeout(() => {
-      const navHeight = navRef.current.offsetHeight;
-
-      document.documentElement.style.setProperty(
-        '--nav-height',
-        `${navHeight}px`,
-      );
-    }, 500);
+    document.documentElement.style.setProperty(
+      '--nav-height',
+      `${navHeight}px`,
+    );
   }, [navRef]);
 };

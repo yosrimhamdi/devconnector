@@ -4,6 +4,10 @@
   position: relative;
   z-index: 3;
 
+  &--small &__circle {
+    width: 25px;
+  }
+
   &--space-around {
     padding: 2em 0;
   }

@@ -97,7 +97,7 @@ const CreatePostModal = ({
             post
           </button>
         </form>
-        <Spinner removed={!loading} onContent />
+        <Spinner visible={loading} onContent />
       </div>
     </div>
   );

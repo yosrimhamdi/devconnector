@@ -37,7 +37,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
       }
     };
 
-    document.addEventListener('scroll', handleScroll);
+    // document.addEventListener('scroll', handleScroll);
 
     return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchPosts, pages, loading]);
@@ -49,7 +49,7 @@ const PostList = ({ posts, loading, fetchPosts }) => {
   return (
     <>
       <ul className="post-list">{renderedPosts}</ul>
-      <Spinner removed={!loading} spaceAround />
+      <Spinner removed={false} />
       <EndOfContent currentPage={currentPage} pages={pages} loading={loading} />
     </>
   );

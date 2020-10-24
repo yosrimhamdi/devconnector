@@ -40,6 +40,8 @@
   &__circle {
     animation: spin 1500ms linear infinite;
     width: 30px;
+    display: block;
+    margin: 0 auto;
   }
 }
 

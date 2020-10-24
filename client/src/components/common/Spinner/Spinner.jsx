@@ -9,7 +9,6 @@ import './Spinner.scss';
 const Spinner = ({
   white,
   fullScreen,
-  spaceAround,
   removed,
   overlay,
   onContent,
@@ -23,7 +22,6 @@ const Spinner = ({
     'spinner--full-screen': fullScreen,
     'spinner--on-bottom': onBottom,
     'spinner--overlay': overlay,
-    'spinner--space-around': spaceAround,
     'spinner--on-content': onContent,
   });
 

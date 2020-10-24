@@ -4,10 +4,6 @@
 .auth {
   width: 100vw;
   height: 100vh;
-  background-color: #f2f2f2;
-  background-size: cover;
-  background-position: center;
-  margin-top: var(--nav-height);
   background-color: white;
 
   @include at-small {
@@ -15,12 +11,15 @@
 
     margin-top: 0;
     background-image: url('../../../assets/images/nature-1.jpg');
+    background-position: center;
+    background-size: cover;
   }
 
   &__content {
     width: 100%;
     position: relative;
     padding: 1em;
+    padding-top: calc(var(--nav-height) + 1em);
 
     @include at-small {
       background-color: white;

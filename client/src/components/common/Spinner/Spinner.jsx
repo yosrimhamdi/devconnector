@@ -9,12 +9,12 @@ import './Spinner.scss';
 const Spinner = ({
   white,
   fullScreen,
-  removed,
+  visible,
   overlay,
   onContent,
   onBottom,
 }) => {
-  if (removed) {
+  if (!visible) {
     return null;
   }
 
@@ -41,7 +41,7 @@ const Spinner = ({
 };
 
 Spinner.defaultProps = {
-  hidden: false,
+  visible: true,
 };
 
 export default Spinner;

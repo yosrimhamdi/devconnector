@@ -53,12 +53,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner
-        white
-        removed={!loading}
-        spaceAround
-        fullScreen={currentPage === 1}
-      />
+      <Spinner white visible={loading} fullScreen={currentPage === 1} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}

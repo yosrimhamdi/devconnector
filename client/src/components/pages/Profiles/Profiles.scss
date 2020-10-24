@@ -7,7 +7,8 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding-top: var(--nav-height);
+  margin-top: var(--nav-height);
+  padding: 3em 0 2em;
 
   &::after {
     content: '';
@@ -23,7 +24,8 @@
     position: relative;
     z-index: 1;
     list-style: none;
-    padding: 3em 1em 0;
+    padding: 0 1em;
+    margin-bottom: 2em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

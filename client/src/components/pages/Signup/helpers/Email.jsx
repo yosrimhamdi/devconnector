@@ -38,7 +38,7 @@ const Email = ({
       <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
         <Button text="next" />
       </div>
-      <Spinner removed={!loading} onContent />
+      <Spinner visible={loading} onContent />
     </form>
   );
 };

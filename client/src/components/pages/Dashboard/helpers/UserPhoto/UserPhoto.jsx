@@ -22,6 +22,12 @@ const UserPhoto = ({ user, updatePhoto }) => {
     updatePhoto(form, setLoading);
   };
 
+  const changeCameraToBlue = () => {
+    if (window.innerWidth >= 1024) {
+      setCamera(blueCamera);
+    }
+  };
+
   return (
     <div className="user-photo">
       <div className="user-photo__photo-container">
@@ -33,7 +39,7 @@ const UserPhoto = ({ user, updatePhoto }) => {
         <label
           htmlFor="update-photo-input"
           className="user-photo__update-photo-label"
-          onMouseEnter={() => setCamera(blueCamera)}
+          onMouseEnter={changeCameraToBlue}
           onMouseLeave={() => setCamera(greyCamera)}
         >
           <input

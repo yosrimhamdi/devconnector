@@ -1,11 +1,14 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import ReactDOM from 'react-dom';
 
 import './ConfirmModal.scss';
 import ModalContext from '../../../../contexts/ModalContext';
 import ModalCloseButton from '../ModalCloseButton';
+import Spinner from '../../Spinner';
 
 const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
+  const [confirmed, setConfirmed] = useState(false);
+
   const { title, description, action } = useContext(ModalContext);
 
   if (isModalShown) {
@@ -15,7 +18,11 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
     return null;
   }
 
-  const removeModalFromScreen = () => setIsModalShown(false);
+  const removeModalFromScreen = () => {
+    if (!confirmed) {
+      setIsModalShown(false);
+    }
+  };
 
   const modal = (
     <div
@@ -44,11 +51,16 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
           <button
             className="confirm-modal__confirm-button"
             type="button"
-            onClick={action}
+            onClick={() => {
+              setConfirmed(true);
+
+              action();
+            }}
           >
             delete
           </button>
         </div>
+        <Spinner removed={!confirmed} overlay />
       </div>
     </div>
   );

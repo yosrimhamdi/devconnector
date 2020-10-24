@@ -5,7 +5,14 @@ import whiteSpinner from './spinner-white.svg';
 import darkSpinner from './spinner.svg';
 import './Spinner.scss';
 
-const Spinner = ({ white, fullScreen, spaceAround, hidden, removed }) => {
+const Spinner = ({
+  white,
+  fullScreen,
+  spaceAround,
+  hidden,
+  removed,
+  overlay,
+}) => {
   if (removed) {
     return null;
   }
@@ -15,14 +22,15 @@ const Spinner = ({ white, fullScreen, spaceAround, hidden, removed }) => {
     'spinner--white': white,
     'spinner--space-around': spaceAround,
     'spinner--hidden': hidden,
+    'spinner--overlay': overlay,
   });
 
-  const spinner = white ? whiteSpinner : darkSpinner;
+  const spinnerIcon = white ? whiteSpinner : darkSpinner;
 
   return (
     <div className={className}>
       <div className="spinner__wrapper">
-        <img src={spinner} className="spinner__circle" alt="loading..." />
+        <img src={spinnerIcon} className="spinner__circle" alt="loading..." />
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 @import '../../../../../assets/styles/utils/mixins/disable-scroll';
 @import '../../../../../assets/styles/utils/mixins/responsive';
+@import '../../../../../assets/styles/utils/mixins/centerlized-content';
 
 .create-post-modal {
   position: fixed;
@@ -7,14 +8,14 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f3f3f4af;
+  background-color: white;
   margin-top: var(--nav-height);
 
   @include at-small {
+    @include centerlized-content;
+
+    background-color: var(--transparent-white);
     margin-top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   &--disable-scroll {
@@ -32,12 +33,11 @@
   &__content {
     position: relative;
     opacity: initial;
-    background-color: #fff;
-    box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
-    height: 100vh;
+    background-color: white;
     padding: 1em;
 
     @include at-small {
+      box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
       width: 500px;
       height: auto;
       border-radius: 10px;

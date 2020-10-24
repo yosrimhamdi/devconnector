@@ -6,6 +6,7 @@ import classnames from 'classnames';
 import './CreatePostModal.scss';
 import { createPost } from '../../../../../redux/actions';
 import ModalCloseButton from '../../../../common/modal/ModalCloseButton';
+import Spinner from '../../../../common/Spinner';
 
 const CreatePostModal = ({
   placeholder,
@@ -14,6 +15,7 @@ const CreatePostModal = ({
   createPost,
   isModalShown,
   setIsModalShown,
+  loading,
 }) => {
   const textAreaRef = useRef(null);
 
@@ -47,15 +49,17 @@ const CreatePostModal = ({
 
   const removeModalFromScreen = () => setIsModalShown(false);
 
+  const clean = () => {
+    setPost('');
+
+    removeModalFromScreen();
+  };
+
   const submitPost = e => {
     e.preventDefault();
 
     if (post) {
-      createPost({ text: post });
-
-      setPost('');
-
-      removeModalFromScreen();
+      createPost({ text: post }, clean);
     }
   };
 
@@ -93,6 +97,7 @@ const CreatePostModal = ({
             post
           </button>
         </form>
+        <Spinner removed={!loading} onContent />
       </div>
     </div>
   );
@@ -100,4 +105,6 @@ const CreatePostModal = ({
   return ReactDOM.createPortal(modal, document.getElementById('modal'));
 };
 
-export default connect(null, { createPost })(CreatePostModal);
+const mapStateToProps = ({ loading }) => ({ loading });
+
+export default connect(mapStateToProps, { createPost })(CreatePostModal);

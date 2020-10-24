@@ -1,9 +1,9 @@
-import { reset } from 'redux-form';
-
-import { CREATE_POST, ERROR_OCCURED } from '../types';
+import { CREATE_POST, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import posts from '../../../apis/posts';
 
-export default formValues => async dispatch => {
+export default (formValues, clean) => async dispatch => {
+  dispatch({ type: LOADING });
+
   try {
     const response = await posts.post('/', formValues);
 
@@ -12,11 +12,13 @@ export default formValues => async dispatch => {
       payload: response.data,
     });
 
-    dispatch(reset('createPost'));
+    clean();
   } catch (err) {
     dispatch({
       type: ERROR_OCCURED,
       payload: err.response.data,
     });
   }
+
+  dispatch({ type: LOADED });
 };

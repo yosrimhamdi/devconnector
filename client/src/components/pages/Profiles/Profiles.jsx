@@ -55,8 +55,8 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       <ul className="profiles__content">{renderedProfiles}</ul>
       <Spinner
         white
-        spaceAround
         removed={!loading}
+        spaceAround
         fullScreen={currentPage === 1}
       />
       <EndOfContent

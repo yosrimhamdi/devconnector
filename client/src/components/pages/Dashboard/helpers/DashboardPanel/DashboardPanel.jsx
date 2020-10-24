@@ -11,7 +11,6 @@ import NavLinks from '../NavLinks';
 
 const DashBoardPanel = ({ profile, updatePhoto, user }) => {
   const { experience, education } = profile;
-  console.log('dashoboard panel');
 
   const [camera, setCamera] = useState(greyCamera);
 

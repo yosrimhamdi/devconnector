@@ -15,7 +15,7 @@ const Posts = ({ fetchPosts, posts, loading }) => {
   }, [fetchPosts]);
 
   if (loading && !posts.length) {
-    return <Spinner fullScreen />;
+    return <Spinner black fullScreen />;
   }
 
   return (

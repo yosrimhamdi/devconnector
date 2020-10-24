@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import ReactDOM from 'react-dom';
 
 import whiteSpinner from './spinner-white.svg';
 import darkSpinner from './spinner.svg';
@@ -9,9 +10,10 @@ const Spinner = ({
   white,
   fullScreen,
   spaceAround,
-  hidden,
   removed,
   overlay,
+  onContent,
+  onBottom,
 }) => {
   if (removed) {
     return null;
@@ -19,21 +21,25 @@ const Spinner = ({
 
   const className = classnames('spinner', {
     'spinner--full-screen': fullScreen,
-    'spinner--white': white,
-    'spinner--space-around': spaceAround,
-    'spinner--hidden': hidden,
+    'spinner--on-bottom': onBottom,
     'spinner--overlay': overlay,
+    'spinner--space-around': spaceAround,
+    'spinner--on-content': onContent,
   });
 
   const spinnerIcon = white ? whiteSpinner : darkSpinner;
 
-  return (
+  const spinner = (
     <div className={className}>
-      <div className="spinner__wrapper">
-        <img src={spinnerIcon} className="spinner__circle" alt="loading..." />
-      </div>
+      <img src={spinnerIcon} className="spinner__circle" alt="loading..." />
     </div>
   );
+
+  if (fullScreen) {
+    return ReactDOM.createPortal(spinner, document.getElementById('spinner'));
+  }
+
+  return spinner;
 };
 
 Spinner.defaultProps = {

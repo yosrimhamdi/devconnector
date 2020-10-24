@@ -52,11 +52,11 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
 
   return (
     <div className="profiles">
-      {/* <ul className="profiles__content">{renderedProfiles}</ul> */}
+      <ul className="profiles__content">{renderedProfiles}</ul>
       <Spinner
         white
         spaceAround
-        removed={false}
+        removed={!loading}
         fullScreen={currentPage === 1}
       />
       <EndOfContent

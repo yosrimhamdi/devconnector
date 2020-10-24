@@ -51,7 +51,7 @@ const Password = ({
       <div className="auth__button-wrapper">
         <Button text="sign in" />
       </div>
-      <Spinner removed={!loading} onContent />
+      <Spinner visible={loading} onContent />
     </form>
   );
 };

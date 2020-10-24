@@ -42,7 +42,7 @@ const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
       <Button text="sign in" />
     </div>
-    <Spinner removed={!loading} onContent />
+    <Spinner visible={loading} onContent />
   </form>
 );
 

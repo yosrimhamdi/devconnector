@@ -63,7 +63,7 @@ const AddExperience = ({ handleSubmit, addExperience, loading }) => {
           </div>
         </div>
       </form>
-      <Spinner removed={!loading} fullScreen overlay onBottom />
+      <Spinner visible={loading} fullScreen overlay onBottom />
     </>
   );
 };

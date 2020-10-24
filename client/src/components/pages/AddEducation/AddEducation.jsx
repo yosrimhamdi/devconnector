@@ -63,7 +63,7 @@ const AddEducation = ({ handleSubmit, addEducation, loading }) => {
           </div>
         </div>
       </form>
-      <Spinner removed={!loading} fullScreen overlay onBottom />
+      <Spinner visible={loading} fullScreen overlay onBottom />
     </>
   );
 };

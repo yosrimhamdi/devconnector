@@ -40,9 +40,9 @@ const UserName = ({ handleSubmit, previousFormPage, email, loading }) => (
       />
     </div>
     <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
-      <Spinner hidden={!loading} />
       <Button text="sign in" />
     </div>
+    <Spinner removed={!loading} onContent />
   </form>
 );
 

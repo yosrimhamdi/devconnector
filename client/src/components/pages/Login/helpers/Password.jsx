@@ -48,10 +48,10 @@ const Password = ({
         />
       </div>
       <TogglePassword togglePassword={togglePassword} />
-      <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
-        <Spinner hidden={!loading} />
+      <div className="auth__button-wrapper">
         <Button text="sign in" />
       </div>
+      <Spinner removed={!loading} onContent />
     </form>
   );
 };

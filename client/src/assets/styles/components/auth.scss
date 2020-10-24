@@ -1,29 +1,30 @@
 @import '../utils/mixins/responsive';
+@import '../utils/mixins/centerlized-content';
 
 .auth {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: #f2f2f2;
   background-size: cover;
   background-position: center;
-  padding-top: var(--nav-height);
+  margin-top: var(--nav-height);
+  background-color: white;
 
   @include at-small {
+    @include centerlized-content;
+
+    margin-top: 0;
     background-image: url('../../../assets/images/nature-1.jpg');
-    padding-top: 0;
   }
 
   &__content {
     width: 100%;
-    height: 100%;
+    position: relative;
     padding: 1em;
-    background-color: white;
-    box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.3);
 
     @include at-small {
+      background-color: white;
+      box-shadow: 0 0 20px 1px rgba($color: #000000, $alpha: 0.3);
       width: 440px;
       height: auto;
       padding: 2em;
@@ -110,16 +111,6 @@
 
   &__button-wrapper {
     text-align: right;
-  }
-
-  &__button-wrapper--with-spinner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  &__button-wrapper--with-spinner .spinner {
-    margin-right: 1.5em;
   }
 
   &__back-arrow-icon {

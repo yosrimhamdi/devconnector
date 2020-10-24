@@ -25,6 +25,7 @@
   &--on-content {
     @include centerlized-content;
 
+    background-color: var(--transparent-white);
     position: absolute;
     width: 100%;
     height: 100%;

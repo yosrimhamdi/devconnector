@@ -14,6 +14,7 @@ const Spinner = ({
   onContent,
   onBottom,
   small,
+  fullVheight,
 }) => {
   if (!visible) {
     return null;
@@ -25,6 +26,7 @@ const Spinner = ({
     'spinner--overlay': overlay,
     'spinner--on-content': onContent,
     'spinner--small': small,
+    'spinner--full-vh': fullVheight,
   });
 
   const spinnerIcon = white ? whiteSpinner : darkSpinner;

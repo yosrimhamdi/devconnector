@@ -1,4 +1,5 @@
 @import '../../../assets/styles/utils/mixins/centerlized-content';
+@import '../../../assets/styles/utils/mixins/responsive';
 
 .spinner {
   position: relative;
@@ -22,11 +23,6 @@
     width: 100vw;
   }
 
-  &--on-bottom {
-    top: initial;
-    bottom: 0;
-  }
-
   &--on-content {
     @include centerlized-content;
 
@@ -38,12 +34,26 @@
     left: 0;
   }
 
+  &--on-bottom {
+    top: initial;
+    bottom: 0;
+  }
+
+  &--full-vh {
+    height: 100vh;
+
+    @include at-small {
+      width: calc(100% + 3.5em);
+      left: -1.5em;
+    }
+  }
+
   &--overlay {
     background-color: var(--transparent-white);
   }
 
   &__circle {
-    animation: spin 1500ms linear infinite;
+    animation: spin 600ms linear infinite;
     width: 30px;
     display: block;
     margin: 0 auto;

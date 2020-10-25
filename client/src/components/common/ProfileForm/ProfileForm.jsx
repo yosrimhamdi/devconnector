@@ -87,9 +87,9 @@ const ProfileForm = ({
             <Link to="/dashboard" text="cancel" transparent rounded />
             <Button text="submit" rounded />
           </div>
+          <Spinner visible={loading} onContent onBottom fullVheight />
         </div>
       </form>
-      <Spinner visible={loading} fullScreen overlay onBottom />
     </>
   );
 };

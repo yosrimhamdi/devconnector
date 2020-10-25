@@ -21,7 +21,7 @@ const Comment = ({ comment, deleteComment }) => {
       <li className="comment-item">
         <div className="comment-item__user-details">
           <img
-            src={user.photo}
+            src={user.photo.path}
             className="comment-item__user-image"
             alt={user.fullname}
           />
@@ -45,7 +45,7 @@ const Comment = ({ comment, deleteComment }) => {
   return (
     <li className="comment-item">
       <img
-        src={user.photo}
+        src={user.photo.path}
         className="comment-item__user-image"
         alt={user.fullname}
       />

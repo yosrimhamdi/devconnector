@@ -21,7 +21,7 @@ const CreatePostForm = ({ user }) => {
   return (
     <form className="create-post-form">
       <img
-        src={user.photo}
+        src={user.photo.path}
         alt={user.fullname}
         className="create-post-form__user-image"
       />

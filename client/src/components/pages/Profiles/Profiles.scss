@@ -7,8 +7,7 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  margin-top: var(--nav-height);
-  padding: 3em 0 2em;
+  padding: calc(var(--nav-height) + 3em) 0 2em;
 
   &::after {
     content: '';

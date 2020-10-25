@@ -2,14 +2,16 @@
 @import '../utils/mixins/responsive';
 
 .form {
-  position: relative;
-  z-index: 3;
+  padding-bottom: 1em;
+
+  @include at-small {
+    padding-bottom: 3em;
+  }
 
   &__container {
     padding: 1.5em;
 
     @include at-small {
-      position: relative;
       box-shadow: 0 0 3px rgba($color: #000000, $alpha: 0.2);
       margin-right: 2em;
       margin-left: 2em;
@@ -21,6 +23,7 @@
       width: 600px;
       margin-right: 0;
       margin-left: 0;
+      position: relative;
       left: 20%;
     }
   }

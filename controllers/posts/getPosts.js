@@ -1,6 +1,6 @@
 const Post = require('../../models/Post');
 const catchAsync = require('../../errors/catchAsync');
-const POSTS_PER_PAGE = require('../../utils/POSTS_PER_PAGE');
+const POSTS_PER_PAGE = require('./POSTS_PER_PAGE');
 
 module.exports = catchAsync(async (req, res) => {
   const posts = await Post.find()

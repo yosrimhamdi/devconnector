@@ -1,6 +1,6 @@
 const Profile = require('../../models/Profile');
 const catchAsync = require('../../errors/catchAsync');
-const PROFILES_PER_PAGE = require('../../utils/PROFILES_PER_PAGE');
+const PROFILES_PER_PAGE = require('./PROFILES_PER_PAGE');
 
 module.exports = catchAsync(async (req, res) => {
   const profiles = await Profile.find()

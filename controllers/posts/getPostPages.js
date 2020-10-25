@@ -1,5 +1,5 @@
 const Post = require('../../models/Post');
-const POSTS_PER_PAGE = require('../../utils/POSTS_PER_PAGE');
+const POSTS_PER_PAGE = require('./POSTS_PER_PAGE');
 
 module.exports = async (req, res) => {
   const Posts = await Post.find();

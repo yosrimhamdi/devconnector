@@ -7,7 +7,7 @@ const {
   getPosts,
   createPost,
   deletePost,
-  getPostsPages,
+  getPostPages,
 } = require('../controllers/posts');
 const { requireLogIn } = require('../controllers/authentication');
 
@@ -19,7 +19,7 @@ router.use('/:id/comments', comments);
 
 router.route('/').get(getPosts).post(requireLogIn, createPost);
 
-router.route('/pages').get(getPostsPages);
+router.route('/pages').get(getPostPages);
 
 router.route('/:id').delete(requireLogIn, deletePost);
 

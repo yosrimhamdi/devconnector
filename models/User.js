@@ -1,5 +1,10 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const fs = require('fs');
+
+const avatar = fs
+  .readFileSync(`${__dirname}/../static/images/default.svg`)
+  .toString('base64');
 
 const userSchema = new mongoose.Schema({
   firstname: {
@@ -28,11 +33,7 @@ const userSchema = new mongoose.Schema({
   },
   photo: {
     type: String,
-    default: 'default.svg',
-  },
-  profile: {
-    type: mongoose.Types.ObjectId,
-    ref: 'Profile',
+    default: `data:image/svg+xml;charset=utf-8;base64,${avatar}`,
   },
   createdAt: {
     type: Date,

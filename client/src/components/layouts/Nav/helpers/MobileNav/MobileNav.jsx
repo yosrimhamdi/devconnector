@@ -28,7 +28,7 @@ const MobileNav = ({ auth: { user, isAuthenticated } }) => {
     left = (
       <Link to="/dashboard" className="mobile-nav__dashboard-link">
         <img
-          src={`/images/${user.photo}`}
+          src={user.photo}
           alt={user.fullname}
           className="mobile-nav__user-photo"
         />

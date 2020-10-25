@@ -27,7 +27,7 @@ const PostItem = ({ post, deletePost }) => {
         <div className="post-item__wrapper">
           <div className="post-item__user-details">
             <img
-              src={`/images/${user.photo}`}
+              src={user.photo}
               className="post-item__user-image"
               alt={user.fullname}
             />
@@ -67,7 +67,7 @@ const PostItem = ({ post, deletePost }) => {
     <li className="post-item">
       <div className="post-item__wrapper">
         <img
-          src={`/images/${user.photo}`}
+          src={user.photo}
           className="post-item__user-image"
           alt={user.fullname}
         />

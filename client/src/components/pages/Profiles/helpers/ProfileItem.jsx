@@ -16,7 +16,7 @@ const ProfileItem = ({ profile }) => {
     <li className={className}>
       <img
         className="profile-item__image"
-        src={`/images/${user.photo}`}
+        src={user.photo}
         alt={user.fullname}
       />
       <div className="profile-item__user-name">{user.fullname}</div>

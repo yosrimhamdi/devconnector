@@ -32,7 +32,7 @@ const UserPhoto = ({ user, updatePhoto }) => {
     <div className="user-photo">
       <div className="user-photo__photo-container">
         <img
-          src={`/images/${user.photo}`}
+          src={user.photo}
           alt={user.name}
           className="user-photo__user-photo"
         />

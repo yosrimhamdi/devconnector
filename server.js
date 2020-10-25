@@ -25,4 +25,6 @@ const { PORT, DATABASE } = process.env;
 
 app.listen(PORT, () => {
   console.log(`Server running on localhost:${PORT}`);
+
+  console.clear();
 });

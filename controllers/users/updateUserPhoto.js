@@ -4,9 +4,7 @@ const sendToken = require('../authentication/sendToken');
 module.exports = catchAsync(async (req, res) => {
   const { user } = req;
 
-  user.photo = req.file.filename;
-
-  await user.save({ validateBeforeSave: false });
+  await user.updatePhoto(req.file);
 
   sendToken(res, 200, user);
 });

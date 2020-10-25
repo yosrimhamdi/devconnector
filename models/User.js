@@ -2,9 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 
-const avatar = fs
-  .readFileSync(`${__dirname}/../static/images/default.svg`)
-  .toString('base64');
+const avatar = fs.readFileSync(`${__dirname}/../static/default.svg`);
 
 const userSchema = new mongoose.Schema({
   firstname: {
@@ -32,8 +30,23 @@ const userSchema = new mongoose.Schema({
     select: false,
   },
   photo: {
-    type: String,
-    default: `data:image/svg+xml;charset=utf-8;base64,${avatar}`,
+    buffer: {
+      type: Buffer,
+      default: avatar,
+    },
+    updatedAt: {
+      type: Date,
+    },
+    mimetype: {
+      type: String,
+      default: 'image/svg+xml',
+    },
+    path: {
+      type: String,
+      default: function () {
+        return `/api/users/${this._id}/photo`;
+      },
+    },
   },
   createdAt: {
     type: Date,
@@ -54,6 +67,18 @@ userSchema.methods.validatePassword = async function (password) {
   const isValid = await bcrypt.compare(password, this.password);
 
   return isValid;
+};
+
+userSchema.methods.updatePhoto = async function (file) {
+  this.photo.buffer = file.buffer;
+
+  this.photo.updatedAt = Date.now();
+
+  this.photo.mimetype = 'image/jpeg';
+
+  this.photo.path = `/api/users/${this._id}/photo?${Date.now()}`;
+
+  return this.save({ validateBeforeSave: false });
 };
 
 const User = mongoose.model('User', userSchema);

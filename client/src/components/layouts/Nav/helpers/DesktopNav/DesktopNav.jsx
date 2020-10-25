@@ -58,7 +58,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
         <div className="desktop-nav__logout-container">
           <img
             className="desktop-nav__user-image"
-            src={user.photo}
+            src={user.photo.path}
             alt={user.fullname}
           />
           <div className="desktop-nav__link" onClick={logoutUser} role="button">

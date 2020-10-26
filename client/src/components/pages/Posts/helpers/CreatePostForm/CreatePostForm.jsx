@@ -5,10 +5,14 @@ import './CreatePostForm.scss';
 import getCapitalName from '../getCapitalName';
 import CreatePostModal from '../CreatePostModal';
 
-const CreatePostForm = ({ user }) => {
+const CreatePostForm = ({ user, visible }) => {
   const [isModalShown, setIsModalShown] = useState(false);
 
   const [post, setPost] = useState('');
+
+  if (!visible) {
+    return null;
+  }
 
   const placeholder = `What's on your mind, ${getCapitalName(user.firstname)}?`;
 

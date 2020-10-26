@@ -8,12 +8,17 @@
     padding-top: 1.5em;
   }
 
-  &__content {
+  &__content-wrapper {
     padding: 0 1em;
 
     @include at-small {
       max-width: 80vw;
       margin: 0 auto;
     }
+  }
+
+  &__content {
+    list-style: none;
+    margin-bottom: 2em;
   }
 }

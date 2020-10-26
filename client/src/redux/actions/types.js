@@ -22,6 +22,8 @@ export const LOADED = 'LOADED';
 export const FETCH_POSTS = 'FETCH_POSTS';
 export const CREATE_POST = 'CREATE_POST';
 export const DELETE_POST = 'DELETE_POST';
+export const FETCH_POST_PAGES = 'FETCH_POST_PAGES';
+export const UPDATE_CURRENT_POST_PAGE = 'UPDATE_CURRENT_POST_PAGE';
 
 export const GET_LIKES = 'GET_LIKES';
 export const ADD_LIKE = 'ADD_LIKE';

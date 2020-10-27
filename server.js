@@ -16,6 +16,10 @@ const { PORT, DATABASE, NODE_ENV } = process.env;
       useUnifiedTopology: true,
     });
 
+    if (NODE_ENV === 'development') {
+      console.clear();
+    }
+
     console.log('connected to database');
   } catch (err) {
     console.error(err);
@@ -25,8 +29,4 @@ const { PORT, DATABASE, NODE_ENV } = process.env;
 
 app.listen(PORT, () => {
   console.log(`Server running on localhost:${PORT}`);
-
-  if (NODE_ENV === 'development') {
-    console.clear();
-  }
 });

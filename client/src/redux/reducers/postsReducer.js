@@ -7,7 +7,7 @@ import {
 } from '../actions/types';
 
 const INITIAL = {
-  data: [],
+  data: null,
   pages: null,
   currentPage: 1,
 };
@@ -15,12 +15,19 @@ const INITIAL = {
 export default (state = INITIAL, action) => {
   switch (action.type) {
     case FETCH_POSTS:
-      // return [...state, ...action.payload.posts];
-      return { ...state, data: [...state.data, ...action.payload.posts] };
+      if (state.data) {
+        return { ...state, data: [...state.data, ...action.payload.posts] };
+      }
+
+      return { ...state, data: [...action.payload.posts] };
+
     case CREATE_POST:
-      return [action.payload.post, ...state];
-    case DELETE_POST:
-      return state.filter(post => post._id !== action.payload);
+      return { ...state, data: [action.payload.post, ...state.data] };
+    case DELETE_POST: {
+      const data = state.data.filter(post => post._id !== action.payload.id);
+
+      return { ...state, data };
+    }
     case FETCH_POST_PAGES:
       return { ...state, pages: action.payload.pages };
     case UPDATE_CURRENT_POST_PAGE:

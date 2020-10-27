@@ -20,8 +20,8 @@ const Posts = ({
   loading,
 }) => {
   useEffect(() => {
-    if (currentPage === 1) {
-      fetchPosts();
+    if (!data) {
+      fetchPosts(currentPage);
 
       fetchPostPages();
     }
@@ -46,14 +46,16 @@ const Posts = ({
     return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchPosts, pages, loading]);
 
-  const renderedPosts = data.map(post => (
-    <PostItem key={post._id} post={post} />
-  ));
+  let renderedPosts = null;
+
+  if (data) {
+    renderedPosts = data.map(post => <PostItem key={post._id} post={post} />);
+  }
 
   return (
     <div className="posts">
       <div className="posts__content-wrapper">
-        <CreatePostForm visible={data.length} />
+        <CreatePostForm visible={data} />
         <ul className="posts__content">{renderedPosts}</ul>
         <Spinner visible={loading} fullScreen={currentPage === 1} />
         <EndOfContent

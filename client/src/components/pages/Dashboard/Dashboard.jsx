@@ -17,8 +17,9 @@ const Dashboard = ({ profile, loading, fetchUserProfile, errors }) => {
 
   if (errors.noProfileYet) {
     return <CreateProfileModal />;
-    // eslint-disable-next-line
-  } else if (profile) {
+  }
+
+  if (profile) {
     return <DashboardPanel profile={profile} />;
   }
 

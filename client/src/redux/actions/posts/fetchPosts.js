@@ -1,7 +1,7 @@
 import { FETCH_POSTS, ERROR_OCCURED, LOADING, LOADED } from '../types';
 import posts from '../../../apis/posts';
 
-export default (page = 1) => async dispatch => {
+export default page => async dispatch => {
   dispatch({ type: LOADING });
 
   try {

@@ -2,9 +2,6 @@
 @import '../../../assets/styles/utils/mixins/responsive';
 
 .spinner {
-  position: relative;
-  z-index: 1;
-
   &--small &__circle {
     width: 25px;
   }
@@ -17,6 +14,7 @@
     @include centerlized-content;
 
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     height: 100vh;

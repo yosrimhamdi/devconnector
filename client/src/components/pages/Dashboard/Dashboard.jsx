@@ -8,7 +8,9 @@ import DashboardPanel from './helpers/DashboardPanel';
 
 const Dashboard = ({ profile, loading, fetchUserProfile, errors }) => {
   useEffect(() => {
-    fetchUserProfile();
+    if (!profile && !errors.noProfileYet) {
+      fetchUserProfile();
+    }
   }, [fetchUserProfile]);
 
   if (loading) {

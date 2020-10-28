@@ -1,3 +1,9 @@
+@import './responsive';
+
 @mixin disable-scroll {
   overflow-y: hidden;
+
+  @include at-medium {
+    padding-right: 17px;
+  }
 }

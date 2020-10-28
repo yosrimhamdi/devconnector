@@ -57,7 +57,7 @@ const Posts = ({
       <div className="posts__content-wrapper">
         <CreatePostForm visible={data} />
         <ul className="posts__content">{renderedPosts}</ul>
-        <Spinner visible={loading} fullScreen={currentPage === 1} />
+        <Spinner visible={loading} fullScreen={!data} />
         <EndOfContent
           currentPage={currentPage}
           pages={pages}

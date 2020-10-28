@@ -1,6 +1,6 @@
-@import './responsive';
+@import '../utils/mixins/responsive';
 
-@mixin disable-scroll {
+.scroll-disabled {
   overflow-y: hidden;
 
   @include at-medium {

@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 
+import '../assets/styles/components/scroll-disabled.scss';
+
 export default loading => {
   useEffect(() => {
     if (loading) {
-      document.body.style.overflowY = 'hidden';
+      document.body.classList.add('scroll-disabled');
     } else {
-      document.body.style.overflowY = 'initial';
+      document.body.classList.remove('scroll-disabled');
     }
   }, [loading]);
 };

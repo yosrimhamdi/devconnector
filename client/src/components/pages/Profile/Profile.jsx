@@ -30,7 +30,7 @@ const Profile = ({ profile, fetchProfile, match, errors }) => {
 };
 
 const mapStateToProps = ({ profiles, errors }, ownProps) => {
-  const profile = profiles.data.find(
+  const profile = Object.values(profiles.data).find(
     profile => profile.handle === ownProps.match.params.handle,
   );
 

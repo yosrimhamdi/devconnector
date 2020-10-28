@@ -17,7 +17,7 @@ const Profiles = ({
   loading,
 }) => {
   useEffect(() => {
-    if (!data) {
+    if (!data.length) {
       fetchProfiles(1);
 
       fetchProfilePages();
@@ -43,18 +43,14 @@ const Profiles = ({
     return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchProfiles, pages, loading]);
 
-  let renderedProfiles = null;
-
-  if (data) {
-    renderedProfiles = data.map((profile, i) => (
-      <ProfileItem key={profile._id} profile={profile} i={i} />
-    ));
-  }
+  const renderedProfiles = data.map((profile, i) => (
+    <ProfileItem key={profile._id} profile={profile} i={i} />
+  ));
 
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner white visible={loading} fullScreen={!data} />
+      <Spinner white visible={loading} fullScreen={!data.length} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}
@@ -66,10 +62,7 @@ const Profiles = ({
 };
 
 const mapStateToProps = ({ profiles, loading }) => ({
-  profiles: {
-    ...profiles,
-    data: profiles.data ? Object.values(profiles.data) : profiles.data,
-  },
+  profiles,
   loading,
 });
 

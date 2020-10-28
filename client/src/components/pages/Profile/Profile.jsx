@@ -9,8 +9,10 @@ import ProfileDisplay from './helpers/ProfileDisplay/ProfileDisplay';
 
 const Profile = ({ profile, fetchProfile, match, errors }) => {
   useEffect(() => {
-    fetchProfile(match.params.handle);
-  }, [fetchProfile, match.params.handle]);
+    if (!profile) {
+      fetchProfile(match.params.handle);
+    }
+  }, []);
 
   if (errors.profileNotFound) {
     return <div>profile not found</div>;
@@ -28,13 +30,11 @@ const Profile = ({ profile, fetchProfile, match, errors }) => {
 };
 
 const mapStateToProps = ({ profiles, errors }, ownProps) => {
-  const { handle } = ownProps.match.params;
-
-  const targetProfile = Object.values(profiles).find(
-    profile => profile.handle === handle,
+  const profile = profiles.data.find(
+    profile => profile.handle === ownProps.match.params.handle,
   );
 
-  return { profile: targetProfile, errors };
+  return { profile, errors };
 };
 
 export default connect(mapStateToProps, { fetchProfile })(Profile);

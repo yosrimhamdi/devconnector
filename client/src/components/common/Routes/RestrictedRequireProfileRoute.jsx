@@ -4,12 +4,11 @@ import { connect } from 'react-redux';
 
 const RestrictedRequireProfileRoute = ({
   component: Component,
-  auth,
-  profile,
+  auth: { isAuthenticated, profile },
   ...rest
 }) => {
   const render = props => {
-    if (!auth.isAuthenticated) {
+    if (!isAuthenticated) {
       return <Redirect to="/login" />;
     }
 
@@ -23,9 +22,6 @@ const RestrictedRequireProfileRoute = ({
   return <Route {...rest} render={render} />;
 };
 
-const mapStateToProps = ({ auth, profiles }) => ({
-  auth,
-  profile: auth.user ? profiles[auth.user._id] : null,
-});
+const mapStateToProps = ({ auth }) => ({ auth });
 
 export default connect(mapStateToProps)(RestrictedRequireProfileRoute);

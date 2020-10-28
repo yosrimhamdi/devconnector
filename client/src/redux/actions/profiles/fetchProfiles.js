@@ -1,7 +1,7 @@
 import { FETCH_PROFILES, LOADING, LOADED } from '../types';
 import profiles from '../../../apis/profiles';
 
-export default (page = 1) => async dispatch => {
+export default page => async dispatch => {
   dispatch({ type: LOADING });
 
   const response = await profiles.get(`/all?page=${page}`);

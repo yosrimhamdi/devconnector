@@ -1,31 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './Profiles.scss';
 import { fetchProfiles } from '../../../redux/actions';
 import ProfileItem from './helpers/ProfileItem';
 import Spinner from '../../common/Spinner';
-import profilesAPI from '../../../apis/profiles';
 import EndOfContent from '../../common/EndOfContent';
+import fetchProfilePages from '../../../redux/actions/profiles/fetchProfilePages';
+import updateCurrentProfilePage from '../../../redux/actions/profiles/updateCurrentProfilePage';
 
-const Profiles = ({ fetchProfiles, profiles, loading }) => {
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const [pages, setPages] = useState(null);
-
+const Profiles = ({
+  fetchProfiles,
+  fetchProfilePages,
+  updateCurrentProfilePage,
+  profiles: { data, pages, currentPage },
+  loading,
+}) => {
   useEffect(() => {
-    fetchProfiles();
+    if (!data) {
+      fetchProfiles(1);
+
+      fetchProfilePages();
+    }
   }, [fetchProfiles]);
-
-  useEffect(() => {
-    const fetchPages = async () => {
-      const response = await profilesAPI.get('/pages');
-
-      setPages(response.data.pages);
-    };
-
-    fetchPages();
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +34,7 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
       ) {
         fetchProfiles(currentPage + 1);
 
-        setCurrentPage(currentPage + 1);
+        updateCurrentProfilePage(currentPage + 1);
       }
     };
 
@@ -46,14 +43,18 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
     return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchProfiles, pages, loading]);
 
-  const renderedProfiles = profiles.map((profile, i) => (
-    <ProfileItem key={profile._id} profile={profile} i={i} />
-  ));
+  let renderedProfiles = null;
+
+  if (data) {
+    renderedProfiles = data.map((profile, i) => (
+      <ProfileItem key={profile._id} profile={profile} i={i} />
+    ));
+  }
 
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner white visible={loading} fullScreen={currentPage === 1} />
+      <Spinner white visible={loading} fullScreen={!data} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}
@@ -65,8 +66,15 @@ const Profiles = ({ fetchProfiles, profiles, loading }) => {
 };
 
 const mapStateToProps = ({ profiles, loading }) => ({
-  profiles: Object.values(profiles),
+  profiles: {
+    ...profiles,
+    data: profiles.data ? Object.values(profiles.data) : profiles.data,
+  },
   loading,
 });
 
-export default connect(mapStateToProps, { fetchProfiles })(Profiles);
+export default connect(mapStateToProps, {
+  fetchProfiles,
+  updateCurrentProfilePage,
+  fetchProfilePages,
+})(Profiles);

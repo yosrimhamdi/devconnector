@@ -10,12 +10,33 @@ import {
   REMOVE_EDUCATION,
   CREATE_PROFILE,
   UPDATE_PROFILE,
+  FETCH_PROFILE_PAGES,
+  UPDATE_CURRENT_PROFILE_PAGE,
 } from '../actions/types';
 
-export default (state = {}, action) => {
+const INTIAL = {
+  data: null,
+  pages: null,
+  currentPage: 1,
+};
+
+export default (state = INTIAL, action) => {
   switch (action.type) {
     case FETCH_PROFILES:
-      return { ...state, ..._.mapKeys(action.payload.profiles, 'user._id') };
+      if (state.data) {
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            ..._.mapKeys(action.payload.profiles, 'user._id'),
+          },
+        };
+      }
+
+      return {
+        ...state,
+        data: { ..._.mapKeys(action.payload.profiles, 'user._id') },
+      };
     case FETCH_USER_PROFILE:
     case FETCH_PROFILE:
     case ADD_EXPERIENCE:
@@ -26,8 +47,12 @@ export default (state = {}, action) => {
     case UPDATE_PROFILE: {
       const { profile } = action.payload;
 
-      return { ...state, [profile.user._id]: profile };
+      return { ...state, data: { ...state.data, [profile.user._id]: profile } };
     }
+    case FETCH_PROFILE_PAGES:
+      return { ...state, pages: action.payload.pages };
+    case UPDATE_CURRENT_PROFILE_PAGE:
+      return { ...state, currentPage: action.payload.currentPage };
     default:
       return state;
   }

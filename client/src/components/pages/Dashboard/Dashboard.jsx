@@ -28,8 +28,8 @@ const Dashboard = ({ profile, loading, fetchUserProfile, errors }) => {
   return null;
 };
 
-const mapStateToProps = ({ auth, profiles, loading, errors }) => ({
-  profile: profiles[auth.user._id],
+const mapStateToProps = ({ auth, profiles: { data }, loading, errors }) => ({
+  profile: data ? data[auth.user._id] : null,
   loading,
   errors,
 });

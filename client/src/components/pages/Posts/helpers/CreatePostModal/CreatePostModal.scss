@@ -17,14 +17,6 @@
     margin-top: 0;
   }
 
-  &__header {
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #e5e5e5;
-    margin-bottom: 1em;
-    padding-bottom: 0.3em;
-  }
-
   &__content {
     position: relative;
     opacity: initial;
@@ -36,6 +28,7 @@
       width: 500px;
       height: auto;
       border-radius: 10px;
+      animation: zoom 150ms;
     }
   }
 
@@ -50,6 +43,14 @@
     @include at-small {
       text-align: center;
     }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
   }
 
   &__textarea {

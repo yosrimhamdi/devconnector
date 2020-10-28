@@ -1,4 +1,5 @@
 @import '../../../../assets/styles/utils/mixins/button';
+@import '../../../../assets/styles/utils/mixins/centerlized-content';
 @import '../../../../assets/styles/utils/mixins/responsive';
 
 .confirm-modal {
@@ -11,10 +12,9 @@
   margin-top: var(--nav-height);
 
   @include at-small {
+    @include centerlized-content;
+
     margin-top: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--transparent-white);
   }
 
@@ -27,6 +27,7 @@
       border-radius: 10px;
       width: 600px;
       box-shadow: 0 10px 30px 2px rgba($color: #000000, $alpha: 0.1);
+      animation: zoom 150ms;
     }
   }
 

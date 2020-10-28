@@ -5,14 +5,12 @@ import {
   FETCH_PROFILE,
   FETCH_PROFILE_PAGES,
   UPDATE_CURRENT_PROFILE_PAGE,
-  SET_INITIAL_MOUNT,
 } from '../actions/types';
 
 const INTIAL = {
   data: {},
   pages: null,
   currentPage: 1,
-  initialMount: true,
 };
 
 export default (state = INTIAL, action) => {
@@ -34,8 +32,6 @@ export default (state = INTIAL, action) => {
       return { ...state, pages: action.payload.pages };
     case UPDATE_CURRENT_PROFILE_PAGE:
       return { ...state, currentPage: action.payload.currentPage };
-    case SET_INITIAL_MOUNT:
-      return { ...state, initialMount: false };
     default:
       return state;
   }

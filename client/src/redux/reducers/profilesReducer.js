@@ -8,7 +8,7 @@ import {
 const INTIAL = {
   data: [],
   pages: null,
-  currentPage: 1,
+  currentPage: null,
 };
 
 export default (state = INTIAL, action) => {

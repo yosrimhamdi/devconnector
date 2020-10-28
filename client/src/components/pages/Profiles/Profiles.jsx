@@ -17,12 +17,14 @@ const Profiles = ({
   loading,
 }) => {
   useEffect(() => {
-    if (!data.length) {
+    if (!currentPage) {
       fetchProfiles(1);
+
+      updateCurrentProfilePage(1);
 
       fetchProfilePages();
     }
-  }, [fetchProfiles]);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,7 +52,7 @@ const Profiles = ({
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner white visible={loading} fullScreen={!data.length} />
+      <Spinner white visible={loading} fullScreen={!currentPage} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}

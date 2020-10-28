@@ -15,11 +15,14 @@ const Profiles = ({
   updateCurrentProfilePage,
   profiles: { data, pages, currentPage },
   loading,
+  initialMount,
 }) => {
   useEffect(() => {
-    fetchProfiles(1);
+    if (initialMount.profiles) {
+      fetchProfiles(1);
 
-    fetchProfilePages();
+      fetchProfilePages();
+    }
   }, []);
 
   useEffect(() => {
@@ -41,14 +44,18 @@ const Profiles = ({
     return () => document.removeEventListener('scroll', handleScroll);
   }, [currentPage, fetchProfiles, pages, loading]);
 
-  const renderedProfiles = data.map((profile, i) => (
-    <ProfileItem key={profile._id} profile={profile} i={i} />
-  ));
+  let renderedProfiles = null;
+
+  if (!initialMount.profiles) {
+    renderedProfiles = data.map((profile, i) => (
+      <ProfileItem key={profile._id} profile={profile} i={i} />
+    ));
+  }
 
   return (
     <div className="profiles">
       <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner white visible={loading} fullScreen />
+      <Spinner white visible={loading} fullScreen={initialMount.profiles} />
       <EndOfContent
         currentPage={currentPage}
         pages={pages}
@@ -59,9 +66,10 @@ const Profiles = ({
   );
 };
 
-const mapStateToProps = ({ profiles, loading }) => ({
+const mapStateToProps = ({ profiles, loading, initialMount }) => ({
   profiles: { ...profiles, data: Object.values(profiles.data) },
   loading,
+  initialMount,
 });
 
 export default connect(mapStateToProps, {

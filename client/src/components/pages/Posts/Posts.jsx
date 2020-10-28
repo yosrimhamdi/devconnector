@@ -21,7 +21,7 @@ const Posts = ({
 }) => {
   useEffect(() => {
     if (!data) {
-      fetchPosts(currentPage);
+      fetchPosts(1);
 
       fetchPostPages();
     }

@@ -9,7 +9,7 @@
   min-height: 100vh;
   padding: calc(var(--nav-height) + 3em) 0 2em;
 
-  &::after {
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -20,8 +20,6 @@
   }
 
   &__content {
-    position: relative;
-    z-index: 1;
     list-style: none;
     padding: 0 1em;
     margin-bottom: 2em;

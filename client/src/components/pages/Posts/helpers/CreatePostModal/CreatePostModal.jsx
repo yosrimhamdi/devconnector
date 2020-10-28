@@ -47,7 +47,11 @@ const CreatePostModal = ({
     return null;
   }
 
-  const removeModalFromScreen = () => setIsModalShown(false);
+  const removeModalFromScreen = () => {
+    if (!loading) {
+      setIsModalShown(false);
+    }
+  };
 
   const clean = () => {
     setPost('');

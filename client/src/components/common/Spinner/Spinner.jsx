@@ -15,6 +15,7 @@ const Spinner = ({
   onBottom,
   small,
   fullVheight,
+  spaceAround,
 }) => {
   if (!visible) {
     return null;
@@ -27,6 +28,7 @@ const Spinner = ({
     'spinner--on-content': onContent,
     'spinner--small': small,
     'spinner--full-vh': fullVheight,
+    'spinner--space-around': spaceAround,
   });
 
   const spinnerIcon = white ? whiteSpinner : darkSpinner;

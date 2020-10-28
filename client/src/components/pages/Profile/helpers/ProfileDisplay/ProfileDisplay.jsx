@@ -29,7 +29,7 @@ const ProfileDisplay = ({ profile }) => {
       <section className="profile-display__user-photo-wrapper">
         <img
           className="profile-display__user-photo"
-          src={`/images/${photo}`}
+          src={photo.path}
           alt={fullname}
         />
       </section>

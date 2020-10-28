@@ -7,6 +7,7 @@ import './CreatePostModal.scss';
 import { createPost } from '../../../../../redux/actions';
 import ModalCloseButton from '../../../../common/modal/ModalCloseButton';
 import Spinner from '../../../../common/Spinner';
+import useDisableScroll from '../../../../../hooks/useDisableScroll';
 
 const CreatePostModal = ({
   placeholder,
@@ -18,6 +19,8 @@ const CreatePostModal = ({
   loading,
 }) => {
   const textAreaRef = useRef(null);
+
+  useDisableScroll(isModalShown);
 
   useEffect(() => {
     const moveCursorToEnd = field => {
@@ -40,10 +43,7 @@ const CreatePostModal = ({
     }
   });
 
-  if (isModalShown) {
-    document.body.classList.add('create-post-modal--disable-scroll');
-  } else {
-    document.body.classList.remove('create-post-modal--disable-scroll');
+  if (!isModalShown) {
     return null;
   }
 

@@ -5,16 +5,16 @@ import './ConfirmModal.scss';
 import ModalContext from '../../../../contexts/ModalContext';
 import ModalCloseButton from '../ModalCloseButton';
 import Spinner from '../../Spinner';
+import useDisableScroll from '../../../../hooks/useDisableScroll';
 
 const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
   const [confirmed, setConfirmed] = useState(false);
 
   const { title, description, action } = useContext(ModalContext);
 
-  if (isModalShown) {
-    document.body.classList.add('confirm-modal--disable-scroll');
-  } else {
-    document.body.classList.remove('confirm-modal--disable-scroll');
+  useDisableScroll(isModalShown);
+
+  if (!isModalShown) {
     return null;
   }
 

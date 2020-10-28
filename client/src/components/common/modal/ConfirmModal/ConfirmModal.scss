@@ -1,5 +1,4 @@
 @import '../../../../assets/styles/utils/mixins/button';
-@import '../../../../assets/styles/utils/mixins/disable-scroll';
 @import '../../../../assets/styles/utils/mixins/responsive';
 
 .confirm-modal {
@@ -17,10 +16,6 @@
     justify-content: center;
     align-items: center;
     background-color: var(--transparent-white);
-  }
-
-  &--disable-scroll {
-    @include disable-scroll;
   }
 
   &__content {

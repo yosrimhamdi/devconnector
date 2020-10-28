@@ -1,4 +1,3 @@
-@import '../../../../../assets/styles/utils/mixins/disable-scroll';
 @import '../../../../../assets/styles/utils/mixins/responsive';
 @import '../../../../../assets/styles/utils/mixins/centerlized-content';
 
@@ -16,10 +15,6 @@
 
     background-color: var(--transparent-white);
     margin-top: 0;
-  }
-
-  &--disable-scroll {
-    @include disable-scroll;
   }
 
   &__header {

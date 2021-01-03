@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import './Profiles.scss';
+import './Developers.scss';
 import { fetchProfiles } from '../../../redux/actions';
 import ProfileItem from './helpers/ProfileItem';
 import Spinner from '../../common/Spinner';
@@ -53,8 +53,8 @@ const Profiles = ({
   }
 
   return (
-    <div className="profiles">
-      <ul className="profiles__content">{renderedProfiles}</ul>
+    <div className="developers">
+      <ul className="developers__content">{renderedProfiles}</ul>
       <Spinner white visible={loading} fullScreen={initialMount.profiles} />
       <EndOfContent
         currentPage={currentPage}

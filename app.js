@@ -14,7 +14,7 @@ const {
   sendError,
 } = require('./errors/global');
 const notFound = require('./errors/notFound');
-const sendApp = require('./view/sendApp');
+const sendReactApp = require('./view/sendReactApp');
 
 const { NODE_ENV } = process.env;
 
@@ -39,9 +39,9 @@ app.use('/api/profiles', profiles);
 app.use('/api/posts', posts);
 
 if (NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client/build')));
+  app.use(express.static(path.join(__dirname, 'client', 'build')));
 
-  app.get('*', sendApp);
+  app.get('*', sendReactApp);
 }
 
 app.all('*', notFound);

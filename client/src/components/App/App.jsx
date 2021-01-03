@@ -28,7 +28,7 @@ const App = () => (
   <Router history={history}>
     <Nav />
     <Switch>
-      <Route path="/" exact component={Landing} />
+      <RestrictedRoute path="/" exact component={Landing} />
       <PrivateRoute path="/dashboard" exact component={Dashboard} />
       <RestrictedRoute path="/signup" exact component={Signup} />
       <RestrictedRoute path="/login" exact component={Login} />

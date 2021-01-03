@@ -6,7 +6,7 @@ import './DesktopNav.scss';
 import { logoutUser } from '../../../../../redux/actions';
 
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
-  const left = (
+  let left = (
     <div className="desktop-nav__section">
       <Link to="/">devConnector</Link>
       <NavLink
@@ -39,8 +39,15 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   );
 
   if (isAuthenticated) {
-    right = (
+    left = (
       <div className="desktop-nav__section">
+        <NavLink
+          to="/profiles"
+          className="desktop-nav__link"
+          activeClassName="desktop-nav__link--active"
+        >
+          developers
+        </NavLink>
         <NavLink
           to="/posts"
           className="desktop-nav__link"
@@ -48,6 +55,11 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
         >
           post feed
         </NavLink>
+      </div>
+    );
+
+    right = (
+      <div className="desktop-nav__section">
         <NavLink
           to="/dashboard"
           className="desktop-nav__link"

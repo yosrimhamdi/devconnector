@@ -1,7 +1,7 @@
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
 
-dotenv.config({ path: './.env' });
+dotenv.config();
 
 const app = require('./app');
 
@@ -16,17 +16,13 @@ const { PORT, DATABASE, NODE_ENV } = process.env;
       useUnifiedTopology: true,
     });
 
-    if (NODE_ENV === 'development') {
-      console.clear();
-    }
-
     console.log('connected to database');
   } catch (err) {
     console.error(err);
-    console.log('CONNECTION TO DB FAILED');
   }
 })();
 
 app.listen(PORT, () => {
-  console.log(`Server running on localhost:${PORT}`);
+  console.clear();
+  console.log(`server running on localhost:${PORT}`);
 });

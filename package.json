@@ -1,8 +1,15 @@
 {
   "name": "devconnector",
   "version": "1.0.0",
-  "description": "",
   "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon --ignore client/ server.js",
+    "client": "npm start --prefix client",
+    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "npm i --prefix client && npm run build --prefix client",
+    "eslint": "eslint --init"
+  },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
@@ -17,14 +24,7 @@
     "multer": "^1.4.2",
     "sharp": "^0.26.1"
   },
-  "scripts": {
-    "start": "node server",
-    "server": "nodemon --ignore client/ server.js",
-    "client": "npm start --prefix client",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild": "npm i --prefix client && npm run build --prefix client"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "eslint": "^7.17.0"
+  }
 }

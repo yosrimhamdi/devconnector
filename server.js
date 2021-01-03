@@ -5,7 +5,7 @@ dotenv.config();
 
 const app = require('./app');
 
-const { PORT, DATABASE, NODE_ENV } = process.env;
+const { PORT, DATABASE } = process.env;
 
 (async () => {
   try {

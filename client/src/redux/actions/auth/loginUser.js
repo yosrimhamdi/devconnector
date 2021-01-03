@@ -13,7 +13,7 @@ export default formValues => async dispatch => {
       payload: response.data,
     });
 
-    history.push('/dashboard');
+    history.push('/posts');
   } catch (err) {
     dispatch({
       type: ERROR_OCCURED,

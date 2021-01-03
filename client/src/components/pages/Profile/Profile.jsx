@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './Profile.scss';
 
-import { fetchProfile } from '../../../redux/actions';
+import fetchProfile from '../../../redux/actions/profiles/fetchProfile';
 import Spinner from '../../common/Spinner';
 import ProfileDisplay from './helpers/ProfileDisplay/ProfileDisplay';
 

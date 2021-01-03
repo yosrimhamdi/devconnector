@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Spinner from '../../common/Spinner';
-import { fetchUserProfile } from '../../../redux/actions';
+import fetchUserProfile from '../../../redux/actions/profiles/fetchUserProfile';
 import CreateProfileModal from './helpers/CreateProfileModal';
 import DashboardPanel from './helpers/DashboardPanel';
 

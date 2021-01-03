@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import classnames from 'classnames';
 
 import './CreatePostModal.scss';
-import { createPost } from '../../../../../redux/actions';
+import createPost from '../../../../../redux/actions/posts/createPost';
 import ModalCloseButton from '../../../../common/modal/ModalCloseButton';
 import Spinner from '../../../../common/Spinner';
 import useDisableScroll from '../../../../../hooks/useDisableScroll';

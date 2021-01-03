@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './CreateCommentForm.scss';
-import { addComment } from '../../../../../redux/actions';
+import addComment from '../../../../../redux/actions/comments/addComment';
 
 const CreateCommentForm = ({ addComment, postId }) => {
   const [message, setMessage] = useState('');

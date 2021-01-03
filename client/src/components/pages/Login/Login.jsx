@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { loginUser } from '../../../redux/actions';
+import loginUser from '../../../redux/actions/auth/loginUser';
 import Email from './helpers/Email';
 import Password from './helpers/Password';
 import useDestroyFormOnUnmount from '../../../hooks/useDestroyFormOnUnmount';

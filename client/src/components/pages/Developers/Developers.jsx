@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './Developers.scss';
-import { fetchProfiles } from '../../../redux/actions';
+import fetchProfiles from '../../../redux/actions/profiles/fetchProfiles';
 import ProfileItem from './helpers/ProfileItem';
 import Spinner from '../../common/Spinner';
 import EndOfContent from '../../common/EndOfContent';

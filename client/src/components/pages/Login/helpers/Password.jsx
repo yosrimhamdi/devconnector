@@ -7,7 +7,7 @@ import arrow from '../../../../assets/icons/arrow.svg';
 import validate from './validate';
 import Input from '../../../common/form/microsoft/Input';
 import Spinner from '../../../common/Spinner';
-import { clearErrors } from '../../../../redux/actions';
+import clearErrors from '../../../../redux/actions/clearErorrs';
 import Button from '../../../common/Button';
 import {
   TogglePassword,

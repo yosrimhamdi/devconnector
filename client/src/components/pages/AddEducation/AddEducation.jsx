@@ -3,7 +3,7 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from './validate';
-import { addEducation } from '../../../redux/actions';
+import addEducation from '../../../redux/actions/profiles/addEducation';
 import Input from '../../common/form/google/Input';
 import TextArea from '../../common/form/google/TextArea';
 import Button from '../../common/Button';

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './ExperienceItem.scss';
-import { deleteExperience } from '../../../../redux/actions';
+import deleteExperience from '../../../../redux/actions/profiles/deleteExperience';
 import getFormattedDate from '../../../../utils/getFormattedDate';
 import ConfirmModal from '../../modal/ConfirmModal';
 import ModalContext from '../../../../contexts/ModalContext';

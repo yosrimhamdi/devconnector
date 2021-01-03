@@ -3,7 +3,7 @@ import { reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
 
 import validate from '../../common/ProfileForm/validate';
-import { createProfile } from '../../../redux/actions';
+import createProfile from '../../../redux/actions/profiles/createProfile';
 
 import ProfileForm from '../../common/ProfileForm/ProfileForm';
 

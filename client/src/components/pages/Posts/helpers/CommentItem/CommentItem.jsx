@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './CommentItem.scss';
 import getElapsedTime from '../getElapsedTime';
 import Settings from '../Settings';
-import { deleteComment } from '../../../../../redux/actions';
+import deleteComment from '../../../../../redux/actions/comments/deleteComment';
 import ModalContext from '../../../../../contexts/ModalContext';
 
 const Comment = ({ comment, deleteComment }) => {

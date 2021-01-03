@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import './CommentList.scss';
-import { fetchComments } from '../../../../../redux/actions';
+import fetchComments from '../../../../../redux/actions/comments/fetchComments';
 import CommentItem from '../CommentItem';
 import CreateCommentForm from '../CreateCommentForm';
 import Spinner from '../../../../common/Spinner';

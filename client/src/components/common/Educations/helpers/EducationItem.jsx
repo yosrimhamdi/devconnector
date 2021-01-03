@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './EducationItem.scss';
-import { deleteEducation } from '../../../../redux/actions';
+import deleteEducation from '../../../../redux/actions/profiles/deleteEducation';
 import getFormattedDate from '../../../../utils/getFormattedDate';
 import ConfirmModal from '../../modal/ConfirmModal';
 import ModalContext from '../../../../contexts/ModalContext';

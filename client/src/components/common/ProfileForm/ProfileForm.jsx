@@ -7,7 +7,7 @@ import Input from '../form/google/Input';
 import TextArea from '../form/google/TextArea';
 import Select from '../form/google/Select';
 import SocialsForm from './helpers/SocialsForm';
-import { clearErrors } from '../../../redux/actions';
+import clearErrors from '../../../redux/actions/clearErorrs';
 import Spinner from '../Spinner';
 import Link from '../Link';
 import Button from '../Button';

@@ -5,7 +5,7 @@ import './PostItem.scss';
 import Settings from '../Settings';
 import Likes from '../Likes';
 import getElapsedTime from '../getElapsedTime';
-import { deletePost } from '../../../../../redux/actions';
+import deletePost from '../../../../../redux/actions/posts/deletePost';
 import CommentList from '../CommentList';
 import comment from '../../icons/comment.svg';
 import ModalContext from '../../../../../contexts/ModalContext';

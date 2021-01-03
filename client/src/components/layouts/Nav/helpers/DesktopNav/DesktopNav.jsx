@@ -3,14 +3,14 @@ import { connect } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom';
 
 import './DesktopNav.scss';
-import { logoutUser } from '../../../../../redux/actions';
+import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let left = (
     <div className="desktop-nav__section">
       <Link to="/">devConnector</Link>
       <NavLink
-        to="/profiles"
+        to="/developers"
         className="desktop-nav__link"
         activeClassName="desktop-nav__link--active"
       >
@@ -42,7 +42,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     left = (
       <div className="desktop-nav__section">
         <NavLink
-          to="/profiles"
+          to="/developers"
           className="desktop-nav__link"
           activeClassName="desktop-nav__link--active"
         >

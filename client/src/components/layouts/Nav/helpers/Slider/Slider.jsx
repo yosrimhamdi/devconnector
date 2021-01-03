@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 
 import './Slider.scss';
-import { logoutUser } from '../../../../../redux/actions';
+import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 
 const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
   const sliderNavRef = useRef(null);

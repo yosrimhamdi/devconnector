@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
-import { registerUser } from '../../../redux/actions';
+import registerUser from '../../../redux/actions/auth/registerUser';
 import Email from './helpers/Email';
 import Password from './helpers/Password';
 import UserName from './helpers/UserName';

@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import code from '../../../../assets/images/code-logo.svg';
 import Input from '../../../common/form/microsoft/Input';
 import validate from './validate';
-import { checkUserExistence, clearErrors } from '../../../../redux/actions';
+import clearErrors from '../../../../redux/actions/clearErorrs';
+import checkUserExistence from '../../../../redux/actions/users/checkUserExistence';
 import Spinner from '../../../common/Spinner';
 import Button from '../../../common/Button';
 

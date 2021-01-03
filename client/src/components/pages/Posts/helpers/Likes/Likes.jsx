@@ -6,7 +6,9 @@ import redHeart from '../../icons/heart-red.svg';
 
 import './Likes.scss';
 
-import { getLikes, addLike, removeLike } from '../../../../../redux/actions';
+import getLikes from '../../../../../redux/actions/likes/getLikes';
+import addLike from '../../../../../redux/actions/likes/addLike';
+import removeLike from '../../../../../redux/actions/likes/removeLike';
 import LikesNum from './LikesNum';
 
 const Likes = ({

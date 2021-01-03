@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import validate from '../../common/ProfileForm/validate';
 import ProfileForm from '../../common/ProfileForm';
-import { updateProfile } from '../../../redux/actions';
+import updateProfile from '../../../redux/actions/profiles/updateProfile';
 
 const UpdateProfile = ({ handleSubmit, initialValues, updateProfile }) => (
   <ProfileForm

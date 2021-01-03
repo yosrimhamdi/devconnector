@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import './Posts.scss';
 
-import { fetchPosts } from '../../../redux/actions';
+import fetchPosts from '../../../redux/actions/posts/fetchPosts';
 import fetchPostPages from '../../../redux/actions/posts/fetchPostPages';
 import updateCurrentPage from '../../../redux/actions/posts/updateCurrentPage';
 

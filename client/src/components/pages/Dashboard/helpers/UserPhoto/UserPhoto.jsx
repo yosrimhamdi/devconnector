@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './UserPhoto.scss';
 import greyCamera from '../../icons/camera.svg';
 import blueCamera from '../../icons/camera-blue.svg';
-import { updatePhoto } from '../../../../../redux/actions';
+import updatePhoto from '../../../../../redux/actions/users/updatePhoto';
 import Spinner from '../../../../common/Spinner';
 
 const UserPhoto = ({ user, updatePhoto }) => {

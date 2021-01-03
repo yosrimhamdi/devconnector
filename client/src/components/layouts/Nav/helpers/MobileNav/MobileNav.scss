@@ -2,6 +2,7 @@
 
 .mobile-nav {
   @include nav-container;
+  z-index: 2;
 
   &__dashboard-link {
     display: flex;

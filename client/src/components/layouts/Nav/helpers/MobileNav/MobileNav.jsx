@@ -6,7 +6,7 @@ import './MobileNav.scss';
 import HamburgerMenu from '../HamburgerMenu';
 import Slider from '../Slider';
 
-const MobileNav = ({ auth: { user, isAuthenticated } }) => {
+const MobileNav = ({ auth: { isAuthenticated } }) => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
 
   const right = (
@@ -26,13 +26,8 @@ const MobileNav = ({ auth: { user, isAuthenticated } }) => {
 
   if (isAuthenticated) {
     left = (
-      <Link to="/dashboard" className="mobile-nav__dashboard-link">
-        <img
-          src={user.photo.path}
-          alt={user.fullname}
-          className="mobile-nav__user-photo"
-        />
-        <span>{user.fullname}</span>
+      <Link to="/posts" className="mobile-nav__dashboard-link">
+        posts feed
       </Link>
     );
   }

@@ -30,8 +30,8 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
 
   let slideNavLinks = (
     <>
-      <NavLink to="/profiles" activeClassName="slider__active-link">
-        developers
+      <NavLink to="/" exact activeClassName="slider__active-link">
+        devconnector
       </NavLink>
       <NavLink to="/login" activeClassName="slider__active-link">
         login
@@ -45,14 +45,11 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
   if (auth.isAuthenticated) {
     slideNavLinks = (
       <>
+        <NavLink to="/developers" activeClassName="slider__active-link">
+          developers
+        </NavLink>
         <NavLink to="/dashboard" activeClassName="slider__active-link">
           dashboard
-        </NavLink>
-        <NavLink to="/posts" activeClassName="slider__active-link">
-          posts feed
-        </NavLink>
-        <NavLink to="/profiles" activeClassName="slider__active-link">
-          developers
         </NavLink>
         <div className="slider__logout" role="button" onClick={logoutUser}>
           logout

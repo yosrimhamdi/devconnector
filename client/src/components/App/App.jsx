@@ -28,29 +28,17 @@ const App = () => (
   <Router history={history}>
     <Nav />
     <Switch>
-      <RestrictedRoute path="/" exact component={Landing} />
-      <PrivateRoute path="/dashboard" exact component={Dashboard} />
-      <RestrictedRoute path="/signup" exact component={Signup} />
-      <RestrictedRoute path="/login" exact component={Login} />
+      <Route path="/" exact component={Landing} />
+      <Route path="/dashboard" exact component={Dashboard} />
+      <Route path="/signup" exact component={Signup} />
+      <Route path="/login" exact component={Login} />
       <Route path="/developers" exact component={Developers} />
       <Route path="/profiles/new" exact component={CreateProfile} />
-      <RestrictedRequireProfileRoute
-        path="/profiles/update"
-        exact
-        component={UpdateProfile}
-      />
-      <RestrictedRequireProfileRoute
-        path="/profiles/experience/new"
-        exact
-        component={AddExperience}
-      />
-      <RestrictedRequireProfileRoute
-        path="/profiles/education/new"
-        exact
-        component={AddEducation}
-      />
+      <Route path="/profiles/update" exact component={UpdateProfile} />
+      <Route path="/profiles/experience/new" exact component={AddExperience} />
+      <Route path="/profiles/education/new" exact component={AddEducation} />
       <Route path="/profiles/:handle" exact component={Profile} />
-      <PrivateRoute path="/posts" exact component={Posts} />
+      <Route path="/posts" exact component={Posts} />
       <Route path="*" component={NotFound} />
     </Switch>
   </Router>

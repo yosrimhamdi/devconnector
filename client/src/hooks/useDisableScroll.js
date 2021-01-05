@@ -9,5 +9,7 @@ export default loading => {
     } else {
       document.body.classList.remove('scroll-disabled');
     }
+
+    return () => document.body.classList.remove('scroll-disabled');
   }, [loading]);
 };

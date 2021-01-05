@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 
 import '../assets/styles/components/scroll-disabled.scss';
 
-export default isModalShown => {
+export default isModalShownOrLoading => {
   useEffect(() => {
-    if (isModalShown) {
+    if (isModalShownOrLoading) {
       document.body.classList.add('scroll-disabled');
     } else {
       document.body.classList.remove('scroll-disabled');
     }
 
     return () => document.body.classList.remove('scroll-disabled');
-  }, [isModalShown]);
+  }, [isModalShownOrLoading]);
 };

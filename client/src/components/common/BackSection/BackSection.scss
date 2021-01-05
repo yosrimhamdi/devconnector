@@ -6,9 +6,7 @@
   background-color: white;
   position: sticky;
   top: 0;
-  overflow: hidden;
-  z-index: 1;
-  margin-bottom: 1em;
+  z-index: 2;
   transition: box-shadow 120ms;
 
   @include at-small {
@@ -21,7 +19,7 @@
 
   &__wrapper {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     padding-left: 1em;
 

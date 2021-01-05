@@ -3,8 +3,6 @@
 
 .form {
   padding-bottom: 1em;
-  position: relative;
-  z-index: 3;
 
   @include at-small {
     padding-bottom: 3em;

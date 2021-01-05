@@ -3,6 +3,7 @@
 .posts {
   margin-top: var(--nav-height);
   padding: 1em 0 2em;
+  width: 100vw;
 
   @include at-small {
     padding-top: 1.5em;

@@ -1,0 +1,9 @@
+@import '../../../../../../assets/styles/utils/mixins/table.scss';
+
+.experience-item {
+  @include table-data-row;
+
+  &__delete-icon {
+    @include table-delete-icon;
+  }
+}

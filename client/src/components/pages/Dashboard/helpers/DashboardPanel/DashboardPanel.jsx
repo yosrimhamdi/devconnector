@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './DashboardPanel.scss';
-import Experiences from '../../../../common/Experiences';
-import Educations from '../../../../common/Educations';
+import Experiences from '../Experiences';
+import Educations from '../Educations';
 import NavLinks from '../NavLinks';
 import UserPhoto from '../UserPhoto';
 

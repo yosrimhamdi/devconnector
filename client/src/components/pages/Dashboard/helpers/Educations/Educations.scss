@@ -1,0 +1,13 @@
+@import '../../../../../assets/styles/utils/mixins/table.scss';
+
+.educations {
+  @include table;
+
+  &__header-row {
+    @include table-header-row;
+  }
+
+  &__data-row {
+    @include table-data-row;
+  }
+}

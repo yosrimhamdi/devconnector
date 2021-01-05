@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './EducationItem.scss';
-import deleteEducation from '../../../../redux/actions/profiles/deleteEducation';
-import getFormattedDate from '../../../../utils/getFormattedDate';
-import ConfirmModal from '../../modal/ConfirmModal';
-import ModalContext from '../../../../contexts/ModalContext';
-import deleteIcon from '../../../../assets/icons/close.svg';
+import deleteEducation from '../../../../../../redux/actions/profiles/deleteEducation';
+import getFormattedDate from '../../../../../../utils/getFormattedDate';
+import ConfirmModal from '../../../../../common/modal/ConfirmModal';
+import ModalContext from '../../../../../../contexts/ModalContext';
+import deleteIcon from '../../../../../../assets/icons/close.svg';
 
 const EducationItem = ({
   education: { school, degree, from, to, _id },

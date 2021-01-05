@@ -1,0 +1,14 @@
+@import '../../../../../assets/styles/utils/mixins/table.scss';
+
+.experiences {
+  @include table;
+  margin-bottom: 1.5em;
+
+  &__header-row {
+    @include table-header-row;
+  }
+
+  &__data-row {
+    @include table-data-row;
+  }
+}

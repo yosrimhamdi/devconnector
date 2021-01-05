@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 
 import './ExperienceItem.scss';
-import deleteExperience from '../../../../redux/actions/profiles/deleteExperience';
-import getFormattedDate from '../../../../utils/getFormattedDate';
-import ConfirmModal from '../../modal/ConfirmModal';
-import ModalContext from '../../../../contexts/ModalContext';
-import deleteIcon from '../../../../assets/icons/close.svg';
+import deleteExperience from '../../../../../../redux/actions/profiles/deleteExperience';
+import getFormattedDate from '../../../../../../utils/getFormattedDate';
+import ConfirmModal from '../../../../../common/modal/ConfirmModal';
+import ModalContext from '../../../../../../contexts/ModalContext';
+import deleteIcon from '../../../../../../assets/icons/close.svg';
 
 const ExpItem = ({
   experience: { company, title, from, to, _id },

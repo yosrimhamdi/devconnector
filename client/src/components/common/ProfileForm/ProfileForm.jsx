@@ -12,6 +12,7 @@ import Spinner from '../Spinner';
 import Link from '../Link';
 import Button from '../Button';
 import BackSection from '../BackSection';
+import useDisableScroll from '../../../hooks/useDisableScroll';
 
 const ProfileForm = ({
   handleSubmit,
@@ -26,6 +27,8 @@ const ProfileForm = ({
 
     onFormSubmit(profile);
   };
+
+  useDisableScroll(loading);
 
   return (
     <>

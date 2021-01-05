@@ -22,13 +22,13 @@ const ProfileForm = ({
   loading,
   title,
 }) => {
+  useDisableScroll(loading);
+
   const onSubmit = formValues => {
     const profile = constructProfile(formValues);
 
     onFormSubmit(profile);
   };
-
-  useDisableScroll(loading);
 
   return (
     <>

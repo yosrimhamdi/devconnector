@@ -2,8 +2,4 @@
 
 .scroll-disabled {
   overflow-y: hidden;
-
-  @include at-medium {
-    padding-right: var(--scrollbar-width);
-  }
 }

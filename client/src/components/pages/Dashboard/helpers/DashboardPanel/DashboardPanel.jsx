@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import './DashboardPanel.scss';
 import Experiences from '../Experiences';
 import Educations from '../Educations';
+// change exp, eduaction names
 import NavLinks from '../NavLinks';
 import UserPhoto from '../UserPhoto';
 

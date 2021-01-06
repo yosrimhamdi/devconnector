@@ -14,7 +14,7 @@
     @include at-medium {
       height: 100vh;
       position: fixed;
-      width: 50vw;
+      width: 50%;
     }
 
     &::after {
@@ -25,6 +25,24 @@
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.322);
+    }
+  }
+
+  &__user-details {
+    @include at-medium {
+      width: 50%;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__content-wrapper {
+    padding: 2em 1em 3em;
+
+    @include at-small {
+      // overflow issue
+      // padding: calc(var(--nav-height) + 2em) 3em 2em;
     }
   }
 
@@ -40,24 +58,6 @@
     @include at-large {
       width: 200px;
       height: 200px;
-    }
-  }
-
-  &__user-details {
-    @include at-medium {
-      width: 50vw;
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
-  }
-
-  &__content-wrapper {
-    padding: 2em 1em 3em;
-
-    @include at-small {
-      // overflow issue
-      // padding: calc(var(--nav-height) + 2em) 3em 2em;
     }
   }
 

@@ -10,7 +10,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     <div className="desktop-nav__section">
       <Link to="/">devConnector</Link>
       <NavLink
-        to="/developers"
+        to="/profiles"
         className="desktop-nav__link"
         activeClassName="desktop-nav__link--active"
       >
@@ -42,7 +42,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     left = (
       <div className="desktop-nav__section">
         <NavLink
-          to="/developers"
+          to="/profiles"
           className="desktop-nav__link"
           activeClassName="desktop-nav__link--active"
         >

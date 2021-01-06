@@ -45,7 +45,7 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
   if (auth.isAuthenticated) {
     slideNavLinks = (
       <>
-        <NavLink to="/developers" activeClassName="slider__active-link">
+        <NavLink to="/profiles" activeClassName="slider__active-link">
           developers
         </NavLink>
         <NavLink to="/dashboard" activeClassName="slider__active-link">

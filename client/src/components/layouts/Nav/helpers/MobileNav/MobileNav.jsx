@@ -22,7 +22,7 @@ const MobileNav = ({ auth: { isAuthenticated } }) => {
     </>
   );
 
-  let left = <Link to="/developers">developers</Link>;
+  let left = <Link to="/profiles">developers</Link>;
 
   if (isAuthenticated) {
     left = (

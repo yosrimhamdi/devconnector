@@ -12,7 +12,7 @@ import {
 } from '../common/Routes';
 import Nav from '../layouts/Nav';
 import Landing from '../pages/Landing';
-import Developers from '../pages/Developers';
+import Profiles from '../pages/Profiles';
 import Signup from '../pages/Signup';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
@@ -32,7 +32,7 @@ const App = () => (
       <PrivateRoute path="/dashboard" exact component={Dashboard} />
       <RestrictedRoute path="/signup" exact component={Signup} />
       <RestrictedRoute path="/login" exact component={Login} />
-      <Route path="/developers" exact component={Developers} />
+      <Route path="/profiles" exact component={Profiles} />
       <Route path="/profiles/new" exact component={CreateProfile} />
       <RestrictedRequireProfileRoute
         path="/profiles/update"

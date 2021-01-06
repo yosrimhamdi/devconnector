@@ -1,1 +1,1 @@
-export { default } from './ExperienceList';
+export { default } from './ExperienceManager';

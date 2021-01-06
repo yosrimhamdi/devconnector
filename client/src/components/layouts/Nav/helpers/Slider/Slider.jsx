@@ -30,14 +30,11 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
 
   let slideNavLinks = (
     <>
-      <NavLink to="/" exact activeClassName="slider__active-link">
-        devconnector
+      <NavLink to="/signup" activeClassName="slider__active-link">
+        sign up
       </NavLink>
       <NavLink to="/login" activeClassName="slider__active-link">
         login
-      </NavLink>
-      <NavLink to="/signup" activeClassName="slider__active-link">
-        sign up
       </NavLink>
     </>
   );

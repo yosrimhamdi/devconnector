@@ -41,8 +41,7 @@
     padding: 2em 1em 3em;
 
     @include at-small {
-      // overflow issue
-      // padding: calc(var(--nav-height) + 2em) 3em 2em;
+      padding: calc(var(--nav-height) + 2em) 3em 2em;
     }
   }
 

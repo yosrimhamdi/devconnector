@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 
-import './Profile.scss';
-
 import fetchProfile from '../../../redux/actions/profiles/fetchProfile';
 import Spinner from '../../common/Spinner';
 import ProfileDisplay from './helpers/ProfileDisplay/ProfileDisplay';
@@ -22,11 +20,7 @@ const Profile = ({ profile, fetchProfile, match, errors }) => {
     return <Spinner fullScreen />;
   }
 
-  return (
-    <div className="profile">
-      <ProfileDisplay profile={profile} />
-    </div>
-  );
+  return <ProfileDisplay profile={profile} />;
 };
 
 const mapStateToProps = ({ profiles, errors }, ownProps) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Educations.scss';
+import './EducationList.scss';
 import EducationItem from './helpers/EducationItem';
 
 const EducationList = ({ educations }) => {
@@ -13,8 +13,8 @@ const EducationList = ({ educations }) => {
   ));
 
   return (
-    <div className="educations">
-      <div className="educations__header-row">
+    <div className="education-list">
+      <div className="education-list__header-row">
         <div>school</div>
         <div>degree</div>
         <div>years</div>

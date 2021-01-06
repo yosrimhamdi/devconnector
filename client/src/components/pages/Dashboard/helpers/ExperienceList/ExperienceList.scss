@@ -1,7 +1,8 @@
 @import '../../../../../assets/styles/utils/mixins/table.scss';
 
-.educations {
+.experience-list {
   @include table;
+  margin-bottom: 1.5em;
 
   &__header-row {
     @include table-header-row;

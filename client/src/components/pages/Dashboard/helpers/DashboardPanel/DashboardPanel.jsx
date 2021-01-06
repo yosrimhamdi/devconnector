@@ -2,9 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import './DashboardPanel.scss';
-import Experiences from '../Experiences';
-import Educations from '../Educations';
-// change exp, eduaction names
+import ExperienceList from '../ExperienceList';
+import EducationList from '../EducationList';
 import NavLinks from '../NavLinks';
 import UserPhoto from '../UserPhoto';
 
@@ -19,8 +18,8 @@ const DashBoardPanel = ({ profile, user }) => {
         <span>{user.fullname}</span>
       </h1>
       <NavLinks />
-      <Experiences experiences={experience} />
-      <Educations educations={education} />
+      <ExperienceList experiences={experience} />
+      <EducationList educations={education} />
     </div>
   );
 };

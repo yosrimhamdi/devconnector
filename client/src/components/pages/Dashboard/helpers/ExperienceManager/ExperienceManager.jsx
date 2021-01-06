@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './ExperienceList.scss';
+import './ExperienceManager.scss';
 import ExperienceItem from './helpers/ExperienceItem';
 
 const ExperienceList = ({ experiences }) => {
@@ -13,8 +13,8 @@ const ExperienceList = ({ experiences }) => {
   ));
 
   return (
-    <div className="experience-list">
-      <div className="experience-list__header-row">
+    <div className="experience-manager">
+      <div className="experience-manager__header-row">
         <div>company</div>
         <div>title</div>
         <div>year</div>

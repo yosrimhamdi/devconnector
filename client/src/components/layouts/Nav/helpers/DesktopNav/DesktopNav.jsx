@@ -24,14 +24,18 @@ const DesktopNav = ({
   if (isAuthenticated) {
     content = (
       <>
-        <div>
+        <div className="desktop-nav__flex">
           <Link to="/profiles">developers</Link>
           <Link to="/posts">post feed</Link>
         </div>
-        <div>
+        <div className="desktop-nav__flex">
           <Link to="/dashboard">dashboard</Link>
-          <div>
-            <img src={user.photo.path} alt={user.fullname} />
+          <div className="desktop-nav__flex desktop-nav__logout-button">
+            <img
+              className="desktop-nav__user-image"
+              src={user.photo.path}
+              alt={user.fullname}
+            />
             <div onClick={logoutUser} role="button">
               logout
             </div>

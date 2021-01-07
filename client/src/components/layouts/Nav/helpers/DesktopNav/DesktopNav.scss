@@ -3,11 +3,6 @@
 .desktop-nav {
   @include nav-container;
 
-  &__website-logo {
-    width: 20px;
-    margin-right: 0.2em;
-  }
-
   &__devconnector {
     font-weight: 500;
     display: flex;
@@ -27,5 +22,26 @@
       transform: translateY(-1px);
       box-shadow: 0 2px 5px rgba(#000, 0.2);
     }
+  }
+
+  &__user-image {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__flex {
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+
+    & > *:not(:last-child) {
+      margin-right: 1em;
+    }
+  }
+
+  &__logout-button {
+    cursor: pointer;
   }
 }

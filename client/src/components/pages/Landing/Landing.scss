@@ -5,48 +5,48 @@
   background: url('./images/masthead-alt-06-wide-large-cropped.jpg') center;
   background-size: cover;
   position: relative;
+  color: #fefefe;
+  padding-top: 1px;
+  font-weight: 600;
 
-  &__content {
-    color: white;
-    z-index: 1;
-    text-align: center;
-    width: 100%;
+  &__outlook {
+    padding: 0 13%;
+    margin-top: calc(var(--nav-height) - 1px);
+    font-size: 2rem;
+    padding-top: 1.5rem;
+    text-transform: capitalize;
+    z-index: 2;
+  }
+
+  &__wrapper {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 1em;
+    bottom: 0;
+    left: 0;
+    padding: 0 13%;
+    width: 100%;
   }
 
-  &__header {
-    font-size: 8.64vw;
-    font-weight: 300;
-    margin-bottom: 0.5em;
-
-    @include at-small {
-      margin-bottom: 0.2em;
-      font-size: 3.6rem;
-    }
-
-    @include at-large {
-      font-size: 5rem;
-    }
+  &__headline {
+    font-size: 3.8rem;
+    line-height: 1;
   }
 
-  &__sub-header {
-    font-size: 4.5vw;
-    line-height: 1.4;
-    font-weight: 200;
-    text-align: justify;
-    text-align-last: center;
-    margin-bottom: 2.5em;
-
-    @include at-small {
-      font-size: 1.2rem;
-    }
+  &__small-headline {
+    font-size: 0.95rem;
   }
 
-  &__button-container > a:not(:last-child) {
-    margin-right: 0.8em;
+  &__button-wrapper {
+    margin: 1em 0 1em;
+    padding-top: 1em;
+    border-top: 1px solid #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__button {
+    background-color: var(--main-color-dark);
+    padding: 0.9em 8.1em;
+    border-radius: 4px;
   }
 }

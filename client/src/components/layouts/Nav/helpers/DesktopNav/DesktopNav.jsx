@@ -12,8 +12,8 @@ const DesktopNav = ({
 }) => {
   let content = (
     <>
-      <Link to="/" className="desktop-nav__devconnector">
-        microsoft
+      <Link to="/developers" className="desktop-nav__devconnector">
+        developers
       </Link>
       <Link to="/login" className="desktop-nav__login-button">
         sign in

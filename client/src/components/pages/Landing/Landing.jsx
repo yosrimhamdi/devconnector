@@ -1,7 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import './Landing.scss';
-import Link from '../../common/Link';
 import useChangeNavBgColor from './useChangeNavBgColor';
 
 const Landing = () => {
@@ -9,17 +9,15 @@ const Landing = () => {
 
   return (
     <div className="landing">
-      <div className="landing__content">
-        <h1 className="landing__header">
-          <span>Developer Connector</span>
-        </h1>
-        <h2 className="landing__sub-header">
-          Create a developer profile/portfolio, share posts and get help from
-          other developers
-        </h2>
-        <div className="landing__button-container">
-          <Link to="signup" text="sign up" />
-          <Link grey to="login" text="login" />
+      <h4 className="landing__outlook">connector</h4>
+      <div className="landing__wrapper">
+        <h1 className="landing__headline">Connect. Ask.</h1>
+        <h1 className="landing__headline">Get valid responses.</h1>
+        <div className="landing__button-wrapper">
+          <h3 className="landing__small-headline">Join our community</h3>
+          <Link to="/signup" className="landing__button">
+            Create account
+          </Link>
         </div>
       </div>
     </div>

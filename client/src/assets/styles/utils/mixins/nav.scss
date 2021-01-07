@@ -5,29 +5,15 @@
   top: 0;
   width: 100%;
   z-index: 1;
-  padding: 0 1em;
   color: white;
-  background-color: var(--nav-bg-color);
+  background-color: rgba(white, 0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
   text-transform: capitalize;
-  box-shadow: 0 3px 6px 3px rgba($color: #000000, $alpha: 0.1);
-  height: 53px;
+  padding: 1em;
 
   @include at-medium {
-    height: 50px;
-    padding: 0 3em;
-  }
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: var(--nav-bg-color);
-    z-index: -1;
+    padding: 0.6em 13%;
   }
 }

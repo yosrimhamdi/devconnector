@@ -9,8 +9,9 @@ import Slider from '../Slider';
 const MobileNav = ({ auth: { isAuthenticated }, navRef }) => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
 
-  const right = (
+  let content = (
     <>
+      <Link to="/profiles">developers</Link>
       <HamburgerMenu
         isSliderVisible={isSliderVisible}
         setIsSliderVisible={setIsSliderVisible}
@@ -22,20 +23,27 @@ const MobileNav = ({ auth: { isAuthenticated }, navRef }) => {
     </>
   );
 
-  let left = <Link to="/profiles">developers</Link>;
-
   if (isAuthenticated) {
-    left = (
-      <Link to="/posts" className="mobile-nav__dashboard-link">
-        posts feed
-      </Link>
+    content = (
+      <>
+        <HamburgerMenu
+          isSliderVisible={isSliderVisible}
+          setIsSliderVisible={setIsSliderVisible}
+        />
+        <Slider
+          isSliderVisible={isSliderVisible}
+          setIsSliderVisible={setIsSliderVisible}
+        />
+        <Link to="/posts" className="mobile-nav__dashboard-link">
+          posts feed
+        </Link>
+      </>
     );
   }
 
   return (
     <nav className="mobile-nav" ref={navRef}>
-      {left}
-      {right}
+      {content}
     </nav>
   );
 };

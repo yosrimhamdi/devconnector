@@ -6,7 +6,7 @@
   width: 100%;
   z-index: 1;
   color: white;
-  background-color: rgba(white, 0.2);
+  background-color: var(--nav-bg-color);
   display: flex;
   justify-content: space-between;
   align-items: center;

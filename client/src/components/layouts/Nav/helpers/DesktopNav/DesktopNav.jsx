@@ -1,16 +1,15 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './DesktopNav.scss';
 import logoutUser from '../../../../../redux/actions/auth/logoutUser';
-import useNavHeight from '../../../../../hooks/useNavHeight';
 
-const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
-  const navRef = useRef(null);
-
-  useNavHeight(navRef);
-
+const DesktopNav = ({
+  auth: { isAuthenticated, user },
+  logoutUser,
+  navRef,
+}) => {
   let content = (
     <>
       <Link to="/" className="desktop-nav__devconnector">

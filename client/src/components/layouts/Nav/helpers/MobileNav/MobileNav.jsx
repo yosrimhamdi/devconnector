@@ -1,18 +1,13 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import './MobileNav.scss';
 import HamburgerMenu from '../HamburgerMenu';
 import Slider from '../Slider';
-import useNavHeight from '../../../../../hooks/useNavHeight';
 
-const MobileNav = ({ auth: { isAuthenticated } }) => {
-  const navRef = useRef(null);
-
+const MobileNav = ({ auth: { isAuthenticated }, navRef }) => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
-
-  useNavHeight(navRef);
 
   const right = (
     <>

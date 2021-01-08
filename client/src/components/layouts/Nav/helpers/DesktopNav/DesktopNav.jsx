@@ -12,11 +12,11 @@ const DesktopNav = ({
 }) => {
   let content = (
     <>
-      <Link to="/developers" className="desktop-nav__devconnector">
-        developers
+      <Link to="/developers" className="desktop-nav__profiles-link">
+        Developers
       </Link>
       <Link to="/login" className="desktop-nav__login-button">
-        sign in
+        Log in
       </Link>
     </>
   );

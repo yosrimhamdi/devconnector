@@ -17,8 +17,13 @@
     justify-content: space-between;
     align-items: center;
     backdrop-filter: blur(2px);
-    padding-top: 0.55em;
-    padding-bottom: 0.55em;
+    padding-top: 0.9em;
+    padding-bottom: 0.9em;
+
+    @include at-medium {
+      padding-top: 0.55em;
+      padding-bottom: 0.55em;
+    }
   }
 
   &__profiles-link {
@@ -121,7 +126,7 @@
   &__signup-button {
     background-color: var(--main-color-dark);
     padding: 0.9em 8.1em;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     border-radius: 4px;
     display: inline-block;
     width: 100%;

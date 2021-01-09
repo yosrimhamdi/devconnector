@@ -62,6 +62,14 @@
     }
   }
 
+  &__headline,
+  &__connector,
+  &__message {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
   &__connector {
     font-size: 1.5rem;
     padding-top: 1rem;
@@ -73,19 +81,11 @@
     }
   }
 
-  &__cta-wrapper {
+  &__wrapper {
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
-  }
-
-  &__headline,
-  &__connector,
-  &__message {
-    &::first-letter {
-      text-transform: uppercase;
-    }
   }
 
   &__headline {
@@ -106,7 +106,7 @@
     }
   }
 
-  &__button-wrapper {
+  &__cta-wrapper {
     margin: 1em 0 1em;
 
     @include at-medium {

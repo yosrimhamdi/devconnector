@@ -21,11 +21,11 @@ const Landing = () => {
         </Link>
       </div>
       <h4 className="landing__connector">connector</h4>
-      <div className="landing__cta-wrapper">
+      <div className="landing__wrapper">
         <h1 className="landing__headline">connect.</h1>
         <div className="landing__headline">interrogate.</div>
         <h1 className="landing__headline">get responses.</h1>
-        <div className="landing__button-wrapper">
+        <div className="landing__cta-wrapper">
           <h3 className="landing__message">join our community</h3>
           <Link to="/signup" className="landing__button">
             Create account

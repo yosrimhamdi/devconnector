@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import './Landing.scss';
 
 const Landing = () => {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    ref.current.style.height = `${window.innerHeight}px`;
+  }, []);
+
   return (
-    <div className="landing">
+    <div className="landing" ref={ref}>
       <div className="landing__nav">
         <Link to="/developers" className="landing__profiles-link">
           Developers

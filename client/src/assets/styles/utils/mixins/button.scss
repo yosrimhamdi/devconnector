@@ -15,15 +15,6 @@
   }
 }
 
-@mixin grey-button {
-  background-color: var(--grey-button);
-  color: #3a3a3a;
-
-  &:hover {
-    background-color: var(--grey-button-hover);
-  }
-}
-
 @mixin transparent-button {
   color: var(--main-color);
   background-color: #f3f3f3;

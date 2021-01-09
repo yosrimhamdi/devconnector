@@ -27,7 +27,7 @@ const Landing = () => {
         <h1 className="landing__headline">get responses.</h1>
         <div className="landing__cta-wrapper">
           <h3 className="landing__message">join our community</h3>
-          <Link to="/signup" className="landing__button">
+          <Link to="/signup" className="landing__signup-button">
             Create account
           </Link>
         </div>

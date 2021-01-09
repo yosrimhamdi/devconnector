@@ -3,10 +3,6 @@
 .link {
   @include blue-button;
 
-  &--grey {
-    @include grey-button;
-  }
-
   &--transparent {
     @include transparent-button;
   }

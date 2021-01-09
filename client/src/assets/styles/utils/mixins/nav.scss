@@ -10,6 +10,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1em;
+  backdrop-filter: blur(2px);
 
   @include at-medium {
     padding: 0.6em 13%;

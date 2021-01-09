@@ -40,7 +40,7 @@ const Email = ({
       <div className="auth__message">
         <span>Already a user?</span>
         <Link to="/login" className="auth__link">
-          log in!
+          Log in!
         </Link>
       </div>
       <div className="auth__button-wrapper auth__button-wrapper--with-spinner">

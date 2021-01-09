@@ -9,6 +9,14 @@ const Landing = () => {
 
   return (
     <div className="landing">
+      <div className="landing__nav">
+        <Link to="/developers" className="landing__profiles-link">
+          Developers
+        </Link>
+        <Link to="/login" className="landing__login-button">
+          Log in
+        </Link>
+      </div>
       <h4 className="landing__outlook">connector</h4>
       <div className="landing__wrapper">
         <h1 className="landing__headline">Connect. Ask.</h1>

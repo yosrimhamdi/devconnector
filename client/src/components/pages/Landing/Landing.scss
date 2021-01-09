@@ -6,16 +6,13 @@
   background-size: cover;
   position: relative;
   color: #fefefe;
-  padding-top: 1px;
   font-weight: 600;
 
   &__outlook {
     padding: 0 13%;
-    margin-top: calc(var(--nav-height) - 1px);
     font-size: 2rem;
     padding-top: 1.5rem;
     text-transform: capitalize;
-    z-index: 2;
   }
 
   &__wrapper {
@@ -48,5 +45,40 @@
     background-color: var(--main-color-dark);
     padding: 0.9em 8.1em;
     border-radius: 4px;
+  }
+
+  &__nav {
+    background-color: rgba(#ffffff, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    backdrop-filter: blur(2px);
+
+    @include at-medium {
+      padding: 0.6em 13%;
+    }
+  }
+
+  &__profiles-link {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    color: #f5f5f5;
+  }
+
+  &__login-button {
+    background-color: #f3f3f3;
+    color: #0072c9;
+    padding: 0.5em 1.5em;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: transform 120ms, box-shadow 120ms;
+    box-shadow: 1px 0px 2px rgba(#000, 0.2);
+
+    &:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 5px rgba(#000, 0.2);
+    }
   }
 }

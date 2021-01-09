@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import code from '../../../../assets/images/code-logo.svg';
 import Input from '../../../common/form/microsoft/Input';
@@ -35,6 +36,12 @@ const Email = ({
           responseError={errors.alreadyRegisterd}
           onFocus={clearErrors}
         />
+      </div>
+      <div className="auth__message">
+        <span>Already a user?</span>
+        <Link to="/login" className="auth__link">
+          log in!
+        </Link>
       </div>
       <div className="auth__button-wrapper auth__button-wrapper--with-spinner">
         <Button text="next" />

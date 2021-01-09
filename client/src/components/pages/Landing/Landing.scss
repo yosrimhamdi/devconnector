@@ -63,6 +63,7 @@
     text-transform: capitalize;
 
     @include at-medium {
+      padding-top: 0.55rem;
       font-size: 2rem;
     }
   }

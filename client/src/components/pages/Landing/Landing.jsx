@@ -23,7 +23,7 @@ const Landing = () => {
       <h4 className="landing__connector">connector</h4>
       <div className="landing__cta-wrapper">
         <h1 className="landing__headline">connect.</h1>
-        <div className="landing__headline">crganize.</div>
+        <div className="landing__headline">interrogate.</div>
         <h1 className="landing__headline">get responses.</h1>
         <div className="landing__button-wrapper">
           <h3 className="landing__message">join our community</h3>

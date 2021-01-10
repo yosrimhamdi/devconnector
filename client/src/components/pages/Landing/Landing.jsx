@@ -14,10 +14,12 @@ const Landing = () => {
   return (
     <div className="landing" ref={ref}>
       <div className="landing__nav">
-        <ProfilesLink />
-        <Link to="/login" className="landing__login-button">
-          Log in
-        </Link>
+        <div className="landing__nav-content">
+          <ProfilesLink />
+          <Link to="/login" className="landing__login-button">
+            Log in
+          </Link>
+        </div>
       </div>
       <h4 className="landing__connector">connector</h4>
       <div className="landing__wrapper">

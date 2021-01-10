@@ -1,0 +1,14 @@
+@import './responsive';
+
+@mixin wrapper {
+  padding-right: 1em;
+  padding-left: 1em;
+
+  @include at-medium {
+    width: 70% !important;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 0em;
+    padding-left: 0em;
+  }
+}

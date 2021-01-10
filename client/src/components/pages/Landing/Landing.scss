@@ -1,5 +1,6 @@
 @import '../../../assets/styles/utils/mixins/responsive';
 @import '../../../assets/styles/utils/mixins/button';
+@import '../../../assets/styles/utils/mixins/wrapper';
 
 .landing {
   background: url('./images/masthead-alt-06-wide-large-cropped.jpg') center;
@@ -14,10 +15,13 @@
 
   &__nav {
     background-color: rgba(#ffffff, 0.3);
+    backdrop-filter: blur(2px);
+  }
+
+  &__nav-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    backdrop-filter: blur(2px);
     padding-top: 0.9em;
     padding-bottom: 0.9em;
 
@@ -44,26 +48,6 @@
     }
   }
 
-  &__nav,
-  &__connector,
-  &__wrapper {
-    padding-right: 1.4rem;
-    padding-left: 1.4rem;
-
-    @include at-medium {
-      padding-right: 13%;
-      padding-left: 13%;
-    }
-  }
-
-  &__headline,
-  &__connector,
-  &__message {
-    &::first-letter {
-      text-transform: uppercase;
-    }
-  }
-
   &__connector {
     font-size: 1.5rem;
     padding-top: 1rem;
@@ -75,11 +59,29 @@
     }
   }
 
+  &__nav-content,
+  &__connector,
+  &__wrapper {
+    @include wrapper;
+  }
+
+  &__headline,
+  &__connector,
+  &__message {
+    &::first-letter {
+      text-transform: uppercase;
+    }
+  }
+
   &__wrapper {
     position: absolute;
     bottom: 0;
-    left: 0;
     width: 100%;
+
+    @include at-medium {
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__headline {

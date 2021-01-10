@@ -1,11 +1,8 @@
 @import '../../../../../assets/styles/utils/mixins/responsive';
+@import '../../../../../assets/styles/utils/mixins/wrapper';
 
 .dashboard-panel {
-  padding: 2.5em 1em 2em;
-
-  @include at-small {
-    padding-top: 4em;
-  }
+  @include wrapper;
 
   &__greetings {
     text-align: center;

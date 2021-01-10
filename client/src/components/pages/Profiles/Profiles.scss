@@ -1,4 +1,5 @@
 @import '../../../assets/styles/utils/mixins/responsive';
+@import '../../../assets/styles/utils/mixins/wrapper';
 
 .profiles {
   position: relative;
@@ -7,7 +8,6 @@
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 100vh;
-  padding: 3em 0 2em;
   margin-top: -1em;
 
   @include at-medium {
@@ -26,7 +26,7 @@
 
   &__content {
     list-style: none;
-    padding: 0 1em;
+    padding-top: 3em;
     margin-bottom: 2em;
     display: flex;
     justify-content: center;
@@ -36,5 +36,7 @@
     @include at-medium {
       gap: 2em;
     }
+
+    @include wrapper;
   }
 }

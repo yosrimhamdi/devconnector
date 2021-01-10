@@ -6,10 +6,14 @@ import './DesktopNav.scss';
 import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 import ProfilesLink from '../../../../common/ProfilesLink';
 
-const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
+const DesktopNav = ({
+  auth: { isAuthenticated, user },
+  logoutUser,
+  isProfiles,
+}) => {
   let content = (
     <>
-      <ProfilesLink />
+      <ProfilesLink isProfiles={isProfiles} />
       <div className="desktop-nav__flex">
         <Link to="/login" className="desktop-nav__login-button">
           log in
@@ -25,7 +29,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     content = (
       <>
         <div className="desktop-nav__flex">
-          <ProfilesLink />
+          <ProfilesLink isProfiles={isProfiles} />
           <Link to="/posts" className="desktop-nav__posts-link">
             posts
           </Link>

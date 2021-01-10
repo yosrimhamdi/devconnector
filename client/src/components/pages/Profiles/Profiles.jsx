@@ -54,8 +54,6 @@ const Profiles = ({
     ));
   }
 
-  console.log(match.path);
-
   return (
     <>
       <Nav isProfiles={match.path === '/profiles'} />

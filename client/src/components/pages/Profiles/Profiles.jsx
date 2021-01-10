@@ -8,6 +8,7 @@ import Spinner from '../../common/Spinner';
 import EndOfContent from '../../common/EndOfContent';
 import fetchProfilePages from '../../../redux/actions/profiles/fetchProfilePages';
 import updateCurrentProfilePage from '../../../redux/actions/profiles/updateCurrentProfilePage';
+import Nav from '../../layouts/Nav';
 
 const Profiles = ({
   fetchProfiles,
@@ -53,16 +54,19 @@ const Profiles = ({
   }
 
   return (
-    <div className="profiles">
-      <ul className="profiles__content">{renderedProfiles}</ul>
-      <Spinner white visible={loading} fullScreen={initialMount.profiles} />
-      <EndOfContent
-        currentPage={currentPage}
-        pages={pages}
-        loading={loading}
-        white
-      />
-    </div>
+    <>
+      <Nav />
+      <div className="profiles">
+        <ul className="profiles__content">{renderedProfiles}</ul>
+        <Spinner white visible={loading} fullScreen={initialMount.profiles} />
+        <EndOfContent
+          currentPage={currentPage}
+          pages={pages}
+          loading={loading}
+          white
+        />
+      </div>
+    </>
   );
 };
 

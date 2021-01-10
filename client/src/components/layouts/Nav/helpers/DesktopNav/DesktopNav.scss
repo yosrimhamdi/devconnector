@@ -1,26 +1,21 @@
 @import '../../../../../assets/styles/utils/mixins/nav';
+@import '../../../../../assets/styles/utils/mixins/button';
 
 .desktop-nav {
   @include nav-container;
 
-  // move into a mixin: from both, desktop and mobile
-  &__user-image {
-    width: 25px;
-    height: 25px;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-
   &__flex {
     display: flex;
     align-items: center;
-
-    & > *:not(:last-child) {
-      margin-right: 1em;
-    }
   }
 
-  &__logout-button {
-    cursor: pointer;
+  &__login-button {
+    @include login-button;
+
+    margin-right: 0.5em;
+  }
+
+  &__signup-button {
+    @include signup-button;
   }
 }

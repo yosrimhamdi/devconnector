@@ -1,4 +1,5 @@
 @import '../../../assets/styles/utils/mixins/responsive';
+@import '../../../assets/styles/utils/mixins/button';
 
 .landing {
   background: url('./images/masthead-alt-06-wide-large-cropped.jpg') center;
@@ -39,46 +40,13 @@
   }
 
   &__login-button {
-    background-color: white;
-    font-size: 0.75rem;
-    color: #0072c9;
-    padding: 0.5em 1em;
-    border-radius: 2px;
-
-    @include at-medium {
-      background-color: #f3f3f3;
-      padding: 0.5em 1.5em;
-      font-size: 1rem;
-      border-radius: 4px;
-    }
+    @include login-button;
   }
 
   &__signup-button {
-    background-color: var(--main-color-dark);
-    padding: 0.9em 8.1em;
-    font-size: 1.15rem;
-    border-radius: 4px;
-    display: inline-block;
-    width: 100%;
-    white-space: nowrap;
-    display: flex;
-    justify-content: center;
+    @include signup-button;
 
-    @include at-medium {
-      width: auto;
-      font-size: 1rem;
-    }
-  }
-
-  &__login-button,
-  &__signup-button {
-    transition: transform 120ms, box-shadow 120ms;
-    box-shadow: 1px 0px 2px rgba(#000, 0.2);
-
-    &:hover {
-      transform: translate3d(0, -1px, 0);
-      box-shadow: 0 2px 5px rgba(#000, 0.2);
-    }
+    padding: 0.9em 8.1em !important;
   }
 
   &__nav,

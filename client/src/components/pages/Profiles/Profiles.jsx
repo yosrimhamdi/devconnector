@@ -55,7 +55,7 @@ const Profiles = ({
 
   return (
     <>
-      <Nav isProfiles={true} />
+      <Nav isProfiles />
       <div className="profiles">
         <ul className="profiles__content">{renderedProfiles}</ul>
         <Spinner white visible={loading} fullScreen={initialMount.profiles} />

@@ -9,7 +9,6 @@ import EndOfContent from '../../common/EndOfContent';
 import fetchProfilePages from '../../../redux/actions/profiles/fetchProfilePages';
 import updateCurrentProfilePage from '../../../redux/actions/profiles/updateCurrentProfilePage';
 import Nav from '../../layouts/Nav';
-import ProfilesContext from '../../../contexts/ProfilesContext';
 
 const Profiles = ({
   fetchProfiles,
@@ -56,9 +55,7 @@ const Profiles = ({
 
   return (
     <>
-      <ProfilesContext.Provider value>
-        <Nav />
-      </ProfilesContext.Provider>
+      <Nav />
       <div className="profiles">
         <ul className="profiles__content">{renderedProfiles}</ul>
         <Spinner white visible={loading} fullScreen={initialMount.profiles} />

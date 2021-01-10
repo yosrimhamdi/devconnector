@@ -11,6 +11,8 @@
   margin-bottom: 1em;
   position: relative;
   text-transform: capitalize;
+  height: 55px;
+  z-index: 1;
 
   @include at-medium {
     margin-bottom: 2em;

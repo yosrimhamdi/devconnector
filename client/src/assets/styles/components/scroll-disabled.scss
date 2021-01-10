@@ -3,3 +3,7 @@
 .scroll-disabled {
   overflow-y: hidden;
 }
+
+.prevent-jump {
+  padding-right: var(--scrollbar-width);
+}

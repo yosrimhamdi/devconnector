@@ -4,11 +4,12 @@ import { Link } from 'react-router-dom';
 
 import './DesktopNav.scss';
 import logoutUser from '../../../../../redux/actions/auth/logoutUser';
+import ProfilesLink from '../../../../common/ProfilesLink';
 
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let content = (
     <>
-      <Link to="/profiles">developers</Link>
+      <ProfilesLink />
       <div className="desktop-nav__flex">
         <Link to="/login" className="desktop-nav__login-button">
           log in

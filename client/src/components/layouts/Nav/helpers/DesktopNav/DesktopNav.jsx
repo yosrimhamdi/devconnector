@@ -5,11 +5,7 @@ import { Link } from 'react-router-dom';
 import './DesktopNav.scss';
 import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 
-const DesktopNav = ({
-  auth: { isAuthenticated, user },
-  logoutUser,
-  navRef,
-}) => {
+const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let content = (
     <>
       <Link to="/developers" className="desktop-nav__profiles-link">
@@ -45,11 +41,7 @@ const DesktopNav = ({
     );
   }
 
-  return (
-    <nav className="desktop-nav" ref={navRef}>
-      {content}
-    </nav>
-  );
+  return <nav className="desktop-nav">{content}</nav>;
 };
 
 const mapStateToProps = ({ auth }) => ({ auth });

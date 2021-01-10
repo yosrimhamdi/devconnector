@@ -1,19 +1,14 @@
-import React, { useRef } from 'react';
+import React from 'react';
 
 import MobileNav from './helpers/MobileNav';
 import DesktopNav from './helpers/DesktopNav';
-import useNavHeight from '../../../hooks/useNavHeight';
 
 const Nav = () => {
-  const navRef = useRef(null);
-
-  useNavHeight(navRef);
-
   if (window.innerWidth < 1024) {
-    return <MobileNav navRef={navRef} />;
+    return <MobileNav />;
   }
 
-  return <DesktopNav navRef={navRef} />;
+  return <DesktopNav />;
 };
 
 export default Nav;

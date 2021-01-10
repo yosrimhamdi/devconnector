@@ -6,7 +6,7 @@ import './MobileNav.scss';
 import HamburgerMenu from '../HamburgerMenu';
 import Slider from '../Slider';
 
-const MobileNav = ({ auth: { isAuthenticated }, navRef }) => {
+const MobileNav = ({ auth: { isAuthenticated } }) => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
 
   let content = (
@@ -41,11 +41,7 @@ const MobileNav = ({ auth: { isAuthenticated }, navRef }) => {
     );
   }
 
-  return (
-    <nav className="mobile-nav" ref={navRef}>
-      {content}
-    </nav>
-  );
+  return <nav className="mobile-nav">{content}</nav>;
 };
 
 const mapStateToProps = ({ auth }) => ({ auth });

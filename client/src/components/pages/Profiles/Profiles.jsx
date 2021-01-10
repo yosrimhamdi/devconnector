@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { connect } from 'react-redux';
 
 import './Profiles.scss';
@@ -18,12 +18,18 @@ const Profiles = ({
   loading,
   initialMount,
 }) => {
+  const ref = useRef();
+
   useEffect(() => {
     if (initialMount.profiles) {
       fetchProfiles(1);
 
       fetchProfilePages();
     }
+  }, []);
+
+  useEffect(() => {
+    ref.current.style.minHeight = `${window.innerHeight}px`;
   }, []);
 
   useEffect(() => {
@@ -56,7 +62,7 @@ const Profiles = ({
   return (
     <>
       <Nav />
-      <div className="profiles">
+      <div className="profiles" ref={ref}>
         <ul className="profiles__content">{renderedProfiles}</ul>
         <Spinner white visible={loading} fullScreen={initialMount.profiles} />
         <EndOfContent

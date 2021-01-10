@@ -9,7 +9,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let content = (
     <>
       <Link to="/profiles">developers</Link>
-      <Link to="/login">dog in</Link>
+      <Link to="/login">log in</Link>
     </>
   );
 

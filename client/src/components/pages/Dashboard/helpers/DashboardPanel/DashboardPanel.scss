@@ -1,7 +1,6 @@
 @import '../../../../../assets/styles/utils/mixins/responsive';
 
 .dashboard-panel {
-  margin-top: var(--nav-height);
   padding: 2.5em 1em 2em;
 
   @include at-small {

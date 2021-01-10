@@ -11,6 +11,7 @@ import Spinner from '../../common/Spinner';
 import CreatePostForm from './helpers/CreatePostForm';
 import PostItem from './helpers/PostItem';
 import EndOfContent from '../../common/EndOfContent';
+import Nav from '../../layouts/Nav';
 
 const Posts = ({
   fetchPosts,
@@ -53,8 +54,9 @@ const Posts = ({
   }
 
   return (
-    <div className="posts">
-      <div className="posts__content-wrapper">
+    <>
+      <Nav />
+      <div className="posts">
         <CreatePostForm visible={data} />
         <ul className="posts__content">{renderedPosts}</ul>
         <Spinner visible={loading} fullScreen={!data} />
@@ -64,7 +66,7 @@ const Posts = ({
           loading={loading}
         />
       </div>
-    </div>
+    </>
   );
 };
 

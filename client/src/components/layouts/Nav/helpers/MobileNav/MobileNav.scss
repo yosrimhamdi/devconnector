@@ -2,13 +2,4 @@
 
 .mobile-nav {
   @include nav-container;
-
-  &__dashboard-link {
-    display: flex;
-    align-items: center;
-
-    &:active {
-      text-decoration: underline;
-    }
-  }
 }

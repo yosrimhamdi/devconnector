@@ -4,9 +4,10 @@ import { Link } from 'react-router-dom';
 
 import './MobileNav.scss';
 import HamburgerMenu from '../HamburgerMenu';
+import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 import Slider from '../Slider';
 
-const MobileNav = ({ auth: { isAuthenticated } }) => {
+const MobileNav = ({ auth: { isAuthenticated }, logoutUser }) => {
   const [isSliderVisible, setIsSliderVisible] = useState(false);
 
   let content = (
@@ -26,17 +27,17 @@ const MobileNav = ({ auth: { isAuthenticated } }) => {
   if (isAuthenticated) {
     content = (
       <>
-        <HamburgerMenu
-          isSliderVisible={isSliderVisible}
-          setIsSliderVisible={setIsSliderVisible}
-        />
         <Slider
           isSliderVisible={isSliderVisible}
           setIsSliderVisible={setIsSliderVisible}
         />
-        <Link to="/posts" className="mobile-nav__dashboard-link">
-          posts feed
-        </Link>
+        <div role="button" onClick={logoutUser}>
+          logout
+        </div>
+        <HamburgerMenu
+          isSliderVisible={isSliderVisible}
+          setIsSliderVisible={setIsSliderVisible}
+        />
       </>
     );
   }
@@ -46,4 +47,4 @@ const MobileNav = ({ auth: { isAuthenticated } }) => {
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-export default connect(mapStateToProps)(MobileNav);
+export default connect(mapStateToProps, { logoutUser })(MobileNav);

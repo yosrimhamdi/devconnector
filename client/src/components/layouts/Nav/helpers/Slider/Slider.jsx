@@ -4,9 +4,8 @@ import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 
 import './Slider.scss';
-import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 
-const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
+const Slider = ({ auth, isSliderVisible, setIsSliderVisible }) => {
   const sliderNavRef = useRef(null);
 
   useEffect(() => {
@@ -30,10 +29,14 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
 
   let slideNavLinks = (
     <>
-      <NavLink to="/signup" activeClassName="slider__active-link">
+      <NavLink to="/signup" activeClassName="slider__link--active">
         sign up
       </NavLink>
-      <NavLink to="/login" activeClassName="slider__active-link">
+      <NavLink
+        to="/login"
+        className="slider__link"
+        activeClassName="slider__link--active"
+      >
         login
       </NavLink>
     </>
@@ -42,15 +45,27 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
   if (auth.isAuthenticated) {
     slideNavLinks = (
       <>
-        <NavLink to="/profiles" activeClassName="slider__active-link">
+        <NavLink
+          to="/posts"
+          className="slider__link"
+          activeClassName="slider__link--active"
+        >
+          posts feed
+        </NavLink>
+        <NavLink
+          to="/profiles"
+          className="slider__link"
+          activeClassName="slider__link--active"
+        >
           developers
         </NavLink>
-        <NavLink to="/dashboard" activeClassName="slider__active-link">
+        <NavLink
+          to="/dashboard"
+          className="slider__link"
+          activeClassName="slider__link--active"
+        >
           dashboard
         </NavLink>
-        <div className="slider__logout" role="button" onClick={logoutUser}>
-          logout
-        </div>
       </>
     );
   }
@@ -66,4 +81,4 @@ const Slider = ({ auth, logoutUser, isSliderVisible, setIsSliderVisible }) => {
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-export default connect(mapStateToProps, { logoutUser })(Slider);
+export default connect(mapStateToProps)(Slider);

@@ -3,6 +3,7 @@
 .desktop-nav {
   @include nav-container;
 
+  // move into a mixin: from both, desktop and mobile
   &__user-image {
     width: 25px;
     height: 25px;

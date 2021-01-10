@@ -11,25 +11,16 @@
   &--visible {
     box-shadow: 0 0 10px 2px rgba($color: #000000, $alpha: 0.5);
     transform: translate(0, 100%);
-    position: absolute;
   }
 
-  a,
-  &__logout {
+  &__link {
     display: block;
     padding: 1em;
     padding-right: 3em;
-  }
 
-  &__logout:active {
-    text-decoration: underline;
-  }
-
-  a:active {
-    background-color: var(--main-color);
-  }
-
-  &__active-link {
-    background-color: var(--main-color);
+    &:active,
+    &--active {
+      background-color: var(--main-color);
+    }
   }
 }

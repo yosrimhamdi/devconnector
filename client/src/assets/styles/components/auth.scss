@@ -4,7 +4,6 @@
 .auth {
   width: 100vw;
   background-color: white;
-  padding-top: var(--nav-height);
 
   @include at-small {
     @include centerlized-content;

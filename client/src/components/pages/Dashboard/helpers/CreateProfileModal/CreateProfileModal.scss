@@ -2,7 +2,6 @@
 @import '../../../../../assets/styles/utils/mixins/centerlized-content';
 
 .create-profile-modal {
-  padding-top: var(--nav-height);
   height: 100vh;
 
   @include at-small {

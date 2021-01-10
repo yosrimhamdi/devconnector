@@ -1,18 +1,32 @@
 @import './responsive';
 
 @mixin nav-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1;
   background-color: rgba(#ffffff, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1em;
-  backdrop-filter: blur(2px);
+  padding: 1.2em 1em;
+  background-color: var(--nav-bg-color);
+  color: white;
+  margin-bottom: 1em;
+  position: relative;
+  z-index: 1;
+  text-transform: capitalize;
 
   @include at-medium {
-    padding: 0.6em 13%;
+    margin-bottom: 2em;
+    color: #9ea89d;
+    padding: 1em 13%;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--nav-bg-color);
+    z-index: -1;
   }
 }

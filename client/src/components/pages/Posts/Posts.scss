@@ -1,20 +1,11 @@
 @import '../../../assets/styles/utils/mixins/responsive';
 
 .posts {
-  margin-top: var(--nav-height);
-  padding: 1.5em 0 2em;
+  padding: 0 1em;
 
   @include at-small {
-    padding-top: 2em;
-  }
-
-  &__content-wrapper {
-    padding: 0 1em;
-
-    @include at-small {
-      max-width: 80vw;
-      margin: 0 auto;
-    }
+    padding: 0 13%;
+    margin: 0 auto;
   }
 
   &__content {

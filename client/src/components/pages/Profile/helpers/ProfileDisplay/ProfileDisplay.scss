@@ -41,7 +41,7 @@
     padding: 2em 1em 3em;
 
     @include at-small {
-      padding: calc(var(--nav-height) + 2em) 3em 2em;
+      padding: 2em 3em 2em;
     }
   }
 

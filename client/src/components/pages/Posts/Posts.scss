@@ -1,7 +1,9 @@
 @import '../../../assets/styles/utils/mixins/wrapper';
+@import '../../../assets/styles/utils/mixins/content-wrapper';
 
 .posts {
   @include wrapper;
+  @include content-wrapper;
 
   &__content {
     list-style: none;

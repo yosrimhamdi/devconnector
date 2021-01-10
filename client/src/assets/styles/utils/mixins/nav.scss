@@ -5,12 +5,7 @@
   position: relative;
   background-color: var(--nav-bg-color);
   color: white;
-  margin-bottom: 1em;
   z-index: 1;
-
-  @include at-medium {
-    margin-bottom: 2em;
-  }
 
   &::before {
     content: '';

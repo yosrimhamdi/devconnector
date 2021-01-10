@@ -1,8 +1,10 @@
 @import '../../../../../assets/styles/utils/mixins/responsive';
 @import '../../../../../assets/styles/utils/mixins/wrapper';
+@import '../../../../../assets/styles/utils/mixins/content-wrapper';
 
 .dashboard-panel {
   @include wrapper;
+  @include content-wrapper;
 
   &__greetings {
     text-align: center;

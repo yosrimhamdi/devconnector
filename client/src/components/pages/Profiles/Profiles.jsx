@@ -17,7 +17,6 @@ const Profiles = ({
   profiles: { data, pages, currentPage },
   loading,
   initialMount,
-  match,
 }) => {
   useEffect(() => {
     if (initialMount.profiles) {
@@ -56,7 +55,7 @@ const Profiles = ({
 
   return (
     <>
-      <Nav isProfiles={match.path === '/profiles'} />
+      <Nav isProfiles={true} />
       <div className="profiles">
         <ul className="profiles__content">{renderedProfiles}</ul>
         <Spinner white visible={loading} fullScreen={initialMount.profiles} />

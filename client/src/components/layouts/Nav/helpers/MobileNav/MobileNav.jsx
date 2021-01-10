@@ -42,7 +42,11 @@ const MobileNav = ({ auth: { isAuthenticated }, logoutUser }) => {
     );
   }
 
-  return <nav className="mobile-nav">{content}</nav>;
+  return (
+    <nav className="mobile-nav">
+      <div className="mobile-nav__content-wrapper">{content}</div>
+    </nav>
+  );
 };
 
 const mapStateToProps = ({ auth }) => ({ auth });

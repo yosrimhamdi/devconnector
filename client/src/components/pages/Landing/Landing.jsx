@@ -14,7 +14,7 @@ const Landing = () => {
   return (
     <div className="landing" ref={ref}>
       <div className="landing__nav">
-        <div className="landing__nav-content">
+        <div className="landing__nav-content-wrapper">
           <ProfilesLink />
           <Link to="/login" className="landing__login-button">
             Log in

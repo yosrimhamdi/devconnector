@@ -1,8 +1,13 @@
 @import '../../../../../assets/styles/utils/mixins/nav';
 @import '../../../../../assets/styles/utils/mixins/button';
+@import '../../../../../assets/styles/utils/mixins/wrapper';
 
 .desktop-nav {
   @include nav;
+
+  &__content-wrapper {
+    @include nav-content-wrapper;
+  }
 
   &__flex {
     display: flex;

@@ -2,4 +2,8 @@
 
 .mobile-nav {
   @include nav;
+
+  &__content-wrapper {
+    @include nav-content-wrapper;
+  }
 }

@@ -51,7 +51,11 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     );
   }
 
-  return <nav className="desktop-nav">{content}</nav>;
+  return (
+    <nav className="desktop-nav">
+      <div className="desktop-nav__content-wrapper">{content}</div>
+    </nav>
+  );
 };
 
 const mapStateToProps = ({ auth }) => ({ auth });

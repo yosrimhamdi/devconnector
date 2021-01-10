@@ -18,7 +18,7 @@
     backdrop-filter: blur(2px);
   }
 
-  &__nav-content {
+  &__nav-content-wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,7 +59,7 @@
     }
   }
 
-  &__nav-content,
+  &__nav-content-wrapper,
   &__connector,
   &__wrapper {
     @include wrapper;

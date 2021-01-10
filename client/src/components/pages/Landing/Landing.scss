@@ -27,18 +27,6 @@
     }
   }
 
-  &__profiles-link {
-    display: flex;
-    align-items: center;
-    color: #f5f5f5;
-    font-weight: 400;
-  }
-
-  &__cube-logo {
-    width: 16px;
-    margin-right: 0.3em;
-  }
-
   &__login-button {
     @include login-button;
   }

@@ -1,8 +1,8 @@
 import React, { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import ProfilesLink from '../../common/ProfilesLink';
 
 import './Landing.scss';
-import cube from './images/cube.svg';
 
 const Landing = () => {
   const ref = useRef(null);
@@ -14,10 +14,7 @@ const Landing = () => {
   return (
     <div className="landing" ref={ref}>
       <div className="landing__nav">
-        <Link to="/profiles" className="landing__profiles-link">
-          <img src={cube} alt="cube logo" className="landing__cube-logo" />
-          <span>Developers</span>
-        </Link>
+        <ProfilesLink />
         <Link to="/login" className="landing__login-button">
           Log in
         </Link>

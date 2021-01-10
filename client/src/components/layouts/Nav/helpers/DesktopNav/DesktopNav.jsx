@@ -8,8 +8,8 @@ import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let content = (
     <>
-      <Link to="/developers">Developers</Link>
-      <Link to="/login">Log in</Link>
+      <Link to="/profiles">developers</Link>
+      <Link to="/login">dog in</Link>
     </>
   );
 

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 
 import './ProfilesLink.scss';
 import cube from './cube.svg';
+import ProfilesContext from '../../../contexts/ProfilesContext';
 
-const ProfilesLink = ({ isProfiles }) => {
+const ProfilesLink = () => {
+  const isProfiles = useContext(ProfilesContext);
+
   if (isProfiles) {
     return <div />;
   }

@@ -8,12 +8,8 @@ import logoutUser from '../../../../../redux/actions/auth/logoutUser';
 const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   let content = (
     <>
-      <Link to="/developers" className="desktop-nav__profiles-link">
-        Developers
-      </Link>
-      <Link to="/login" className="desktop-nav__login-button">
-        Log in
-      </Link>
+      <Link to="/developers">Developers</Link>
+      <Link to="/login">Log in</Link>
     </>
   );
 
@@ -26,15 +22,19 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
         </div>
         <div className="desktop-nav__flex">
           <Link to="/dashboard">dashboard</Link>
-          <div className="desktop-nav__flex desktop-nav__logout-button">
+          <div className="desktop-nav__flex">
             <img
               className="desktop-nav__user-image"
               src={user.photo.path}
               alt={user.fullname}
             />
-            <div onClick={logoutUser} role="button">
+            <span
+              className="desktop-nav__logout-button"
+              onClick={logoutUser}
+              role="button"
+            >
               logout
-            </div>
+            </span>
           </div>
         </div>
       </>

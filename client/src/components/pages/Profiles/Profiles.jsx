@@ -29,10 +29,6 @@ const Profiles = ({
   }, []);
 
   useEffect(() => {
-    ref.current.style.minHeight = `${window.innerHeight}px`;
-  }, []);
-
-  useEffect(() => {
     const handleScroll = () => {
       if (
         document.documentElement.offsetHeight - 100 <=

@@ -25,10 +25,10 @@
   align-items: center;
   text-transform: capitalize;
 
-  height: 55px;
+  height: var(--mobile-nav-height);
 
   @include at-medium {
-    height: 53px;
+    height: var(--desktop-nav-height);
   }
 
   @include wrapper;

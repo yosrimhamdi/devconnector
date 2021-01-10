@@ -52,7 +52,7 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
   }
 
   return (
-    <nav className="desktop-nav" ref={ref}>
+    <nav className="desktop-nav">
       <div className="desktop-nav__content-wrapper">{content}</div>
     </nav>
   );

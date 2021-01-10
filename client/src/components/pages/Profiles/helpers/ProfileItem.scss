@@ -11,7 +11,7 @@
   flex-basis: 100%;
 
   @include at-medium {
-    flex-basis: calc(31%);
+    flex-basis: calc(31.2%);
 
     &:hover {
       transform: scale(1.03);

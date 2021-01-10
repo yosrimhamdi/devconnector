@@ -1,21 +1,21 @@
 @import './responsive';
 
-@mixin nav-container {
+@mixin nav {
   background-color: rgba(#ffffff, 0.3);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2em 1em;
+  padding: 0 1em;
   background-color: var(--nav-bg-color);
   color: white;
   margin-bottom: 1em;
   position: relative;
-  z-index: 1;
   text-transform: capitalize;
 
   @include at-medium {
     margin-bottom: 2em;
-    padding: 0.7em 13%;
+    padding: 0 13%;
+    height: 53px;
   }
 
   &::before {

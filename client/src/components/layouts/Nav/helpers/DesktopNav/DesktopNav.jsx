@@ -25,8 +25,10 @@ const DesktopNav = ({ auth: { isAuthenticated, user }, logoutUser }) => {
     content = (
       <>
         <div className="desktop-nav__flex">
-          <Link to="/profiles">developers</Link>
-          <Link to="/posts">post feed</Link>
+          <ProfilesLink />
+          <Link to="/posts" className="desktop-nav__posts-link">
+            posts
+          </Link>
         </div>
         <div className="desktop-nav__flex">
           <Link to="/dashboard">dashboard</Link>

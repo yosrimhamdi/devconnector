@@ -2,7 +2,7 @@
 @import '../../../../../assets/styles/utils/mixins/button';
 
 .desktop-nav {
-  @include nav-container;
+  @include nav;
 
   &__flex {
     display: flex;
@@ -17,5 +17,21 @@
 
   &__signup-button {
     @include signup-button;
+  }
+
+  &__logout-button {
+    cursor: pointer;
+  }
+
+  &__user-image {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 0.5em 0 1em;
+  }
+
+  &__posts-link {
+    margin-left: 1em;
   }
 }

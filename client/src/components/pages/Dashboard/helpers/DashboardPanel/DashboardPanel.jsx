@@ -6,21 +6,25 @@ import ExperienceManager from '../ExperienceManager';
 import EducationManager from '../EducationManager';
 import NavLinks from '../NavLinks';
 import UserPhoto from '../UserPhoto';
+import Nav from '../../../../layouts/Nav';
 
 const DashBoardPanel = ({ profile, user }) => {
   const { experience, education } = profile;
 
   return (
-    <div className="dashboard-panel">
-      <UserPhoto user={user} />
-      <h1 className="dashboard-panel__greetings">
-        <span>welcome, </span>
-        <span>{user.fullname}</span>
-      </h1>
-      <NavLinks />
-      <ExperienceManager experiences={experience} />
-      <EducationManager educations={education} />
-    </div>
+    <>
+      <Nav />
+      <div className="dashboard-panel">
+        <UserPhoto user={user} />
+        <h1 className="dashboard-panel__greetings">
+          <span>welcome, </span>
+          <span>{user.fullname}</span>
+        </h1>
+        <NavLinks />
+        <ExperienceManager experiences={experience} />
+        <EducationManager educations={education} />
+      </div>
+    </>
   );
 };
 

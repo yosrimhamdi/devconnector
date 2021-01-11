@@ -3,6 +3,10 @@
 .add-experience {
   @include form;
 
+  &__container {
+    @include form-container;
+  }
+
   &__content-wrapper {
     @include form-content-wrapper;
   }

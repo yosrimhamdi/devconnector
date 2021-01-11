@@ -25,11 +25,7 @@
   align-items: center;
   text-transform: capitalize;
 
-  height: var(--mobile-nav-height);
-
-  @include at-medium {
-    height: var(--desktop-nav-height);
-  }
+  height: var(--nav-height);
 
   @include wrapper;
 }

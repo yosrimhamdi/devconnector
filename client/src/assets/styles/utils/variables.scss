@@ -1,3 +1,5 @@
+@import './mixins/responsive';
+
 :root {
   --main-color: #4286f3;
   --main-color-dark: #206ae2;
@@ -13,6 +15,9 @@
   --transparent-white: #ffffff9f;
 
   --scrollbar-width: 17px;
-  --mobile-nav-height: 55px;
-  --desktop-nav-height: 53px;
+  --nav-height: 55px;
+
+  @include at-medium {
+    --nav-height: 53px;
+  }
 }

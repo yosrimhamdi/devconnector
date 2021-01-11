@@ -8,11 +8,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  min-height: calc(100vh - var(--mobile-nav-height));
-
-  @include at-medium {
-    min-height: calc(100vh - var(--desktop-nav-height));
-  }
+  min-height: calc(100vh - var(--nav-height));
 
   &::before {
     content: '';

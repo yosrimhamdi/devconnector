@@ -2,7 +2,7 @@
 @import '../../../../../assets/styles/utils/mixins/centerlized-content';
 
 .create-profile-modal {
-  height: 100vh;
+  height: calc(100vh - var(--nav-height));
 
   @include at-small {
     @include centerlized-content;

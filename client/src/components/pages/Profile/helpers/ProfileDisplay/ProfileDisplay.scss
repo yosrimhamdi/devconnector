@@ -3,6 +3,7 @@
 .profile-display {
   &__user-photo-wrapper {
     height: 100vh;
+    margin-top: calc(var(--nav-height) * -1);
     position: relative;
     background-image: url('../../../../../assets/images/nature-3--960-640--q50.jpg');
     background-position: center;
@@ -17,7 +18,7 @@
       width: 50%;
     }
 
-    &::after {
+    &::before {
       content: '';
       position: absolute;
       top: 0;
@@ -52,7 +53,6 @@
     position: relative;
     border-radius: 50%;
     box-shadow: 0 0 20px 2px rgba($color: #000000, $alpha: 0.1);
-    z-index: 1;
 
     @include at-large {
       width: 200px;

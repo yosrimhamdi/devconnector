@@ -6,6 +6,7 @@ import Socials from '../Socials';
 import SkillList from '../SkillList';
 import Experiences from '../ExperienceList';
 import EducationList from '../EducationsList';
+import Nav from '../../../../layouts/Nav';
 
 const ProfileDisplay = ({ profile }) => {
   const {
@@ -26,6 +27,7 @@ const ProfileDisplay = ({ profile }) => {
 
   return (
     <div className="profile-display">
+      <Nav />
       <section className="profile-display__user-photo-wrapper">
         <img
           className="profile-display__user-photo"

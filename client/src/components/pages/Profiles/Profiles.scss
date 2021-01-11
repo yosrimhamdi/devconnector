@@ -37,5 +37,12 @@
 
     @include wrapper;
     @include content-wrapper;
+
+    i {
+      @include at-medium {
+        width: 315.66px;
+        height: 336.73px;
+      }
+    }
   }
 }

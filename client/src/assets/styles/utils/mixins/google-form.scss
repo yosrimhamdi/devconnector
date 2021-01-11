@@ -24,10 +24,6 @@
     border-radius: 5px;
     width: 600px;
   }
-
-  @include at-medium {
-    position: relative;
-  }
 }
 
 @mixin form-title {

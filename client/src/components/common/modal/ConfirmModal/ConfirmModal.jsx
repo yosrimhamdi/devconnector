@@ -60,7 +60,7 @@ const ConfrimModal = ({ isModalShown, setIsModalShown }) => {
             delete
           </button>
         </div>
-        <Spinner visible={confirmed} onContent overlay />
+        <Spinner visible={confirmed} onContent />
       </div>
     </div>
   );

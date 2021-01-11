@@ -62,7 +62,7 @@ const AddExperience = ({ handleSubmit, addExperience, loading }) => {
             <Link to="/dashboard" text="cancel" transparent rounded />
             <Button text="submit" rounded />
           </div>
-          <Spinner visible={loading} onContent onBottom fullVheight />
+          <Spinner visible={loading} onBottom />
         </div>
       </form>
     </>

@@ -10,11 +10,9 @@ const Spinner = ({
   white,
   fullScreen,
   visible,
-  overlay,
   onContent,
   onBottom,
   small,
-  fullVheight,
   spaceAround,
 }) => {
   if (!visible) {
@@ -24,9 +22,7 @@ const Spinner = ({
   const className = classnames('spinner', {
     'spinner--full-screen': fullScreen,
     'spinner--on-bottom': onBottom,
-    'spinner--overlay': overlay,
     'spinner--on-content': onContent,
-    'spinner--full-vh': fullVheight,
     'spinner--small': small,
     'spinner--space-around': spaceAround,
   });
@@ -35,7 +31,9 @@ const Spinner = ({
 
   const spinner = (
     <div className={className}>
-      <img src={spinnerIcon} className="spinner__circle" alt="loading..." />
+      <div className="spinner__wrapper">
+        <img src={spinnerIcon} className="spinner__circle" alt="loading..." />
+      </div>
     </div>
   );
 

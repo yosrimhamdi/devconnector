@@ -29,17 +29,12 @@ const BackSection = ({ title }) => {
   return (
     <div className={className}>
       <div className="back-section__wrapper">
-        <div
-          role="button"
+        <img
           onClick={history.goBack}
-          className="back-section__link"
-        >
-          <img
-            src={backArrow}
-            alt="arrow"
-            className="back-section__back-arrow"
-          />
-        </div>
+          src={backArrow}
+          alt="arrow"
+          className="back-section__back-arrow"
+        />
         <div className="back-section__title">{title}</div>
       </div>
     </div>

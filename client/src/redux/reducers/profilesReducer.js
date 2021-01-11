@@ -5,6 +5,7 @@ import {
   FETCH_PROFILE,
   FETCH_PROFILE_PAGES,
   UPDATE_CURRENT_PROFILE_PAGE,
+  CREATE_PROFILE,
 } from '../actions/types';
 
 const INTIAL = {
@@ -20,12 +21,13 @@ export default (state = INTIAL, action) => {
         ...state,
         data: { ...state.data, ..._.mapKeys(action.payload.profiles, '_id') },
       };
+    case CREATE_PROFILE:
     case FETCH_PROFILE: {
       const { profile } = action.payload;
 
       return {
         ...state,
-        data: { ...state.data, [profile._id]: profile },
+        data: { [profile._id]: profile, ...state.data },
       };
     }
     case FETCH_PROFILE_PAGES:

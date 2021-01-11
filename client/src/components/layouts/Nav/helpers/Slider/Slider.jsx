@@ -4,9 +4,12 @@ import { NavLink } from 'react-router-dom';
 import classnames from 'classnames';
 
 import './Slider.scss';
+import useDisableScroll from '../../../../../hooks/useDisableScroll';
 
 const Slider = ({ auth, isSliderVisible, setIsSliderVisible }) => {
-  const sliderNavRef = useRef(null);
+  const sliderNavRef = useRef();
+
+  useDisableScroll(isSliderVisible);
 
   useEffect(() => {
     const onDocClick = ({ target }) => {

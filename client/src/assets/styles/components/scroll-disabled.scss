@@ -5,5 +5,7 @@
 }
 
 .prevent-jump {
-  padding-right: var(--scrollbar-width);
+  @include at-medium {
+    padding-right: var(--scrollbar-width);
+  }
 }

@@ -59,11 +59,7 @@ const Profiles = ({
     <>
       <Nav />
       <div className="profiles" ref={ref}>
-        <ul className="profiles__content">
-          {renderedProfiles}
-          <i areia-hidden="true" />
-          <i areia-hidden="true" />
-        </ul>
+        <ul className="profiles__content">{renderedProfiles}</ul>
         <Spinner white visible={loading} fullScreen={initialMount.profiles} />
         <EndOfContent
           currentPage={currentPage}

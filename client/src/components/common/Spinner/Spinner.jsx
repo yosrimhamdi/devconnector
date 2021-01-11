@@ -26,8 +26,8 @@ const Spinner = ({
     'spinner--on-bottom': onBottom,
     'spinner--overlay': overlay,
     'spinner--on-content': onContent,
-    'spinner--small': small,
     'spinner--full-vh': fullVheight,
+    'spinner--small': small,
     'spinner--space-around': spaceAround,
   });
 

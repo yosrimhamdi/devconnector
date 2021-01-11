@@ -2,6 +2,7 @@
 
 @mixin form {
   padding-bottom: 1em;
+  position: relative;
 
   @include at-small {
     padding-bottom: 3em;

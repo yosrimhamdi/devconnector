@@ -2,6 +2,8 @@
 @import '../../../assets/styles/utils/mixins/responsive';
 
 .spinner {
+  z-index: 3;
+
   &--small &__circle {
     width: 25px;
   }

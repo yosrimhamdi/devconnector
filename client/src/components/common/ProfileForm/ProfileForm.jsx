@@ -2,6 +2,7 @@ import React from 'react';
 import { Field } from 'redux-form';
 import { connect } from 'react-redux';
 
+import './ProfileForm.scss';
 import constructProfile from '../../../utils/constructProfile';
 import Input from '../form/google/Input';
 import TextArea from '../form/google/TextArea';
@@ -32,10 +33,10 @@ const ProfileForm = ({
 
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className="form">
+      <form onSubmit={handleSubmit(onSubmit)} className="profile-form">
         <BackSection title="profile" />
-        <div className="form__container">
-          <h1 className="form__title">{title}</h1>
+        <div className="profile-form__content-wrapper">
+          <h1 className="profile-form__title">{title}</h1>
           <Field
             name="handle"
             placeholder="profile handle**"
@@ -86,7 +87,7 @@ const ProfileForm = ({
             component={TextArea}
           />
           <SocialsForm />
-          <div className="form__buttons-wrapper">
+          <div className="profile-form__button-wrapper">
             <Link to="/dashboard" text="cancel" transparent rounded />
             <Button text="submit" rounded />
           </div>

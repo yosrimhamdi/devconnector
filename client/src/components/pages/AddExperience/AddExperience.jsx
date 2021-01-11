@@ -2,6 +2,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
+import './AddExperience.scss';
 import validate from './validate';
 import addExperience from '../../../redux/actions/profiles/addExperience';
 import Input from '../../common/form/google/Input';
@@ -17,10 +18,10 @@ const AddExperience = ({ handleSubmit, addExperience, loading }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(addExperience)} className="form">
+      <form onSubmit={handleSubmit(addExperience)} className="add-experience">
         <BackSection title="experience" />
-        <div className="form__container">
-          <h1 className="form__title">add experience</h1>
+        <div className="add-experience__content-wrapper">
+          <h1 className="add-experience__title">add experience</h1>
           <Field
             name="company"
             placeholder="company**"
@@ -57,7 +58,7 @@ const AddExperience = ({ handleSubmit, addExperience, loading }) => {
             description="tell us about the position"
             component={TextArea}
           />
-          <div className="form__buttons-wrapper">
+          <div className="add-experience__button-wrapper">
             <Link to="/dashboard" text="cancel" transparent rounded />
             <Button text="submit" rounded />
           </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 
+import './AddEducation.scss';
 import validate from './validate';
 import addEducation from '../../../redux/actions/profiles/addEducation';
 import Input from '../../common/form/google/Input';
@@ -17,10 +18,10 @@ const AddEducation = ({ handleSubmit, addEducation, loading }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(addEducation)} className="form">
+      <form onSubmit={handleSubmit(addEducation)} className="add-education">
         <BackSection title="education" />
-        <div className="form__container">
-          <h1 className="form__title">add education</h1>
+        <div className="add-education__content-wrapper">
+          <h1 className="add-education__title">add education</h1>
           <Field
             name="school"
             placeholder="school"
@@ -57,7 +58,7 @@ const AddEducation = ({ handleSubmit, addEducation, loading }) => {
             description="tell us about the program that you were in"
             component={TextArea}
           />
-          <div className="form__buttons-wrapper">
+          <div className="add-experience__button-wrapper">
             <Link to="/dashboard" text="cancel" transparent rounded />
             <Button text="submit" rounded />
           </div>

@@ -1,0 +1,17 @@
+@import '../../../assets/styles/utils/mixins/google-form';
+
+.add-experience {
+  @include form;
+
+  &__content-wrapper {
+    @include form-content-wrapper;
+  }
+
+  &__title {
+    @include form-title;
+  }
+
+  &__button-wrapper {
+    @include form-button-wrapper;
+  }
+}

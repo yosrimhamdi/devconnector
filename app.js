@@ -3,6 +3,7 @@ const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
 const path = require('path');
 const compression = require('compression');
+const cors = require('cors');
 
 const users = require('./routers/users');
 const profiles = require('./routers/profiles');
@@ -23,6 +24,8 @@ const app = express();
 if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
+
+app.use(cors({ origin: 'https://https://yosrimhamdi.netlify.app' }));
 
 app.use(express.json());
 

@@ -7,7 +7,8 @@
     "server": "nodemon --ignore client/ server.js",
     "client": "npm start --prefix client",
     "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm run build --prefix client && TRUE",
+    "heroku-postbuild": "npm install --prefix client",
+    "build": "npm run build --prefix client",
     "eslint": "eslint --init"
   },
   "dependencies": {

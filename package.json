@@ -7,7 +7,7 @@
     "server": "nodemon --ignore client/ server.js",
     "client": "npm start --prefix client",
     "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm i --prefix client/ && npm run build --prefix client/",
+    "build": "npm i --only=prod--prefix client/ && npm run build --prefix client/",
     "eslint": "eslint --init"
   },
   "dependencies": {

@@ -4,16 +4,15 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon --ignore client/ server.js",
+    "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "npm i --production --prefix client/ && npm run build --prefix client/",
+    "install": "cd client & npm install",
+    "build": "npm run build --prefix client",
     "eslint": "eslint --init"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
-    "concurrently": "^5.3.0",
     "cookie-parser": "^1.4.5",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

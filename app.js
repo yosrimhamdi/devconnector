@@ -25,7 +25,7 @@ if (NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
-app.use(cors({ origin: 'https://https://yosrimhamdi.netlify.app' }));
+app.use(cors({ origin: 'https://yosrimhamdi.netlify.app' }));
 
 app.use(express.json());
 

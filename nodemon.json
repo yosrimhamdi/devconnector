@@ -1,4 +1,4 @@
 {
-  "ext": "js, env, json",
-  "ignore": "client/"
+  "ignore": "client/",
+  "watch": [".env", "*"]
 }

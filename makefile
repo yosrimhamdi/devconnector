@@ -3,5 +3,5 @@ git:
 		git commit -m "$m"
 		git push origin master
 
-heroku: git
+heroku:
 		git push heroku master

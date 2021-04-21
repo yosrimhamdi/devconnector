@@ -40,11 +40,9 @@ app.use('/api/profiles', profiles);
 
 app.use('/api/posts', posts);
 
-if (NODE_ENV) {
-  app.use(express.static('client/build'));
+app.use(express.static('client/build'));
 
-  app.get('*', sendReactApp);
-}
+app.get('*', sendReactApp);
 
 app.all('*', notFound);
 

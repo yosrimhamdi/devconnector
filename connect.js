@@ -1,8 +1,12 @@
 const mongoose = require('mongoose');
 
+const { DB_URI, DB_USER_PASSWORD } = process.env;
+
+const URI = DB_URI.replace('<password>', DB_USER_PASSWORD);
+
 module.exports = async () => {
   try {
-    await mongoose.connect(process.env.DB_URI, {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
       useCreateIndex: true,
       useFindAndModify: false,

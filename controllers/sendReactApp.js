@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = (req, res) => {
-  res.sendFile(path.join(__dirname, '../client', 'build', 'index.html'));
+  res.sendFile('/client/build/index.html');
 };

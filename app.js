@@ -1,7 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
-const path = require('path');
 const compression = require('compression');
 const cors = require('cors');
 
@@ -41,8 +40,8 @@ app.use('/api/profiles', profiles);
 
 app.use('/api/posts', posts);
 
-if (NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'client', 'build')));
+if (NODE_ENV) {
+  app.use(express.static('client/build'));
 
   app.get('*', sendReactApp);
 }

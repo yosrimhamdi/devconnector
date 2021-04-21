@@ -15,7 +15,7 @@ const {
   sendError,
 } = require('./errors/global');
 const notFound = require('./errors/notFound');
-const sendReactApp = require('./view/sendReactApp');
+const sendReactApp = require('./controllers/sendReactApp');
 
 const { NODE_ENV } = process.env;
 

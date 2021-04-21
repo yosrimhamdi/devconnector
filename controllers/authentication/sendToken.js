@@ -1,6 +1,6 @@
 const _ = require('lodash');
 
-const { createToken } = require('../../utils/jwt');
+const createToken = require('./jwt/createToken');
 
 module.exports = (res, statusCode, user) => {
   const { JWT_COOKIE_EXPIRES_IN, NODE_ENV } = process.env;

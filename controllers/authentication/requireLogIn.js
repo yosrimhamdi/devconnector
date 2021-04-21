@@ -1,4 +1,4 @@
-const { verifyToken } = require('../../utils/jwt');
+const verifyToken = require('./jwt/verifyToken');
 const catchAsync = require('../../errors/catchAsync');
 const User = require('../../models/User');
 const AppError = require('../../errors/appError');

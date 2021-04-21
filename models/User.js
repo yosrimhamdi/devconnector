@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
 const fs = require('fs');
 
-const avatar = fs.readFileSync(`${__dirname}/../static/default.svg`);
+const avatar = fs.readFileSync(`${__dirname}/../public/default.svg`);
 
 const userSchema = new mongoose.Schema({
   firstname: {

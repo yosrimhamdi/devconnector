@@ -3,10 +3,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server",
-    "start:dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server",
-    "client": "npm start --prefix client",
+    "start": "concurrently \"nodemon server\" \"npm start --prefix client\"",
+    "server": "node server",
     "build": "npm i --prefix client && npm run build --prefix client",
     "eslint": "eslint --init"
   },

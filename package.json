@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "start": "concurrently \"nodemon server\" \"npm start --prefix client\"",
-    "server": "node server",
+    "start:server": "node server",
     "build": "npm i --prefix client && npm run build --prefix client",
     "eslint": "eslint --init"
   },

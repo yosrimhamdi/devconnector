@@ -6,7 +6,7 @@
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
-    "build": "npm i --prefix client & npm run build --prefix client",
+    "heroku-postbuild": "npm i --prefix client & npm run build --prefix client",
     "eslint": "eslint --init"
   },
   "dependencies": {

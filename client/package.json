@@ -23,7 +23,8 @@
     "redux": "^4.0.5",
     "redux-form": "^8.3.6",
     "redux-thunk": "^2.3.0",
-    "validator": "^13.1.1"
+    "validator": "^13.1.1",
+    "eslint-config-airbnb": "^18.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -49,7 +50,6 @@
   },
   "devDependencies": {
     "eslint": "^7.9.0",
-    "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",

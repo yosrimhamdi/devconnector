@@ -1,3 +1,7 @@
+const path = require('path');
+
 module.exports = (req, res) => {
-  res.sendFile('/client/build/index.html');
+  const filePath = path.join(__dirname, '..', 'client', 'build', 'index.html');
+
+  res.sendFile(filePath);
 };

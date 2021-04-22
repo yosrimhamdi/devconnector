@@ -17,11 +17,9 @@ const {
 const notFound = require('./errors/notFound');
 const sendReactApp = require('./controllers/sendReactApp');
 
-const { NODE_ENV } = process.env;
-
 const app = express();
 
-if (NODE_ENV === 'development') {
+if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 

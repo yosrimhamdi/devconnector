@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
-
 const dotenv = require('dotenv');
+
+const app = require('./app');
 
 dotenv.config();
 
@@ -22,8 +23,6 @@ const URI = DB_URI.replace('<password>', DB_USER_PASSWORD);
     console.error(err);
   }
 })();
-
-const app = require('./app');
 
 app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`);

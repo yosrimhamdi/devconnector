@@ -9,4 +9,4 @@ heroku:
 
 both: 
 	$(MAKE) git
-	$(MAKE) heorku
+	$(MAKE) heroku

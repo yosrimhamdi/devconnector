@@ -5,7 +5,7 @@
   "scripts": {
     "start": "concurrently \"nodemon server\" \"npm start --prefix client\"",
     "start:server": "node server",
-    "build": "npm run build --prefix client",
+    "build": "npm i --prefix client && npm run build --prefix client",
     "eslint": "eslint --init"
   },
   "dependencies": {

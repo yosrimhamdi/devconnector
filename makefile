@@ -5,3 +5,8 @@ git:
 
 heroku:
 		git push heroku master
+		heroku open
+
+both: 
+	$(MAKE) git
+	$(MAKE) heorku

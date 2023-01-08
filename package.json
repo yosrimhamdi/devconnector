@@ -26,5 +26,8 @@
   "devDependencies": {
     "concurrently": "^6.0.2",
     "eslint": "^7.17.0"
+  },
+  "engines": {
+    "node": "14.21.2"
   }
 }
